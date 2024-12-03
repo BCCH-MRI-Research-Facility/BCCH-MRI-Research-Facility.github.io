@@ -4,4 +4,6 @@
 
 # Mattermost
 
+![Mattermost Logo](/img/mattermost.png)
+
 We currently use Mattermost to communicate. Mattermost is like Slack but open source and hosted by BCCHR.
