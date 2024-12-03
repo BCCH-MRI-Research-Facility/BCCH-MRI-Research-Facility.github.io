@@ -2,6 +2,9 @@ project:
   type: website
 
 website:
+  search:
+    location: navbar
+    type: overlay
   title: "BCCH MRI Research Facility Github Page"
   navbar:
     left:
@@ -11,7 +14,7 @@ website:
 
 format:
   html:
-    theme: just-the-docs
+    theme: cosmo
     css: styles.css
     toc: true
 
