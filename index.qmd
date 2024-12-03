@@ -1,5 +1,7 @@
 ---
+layout: default
 title: "BCCH MRI Research Facility Github Page"
+nav_enabled: true
 ---
 
 This page serves as a repository of resources for users of [BC Children's MRI Research Facility](https://bcchr.ca/3tmri) 
