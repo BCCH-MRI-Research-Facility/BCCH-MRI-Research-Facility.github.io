@@ -2,8 +2,6 @@
 title: "BCCH MRI Research Facility Github Page"
 ---
 
-This is a Quarto website.
+This page serves as a repository of resources for users of [BC Children's MRI Research Facility](https://bcchr.ca/3tmri) 
 
-Test github actions
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Our Wiki page can be found [here](https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/wiki)
