@@ -2,6 +2,7 @@ project:
   type: website
 
 website:
+  open-graph: true #improve the previews of your content when a link to it is pasted into applications like Slack, Discord, Facebook, Linkedin, and more
   search:
     location: navbar
     type: overlay
@@ -11,6 +12,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+  google-analytics: "G-B9X9W6319W"
 
 format:
   html:
