@@ -12,6 +12,11 @@ website:
     search: true
     contents: auto
   navbar:
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            href: https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io
     left:
       - href: index.qmd
         text: Home
