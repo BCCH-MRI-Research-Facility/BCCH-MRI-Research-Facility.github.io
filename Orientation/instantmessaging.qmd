@@ -1,0 +1,7 @@
+---
+  title: "Instant Messaging / Stay in Touch"
+---
+
+# Mattermost
+
+We currently use Mattermost to communicate. Mattermost is like Slack but open source and hosted by BCCHR.
