@@ -4,6 +4,8 @@ title: "BCCH MRI Research Facility Github Page"
 nav_enabled: true
 ---
 
-This page serves as a repository of resources for users of [BC Children's MRI Research Facility](https://bcchr.ca/3tmri) 
+This page serves as a Wiki and collection of resources for users of [BC Children's MRI Research Facility](https://bcchr.ca/3tmri) 
 
-Our Wiki page can be found [here](https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/wiki)
+You can search this page using the magnifying glass in the top right.
+
+Or you can navigate using the sidebar on the left.
