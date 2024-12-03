@@ -1,9 +1,40 @@
 ---
   title: "Instant Messaging / Stay in Touch"
+  order: 1
 ---
 
 # Mattermost
 
 ![Mattermost Logo](/img/mattermost.png)
 
-We currently use Mattermost to communicate. Mattermost is like Slack but open source and hosted by BCCHR.
+Mattermost is an open-source, self-hostable online chat service with file sharing, search, and integrations. It is designed as an internal chat for organisations and companies, and mostly markets itself as an open-source alternative to Slack and Microsoft Teams.
+
+If you have questions or want to connect with other BCCH MRI Research Facility users, you can download Mattermost and connect with us.
+
+## Install
+
+### Computer
+
+For your computer, you will want to install Mattermost Desktop. [Click here](https://mattermost.com/download/#desktop) to choose your operating system and use their install guide.
+
+### Mobile
+
+Mattermost can also be installed on your phone. [Click here](https://mattermost.com/download/#mobile) to choose your phone operating system.
+
+## Setup
+
+[*NOTE: You will need a BCCHR username to gain access.*]
+
+1. You will need to ask to be invited. [Click here](https://link)
+2. After you are given access: open mattermost (either Desktop or Mobile)
+3. For server display name, use: ``
+4. For server URL, use: `https://im.bcchr.ca/`
+5. Login with your BCCHR username and password
+
+### Add A Photo of Yourself
+
+It can be very helpful to others to include a photo or yourself.
+
+1. Go to `Account Settings` (Top right on Desktop app, and bottom right on Mobile app)
+2. Click on `Your Profile`
+3. Edit your Profile Picture
