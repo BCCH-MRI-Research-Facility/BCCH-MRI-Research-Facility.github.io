@@ -24,6 +24,9 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+    right:
+      - text: "{{< fa brands bluesky >}}"
+        href: https://bsky.app/profile/bcch-mri-research.bsky.social
     tools:
       - icon: github
         menu:
