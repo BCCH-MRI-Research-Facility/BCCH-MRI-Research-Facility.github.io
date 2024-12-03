@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "BCCH MRI Research Facility Github Page",
     "section": "",
-    "text": "This page serves as a repository of resources for users of BC Children’s MRI Research Facility\nOur Wiki page can be found here"
+    "text": "This page serves as a Wiki and collection of resources for users of BC Children’s MRI Research Facility\nYou can search this page using the magnifying glass in the top right.\nOr you can navigate using the sidebar on the left."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site",
+    "text": "The BC Children’s Hospital MRI Research Facility is one of Canada’s top centres for pediatric brain mapping and imaging sciences research.\nA core facility of the BC Children’s Hospital’s Research Institute and affiliated with the University of British Columbia, the child-friendly environment of the MRI Research Facility is ideally situated to optimize opportunities for widespread research collaborations with the highly skilled staff found at BC Children’s Hospital and BC Women’s Hospital + Health Centre.\nThe MRI Research Facility features a GE Discovery MR750 3.0 Tesla MRI scanner for functional MRI, structural MRI and spectroscopy. The current scanner software version is DV26.0_R03.\nTogether, with our child-friendly MRI simulator, the MRI Research Facility provides an excellent platform for performing research studies on babies and young children.",
     "crumbs": [
       "Home",
       "About"
