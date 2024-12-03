@@ -16,5 +16,17 @@
       "Home",
       "About"
     ]
+  },
+  {
+    "objectID": "Orientation/instantmessaging.html",
+    "href": "Orientation/instantmessaging.html",
+    "title": "Instant Messaging / Stay in Touch",
+    "section": "",
+    "text": "Mattermost\nWe currently use Mattermost to communicate. Mattermost is like Slack but open source and hosted by BCCHR.\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Orientation",
+      "Instant Messaging / Stay in Touch"
+    ]
   }
 ]
