@@ -2,25 +2,35 @@ project:
   type: website
 
 website:
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: "**Alert** Testing announcement"
+    type: primary
+    position: below-navbar
+  repo-url: https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io
+  repo-actions: [edit, source, issue]
+  back-to-top-navigation: true
   open-graph: true #improve the previews of your content when a link to it is pasted into applications like Slack, Discord, Facebook, Linkedin, and more
-  search:
-    location: navbar
-    type: overlay
-  title: "BCCH MRI Research Facility Github Page"
+  title: "BCCH MRI Research Facility Wiki"
   sidebar:
     style: "docked"
     search: true
     contents: auto
   navbar:
+    background: primary
+    search: true
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
     tools:
       - icon: github
         menu:
           - text: Source Code
             href: https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+          - text: Report a Bug
+            href: https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues
   google-analytics: "G-B9X9W6319W"
 
 format:
