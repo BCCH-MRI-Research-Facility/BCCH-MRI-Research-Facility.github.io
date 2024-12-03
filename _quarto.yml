@@ -7,6 +7,10 @@ website:
     location: navbar
     type: overlay
   title: "BCCH MRI Research Facility Github Page"
+  sidebar:
+    style: "docked"
+    search: true
+    contents: auto
   navbar:
     left:
       - href: index.qmd
