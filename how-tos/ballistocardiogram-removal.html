@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lynne Williams">
+<meta name="dcterms.date" content="2018-07-11">
+<meta name="description" content="Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron’s dissertation is included in this repository for transparency’s sake. This code requires Matlab and the Signal Processing Toolbox.">
 
-<title>BCCH MRI Research Facility Github Page – BCCH MRI Research Facility Wiki</title>
+<title>EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method) – BCCH MRI Research Facility Wiki</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c16f70d9e6245094a6412faf456d4b9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c16f70d9e6245094a6412faf456d4b9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,9 +82,9 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="BCCH MRI Research Facility Github Page – BCCH MRI Research Facility Wiki">
-<meta property="og:description" content="">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method) – BCCH MRI Research Facility Wiki">
+<meta property="og:description" content="Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron’s dissertation is included in this repository for transparency’s sake. This code requires Matlab and the Signal Processing Toolbox.">
 <meta property="og:site_name" content="BCCH MRI Research Facility Wiki">
 </head>
 
@@ -92,7 +95,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">BCCH MRI Research Facility Wiki</span>
     </a>
   </div>
@@ -103,15 +106,15 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link active" href="../about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./how-tos.html"> 
+    <a class="nav-link" href="../how-tos.html"> 
 <span class="menu-text">MRI How Tos</span></a>
   </li>  
 </ul>
@@ -146,7 +149,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">BCCH MRI Research Facility Github Page</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../how-tos/ballistocardiogram-removal.html">How Tos</a></li><li class="breadcrumb-item"><a href="../how-tos/ballistocardiogram-removal.html">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -171,7 +174,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./Orientation/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../Orientation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Orientation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -180,7 +183,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Orientation/instantmessaging.html" class="sidebar-item-text sidebar-link">
+  <a href="../Orientation/instantmessaging.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instant Messaging / Stay in Touch</span></a>
   </div>
 </li>
@@ -188,13 +191,13 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./how-tos.html" class="sidebar-item-text sidebar-link">
+  <a href="../how-tos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">MRI How Tos</span></a>
   </div>
 </li>
@@ -209,7 +212,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./how-tos/ballistocardiogram-removal.html" class="sidebar-item-text sidebar-link">
+  <a href="../how-tos/ballistocardiogram-removal.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</span></a>
   </div>
 </li>
@@ -226,17 +229,47 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../how-tos/ballistocardiogram-removal.html">How Tos</a></li><li class="breadcrumb-item"><a href="../how-tos/ballistocardiogram-removal.html">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">BCCH MRI Research Facility Github Page</h1>
-</div>
+<h1 class="title">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">eeg-fmri</div>
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">matlab</div>
+    <div class="quarto-category">preprocessing</div>
+    <div class="quarto-category">eeg</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron’s dissertation is included in this repository for transparency’s sake. This code requires Matlab and the Signal Processing Toolbox.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lynne Williams </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 11, 2018</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">December 3, 2024</p>
+    </div>
+  </div>
     
   </div>
   
@@ -245,9 +278,17 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </header>
 
 
-<p>This page serves as a Wiki and collection of resources for users of <a href="https://bcchr.ca/3tmri">BC Children’s MRI Research Facility</a></p>
-<p>You can search this page using the magnifying glass in the top right.</p>
-<p>Or you can navigate using the sidebar on the left.</p>
+<p>Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron’s dissertation is included in this repository for transparency’s sake. This code requires Matlab and the Signal Processing Toolbox.</p>
+<p>If you use this code, please cite:</p>
+<pre><code>Rodriguez, Cameron. (2016). Improvements to Simultaneous Electroencepalography-Functional Magnetic Resonance Imaging and Electroencepalographic Source Localization. PhD Thesis for the University of California, Los Angeles."</code></pre>
+<p>Remove the MR gradient signal from the EEG using your favourite software (here we used FIMRIB’s EGG tools in EEGLAB [REF.] saved as a .set file.).</p>
+<p>Set up the paths to your data</p>
+<pre><code>srcdir = fullfile('/Volumes', 'Lynne_32G', 'EEG', 'src');
+cd(scrdir)</code></pre>
+<p>Load the EEG run.</p>
+<pre><code>EEG = load('-mat', [srcdir 'BHBMEG007_20210511_040344_GR.set']);</code></pre>
+<p>And get the sampling rate.</p>
+<pre><code>Fs = EEG.srate</code></pre>
 
 
 
@@ -674,4 +715,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

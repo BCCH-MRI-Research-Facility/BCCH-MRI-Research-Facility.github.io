@@ -1,6 +1,8 @@
 [
   {
     "listing": "/how-tos.html",
-    "items": []
+    "items": [
+      "/how-tos/ballistocardiogram-removal.html"
+    ]
   }
 ]
