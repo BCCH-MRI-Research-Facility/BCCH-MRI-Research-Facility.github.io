@@ -8,11 +8,14 @@ highlight-style: github
 categories:
     - anat
     - shell
+    - code
     - visualization
     - alignment
 ---
 
 # Align to the Anterior Commissure-Posterior Commisure Line
+
+If you need help determining where the Anterior and Posterior Commisures are in your image, please see [Commissural Pathways](https://www.kenhub.com/en/library/anatomy/commissural-pathways), available online,  or [Catani & Thiebaut de Schotten (2012)](https://academic.oup.com/book/24732/chapter-abstract/188237007?redirectedFrom=fulltext), which is available from the UBC Library.
 
 1. Download the [`acpc_align`](./acpc_align) script from [here](./acpc_align). Be sure the code is in the folder where your participant's structural scans are.
 
