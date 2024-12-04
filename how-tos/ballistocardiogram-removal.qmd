@@ -146,7 +146,7 @@ LR_HBW = filtfilt(HBW.lowpass, temp);
     - First take the first drivative
 
 $$ x'[n] = \frac{d}{dn}x[n], $$
-where $x\[n\]$ is the time domain representation of the LR mean signal
+where $x[n]$ is the time domain representation of the LR mean signal
 
 ```{.matlab}
 LR_LBW_diff = diff(LR_LBW)/(Fs);
@@ -166,7 +166,7 @@ $$SEE[n] = -\bigg( \big< ( < x'_N[n], x'*_N[n] > ), log( < x'[n], x'*_N[n] > ) \
 
 when $x'*_N$ is the complex conjugate. However, in most cases, this simplifies into real numbers as
 
-$$SEE[n] = \big< x'[n]^2,\ln\(x'_N[n]^2)\big>$$
+$$SEE[n] = \big< x'[n]^2,\ln(x'_N[n]^2)\big>$$
 
 ```{.matlab}
 LR_LBW_SEE = -((LR_LBW_norm.^2).*log(LR_LBW_norm.^2));
