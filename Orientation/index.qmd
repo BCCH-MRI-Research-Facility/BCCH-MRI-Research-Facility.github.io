@@ -2,7 +2,7 @@
 title: "Orientation"
 listing:
     contents: 
-        - orientation/*.qmd
+        - /*.qmd
     sort: "title"
     type: default
     categories: true
