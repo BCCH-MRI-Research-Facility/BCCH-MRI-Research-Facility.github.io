@@ -4,6 +4,7 @@ description: "Reversed engineered code from Rodriguez (2016) for removal of the 
 author: "Lynne Williams"
 date: "2018/07/11"
 date-modified: "2024/12/03"
+highlight-style: github
 categories:
     - eeg-fmri
     - code
@@ -26,20 +27,20 @@ Rodriguez, Cameron. (2016). [Improvements to Simultaneous Electroencepalography-
 
 2. Set up the paths to your data and change directories into the `srcdir` directory. Change the path to suit your dataset.
 
-```{matlab}
+```{.matlab}
 srcdir = fullfile('/Volumes', 'Lynne_32G', 'EEG', 'src');
 cd(scrdir)
 ```
 
 3. Load the EEG run. Change to suit your dataset.
 
-```{matlab}
+```{.matlab}
 EEG = load('-mat', [srcdir 'BHBMEG007_20210511_040344_GR.set']);
 ```
 
 4. Get the sampling rate. In the `.set` file, it is named `srate` and is an embedded structure of `EEG`. This may differ depending on the software used to remove the MR gradient noise.
 
-```{matlab}
+```{.matlab}
 Fs = EEG.srate
 ```
 
@@ -48,5 +49,5 @@ Fs = EEG.srate
 6. Restrict signal to channels included in Rodriguez 2016 for ballistocardiogram estimation (FT9 [EGI 67], TP9 [EGI 94], T7 [EGI 69], P7 [EGI 96], FT10 [EGI 219], TP10 [EGI 190], T8 [EGI 202], P8 [EGI 179]).
 ![Channels to derive cardiac signal from.](./images/channels4cardiacsignal.png)
 
-7. 
+
 
