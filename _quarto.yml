@@ -8,7 +8,7 @@ website:
   announcement:
     # icon: info-circle
     dismissable: true
-    content: "🎉 Join our Mattermost server and follow us on Bluesky"
+    content: "🎉 Join our [Mattermost](/Orientation/instantmessaging.qmd) server to chat and collaborate; and follow us on [Bluesky](https://bsky.app/profile/bcch-mri-research.bsky.social)"
     type: primary
     position: below-navbar
   repo-url: https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io

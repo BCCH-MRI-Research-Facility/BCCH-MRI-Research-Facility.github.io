@@ -2,7 +2,7 @@
 title: "Tutorials"
 listing:
     contents: 
-        - eeg-fmri/*.qmd
+        - "*/*.qmd"
     sort: "title"
     type: default
     categories: true
