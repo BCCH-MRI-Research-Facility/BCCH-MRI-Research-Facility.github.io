@@ -1,11 +1,14 @@
 ---
-layout: default
-title: "BCCH MRI Research Facility Github Page"
-nav_enabled: true
+title: "BCCH MRI Research Facility Wiki Page"
+# title-block-banner: /img/banner.png
 ---
+
+![](/img/banner.jpg){width=100%}
+
+# Overview
 
 This page serves as a Wiki and collection of resources for users of [BC Children's MRI Research Facility](https://bcchr.ca/3tmri) 
 
-You can search this page using the magnifying glass in the top right.
+You can search this page using the magnifying glass in the top right 🔍
 
-Or you can navigate using the sidebar on the left.
+Or you can navigate using the sidebar on the left 👈
