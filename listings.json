@@ -1,6 +1,8 @@
 [
   {
     "listing": "/tutorials/index.html",
-    "items": []
+    "items": [
+      "/tutorials/instruction-sheets/ballistocardiogram-removal.html"
+    ]
   }
 ]
