@@ -1,0 +1,104 @@
+---
+title: "MRI Safety FAQ"
+# author: "A Weber"
+# date: 2024-12-04
+# date-modified: "2024/12/04"
+description: "Your frequently asked MRI safety questions answered"
+highlight-style: github
+categories:
+    - safety
+    - mri
+order: 2
+---
+
+# Frequencly Asked Questions Answered
+
+[*Note: the following was taken from [here](https://health.ucdavis.edu/irc/content/pdfs/safety_faq.pdf).  
+This is a rough guide; some things may no longer be accurate for our facility*]
+
+> Can you have an MRI if you have fillings, retainers or braces on your teeth?
+
+The metal in most fillings is not affected by the MRI system's magnetic field. However, the fillings may cause some distortion of the images if you are having a scan of the brain or facial area.
+
+> Can I have an MRI exam if I have a permanent retainer or braces on my teeth?
+
+The recommendation is not to scan a subject with retainers or braces because of distortion can occur that can affect the quality of the data.
+
+> Can you have make-up on for an MRI?
+
+Some cosmetics contain metals that can interact with MRI magnets, so on the day of the MRI, if possible, ask your subject to not wear makeup. Also, minimize hairspray and forgo antiperspirants and sunscreens, which contain metals, that could interfere with the scan and reduce the quality of the images.
+
+> Can you put on deodorant for an MRI?
+
+Please refrain from wearing any powder, perfumes, deodorant and/or lotions on your underarms and breasts prior to the procedure. Since the MRI is a magnet, please let us know if you have any metal in or on your body.
+
+> Is titanium safe for MRI?
+
+Titanium implants are MRI compatible. Subjects with nontitanium implants should inform the MRI safety officer 7 days prior to the procedure to check with the manufacture for condition that allow safely conducting an MRI scan.
+
+> What do you wear for an MRI?
+
+If the subject’s clothes have any metal fasteners or metallic design in close proximity to the anatomy being scanned, you should ask the subject to change into a hospital gown. If the clothing is made of a stretchy material, the subject must change into a hospital gown as a precautionary measure of safety to prevent possible burns to the skin. A locker will be supplied to secure their belongings.
+
+> Is it safe to have an MRI while pregnant?
+
+Unless the research MRI study involves prenatal or pregnant subjects, pregnant subjects are excluded.
+
+> Are piercings safe for MRI?
+
+It is the policy to remove all piercings before you scan your subject to avoid any possible burns due to heating of the metal used in the piercings. Piercings, if not removed, i.e. earrings, will cause distortion to the image.
+
+# Safety of frequently asked implant MRI compatibility:
+
+If a subject has an implant it must be reviewed by the MRI safety officer before the subject can be scanned. Written documentation must be provided to determine the type of implant.
+
+### Hearing Aids and Other Hearing Systems
+
+Unsafe.
+
+### Heart Valves and Annuloplasty Rings
+
+Safe to scan at 3T or less.
+
+### Hemostatic clips, other clips, fasteners, staples
+
+Safe at 3T or less.
+
+### IUDs and other contraceptive devices
+
+- Copper T and Copper 7:  Safe at 1.5 T or less.
+
+- Copper T 380A:  Safe at 3T or less.
+
+- Stainless steel IUDs:  Unsafe.
+
+- Mirena IUD:  Safe.
+
+- Implanon implant:  Safe.
+
+- Essure:  Safe to scan at 3T or less.
+
+### Magnetically activated implants and devices
+
+Unsafe.
+
+### Neurostimulation system
+
+Unsafe.
+
+### Otologic Implants
+
+Unsafe.
+
+### Penile Implants
+
+Unsafe – Duraphase or Omniphase.
+
+### Pessary/Pessaries
+
+Unsafe – metallic.
+Safe – nonmetallic.
+
+### Orthopedic implants
+
+Must check manufactures conditions for MRI safety.
