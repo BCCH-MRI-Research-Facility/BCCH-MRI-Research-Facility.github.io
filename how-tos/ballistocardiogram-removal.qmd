@@ -8,7 +8,6 @@ description: |
   Rodriguez, Cameron. (2016). Improvements to Simultaneous Electroencepalography-Functional Magnetic Resonance Imaging and Electroencepalographic Source Localization. PhD Thesis for the University of California, Los Angeles."
 author: "Lynne Williams"
 date: "2018/07/11"
-draft: false
 date-modified: "2024/12/03"
 categories:
   - eeg-fmri

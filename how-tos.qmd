@@ -1,7 +1,8 @@
 ---
 title: "MRI How Tos"
 listing:
-    contents: posts
+    contents: 
+        - how-tos/*.qmd
     sort: "title"
     type: default
     categories: true
