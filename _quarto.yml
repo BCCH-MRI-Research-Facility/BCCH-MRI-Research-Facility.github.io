@@ -24,6 +24,8 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: how-tos.qmd
+        text: MRI How Tos
     right:
       - text: "{{< fa brands bluesky >}}"
         href: https://bsky.app/profile/bcch-mri-research.bsky.social
