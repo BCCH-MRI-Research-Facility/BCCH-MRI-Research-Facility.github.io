@@ -7,8 +7,30 @@
     "text": "Overview\nThis page serves as a Wiki and collection of resources for users of BC Children’s MRI Research Facility\nYou can search this page using the magnifying glass in the top right 🔍\nOr you can navigate using the sidebar on the left 👈\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "Orientation/instantmessaging.html",
-    "href": "Orientation/instantmessaging.html",
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Tutorials"
+    ]
+  },
+  {
+    "objectID": "orientation/index.html",
+    "href": "orientation/index.html",
+    "title": "Orientation",
+    "section": "",
+    "text": "No matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Orientation"
+    ]
+  },
+  {
+    "objectID": "orientation/instantmessaging.html",
+    "href": "orientation/instantmessaging.html",
     "title": "Instant Messaging / Stay in Touch",
     "section": "",
     "text": "Mattermost is an open-source alternative to Slack and Microsoft Teams. Similar to those programs, it is a tool for instant messaging and collaboration.\nIf you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us.\n\n\nIf you are on the BCCHR VPN, you can follow instructions from the BCCHR Hub here:\nhttps://hub.bcchr.ca/display/it/Mattermost\nOtherwise, you can follow these directions:\n\n\n\n[NOTE: You will need a BCCHR username and password to gain access.]\n\nFirst thing you will want to do is get invited to our ‘team’:\nClick here to be invited\nIf that link does not work, you can submit a request to IT via support.bcchr.ca\nYou will be asked “Where would you like to view this?” For now, click “View in Browser”\nYou will be asked to login with your BCCHR username and password: \nAfter you are given access, refresh the login (i.e. log out and log back in to https://im.bcchr.ca)\n\n\n\n\n\n\nAs described above, you can check out Mattermost on your browser first before you decide to install the app on your computer or phone:\nhttps://im.bcchr.ca/\n\n\n\nFor your computer, you will want to install Mattermost Desktop. Click here to choose your operating system and use their installation guide.\nFor server display name, use: BCCH Research MRI\nFor server URL, use: https://im.bcchr.ca/\nLogin with your BCCHR username and password\n\n\n\nMattermost can also be installed on your phone. Click here to choose your phone operating system.\nFor server display name, use: BCCH Research MRI\nFor server URL, use: https://im.bcchr.ca/\nLogin with your BCCHR username and password\n\n\n\n\n\n\nIf you want to learn more about Mattermost and its features, visit https://docs.mattermost.com/guides/user.html\n\n\n\nIt can be very helpful to others to include a photo or yourself.\n\nGo to Account Settings (Top right on Desktop app, and bottom right on Mobile app)\nClick on Your Profile\nEdit your Profile Picture",
@@ -19,8 +41,8 @@
     ]
   },
   {
-    "objectID": "Orientation/instantmessaging.html#bcchr-it-instructions",
-    "href": "Orientation/instantmessaging.html#bcchr-it-instructions",
+    "objectID": "orientation/instantmessaging.html#bcchr-it-instructions",
+    "href": "orientation/instantmessaging.html#bcchr-it-instructions",
     "title": "Instant Messaging / Stay in Touch",
     "section": "",
     "text": "If you are on the BCCHR VPN, you can follow instructions from the BCCHR Hub here:\nhttps://hub.bcchr.ca/display/it/Mattermost\nOtherwise, you can follow these directions:",
@@ -31,8 +53,8 @@
     ]
   },
   {
-    "objectID": "Orientation/instantmessaging.html#setup",
-    "href": "Orientation/instantmessaging.html#setup",
+    "objectID": "orientation/instantmessaging.html#setup",
+    "href": "orientation/instantmessaging.html#setup",
     "title": "Instant Messaging / Stay in Touch",
     "section": "",
     "text": "[NOTE: You will need a BCCHR username and password to gain access.]\n\nFirst thing you will want to do is get invited to our ‘team’:\nClick here to be invited\nIf that link does not work, you can submit a request to IT via support.bcchr.ca\nYou will be asked “Where would you like to view this?” For now, click “View in Browser”\nYou will be asked to login with your BCCHR username and password: \nAfter you are given access, refresh the login (i.e. log out and log back in to https://im.bcchr.ca)",
@@ -43,8 +65,8 @@
     ]
   },
   {
-    "objectID": "Orientation/instantmessaging.html#installation",
-    "href": "Orientation/instantmessaging.html#installation",
+    "objectID": "orientation/instantmessaging.html#installation",
+    "href": "orientation/instantmessaging.html#installation",
     "title": "Instant Messaging / Stay in Touch",
     "section": "",
     "text": "As described above, you can check out Mattermost on your browser first before you decide to install the app on your computer or phone:\nhttps://im.bcchr.ca/\n\n\n\nFor your computer, you will want to install Mattermost Desktop. Click here to choose your operating system and use their installation guide.\nFor server display name, use: BCCH Research MRI\nFor server URL, use: https://im.bcchr.ca/\nLogin with your BCCHR username and password\n\n\n\nMattermost can also be installed on your phone. Click here to choose your phone operating system.\nFor server display name, use: BCCH Research MRI\nFor server URL, use: https://im.bcchr.ca/\nLogin with your BCCHR username and password",
@@ -55,8 +77,8 @@
     ]
   },
   {
-    "objectID": "Orientation/instantmessaging.html#next-steps",
-    "href": "Orientation/instantmessaging.html#next-steps",
+    "objectID": "orientation/instantmessaging.html#next-steps",
+    "href": "orientation/instantmessaging.html#next-steps",
     "title": "Instant Messaging / Stay in Touch",
     "section": "",
     "text": "If you want to learn more about Mattermost and its features, visit https://docs.mattermost.com/guides/user.html\n\n\n\nIt can be very helpful to others to include a photo or yourself.\n\nGo to Account Settings (Top right on Desktop app, and bottom right on Mobile app)\nClick on Your Profile\nEdit your Profile Picture",
@@ -64,17 +86,6 @@
       "Home",
       "Orientation",
       "Instant Messaging / Stay in Touch"
-    ]
-  },
-  {
-    "objectID": "tutorials/index.html",
-    "href": "tutorials/index.html",
-    "title": "Tutorials",
-    "section": "",
-    "text": "EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "Tutorials"
     ]
   },
   {
@@ -125,17 +136,6 @@
     "crumbs": [
       "Home",
       "About"
-    ]
-  },
-  {
-    "objectID": "Orientation/index.html",
-    "href": "Orientation/index.html",
-    "title": "Orientation",
-    "section": "",
-    "text": "Back to top",
-    "crumbs": [
-      "Home",
-      "Orientation"
     ]
   }
 ]
