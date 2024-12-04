@@ -2,7 +2,7 @@
 title: "Tutorials"
 listing:
     contents: 
-        - tutorials/*.qmd
+        - *.qmd
     sort: "title"
     type: default
     categories: true
