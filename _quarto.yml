@@ -18,7 +18,8 @@ website:
   sidebar:
     style: "docked"
     search: true
-    contents: auto
+    contents: 
+      - Orientation
   navbar:
     logo: /img/magnet.png
     background: primary
