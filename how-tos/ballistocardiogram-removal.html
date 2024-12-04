@@ -121,7 +121,6 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <meta property="og:description" content="Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.">
 <meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/how-tos/images/channels4cardiacsignal.png">
 <meta property="og:site_name" content="BCCH MRI Research Facility Wiki">
-<meta property="og:image:alt" content="Channels to derive cardiac signal from.">
 <meta property="og:image:height" content="360">
 <meta property="og:image:width" content="489">
 </head>
@@ -332,7 +331,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <section id="removing-the-ballistocardiogram-with-no-ecg" class="level2">
 <h2 class="anchored" data-anchor-id="removing-the-ballistocardiogram-with-no-ecg">Removing the Ballistocardiogram with no ECG</h2>
 <ol type="1">
-<li><p>Remove the MR gradient signal from the EEG using your favourite software (here we used FIMRIB’s EEG tools in EEGLAB [REF.] saved as a .set file.).</p></li>
+<li><p>Remove the MR gradient signal from the EEG using your favourite software (here we used FIMRIB’s EEG tools [Niazy et al., 2005] in EEGLAB [Delorme &amp; Makeig, 2004] saved as a .set file).</p></li>
 <li><p>Set up the paths to your data and change directories into the <code>srcdir</code> directory. Change the path to suit your dataset.</p></li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">srcdir</span> <span class="op">=</span> <span class="va">fullfile</span>(<span class="ss">'/Volumes'</span><span class="op">,</span> <span class="ss">'Lynne_32G'</span><span class="op">,</span> <span class="ss">'EEG'</span><span class="op">,</span> <span class="ss">'src'</span>)<span class="op">;</span></span>
@@ -347,8 +346,101 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <div class="sourceCode" id="cb3"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">Fs</span> <span class="op">=</span> <span class="va">EEG</span>.<span class="va">srate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="5" type="1">
 <li><p>Remove remaining gradient artifact at beginning and cut off part when net was removed at the end by cropping the signal.</p></li>
-<li><p>Restrict signal to channels included in Rodriguez 2016 for ballistocardiogram estimation (FT9 [EGI 67], TP9 [EGI 94], T7 [EGI 69], P7 [EGI 96], FT10 [EGI 219], TP10 [EGI 190], T8 [EGI 202], P8 [EGI 179]). <img src="./images/channels4cardiacsignal.png" class="img-fluid" alt="Channels to derive cardiac signal from."></p></li>
+<li><p>Restrict signal to channels included in Rodriguez 2016 for ballistocardiogram estimation (FT9 [EGI 67], TP9 [EGI 94], T7 [EGI 69], P7 [EGI 96], FT10 [EGI 219], TP10 [EGI 190], T8 [EGI 202], P8 [EGI 179]).</p></li>
 </ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">channels2keep</span> <span class="op">=</span> [<span class="fl">67</span> <span class="fl">94</span> <span class="fl">69</span> <span class="fl">96</span> <span class="fl">219</span> <span class="fl">190</span> <span class="fl">202</span> <span class="fl">179</span>]<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">start</span> <span class="op">=</span> <span class="va">round</span>(<span class="va">EEG</span>.<span class="va">event</span>(<span class="fl">2</span>).<span class="va">latency</span>)<span class="op">;</span> <span class="co">% skip first TR as there is often gradient noise still in the signal  </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">data</span> <span class="op">=</span> <span class="va">double</span>(<span class="va">EEG</span>.<span class="va">data</span>(<span class="va">channels2keep</span><span class="op">,</span> <span class="va">start</span><span class="op">:</span><span class="kw">end</span>) )<span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">8</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">1</span>)<span class="op">,</span> <span class="va">plot</span>(<span class="va">data</span>(<span class="fl">1</span><span class="op">,</span><span class="fl">1</span><span class="op">:</span><span class="fl">1500</span>))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">8</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">2</span>)<span class="op">,</span> <span class="va">plot</span>(<span class="va">data</span>(<span class="fl">2</span><span class="op">,</span><span class="fl">1</span><span class="op">:</span><span class="fl">1500</span>))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">8</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">3</span>)<span class="op">,</span> <span class="va">plot</span>(<span class="va">data</span>(<span class="fl">3</span><span class="op">,</span><span class="fl">1</span><span class="op">:</span><span class="fl">1500</span>))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">8</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">4</span>)<span class="op">,</span> <span class="va">plot</span>(<span class="va">data</span>(<span class="fl">4</span><span class="op">,</span><span class="fl">1</span><span class="op">:</span><span class="fl">1500</span>))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">8</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">5</span>)<span class="op">,</span> <span class="va">plot</span>(<span class="va">data</span>(<span class="fl">5</span><span class="op">,</span><span class="fl">1</span><span class="op">:</span><span class="fl">1500</span>))</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">8</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">6</span>)<span class="op">,</span> <span class="va">plot</span>(<span class="va">data</span>(<span class="fl">6</span><span class="op">,</span><span class="fl">1</span><span class="op">:</span><span class="fl">1500</span>))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">8</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">7</span>)<span class="op">,</span> <span class="va">plot</span>(<span class="va">data</span>(<span class="fl">7</span><span class="op">,</span><span class="fl">1</span><span class="op">:</span><span class="fl">1500</span>))</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="va">subplot</span>(<span class="fl">8</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">8</span>)<span class="op">,</span> <span class="va">plot</span>(<span class="va">data</span>(<span class="fl">8</span><span class="op">,</span><span class="fl">1</span><span class="op">:</span><span class="fl">1500</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/channels4cardiacsignal.png" class="img-fluid figure-img"></p>
+<figcaption>Channels to derive cardiac signal from.</figcaption>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>Subtract mean from each channel.</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">data</span> <span class="op">=</span> <span class="va">data</span> <span class="op">-</span> <span class="va">mean</span>(<span class="va">data</span><span class="op">,</span><span class="fl">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="8" type="1">
+<li>Create mean left and right channels</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">Lmean</span> <span class="op">=</span> <span class="va">mean</span>(<span class="va">data</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">,:</span>))<span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">Rmean</span> <span class="op">=</span> <span class="va">mean</span>(<span class="va">data</span>(<span class="fl">5</span><span class="op">:</span><span class="fl">8</span><span class="op">,:</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="9" type="1">
+<li>Rereference channels
+<ul>
+<li>Take the difference of Lmean and Rmean</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">LR</span> <span class="op">=</span> <span class="va">Lmean</span> <span class="op">-</span> <span class="va">Rmean</span><span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">LR</span>(<span class="fl">35000</span><span class="op">:</span><span class="fl">40000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/rereferencedchannels.png" class="img-fluid figure-img"></p>
+<figcaption>Rereferenced channels.</figcaption>
+</figure>
+</div>
+<ol start="10" type="1">
+<li>Clean up output
+<ul>
+<li><strong>Step 10.1: LR mean Signal Conditioning/Filtering</strong> Filter series 1: Low Bandwidth
+<ul>
+<li>0.75 Hz 6th order Butterworth filter</li>
+<li>10 Hz 12th order Butterworth filter</li>
+</ul></li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">% Generate filters</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">LBW</span>.<span class="va">highpass</span> <span class="op">=</span> <span class="va">designfilt</span>(<span class="ss">'highpassiir'</span><span class="op">,</span> <span class="ss">'FilterOrder'</span><span class="op">,</span> <span class="fl">6</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'HalfPowerFrequency'</span><span class="op">,</span> <span class="fl">0.75</span><span class="op">,</span> <span class="ss">'SampleRate'</span><span class="op">,</span> <span class="va">Fs</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="va">LBW</span>.<span class="va">lowpass</span> <span class="op">=</span> <span class="va">designfilt</span>(<span class="ss">'lowpassiir'</span><span class="op">,</span> <span class="ss">'FilterOrder'</span><span class="op">,</span> <span class="fl">12</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'HalfPowerFrequency'</span><span class="op">,</span> <span class="fl">10</span><span class="op">,</span> <span class="ss">'SampleRate'</span><span class="op">,</span> <span class="va">Fs</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">% Filter Lmean</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="va">temp</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">LBW</span>.<span class="va">highpass</span><span class="op">,</span> <span class="va">Lmean</span>)<span class="op">;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="va">Lmean_LBW</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">LBW</span>.<span class="va">lowpass</span><span class="op">,</span> <span class="va">temp</span>)<span class="op">;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">% Filter Rmean</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="va">temp</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">LBW</span>.<span class="va">highpass</span><span class="op">,</span> <span class="va">Rmean</span>)<span class="op">;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="va">Rmean_LBW</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">LBW</span>.<span class="va">lowpass</span><span class="op">,</span> <span class="va">temp</span>)<span class="op">;</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">% Filter again (only with the difference this time)</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="va">temp</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">LBW</span>.<span class="va">highpass</span><span class="op">,</span> (<span class="va">Lmean_LBW</span> <span class="op">-</span> <span class="va">Rmean_LBW</span>))<span class="op">;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="va">LR_LBW</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">LBW</span>.<span class="va">lowpass</span><span class="op">,</span> <span class="va">temp</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Filter series 2: High Bandwidth
+  - 0.75 Hz 6th order Butterworth filter
+  - 50 Hz 12th order Butterworth filter</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">% Generate filters</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="va">HBW</span>.<span class="va">highpass</span> <span class="op">=</span> <span class="va">designfilt</span>(<span class="ss">'highpassiir'</span><span class="op">,</span> <span class="ss">'FilterOrder'</span><span class="op">,</span> <span class="fl">6</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'HalfPowerFrequency'</span><span class="op">,</span> <span class="fl">0.75</span><span class="op">,</span> <span class="ss">'SampleRate'</span><span class="op">,</span> <span class="va">Fs</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="va">HBW</span>.<span class="va">lowpass</span> <span class="op">=</span> <span class="va">designfilt</span>(<span class="ss">'lowpassiir'</span><span class="op">,</span> <span class="ss">'FilterOrder'</span><span class="op">,</span> <span class="fl">12</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'HalfPowerFrequency'</span><span class="op">,</span> <span class="fl">50</span><span class="op">,</span> <span class="ss">'SampleRate'</span><span class="op">,</span> <span class="va">Fs</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">% Filter Lmean</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="va">temp</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">HBW</span>.<span class="va">highpass</span><span class="op">,</span> <span class="va">Lmean</span>)<span class="op">;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="va">Lmean_HBW</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">HBW</span>.<span class="va">lowpass</span><span class="op">,</span> <span class="va">temp</span>)<span class="op">;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">% Filter Rmean</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="va">temp</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">HBW</span>.<span class="va">highpass</span><span class="op">,</span> <span class="va">Rmean</span>)<span class="op">;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="va">Rmean_HBW</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">HBW</span>.<span class="va">lowpass</span><span class="op">,</span> <span class="va">temp</span>)<span class="op">;</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">% Filter again (only with the difference this time)</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="va">temp</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">HBW</span>.<span class="va">highpass</span><span class="op">,</span> (<span class="va">Lmean_HBW</span> <span class="op">-</span> <span class="va">Rmean_HBW</span>))<span class="op">;</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="va">LR_HBW</span> <span class="op">=</span> <span class="va">filtfilt</span>(<span class="va">HBW</span>.<span class="va">lowpass</span><span class="op">,</span> <span class="va">temp</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>TO BE CONTINUED …</p>
+<pre><code>
+</code></pre>
 
 
 </section>
