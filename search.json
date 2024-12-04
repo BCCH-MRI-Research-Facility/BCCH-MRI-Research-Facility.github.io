@@ -71,7 +71,7 @@
     "href": "tutorials/index.html",
     "title": "Tutorials",
     "section": "",
-    "text": "No matching items\n\n Back to top",
+    "text": "EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "Tutorials"

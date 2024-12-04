@@ -1,6 +1,8 @@
 [
   {
     "listing": "/tutorials/index.html",
-    "items": []
+    "items": [
+      "/tutorials/eeg-fmri/ballistocardiogram-removal.html"
+    ]
   }
 ]
