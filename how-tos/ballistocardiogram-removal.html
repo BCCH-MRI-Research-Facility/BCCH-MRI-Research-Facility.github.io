@@ -489,9 +489,9 @@ window.Quarto = {
 <ul>
 <li>Get the positive Shannon Energy envelope:</li>
 </ul>
-<p><span class="math display">\[SEE[n] = -\( \&lt; \( \&lt; x'_N[n], x'*_N[n] \&gt; \), log\(\&lt; x'[n], x'*_N[n]\&gt;\)\&gt;\)\]</span></p>
+<p><span class="math display">\[SEE[n] = -\bigg( \big&lt; ( &lt; x'_N[n], x'*_N[n] &gt; ), log\(\&lt; x'[n], x'*_N[n] &gt; ) \big&gt; \bigg)\]</span></p>
 <p>when <span class="math inline">\(x'*_N\)</span> is the complex conjugate. However, in most cases, this simplifies into real numbers as</p>
-<p><span class="math display">\[SEE\[n\] = \&lt;x'\[n\]^2,\ln\(x'_N\[n\]^2\)\&gt;\]</span></p>
+<p><span class="math display">\[SEE[n] = \&lt; x'[n]^2,\ln\(x'_N[n]^2\)\&gt;\]</span></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="va">LR_LBW_SEE</span> <span class="op">=</span> <span class="op">-</span>((<span class="va">LR_LBW_norm</span><span class="op">.^</span><span class="fl">2</span>)<span class="op">.*</span><span class="va">log</span>(<span class="va">LR_LBW_norm</span><span class="op">.^</span><span class="fl">2</span>))<span class="op">;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">plot</span>(<span class="va">LR_LBW_SEE</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">5000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
