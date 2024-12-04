@@ -2,7 +2,10 @@
 title: "Tutorials"
 listing:
     contents: 
-        - instruction-sheets/*.qmd
+        - DTI/*.qmd
+        - EEG-fMRI/*.qmd
+        - fMRI/*.qmd
+        - QA/*.qmd
     sort: "title"
     type: default
     categories: true
