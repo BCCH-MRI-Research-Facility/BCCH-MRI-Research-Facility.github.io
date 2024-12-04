@@ -27,8 +27,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - href: tutorials.qmd
-        text: "Tutorials"
+      - tutorials.qmd
     right:
       - text: "{{< fa brands bluesky >}}"
         href: https://bsky.app/profile/bcch-mri-research.bsky.social
