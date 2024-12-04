@@ -47,25 +47,14 @@
     "text": "Back to top"
   },
   {
-    "objectID": "orientation/index.html",
-    "href": "orientation/index.html",
-    "title": "Orientation",
-    "section": "",
-    "text": "Mattermost: Instant Messaging / Stay in Touch\n\n\n\n\n\n\ncollaboration\n\n\nsoftware\n\n\ninstant messaging\n\n\n\nInstant messaging app for users of the research MRI facility\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "Orientation"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/index.html",
-    "href": "mrisoftware/index.html",
-    "title": "MRI Software",
+    "objectID": "mrimethods/index.html",
+    "href": "mrimethods/index.html",
+    "title": "MRI Methods",
     "section": "",
     "text": "No matching items\n\n Back to top",
     "crumbs": [
       "Home",
-      "MRI Software"
+      "MRI Methods"
     ]
   },
   {
@@ -129,14 +118,38 @@
     ]
   },
   {
-    "objectID": "mrimethods/index.html",
-    "href": "mrimethods/index.html",
-    "title": "MRI Methods",
+    "objectID": "mrisoftware/index.html",
+    "href": "mrisoftware/index.html",
+    "title": "MRI Software",
     "section": "",
     "text": "No matching items\n\n Back to top",
     "crumbs": [
       "Home",
-      "MRI Methods"
+      "MRI Software"
+    ]
+  },
+  {
+    "objectID": "orientation/index.html",
+    "href": "orientation/index.html",
+    "title": "Orientation",
+    "section": "",
+    "text": "Mattermost: Instant Messaging / Stay in Touch\n\n\n\n\n\n\ncollaboration\n\n\nsoftware\n\n\ninstant messaging\n\n\n\nInstant messaging app for users of the research MRI facility\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Orientation"
+    ]
+  },
+  {
+    "objectID": "tutorials/anat/acpc-align.html",
+    "href": "tutorials/anat/acpc-align.html",
+    "title": "Align AC PC to horizontal",
+    "section": "",
+    "text": "Align to the Anterior Commissure-Posterior Commisure Line\nIf you need help determining where the Anterior and Posterior Commisures are in your image, please see Commissural Pathways, available online, or Catani & Thiebaut de Schotten (2012), which is available from the UBC Library.\n\nDownload the acpc_align script from here. Be sure the code is in the folder where your participant’s structural scans are.\nMake the acpc_align.sh script executable.\n\nchmod 755 acpc_align.sh\n\nOpen your structural scan in your faviourite viewer. Here we are using FSLeyes.\n\n\n\n\nFSLeyes\n\n\n\nGet the X, Y and Z coordinates of the anterior commissure in voxel space by placing your cursor on the anterior commissure. The anterior commissure is located in the anterior wall of the third ventricle. It runs transversely anterior to the anterior columns of the fornix, above the basal forebrain and beneath the medial and ventral aspect of the anterior limb of the internal capsule. Save the X, Y, and Z coordinates.\n\n\n\n\nAnterior Commissure\n\n\n\nGet the X, Y, and Z coordinates of the posterior commissure in voxel space by placing your cursor on the posterior commissure. The posterior commissure is the inferior lamina or stalk of the pineal gland. Save the X, Y, and Z coordinates.\n\n\n\n\nPosterior Commissure\n\n\n\nIn your terminal (MacOS or Linux) run\n\nacpc_align subjectbrain.nii.gz -a x y z -p x y z\nto produce the realigned image for subject-specific to acpc alignment.\nIn the example, this is\nsh acpc_align.sh T1_reoriented.nii.gz -a 93 130 153 -p 93 98 152\n\n\n\nacpc aligned image\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Anat",
+      "Align AC PC to horizontal"
     ]
   },
   {

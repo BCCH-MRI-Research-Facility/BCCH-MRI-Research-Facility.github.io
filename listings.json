@@ -15,18 +15,18 @@
     ]
   },
   {
-    "listing": "/orientation/index.html",
-    "items": [
-      "/orientation/instantmessaging.html"
-    ]
+    "listing": "/mrimethods/index.html",
+    "items": []
   },
   {
     "listing": "/mrisoftware/index.html",
     "items": []
   },
   {
-    "listing": "/mrimethods/index.html",
-    "items": []
+    "listing": "/orientation/index.html",
+    "items": [
+      "/orientation/instantmessaging.html"
+    ]
   },
   {
     "listing": "/mriscanners/index.html",
