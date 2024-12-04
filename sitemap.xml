@@ -1,27 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/index.html</loc>
-    <lastmod>2024-12-04T22:32:06.185Z</lastmod>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/studentresources/index.html</loc>
+    <lastmod>2024-12-04T22:57:31.403Z</lastmod>
   </url>
   <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/Orientation/instantmessaging.html</loc>
-    <lastmod>2024-12-04T22:32:06.173Z</lastmod>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/index.html</loc>
+    <lastmod>2024-12-04T22:57:31.399Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/scienceresources/index.html</loc>
+    <lastmod>2024-12-04T22:57:31.403Z</lastmod>
   </url>
   <url>
     <loc>https://BCCH-MRI-Research-Facility.github.io/tutorials/index.html</loc>
-    <lastmod>2024-12-04T22:32:06.189Z</lastmod>
+    <lastmod>2024-12-04T22:57:31.403Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/orientation/index.html</loc>
+    <lastmod>2024-12-04T22:57:31.403Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/mrisoftware/index.html</loc>
+    <lastmod>2024-12-04T22:57:31.399Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/orientation/instantmessaging.html</loc>
+    <lastmod>2024-12-04T22:57:31.403Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/mrimethods/index.html</loc>
+    <lastmod>2024-12-04T22:57:31.399Z</lastmod>
   </url>
   <url>
     <loc>https://BCCH-MRI-Research-Facility.github.io/tutorials/eeg-fmri/ballistocardiogram-removal.html</loc>
-    <lastmod>2024-12-04T22:32:06.185Z</lastmod>
+    <lastmod>2024-12-04T22:57:31.403Z</lastmod>
   </url>
   <url>
     <loc>https://BCCH-MRI-Research-Facility.github.io/about.html</loc>
-    <lastmod>2024-12-04T22:32:06.185Z</lastmod>
+    <lastmod>2024-12-04T22:57:31.399Z</lastmod>
   </url>
   <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/Orientation/index.html</loc>
-    <lastmod>2024-12-04T22:32:06.173Z</lastmod>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/mriscanners/index.html</loc>
+    <lastmod>2024-12-04T22:57:31.399Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/investigatorresources/index.html</loc>
+    <lastmod>2024-12-04T22:57:31.399Z</lastmod>
   </url>
 </urlset>

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Lynne Williams">
 <meta name="dcterms.date" content="2018-07-11">
-<meta name="description" content="Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.">
+<meta name="description" content="Reverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.">
 
 <title>EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method) – BC Children’s Research MRI Wiki</title>
 <style>
@@ -148,7 +148,7 @@ window.Quarto = {
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method) – BC Children’s Research MRI Wiki">
-<meta property="og:description" content="Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.">
+<meta property="og:description" content="Reverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.">
 <meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/tutorials/eeg-fmri/images/channels4cardiacsignal.png">
 <meta property="og:site_name" content="BC Children's Research MRI Wiki">
 <meta property="og:image:height" content="360">
@@ -223,8 +223,8 @@ window.Quarto = {
       </button>
     </div>
   </nav>
-  <div id="quarto-announcement" data-announcement-id="095364b4067704e9e3c084d764e398e8" class="alert alert-primary hidden"><div class="quarto-announcement-content">
-<p>🎉 Join our <a href="../../Orientation/instantmessaging.html">Mattermost</a> server to chat and collaborate; and follow us on <a href="https://bsky.app/profile/bcch-mri-research.bsky.social">Bluesky</a></p>
+  <div id="quarto-announcement" data-announcement-id="f8092d23da6c63237c7941459c020985" class="alert alert-primary hidden"><div class="quarto-announcement-content">
+<p>🎉 Join our <a href="../../orientation/instantmessaging.html">Mattermost</a> server to chat and collaborate; and follow us on <a href="https://bsky.app/profile/bcch-mri-research.bsky.social">Bluesky</a></p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
@@ -240,7 +240,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../Orientation/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../orientation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Orientation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -249,12 +249,24 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Orientation/instantmessaging.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Instant Messaging / Stay in Touch</span></a>
+  <a href="../../orientation/instantmessaging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mattermost: Instant Messaging / Stay in Touch</span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../studentresources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Student Resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../scienceresources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Resources</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../tutorials/index.html" class="sidebar-item-text sidebar-link">
@@ -283,6 +295,30 @@ window.Quarto = {
   </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../investigatorresources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Investigator Resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mrisoftware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Software</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mrimethods/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Methods</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mriscanners/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Scanners</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../about.html" class="sidebar-item-text sidebar-link">
@@ -321,7 +357,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.
+    Reverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.
   </div>
 </div>
 

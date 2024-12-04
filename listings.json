@@ -1,5 +1,13 @@
 [
   {
+    "listing": "/studentresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/scienceresources/index.html",
+    "items": []
+  },
+  {
     "listing": "/tutorials/index.html",
     "items": [
       "/tutorials/eeg-fmri/index.html",
@@ -7,9 +15,25 @@
     ]
   },
   {
-    "listing": "/Orientation/index.html",
+    "listing": "/orientation/index.html",
     "items": [
-      "/Orientation/instantmessaging.html"
+      "/orientation/instantmessaging.html"
     ]
+  },
+  {
+    "listing": "/mrisoftware/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mrimethods/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mriscanners/index.html",
+    "items": []
+  },
+  {
+    "listing": "/investigatorresources/index.html",
+    "items": []
   }
 ]
