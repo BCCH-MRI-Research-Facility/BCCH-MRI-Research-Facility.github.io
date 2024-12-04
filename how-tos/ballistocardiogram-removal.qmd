@@ -145,7 +145,7 @@ LR_HBW = filtfilt(HBW.lowpass, temp);
 - Normalize Low Bandwidth Signal
     - First take the first drivative
 
-$$ x'\[n\] = \frac{d}{dn}x\[n\], $$
+$$ x'[n] = \frac{d}{dn}x[n], $$
 where $x\[n\]$ is the time domain representation of the LR mean signal
 
 ```{.matlab}
@@ -154,7 +154,7 @@ LR_LBW_diff = diff(LR_LBW)/(Fs);
 
 Then normalize the difference representation 
 
-$$ x'[n] = \frac{x'\[n\]}{\text{max}\|x'\[n\]\|}$$
+$$ x'[n] = \frac{x'[n]}{\text{max}\|x'[n]\|}$$
 
 ```{.matlab}
 LR_LBW_norm = LR_LBW_diff./max(abs(LR_LBW_diff));
@@ -162,7 +162,7 @@ LR_LBW_norm = LR_LBW_diff./max(abs(LR_LBW_diff));
 
 - Get the positive Shannon Energy envelope:
 
-$$SEE[n] = -\( \< \( \< x'_N\[n\], x'*_N\[n\] \> \), log\(\< x'\[n\], x'*_N\[n\]\.\)\>\)$$
+$$SEE[n] = -\( \< \( \< x'_N[n], x'*_N[n] \> \), log\(\< x'[n], x'*_N[n]\>\)\>\)$$
 
 when $x'*_N$ is the complex conjugate. However, in most cases, this simplifies into real numbers as
 
