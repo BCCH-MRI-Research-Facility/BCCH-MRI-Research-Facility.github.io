@@ -14,7 +14,7 @@
     "text": "Mattermost Logo\n\n\nMattermost is an open-source, self-hostable online chat service with file sharing, search, and integrations. It is designed as an internal chat for organisations and companies, and mostly markets itself as an open-source alternative to Slack and Microsoft Teams.\nIf you have questions or want to connect with other BCCH MRI Research Facility users, you can download Mattermost and connect with us.\n\n\n\n\nFor your computer, you will want to install Mattermost Desktop. Click here to choose your operating system and use their install guide.\n\n\n\nMattermost can also be installed on your phone. Click here to choose your phone operating system.\n\n\n\n\n[NOTE: You will need a BCCHR username to gain access.]\n\nYou will need to ask to be invited. Click here\nAfter you are given access: open mattermost (either Desktop or Mobile)\nFor server display name, use: ``\nFor server URL, use: https://im.bcchr.ca/\nLogin with your BCCHR username and password\n\n\n\nIt can be very helpful to others to include a photo or yourself.\n\nGo to Account Settings (Top right on Desktop app, and bottom right on Mobile app)\nClick on Your Profile\nEdit your Profile Picture",
     "crumbs": [
       "Home",
-      "index.html",
+      "Orientation",
       "Instant Messaging / Stay in Touch"
     ]
   },
@@ -26,7 +26,7 @@
     "text": "For your computer, you will want to install Mattermost Desktop. Click here to choose your operating system and use their install guide.\n\n\n\nMattermost can also be installed on your phone. Click here to choose your phone operating system.",
     "crumbs": [
       "Home",
-      "index.html",
+      "Orientation",
       "Instant Messaging / Stay in Touch"
     ]
   },
@@ -38,7 +38,7 @@
     "text": "[NOTE: You will need a BCCHR username to gain access.]\n\nYou will need to ask to be invited. Click here\nAfter you are given access: open mattermost (either Desktop or Mobile)\nFor server display name, use: ``\nFor server URL, use: https://im.bcchr.ca/\nLogin with your BCCHR username and password\n\n\n\nIt can be very helpful to others to include a photo or yourself.\n\nGo to Account Settings (Top right on Desktop app, and bottom right on Mobile app)\nClick on Your Profile\nEdit your Profile Picture",
     "crumbs": [
       "Home",
-      "index.html",
+      "Orientation",
       "Instant Messaging / Stay in Touch"
     ]
   },
@@ -56,12 +56,12 @@
   {
     "objectID": "Orientation/index.html",
     "href": "Orientation/index.html",
-    "title": "BCCH MRI Research Facility Wiki",
+    "title": "Orientation",
     "section": "",
     "text": "Back to top",
     "crumbs": [
       "Home",
-      "index.html"
+      "Orientation"
     ]
   }
 ]
