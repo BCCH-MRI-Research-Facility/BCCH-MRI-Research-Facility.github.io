@@ -2,10 +2,7 @@
 title: "Tutorials"
 listing:
     contents: 
-        - DTI/*.qmd
-        - EEG-fMRI/*.qmd
-        - fMRI/*.qmd
-        - QA/*.qmd
+        - eeg-fmri/*.qmd
     sort: "title"
     type: default
     categories: true
