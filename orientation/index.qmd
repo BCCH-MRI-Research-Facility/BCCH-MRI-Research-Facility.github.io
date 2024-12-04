@@ -1,0 +1,12 @@
+---
+title: "Orientation"
+listing:
+    contents: 
+        - orientation/*.qmd
+    sort: "title"
+    type: default
+    categories: true
+    sort-ui: false
+    filter-ui: false
+order: 1
+---
