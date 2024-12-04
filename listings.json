@@ -2,11 +2,14 @@
   {
     "listing": "/tutorials/index.html",
     "items": [
+      "/tutorials/eeg-fmri/index.html",
       "/tutorials/eeg-fmri/ballistocardiogram-removal.html"
     ]
   },
   {
-    "listing": "/orientation/index.html",
-    "items": []
+    "listing": "/Orientation/index.html",
+    "items": [
+      "/Orientation/instantmessaging.html"
+    ]
   }
 ]
