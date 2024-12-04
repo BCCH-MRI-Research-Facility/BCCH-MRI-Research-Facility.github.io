@@ -1,0 +1,34 @@
+---
+title: "EEG-fMRI Data Cleaning (Rodriguez method)"
+description: |
+  "Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron's dissertation is included in this repository for transparency's sake. This code requires Matlab and the Signal Processing Toolbox.
+
+  If you use this code, please cite:
+
+  Rodriguez, Cameron. (2016). Improvements to Simultaneous Electroencepalography-Functional Magnetic Resonance Imaging and Electroencepalographic Source Localization. PhD Thesis for the University of California, Los Angeles."
+author: "Lynne Williams"
+date: "2018/07/11"
+draft: true
+date-modified: "2024/12/03"
+---
+
+Remove the MR gradient signal from the EEG using your favourite software (here we used FIMRIB's EGG tools in EEGLAB [REF.] saved as a .set file.).
+
+Set up the paths to your data
+
+```{matlab}
+srcdir = fullfile('/Volumes', 'Lynne_32G', 'EEG', 'src');
+cd(scrdir)
+```
+Load the EEG run.
+
+```{matlab}
+EEG = load('-mat', [srcdir 'BHBMEG007_20210511_040344_GR.set']);
+```
+
+And get the sampling rate.
+
+```{matlab}
+Fs = EEG.srate
+```
+

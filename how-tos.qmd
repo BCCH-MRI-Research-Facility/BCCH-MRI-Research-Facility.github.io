@@ -1,0 +1,10 @@
+---
+title: "MRI How Tos"
+listing:
+    contents: posts
+    sort: "title"
+    type: default
+    categories: true
+    sort-ui: false
+    filter-ui: false
+---
