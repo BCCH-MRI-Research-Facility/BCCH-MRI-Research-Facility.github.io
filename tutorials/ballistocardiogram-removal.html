@@ -149,7 +149,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method) – BC Children’s Research MRI Wiki">
 <meta property="og:description" content="Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.">
-<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/how-tos/images/channels4cardiacsignal.png">
+<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/tutorials/images/channels4cardiacsignal.png">
 <meta property="og:site_name" content="BC Children's Research MRI Wiki">
 <meta property="og:image:height" content="360">
 <meta property="og:image:width" content="489">
@@ -184,8 +184,8 @@ window.Quarto = {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../how-tos.html"> 
-<span class="menu-text">MRI How Tos</span></a>
+    <a class="nav-link" href="../tutorials.html"> 
+<span class="menu-text">Tutorials</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -219,7 +219,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../how-tos/ballistocardiogram-removal.html">How Tos</a></li><li class="breadcrumb-item"><a href="../how-tos/ballistocardiogram-removal.html">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/ballistocardiogram-removal.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/ballistocardiogram-removal.html">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -267,14 +267,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../how-tos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">MRI How Tos</span></a>
+  <a href="../tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tutorials</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">How Tos</span></a>
+ <span class="menu-text">Tutorials</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -282,7 +282,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../how-tos/ballistocardiogram-removal.html" class="sidebar-item-text sidebar-link active">
+  <a href="../tutorials/ballistocardiogram-removal.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</span></a>
   </div>
 </li>
@@ -301,12 +301,12 @@ window.Quarto = {
   <li><a href="#please-cite-rodriguez-2016" id="toc-please-cite-rodriguez-2016" class="nav-link active" data-scroll-target="#please-cite-rodriguez-2016">Please cite Rodriguez (2016)</a></li>
   <li><a href="#removing-the-ballistocardiogram-with-no-ecg" id="toc-removing-the-ballistocardiogram-with-no-ecg" class="nav-link" data-scroll-target="#removing-the-ballistocardiogram-with-no-ecg">Removing the Ballistocardiogram with no ECG</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/tutorials/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/tutorials/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../how-tos/ballistocardiogram-removal.html">How Tos</a></li><li class="breadcrumb-item"><a href="../how-tos/ballistocardiogram-removal.html">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/ballistocardiogram-removal.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/ballistocardiogram-removal.html">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</h1>
   <div class="quarto-categories">
@@ -1185,4 +1185,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/tutorials/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/tutorials/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
