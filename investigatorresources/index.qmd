@@ -1,8 +1,8 @@
 ---
-title: "Tutorials"
+title: "Investigator Resources"
 listing:
     contents: 
-        - "*/*.qmd"
+        - /*.qmd
     sort: "title"
     type: default
     categories: true
