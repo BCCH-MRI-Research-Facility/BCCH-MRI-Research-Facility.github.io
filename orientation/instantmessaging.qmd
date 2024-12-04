@@ -1,22 +1,21 @@
 ---
-title: "Instant Messaging / Stay in Touch"
-author: "A Weber"
-date: 2024-12-04
-date-modified: "2024/12/04"
+title: "Mattermost: Instant Messaging / Stay in Touch"
+# author: "A Weber"
+# date: 2024-12-04
+# date-modified: "2024/12/04"
 description: "Instant messaging app for users of the research MRI facility"
 highlight-style: github
 categories:
     - collaboration
     - software
     - instant messaging
+order: 1
 ---
-
-# Mattermost
 
 ![](./img/mattermost.png)
 
-Mattermost is an open-source alternative to Slack and Microsoft Teams. Similar to those programs, it is a tool for instant messaging and collaboration.
-
+[Mattermost](https://mattermost.com/) is an open-source alternative to Slack and Microsoft Teams. Similar to those programs, it is a tool for instant messaging and collaboration.
+<!-- test -->
 If you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us.
 
 ## BCCHR IT Instructions

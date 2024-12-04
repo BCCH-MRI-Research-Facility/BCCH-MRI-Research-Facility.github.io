@@ -1,5 +1,5 @@
 ---
-title: "Orientation"
+title: "Investigator Resources"
 listing:
     contents: 
         - /*.qmd
@@ -8,5 +8,5 @@ listing:
     categories: true
     sort-ui: false
     filter-ui: false
-order: 1
+order: 5
 ---

@@ -1,12 +1,12 @@
 ---
-title: "Tutorials"
+title: "MRI Methods"
 listing:
     contents: 
-        - "*/*.qmd"
+        - /*.qmd
     sort: "title"
     type: default
     categories: true
     sort-ui: false
     filter-ui: false
-order: 5
+order: 7
 ---

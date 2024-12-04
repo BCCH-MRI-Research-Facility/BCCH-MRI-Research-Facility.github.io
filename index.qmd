@@ -13,4 +13,4 @@ You can search this page using the magnifying glass in the top right 🔍
 
 Or you can navigate using the sidebar on the left 👈
 
-If you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use [Mattermost](/Orientation/instantmessaging.qmd) to connect with us (similar to Slack or Microsoft Teams).
+If you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use [Mattermost](/orientation/instantmessaging.qmd) to connect with us (similar to Slack or Microsoft Teams).
