@@ -8,7 +8,7 @@
 
 <meta name="author" content="Lynne Williams">
 <meta name="dcterms.date" content="2018-07-11">
-<meta name="description" content="Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron’s dissertation is included in this repository for transparency’s sake. This code requires Matlab and the Signal Processing Toolbox.">
+<meta name="description" content="Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.">
 
 <title>EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method) – BCCH MRI Research Facility Wiki</title>
 <style>
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -38,10 +72,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c16f70d9e6245094a6412faf456d4b9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4bb5d4edb0ab0334082e00ebd2a57d76.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -84,8 +118,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method) – BCCH MRI Research Facility Wiki">
-<meta property="og:description" content="Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron’s dissertation is included in this repository for transparency’s sake. This code requires Matlab and the Signal Processing Toolbox.">
+<meta property="og:description" content="Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.">
+<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/how-tos/images/channels4cardiacsignal.png">
 <meta property="og:site_name" content="BCCH MRI Research Facility Wiki">
+<meta property="og:image:alt" content="Channels to derive cardiac signal from.">
+<meta property="og:image:height" content="360">
+<meta property="og:image:width" content="489">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -223,8 +261,15 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#please-cite-rodriguez-2016" id="toc-please-cite-rodriguez-2016" class="nav-link active" data-scroll-target="#please-cite-rodriguez-2016">Please cite Rodriguez (2016)</a></li>
+  <li><a href="#removing-the-ballistocardiogram-with-no-ecg" id="toc-removing-the-ballistocardiogram-with-no-ecg" class="nav-link" data-scroll-target="#removing-the-ballistocardiogram-with-no-ecg">Removing the Ballistocardiogram with no ECG</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -243,7 +288,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 
 <div>
   <div class="description">
-    Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron’s dissertation is included in this repository for transparency’s sake. This code requires Matlab and the Signal Processing Toolbox.
+    Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.
   </div>
 </div>
 
@@ -278,19 +323,35 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </header>
 
 
+<section id="please-cite-rodriguez-2016" class="level2">
+<h2 class="anchored" data-anchor-id="please-cite-rodriguez-2016">Please cite Rodriguez (2016)</h2>
 <p>Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron’s dissertation is included in this repository for transparency’s sake. This code requires Matlab and the Signal Processing Toolbox.</p>
 <p>If you use this code, please cite:</p>
-<pre><code>Rodriguez, Cameron. (2016). Improvements to Simultaneous Electroencepalography-Functional Magnetic Resonance Imaging and Electroencepalographic Source Localization. PhD Thesis for the University of California, Los Angeles."</code></pre>
-<p>Remove the MR gradient signal from the EEG using your favourite software (here we used FIMRIB’s EGG tools in EEGLAB [REF.] saved as a .set file.).</p>
-<p>Set up the paths to your data</p>
-<pre><code>srcdir = fullfile('/Volumes', 'Lynne_32G', 'EEG', 'src');
-cd(scrdir)</code></pre>
-<p>Load the EEG run.</p>
-<pre><code>EEG = load('-mat', [srcdir 'BHBMEG007_20210511_040344_GR.set']);</code></pre>
-<p>And get the sampling rate.</p>
-<pre><code>Fs = EEG.srate</code></pre>
+<p>Rodriguez, Cameron. (2016). <a href="https://escholarship.org/uc/item/3gg3z2q6">Improvements to Simultaneous Electroencepalography-Functional Magnetic Resonance Imaging and Electroencepalographic Source Localization</a>. PhD Thesis for the University of California, Los Angeles.</p>
+</section>
+<section id="removing-the-ballistocardiogram-with-no-ecg" class="level2">
+<h2 class="anchored" data-anchor-id="removing-the-ballistocardiogram-with-no-ecg">Removing the Ballistocardiogram with no ECG</h2>
+<ol type="1">
+<li><p>Remove the MR gradient signal from the EEG using your favourite software (here we used FIMRIB’s EEG tools in EEGLAB [REF.] saved as a .set file.).</p></li>
+<li><p>Set up the paths to your data and change directories into the <code>srcdir</code> directory. Change the path to suit your dataset.</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">srcdir</span> <span class="op">=</span> <span class="va">fullfile</span>(<span class="ss">'/Volumes'</span><span class="op">,</span> <span class="ss">'Lynne_32G'</span><span class="op">,</span> <span class="ss">'EEG'</span><span class="op">,</span> <span class="ss">'src'</span>)<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">cd</span>(<span class="va">scrdir</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Load the EEG run. Change to suit your dataset.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">EEG</span> <span class="op">=</span> <span class="va">load</span>(<span class="ss">'-mat'</span><span class="op">,</span> [<span class="va">srcdir</span> <span class="ss">'BHBMEG007_20210511_040344_GR.set'</span>])<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Get the sampling rate. In the <code>.set</code> file, it is named <code>srate</code> and is an embedded structure of <code>EEG</code>. This may differ depending on the software used to remove the MR gradient noise.</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">Fs</span> <span class="op">=</span> <span class="va">EEG</span>.<span class="va">srate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li><p>Remove remaining gradient artifact at beginning and cut off part when net was removed at the end by cropping the signal.</p></li>
+<li><p>Restrict signal to channels included in Rodriguez 2016 for ballistocardiogram estimation (FT9 [EGI 67], TP9 [EGI 94], T7 [EGI 69], P7 [EGI 96], FT10 [EGI 219], TP10 [EGI 190], T8 [EGI 202], P8 [EGI 179]). <img src="./images/channels4cardiacsignal.png" class="img-fluid" alt="Channels to derive cardiac signal from."></p></li>
+</ol>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -715,4 +776,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/how-tos/ballistocardiogram-removal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
