@@ -1,8 +1,8 @@
 ---
-title: "MRI How Tos"
+title: "Tutorials"
 listing:
     contents: 
-        - how-tos/*.qmd
+        - tutorials/*.qmd
     sort: "title"
     type: default
     categories: true
