@@ -1,35 +1,68 @@
 ---
   title: "Instant Messaging / Stay in Touch"
-  order: 1
 ---
 
 # Mattermost
 
-![Mattermost Logo](/img/mattermost.png)
+![](/img/mattermost.png)
 
-Mattermost is an open-source, self-hostable online chat service with file sharing, search, and integrations. It is designed as an internal chat for organisations and companies, and mostly markets itself as an open-source alternative to Slack and Microsoft Teams.
+Mattermost is an open-source alternative to Slack and Microsoft Teams. Similar to those programs, it is a tool for instant messaging and collaboration.
 
-If you have questions or want to connect with other BCCH MRI Research Facility users, you can download Mattermost and connect with us.
+If you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us.
 
-## Install
+## BCCHR IT Instructions
 
-### Computer
+If you are on the BCCHR VPN, you can follow instructions from the BCCHR Hub here:
 
-For your computer, you will want to install Mattermost Desktop. [Click here](https://mattermost.com/download/#desktop) to choose your operating system and use their install guide.
+[https://hub.bcchr.ca/display/it/Mattermost](https://hub.bcchr.ca/display/it/Mattermost)
+
+Otherwise, you can follow these directions:
+
+## Setup
+
+[*NOTE: You will need a BCCHR username and password to gain access.*]
+
+1. First thing you will want to do is get invited to our 'team':  
+[Click here to be invited](https://im.bcchr.ca/signup_user_complete/?id=pfcuszqezjbhzyueaigfpooyka)  
+If that link does not work, you can submit a request to IT via [support.bcchr.ca](https://support.bcchr.ca)
+2. You will be asked "Where would you like to view this?" For now, click "View in Browser"
+3. You will be asked to login with your BCCHR username and password:
+![](../img/img/mattermostlogin.png)
+4. After you are given access, refresh the login (i.e. log out and log back in to [https://im.bcchr.ca](https://im.bcchr.ca))
+
+## Installation
+
+### Browser
+
+As described above, you can check out Mattermost on your browser first before you decide to install the app on your computer or phone:
+
+[https://im.bcchr.ca/](https://im.bcchr.ca/)
+
+### Desktop
+
+For your computer, you will want to install Mattermost Desktop. [Click here](https://mattermost.com/download/#desktop) to choose your operating system and use their installation guide.
+
+For server display name, use: `BCCH Research MRI`
+
+For server URL, use: `https://im.bcchr.ca/`
+
+Login with your BCCHR username and password
 
 ### Mobile
 
 Mattermost can also be installed on your phone. [Click here](https://mattermost.com/download/#mobile) to choose your phone operating system.
 
-## Setup
+For server display name, use: `BCCH Research MRI`
 
-[*NOTE: You will need a BCCHR username to gain access.*]
+For server URL, use: `https://im.bcchr.ca/`
 
-1. You will need to ask to be invited. [Click here](https://link)
-2. After you are given access: open mattermost (either Desktop or Mobile)
-3. For server display name, use: ``
-4. For server URL, use: `https://im.bcchr.ca/`
-5. Login with your BCCHR username and password
+Login with your BCCHR username and password
+
+## Next Steps
+
+### Learn more
+
+If you want to learn more about Mattermost and its features, visit [https://docs.mattermost.com/guides/user.html](https://docs.mattermost.com/guides/user.html)
 
 ### Add A Photo of Yourself
 
@@ -38,3 +71,5 @@ It can be very helpful to others to include a photo or yourself.
 1. Go to `Account Settings` (Top right on Desktop app, and bottom right on Mobile app)
 2. Click on `Your Profile`
 3. Edit your Profile Picture
+
+### Notifications

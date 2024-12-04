@@ -2,22 +2,25 @@ project:
   type: website
 
 website:
+  title: "BC Children's Research MRI Wiki"
+  image: /img/banner.png
+  favicon: /img/magnet.png
   announcement:
-    icon: info-circle
+    # icon: info-circle
     dismissable: true
-    content: "**Alert** Testing announcement"
+    content: "🎉 Join our Mattermost server and follow us on Bluesky"
     type: primary
     position: below-navbar
   repo-url: https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io
   repo-actions: [edit, source, issue]
   back-to-top-navigation: true
   open-graph: true #improve the previews of your content when a link to it is pasted into applications like Slack, Discord, Facebook, Linkedin, and more
-  title: "BCCH MRI Research Facility Wiki"
   sidebar:
     style: "docked"
     search: true
     contents: auto
   navbar:
+    logo: /img/magnet.png
     background: primary
     search: true
     left:
