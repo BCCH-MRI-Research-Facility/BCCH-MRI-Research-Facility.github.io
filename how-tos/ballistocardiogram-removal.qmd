@@ -162,11 +162,11 @@ LR_LBW_norm = LR_LBW_diff./max(abs(LR_LBW_diff));
 
 - Get the positive Shannon Energy envelope:
 
-$$SEE[n] = -\( \< \( \< x'_N[n], x'*_N[n] \> \), log\(\< x'[n], x'*_N[n]\>\)\>\)$$
+$$SEE[n] = -\bigg( \big< ( < x'_N[n], x'*_N[n] > ), log\(\< x'[n], x'*_N[n] > ) \big> \bigg)$$
 
 when $x'*_N$ is the complex conjugate. However, in most cases, this simplifies into real numbers as
 
-$$SEE\[n\] = \<x'\[n\]^2,\ln\(x'_N\[n\]^2\)\>$$
+$$SEE[n] = \< x'[n]^2,\ln\(x'_N[n]^2\)\>$$
 
 ```{.matlab}
 LR_LBW_SEE = -((LR_LBW_norm.^2).*log(LR_LBW_norm.^2));
