@@ -1,6 +1,6 @@
 ---
 title: "EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)"
-description: "Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron's dissertation is included in this repository for transparency's sake. This code requires Matlab and the Signal Processing Toolbox."
+description: "Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox."
 author: "Lynne Williams"
 date: "2018/07/11"
 date-modified: "2024/12/03"
@@ -12,29 +12,41 @@ categories:
     - eeg
 ---
 
+## Please cite Rodriguez (2016)
+
 Reversed engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. Cameron's dissertation is included in this repository for transparency's sake. This code requires Matlab and the Signal Processing Toolbox.
 
 If you use this code, please cite:
 
-    Rodriguez, Cameron. (2016). Improvements to Simultaneous Electroencepalography-Functional Magnetic Resonance Imaging and Electroencepalographic Source Localization. PhD Thesis for the University of California, Los Angeles."
+Rodriguez, Cameron. (2016). [Improvements to Simultaneous Electroencepalography-Functional Magnetic Resonance Imaging and Electroencepalographic Source Localization](https://escholarship.org/uc/item/3gg3z2q6). PhD Thesis for the University of California, Los Angeles.
 
-Remove the MR gradient signal from the EEG using your favourite software (here we used FIMRIB's EGG tools in EEGLAB [REF.] saved as a .set file.).
+## Removing the Ballistocardiogram with no ECG
 
-Set up the paths to your data
+1. Remove the MR gradient signal from the EEG using your favourite software (here we used FIMRIB's EEG tools in EEGLAB [REF.] saved as a .set file.).
 
-```
+2. Set up the paths to your data and change directories into the `srcdir` directory. Change the path to suit your dataset.
+
+```{matlab}
 srcdir = fullfile('/Volumes', 'Lynne_32G', 'EEG', 'src');
 cd(scrdir)
 ```
-Load the EEG run.
 
-```
+3. Load the EEG run. Change to suit your dataset.
+
+```{matlab}
 EEG = load('-mat', [srcdir 'BHBMEG007_20210511_040344_GR.set']);
 ```
 
-And get the sampling rate.
+4. Get the sampling rate. In the `.set` file, it is named `srate` and is an embedded structure of `EEG`. This may differ depending on the software used to remove the MR gradient noise.
 
-```
+```{matlab}
 Fs = EEG.srate
 ```
+
+5. Remove remaining gradient artifact at beginning and cut off part when net was removed at the end by cropping the signal.
+
+6. Restrict signal to channels included in Rodriguez 2016 for ballistocardiogram estimation (FT9 [EGI 67], TP9 [EGI 94], T7 [EGI 69], P7 [EGI 96], FT10 [EGI 219], TP10 [EGI 190], T8 [EGI 202], P8 [EGI 179]).
+![Channels to derive cardiac signal from.](./images/channels4cardiacsignal.png)
+
+7. 
 
