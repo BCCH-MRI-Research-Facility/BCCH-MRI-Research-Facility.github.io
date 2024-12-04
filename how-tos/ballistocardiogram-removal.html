@@ -477,15 +477,15 @@ window.Quarto = {
 <li>First take the first drivative</li>
 </ul></li>
 </ul>
-<p><span class="math display">\[ x'\[n\] = \frac{d}{dn}x\[n\], \]</span> where <span class="math inline">\(x\[n\]\)</span> is the time domain representation of the LR mean signal</p>
+<p><span class="math display">\[ x'[n] = \frac{d}{dn}x[n], \]</span> where <span class="math inline">\(x\[n\]\)</span> is the time domain representation of the LR mean signal</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="va">LR_LBW_diff</span> <span class="op">=</span> <span class="va">diff</span>(<span class="va">LR_LBW</span>)<span class="op">/</span>(<span class="va">Fs</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then normalize the difference representation</p>
-<p><span class="math display">\[ x'[n] = \frac{x'\[n\]}{\text{max}\|x'\[n\]\|}\]</span></p>
+<p><span class="math display">\[ x'[n] = \frac{x'[n]}{\text{max}\|x'[n]\|}\]</span></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">LR_LBW_norm</span> <span class="op">=</span> <span class="va">LR_LBW_diff</span><span class="op">./</span><span class="va">max</span>(<span class="va">abs</span>(<span class="va">LR_LBW_diff</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Get the positive Shannon Energy envelope:</li>
 </ul>
-<p><span class="math display">\[SEE[n] = -\( \&lt; \( \&lt; x'_N\[n\], x'*_N\[n\] \&gt; \), log\(\&lt; x'\[n\], x'*_N\[n\]\.\)\&gt;\)\]</span></p>
+<p><span class="math display">\[SEE[n] = -\( \&lt; \( \&lt; x'_N[n], x'*_N[n] \&gt; \), log\(\&lt; x'[n], x'*_N[n]\&gt;\)\&gt;\)\]</span></p>
 <p>when <span class="math inline">\(x'*_N\)</span> is the complex conjugate. However, in most cases, this simplifies into real numbers as</p>
 <p><span class="math display">\[SEE\[n\] = \&lt;x'\[n\]^2,\ln\(x'_N\[n\]^2\)\&gt;\]</span></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="va">LR_LBW_SEE</span> <span class="op">=</span> <span class="op">-</span>((<span class="va">LR_LBW_norm</span><span class="op">.^</span><span class="fl">2</span>)<span class="op">.*</span><span class="va">log</span>(<span class="va">LR_LBW_norm</span><span class="op">.^</span><span class="fl">2</span>))<span class="op">;</span></span>
