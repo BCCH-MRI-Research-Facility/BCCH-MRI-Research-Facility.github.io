@@ -3,7 +3,6 @@ title: "Tutorials"
 listing:
     contents: 
         - "*/*.qmd"
-        - "anat/*.qmd"
     sort: "title"
     type: default
     categories: true
