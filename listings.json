@@ -25,9 +25,9 @@
   {
     "listing": "/mrimethods/index.html",
     "items": [
-      "/mrimethods/anat/acpc-align.html",
       "/mrimethods/eeg-fmri/ballistocardiogram-removal.html",
-      "/mrimethods/eeg-fmri/gradient-removal.html"
+      "/mrimethods/eeg-fmri/gradient-removal.html",
+      "/mrimethods/anat/acpc-align.html"
     ]
   },
   {
