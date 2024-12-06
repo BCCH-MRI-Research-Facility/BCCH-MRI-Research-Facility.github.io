@@ -2,11 +2,13 @@
 title: "MRI Methods"
 listing:
     contents: 
-        - /*.qmd
+        - "*/*.qmd"
     sort: "title"
     type: default
     categories: true
     sort-ui: false
     filter-ui: false
+    exclude: 
+        title: "EEG-fMRI"
 order: 7
 ---
