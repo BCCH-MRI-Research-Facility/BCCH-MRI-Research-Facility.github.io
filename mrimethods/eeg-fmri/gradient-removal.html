@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lynne Williams">
+<meta name="dcterms.date" content="2024-02-13">
+<meta name="description" content="Reverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.">
+
+<title>EEG-fMRI Data Cleaning &amp; Forward Solution – BC Children’s Research MRI Wiki</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../..//img/magnet.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-4bb5d4edb0ab0334082e00ebd2a57d76.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B9X9W6319W"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="EEG-fMRI Data Cleaning &amp; Forward Solution – BC Children’s Research MRI Wiki">
+<meta property="og:description" content="Reverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.">
+<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/mrimethods/eeg-fmri/images/Pasted image 20240213121504.png">
+<meta property="og:site_name" content="BC Children's Research MRI Wiki">
+<meta property="og:image:height" content="169">
+<meta property="og:image:width" content="340">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/magnet.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">BC Children’s Research MRI Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../about.html" aria-current="page"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://bsky.app/profile/bcch-mri-research.bsky.social"> 
+<span class="menu-text"><i class="fa-brands fa-bluesky" aria-label="bluesky"></i></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io">
+            Source Code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues">
+            Report a Bug
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../mrimethods/index.html">MRI Methods</a></li><li class="breadcrumb-item"><a href="../../mrimethods/eeg-fmri/ballistocardiogram-removal.html">EEG-fMRI</a></li><li class="breadcrumb-item"><a href="../../mrimethods/eeg-fmri/gradient-removal.html">EEG-fMRI Data Cleaning &amp; Forward Solution</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+  <div id="quarto-announcement" data-announcement-id="f8092d23da6c63237c7941459c020985" class="alert alert-primary hidden"><div class="quarto-announcement-content">
+<p>🎉 Join our <a href="../../orientation/instantmessaging.html">Mattermost</a> server to chat and collaborate; and follow us on <a href="https://bsky.app/profile/bcch-mri-research.bsky.social">Bluesky</a></p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../orientation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Orientation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../orientation/instantmessaging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mattermost: Instant Messaging / Stay in Touch</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../orientation/mrisafetyfaq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Safety FAQ</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../investigatorresources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Investigator Resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../studentresources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Student Resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../scienceresources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tutorials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tutorials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mrisoftware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Software</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../mrimethods/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Anat</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mrimethods/anat/acpc-align.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Align AC PC to horizontal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">EEG-fMRI</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mrimethods/eeg-fmri/ballistocardiogram-removal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mrimethods/eeg-fmri/gradient-removal.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">EEG-fMRI Data Cleaning &amp; Forward Solution</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mriscanners/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Scanners</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#gradient-and-ballistocardiogram-removal-procedure" id="toc-gradient-and-ballistocardiogram-removal-procedure" class="nav-link active" data-scroll-target="#gradient-and-ballistocardiogram-removal-procedure">Gradient and Ballistocardiogram Removal Procedure</a>
+  <ul class="collapse">
+  <li><a href="#high-level-overview-of-eeg-fmri-artifact-cleaning-procedure" id="toc-high-level-overview-of-eeg-fmri-artifact-cleaning-procedure" class="nav-link" data-scroll-target="#high-level-overview-of-eeg-fmri-artifact-cleaning-procedure">High-Level Overview of EEG-fMRI Artifact Cleaning Procedure</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a>
+  <ul class="collapse">
+  <li><a href="#create-the-directory-bhbmegsubject_id" id="toc-create-the-directory-bhbmegsubject_id" class="nav-link" data-scroll-target="#create-the-directory-bhbmegsubject_id">Create the directory BHBMEG&lt;subject_id&gt;</a></li>
+  <li><a href="#put-the-mri-data-in-bids-format" id="toc-put-the-mri-data-in-bids-format" class="nav-link" data-scroll-target="#put-the-mri-data-in-bids-format">Put the MRI data in BIDS format</a></li>
+  <li><a href="#get-freesurfer-surfaces" id="toc-get-freesurfer-surfaces" class="nav-link" data-scroll-target="#get-freesurfer-surfaces">Get freesurfer surfaces</a></li>
+  <li><a href="#run-fmriprep-using-the-python-interface" id="toc-run-fmriprep-using-the-python-interface" class="nav-link" data-scroll-target="#run-fmriprep-using-the-python-interface">Run fMRIprep using the python interface</a></li>
+  </ul></li>
+  <li><a href="#eeg-cleaning" id="toc-eeg-cleaning" class="nav-link" data-scroll-target="#eeg-cleaning">EEG Cleaning</a>
+  <ul class="collapse">
+  <li><a href="#create-scalp-and-skin-surfaces-from-freesurfer-output" id="toc-create-scalp-and-skin-surfaces-from-freesurfer-output" class="nav-link" data-scroll-target="#create-scalp-and-skin-surfaces-from-freesurfer-output">Create scalp and skin surfaces from freesurfer output</a></li>
+  <li><a href="#create-translation-i.e.-.trans-file" id="toc-create-translation-i.e.-.trans-file" class="nav-link" data-scroll-target="#create-translation-i.e.-.trans-file">Create translation (i.e., .trans) file</a></li>
+  <li><a href="#enter-mr-runs-contained-in-each-eeg-run" id="toc-enter-mr-runs-contained-in-each-eeg-run" class="nav-link" data-scroll-target="#enter-mr-runs-contained-in-each-eeg-run">Enter MR runs contained in each EEG run</a></li>
+  <li><a href="#open-.set-files-in-eeglab-and-matlab" id="toc-open-.set-files-in-eeglab-and-matlab" class="nav-link" data-scroll-target="#open-.set-files-in-eeglab-and-matlab">Open .set file(s) in EEGLAB and Matlab</a></li>
+  </ul></li>
+  <li><a href="#remove-mr-gradient-artifact-using-fimrib-eeglab-plugin" id="toc-remove-mr-gradient-artifact-using-fimrib-eeglab-plugin" class="nav-link" data-scroll-target="#remove-mr-gradient-artifact-using-fimrib-eeglab-plugin">Remove MR Gradient Artifact using FIMRIB EEGLAB Plugin</a>
+  <ul class="collapse">
+  <li><a href="#compute-sppeaks-from-channel-data-in-matlab-using-custom-.mlx-script" id="toc-compute-sppeaks-from-channel-data-in-matlab-using-custom-.mlx-script" class="nav-link" data-scroll-target="#compute-sppeaks-from-channel-data-in-matlab-using-custom-.mlx-script">Compute SPPEAKS from Channel Data in Matlab using custom .mlx script</a></li>
+  <li><a href="#remove-ballistocardiogram-using-fimrib-eeglab-plugin" id="toc-remove-ballistocardiogram-using-fimrib-eeglab-plugin" class="nav-link" data-scroll-target="#remove-ballistocardiogram-using-fimrib-eeglab-plugin">Remove Ballistocardiogram using FIMRIB EEGLAB Plugin</a></li>
+  <li><a href="#spike-reading-for-epilepsy-patients-only" id="toc-spike-reading-for-epilepsy-patients-only" class="nav-link" data-scroll-target="#spike-reading-for-epilepsy-patients-only">Spike Reading (for epilepsy patients only)</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrimethods/eeg-fmri/gradient-removal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrimethods/eeg-fmri/gradient-removal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../mrimethods/index.html">MRI Methods</a></li><li class="breadcrumb-item"><a href="../../mrimethods/eeg-fmri/ballistocardiogram-removal.html">EEG-fMRI</a></li><li class="breadcrumb-item"><a href="../../mrimethods/eeg-fmri/gradient-removal.html">EEG-fMRI Data Cleaning &amp; Forward Solution</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">EEG-fMRI Data Cleaning &amp; Forward Solution</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">eeg-fmri</div>
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">matlab</div>
+    <div class="quarto-category">eeglab</div>
+    <div class="quarto-category">mne</div>
+    <div class="quarto-category">freesurfer</div>
+    <div class="quarto-category">preprocessing</div>
+    <div class="quarto-category">eeg</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Reverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lynne Williams </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 13, 2024</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">December 6, 2024</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="gradient-and-ballistocardiogram-removal-procedure" class="level1">
+<h1>Gradient and Ballistocardiogram Removal Procedure</h1>
+<p>The purpose of this procedure is to outline the steps necessary for cleaning magnetic resonance (MR) and ballistocardiogram (BCG) artifacts from EEG data obtained during simultaneous EEG-fMRI recordings. The efficacy of multimodal imaging can be significantly compromised without proper artifact removal. Hence, this procedure is crucial for improving the quality and interpretability of EEG data that is collected in conjunction with fMRI studies, particularly in clinical and research settings in the field of medicine.</p>
+<section id="high-level-overview-of-eeg-fmri-artifact-cleaning-procedure" class="level2">
+<h2 class="anchored" data-anchor-id="high-level-overview-of-eeg-fmri-artifact-cleaning-procedure">High-Level Overview of EEG-fMRI Artifact Cleaning Procedure</h2>
+<p>The procedure for cleaning MR and BCG artifacts from EEG data can be summarized in three main steps:</p>
+<ul>
+<li><p><strong>Artifact Identification</strong>: Detecting and marking the artifacts within the EEG data that stem from MR and BCG sources.</p></li>
+<li><p><strong>Artifact Removal</strong>: Implementing algorithms and techniques designed to exclude or minimize the intrusion of identified artifacts.</p></li>
+<li><p><strong>Data Validation</strong>: Assessing the cleaned EEG data to confirm the efficacy of artifact removal and ensuring the integrity of the signal for further analysis.</p></li>
+</ul>
+<p>This high-level overview provides a foundational understanding of the procedural steps involved without delving into complex technicalities.</p>
+</section>
+<section id="data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
+<section id="create-the-directory-bhbmegsubject_id" class="level3">
+<h3 class="anchored" data-anchor-id="create-the-directory-bhbmegsubject_id">Create the directory BHBMEG&lt;subject_id&gt;</h3>
+<p>Use the subject id from the MR scanner EEG-fMRI session.</p>
+<pre class="shell"><code>cd BHBMEG&lt;subject_id&gt;</code></pre>
+</section>
+<section id="put-the-mri-data-in-bids-format" class="level3">
+<h3 class="anchored" data-anchor-id="put-the-mri-data-in-bids-format">Put the MRI data in BIDS format</h3>
+<p>Put the MRI data in BIDS format using your favourite BIDS conversion tool. I recommend <code>dcm2bids</code>. You can find more information at <a href="https://unfmontreal.github.io/Dcm2Bids/3.1.1/" class="uri">https://unfmontreal.github.io/Dcm2Bids/3.1.1/</a>. Be sure that the subject is the root BIDS directory (i.e., only one subject in the BIDS directory) to keep the analysis as a <em>N</em> = 1 study.</p>
+<p>Install <code>anaconda</code> if you haven’t already done so. Go to <a href="https://www.anaconda.com/download" class="uri">https://www.anaconda.com/download</a>. Follow the install directions for your workstation and operating system.</p>
+<p>Open a <code>Terminal</code> window. Check your Python version. At the command prompt, type</p>
+<pre class="shell"><code>which python</code></pre>
+<p>If the command should return a path with <code>anaconda3</code> in it. For example,</p>
+<pre class="shell"><code>/Users/lj/anaconda3/bin/python</code></pre>
+<p>Create a python environment for dcm2bids. In a text file called <code>environment.yml</code> copy the following:</p>
+<pre><code>name: dcm2bids\
+channels:\
+- conda-forge\
+dependencies:\
+- python\&gt;=3.7\
+- dcm2niix\
+- dcm2bids</code></pre>
+<p>and in <code>Terminal</code> create the environment:</p>
+<pre class="shell"><code>conda env create --file environment.yml*</code></pre>
+<p>Activate your new python environment. By running</p>
+<pre class="shell"><code>conda activate dcm2bids</code></pre>
+<p>Test your <code>dcm2bids</code> installation.</p>
+<pre class="shell"><code>dcm2bids *\--help*</code></pre>
+<p>You should get the help file for <code>dcm2bids</code>:</p>
+<pre class="shell"><code>usage: dcm2bids [-h] -d DICOM_DIR [DICOM_DIR ...] -p PARTICIPANT [-s SESSION]  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -c CONFIG [-o OUTPUT_DIR] [_--auto_extract_entities]_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [_--bids_validate] [--force_dcm2bids] [--skip_dcm2niix]_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [_--clobber] [-l {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [-v]_Reorganising NIfTI files from dcm2niix into the Brain Imaging Data Structure  
+  
+options:  
+&nbsp; -h, _--help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; show this help message and exit_&nbsp; -d DICOM_DIR [DICOM_DIR ...], _--dicom_dir DICOM_DIR [DICOM_DIR ...]_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DICOM directory(ies) or archive(s) (tar, tar.bz2, tar.gz or zip).  
+&nbsp; -p PARTICIPANT, _--participant PARTICIPANT_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Participant ID.  
+&nbsp; -s SESSION, _--session SESSION_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Session ID. []  
+&nbsp; -c CONFIG, _--config CONFIG_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JSON configuration file (see example/config.json).  
+&nbsp; -o OUTPUT_DIR, _--output_dir OUTPUT_DIR_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Output BIDS directory. [/Users/lj]&nbsp; _--auto_extract_entities_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If set, it will automatically try to extract entityinformation [task, dir, echo] based on the suffix and datatype. [False]&nbsp; _--bids_validate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If set, once your conversion is done it will check if your output folder is BIDS valid. [False]_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bids-validator needs to be installed check: https://github.com/bids-standard/bids-validator_#quickstart_&nbsp; _--force_dcm2bids&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Overwrite previous temporary dcm2bids output if it exists._&nbsp; _--skip_dcm2niix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Skip dcm2niix conversion. Option -d should contains NIFTI and json files._&nbsp; _--clobber&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Overwrite output if it exists._&nbsp; -l {DEBUG,INFO,WARNING,ERROR,CRITICAL}, _--log_level {DEBUG,INFO,WARNING,ERROR,CRITICAL}_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set logging level to the console. [INFO]  
+&nbsp; -v, _--version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Report dcm2bids version and the BIDS version._Documentation at https://unfmontreal.github.io/Dcm2Bids/</code></pre>
+<p>Make a directory for your BIDS root directory:</p>
+<pre class="shell"><code>mkdir BIDS\
+cd BIDS</code></pre>
+<p>Create the scaffold for your BIDS root directory:</p>
+<pre class="shell"><code>dcm2bids_scaffold -o BHBMEG&lt;subject_id\&gt;
+cd BHBMEG&lt;subject_id&gt;</code></pre>
+<p>Download your MRI data from XNAT for BHBMEG&lt;subject_id&gt;.</p>
+<p>Put the MRI data in the <code>sourcedata</code> folder created by the scaffold.</p>
+<pre class="shell"><code>unzip \&lt;xnat-username\&gt;-\&lt;download-date\&gt;\_\&lt;download-time\&gt;.zip -d
+sourcedata/</code></pre>
+<p>For example,</p>
+<pre class="shell"><code>unzip lwilliams-20240109_134304.zip -d sourcedata/</code></pre>
+<p>Change the folder name to <code>mri</code>.</p>
+<pre class="shell"><code>mv ./sourcedata/\&lt;xnat-username\&gt;-\&lt;download-date\&gt;\_\&lt;download-time\&gt;
+mri</code></pre>
+<p>For example,</p>
+<pre class="shell"><code>mv ./sourcedata/ lwilliams-20240109_134304 mri</code></pre>
+<p>Move any additional MRI sessions into the <code>mri</code> folder (e.g., the structural scans from a corresponding BHBEP session).</p>
+<p>Create a new <code>.config</code> file in the <code>code</code> folder of your subject’s BIDS folder. You can use any code editor, but here we will use <code>nano</code>.</p>
+<pre><code>cd \&lt;path to subject's BIDS directory\&gt;
+nano code/dcm2bids_config.json</code></pre>
+<p>In the <code>dcm2bids_config.json</code> file in the editor window, add the following:</p>
+<pre><code>{
+"descriptions": [ ]
+}</code></pre>
+<p>Change directory back to the <code>sourcedata/mri</code> folder:</p>
+<pre class="shell"><code>cd &lt;path to BHBMEG&lt;subject_id&gt; directory&gt;/sourcedata/mri</code></pre>
+<p>Run the <code>dcm2bids_helper</code> function:</p>
+<pre class="shell"><code>dcm2bids_helper -d . </code></pre>
+<p>Note that the period indicates to run <code>dcm2bids_helper</code> function in the current directory. It will create a folder in that directory call <code>tmp_dcm2bids/helper</code>. Here you will find your NIFTI files using the names given by the scanner console. You can check what is in the folder by running <code>ls</code>:</p>
+<pre class="shell"><code>ls tmp_dcm2bids/helper </code></pre>
+<p>For each scan, there will be 2 files: the NIFTI file and a <code>.json</code> sidecar:</p>
+<pre class="shell"><code>ls tmp/dcm2bids/helper/*
+003\_.\_RESEARCH\_-\_BHBEP_20190314111207.json
+003\_.\_RESEARCH\_-\_BHBEP_20190314111207.nii.gz
+003\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+003\_.\_RESEARCH\_\_BHBMEG_20190507142627.nii.gz
+004\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+004\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+005\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+005\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+006\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+006\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+006\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+007\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+007\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+009\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+009\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+010\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+010\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+011\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+011\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+012\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+012\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+013\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+013\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz</code></pre>
+<p>You will use the information in the sidecar file to put your data into BIDS format.</p>
+<p>To populate the config file, you need to inspect each of the sidecar files one at a time to make sure there is a unique match for the acquisitions. You can use the “<code>SeriesDescription</code>” field to help you.</p>
+<pre><code>cat ./sourcedata/mri/tmp_dcm2bids/helper/</code></pre>
+<p>Change directories into the <code>helper</code> folder:</p>
+<pre class="shell"><code>cd &lt;Path to BHBMEG&lt;subject_id&gt; folder&gt;/sourcedata/mri/tmp_dcm2bids/helper</code></pre>
+<p>Find the Series Description using <code>grep</code>. For example,</p>
+<pre class="shell"><code>grep SeriesDescription *.json</code></pre>
+<p>which returns the lines:</p>
+<pre><code>003_._RESEARCH_-_BHBEP_20190314111207.json: "SeriesDescription": "SAG MPRAGE PROMO 0.9x0.9x0.9",
+003_._RESEARCH_-_BHBMEG_20190507142627.json: "SeriesDescription": "fMRI Resting State",
+004_._RESEARCH_-_BHBMEG_20190507142627.json: "SeriesDescription": "fMRI Resting State",
+005_._RESEARCH_-_BHBMEG_20190507142627.json: "SeriesDescription": "fMRI Resting State",
+006_._RESEARCH_-_BHBMEG_20190507142627.json: "SeriesDescription": "fMRI Resting State",
+007_._RESEARCH_-_BHBMEG_20190507142627.json: "SeriesDescription": "fMRI Resting State",
+009_._RESEARCH_-_BHBMEG_20190507142627.json: "SeriesDescription": "fMRI Hand Stim",
+010_._RESEARCH_-_BHBMEG_20190507142627.json: "SeriesDescription": "fMRI Resting State",
+011_._RESEARCH_-_BHBMEG_20190507142627.json: "SeriesDescription": "fMRI Resting State",
+012_._RESEARCH_-_BHBMEG_20190507142627.json: "SeriesDescription": "fMRI Resting State",
+013_._RESEARCH_-_BHBMEG_20190507142627.json: "SeriesDescription": "SAG FSPGR 3D .9X.9X.9"</code></pre>
+<p>We can add it to our config file.</p>
+<pre><code>{
+"descriptions\": [
+  {
+    "datatype": "anat",
+    "suffix": "T1w",
+    "custom_entities": "ses-brainmap",
+    "criteria": {
+      "SeriesDescription": "SAG MPRAGE PROMO 0.9x0.9x0.9",
+      "SeriesNumber": "3"
+      }
+    }
+  ]
+}</code></pre>
+<p>Make sure that the “criteria” together identify only one MRI sequence. Look at <code>SeriesNumber</code> to differentiate the files. Continue until you have completed this exercise for all runs for all sequences. You should get something that looks like below:</p>
+<pre><code>{  
+&nbsp; "descriptions": [  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "anat",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "T1W",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-brainmap",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "SAG MPRAGE PROMO 0.9x0.9x0.9",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "3"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "anat",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "T1W",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-eegfmri",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "SAG FSPGR 3D .9X.9X.9",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "13"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "func",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "bold",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-eegfmri_task-handstim",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Hand Stim",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "9"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "func",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "bold",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-eegfmri_task-rest",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "3"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "sidecar_changes": {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State Eyes Closed"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "func",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "bold",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-eegfmri_task-rest",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "4"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "sidecar_changes": {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State Eyes Closed"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "func",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "bold",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-eegfmri_task-rest",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "5"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "sidecar_changes": {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State Eyes Closed"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "func",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "bold",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-eegfmri_task-rest",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "6"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "sidecar_changes": {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State Eyes Closed"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "func",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "bold",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-eegfmri_task-rest",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "7"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "sidecar_changes":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State Eyes Closed"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "func",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "bold",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-eegfmri_task-rest",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "10"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "sidecar_changes": {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State Eyes Closed"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "func",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "bold",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-eegfmri_task-rest",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "11"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "sidecar_changes": {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State Eyes Closed"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "datatype": "func",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "suffix": "bold",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "custom_entities": "ses-eegfmri_task-rest",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "criteria":  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesNumber": "12"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; },  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "sidecar_changes": {  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "SeriesDescription": "fMRI Resting State Eyes Closed"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }  
+&nbsp;&nbsp;&nbsp; }  
+&nbsp; ]  
+}</code></pre>
+<p>Once you are done, you can run <code>dcm2bids</code>.</p>
+<pre class="shell"><code>dcm2bids -c code/dcm2bids_config.json -p BHBMEG&lt;subject_id&gt; -d
+sourcedata/mri/ --auto_extract_entities</code></pre>
+<p>Copy the contents of the <code>code</code>&nbsp;directory from a previous eeg-fmri subject to the&nbsp;<code>BHBMEG&lt;subject_id&gt;</code>&nbsp;folder except for the <code>dcm2bids_config.json</code> file you created. Change the information in&nbsp;<code>fmriprep_command.py</code>,&nbsp;<code>convert_mff_to_bids.py</code>, and&nbsp;<code>RemoveBallistocardiogram.mlx</code>&nbsp;to fit your data.</p>
+<p>Create a folder called&nbsp;<code>mne</code>&nbsp;in the&nbsp;<code>derivatives</code>&nbsp;folder.</p>
+<p>Once the creation of the BIDS data folder is done, you should have something that looks like:</p>
+<pre><code>BHBMEG004
+├── CHANGES
+├── README
+├── code
+│&nbsp;&nbsp; ├── B3801539-D436-4BC0-81D9-6F9A82244022 (1).pdf
+│&nbsp;&nbsp; ├── Channels4Rodriguez2016
+│&nbsp;&nbsp; ├── RemoveBallistocardiogram.mlx
+│&nbsp;&nbsp; ├── acpc_align.sh
+│&nbsp;&nbsp; ├── bounded line-peg
+│&nbsp;&nbsp; ├── convert_mff_to_bids.py
+│&nbsp;&nbsp; ├── dcm2bids_config.json
+│&nbsp;&nbsp; ├── fmriprep_command.sh
+│&nbsp;&nbsp; └── gradient_removal.m
+├── dataset_description.json
+├── derivatives
+├── participants.json
+├── participants.tsv
+├── sourcedata
+│&nbsp;&nbsp; ├── mri
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── BHBEP214A
+│&nbsp;&nbsp; │&nbsp;&nbsp; │&nbsp;&nbsp; └── 3
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── BHBMEG004B
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 10
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 11
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 12
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 13
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 3
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 4
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 5
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 6
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 7
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── 9
+│&nbsp;&nbsp; └── tmp_dcm2bids
+│&nbsp;&nbsp; ├── helper
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 003\_.\_RESEARCH\_-\_BHBEP_20190314111207.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 003\_.\_RESEARCH\_-\_BHBEP_20190314111207.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 003\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 003\_.\_RESEARCH\_\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 004\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 004\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 005\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 005\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 006\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 006\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 006\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 007\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 007\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 009\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 009\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 010\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 010\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 011\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 011\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 012\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 012\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── 013\_.\_RESEARCH\_-\_BHBMEG_20190507142627.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── 013\_.\_RESEARCH\_-\_BHBMEG_20190507142627.nii.gz
+│&nbsp;&nbsp; └── log
+│&nbsp;&nbsp; └── helper_20240109-144412.log
+├── sub-BHBMEG004
+│&nbsp;&nbsp; ├── anat
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── sub-BHBMEG004_ses-brainmap_T1W.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── sub-BHBMEG004_ses-brainmap_T1W.nii.gz
+│&nbsp;&nbsp; │&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_T1W.json
+│&nbsp;&nbsp; │&nbsp;&nbsp; └── sub-BHBMEG004_ses-eegfmri_T1W.nii.gz
+│&nbsp;&nbsp; └── func\
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-handstim_bold.json
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-handstim_bold.nii.gz
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-01_bold.json
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-01_bold.nii.gz
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-02_bold.json
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-02_bold.nii.gz
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-03_bold.json
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-03_bold.nii.gz
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-04_bold.json
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-04_bold.nii.gz
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-05_bold.json
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-05_bold.nii.gz
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-06_bold.json
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-06_bold.nii.gz
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-07_bold.json
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-07_bold.nii.gz
+│&nbsp;&nbsp; ├── sub-BHBMEG004_ses-eegfmri_task-rest_run-08_bold.json
+│&nbsp;&nbsp; └── sub-BHBMEG004_ses-eegfmri_task-rest_run-08_bold.nii.gz
+└── tmp_dcm2bids
+&nbsp;&nbsp; ├── log
+&nbsp;&nbsp; │&nbsp;&nbsp; ├── scaffold_20240109-142635.log
+&nbsp;&nbsp; │&nbsp;&nbsp; └── sub-BHBMEG004_20240109-180638.log
+&nbsp;&nbsp; └── sub-BHBMEG004</code></pre>
+<p>Deactivate the <code>dcm2bids</code> environment in <code>Terminal</code>.</p>
+<pre class="shell"><code>conda deactivate</code></pre>
+</section>
+<section id="get-freesurfer-surfaces" class="level3">
+<h3 class="anchored" data-anchor-id="get-freesurfer-surfaces">Get freesurfer surfaces</h3>
+<p>For the T1 scan(s) for both the BHBEP and BHBMEG sessions, get the <code>freesurfer</code> surfaces and inflated spheres using <code>recon-all</code>. We will need these to align the EEG data with the MRI data. Include the T1 from the brain mapping session if there is one.</p>
+<pre class="shell"><code>mkdir BIDS/BHBMEG&lt;subject_id&gt;/derivatives/freesurfer
+
+recon-all -subject sub-BHBMEG\&lt;subject_id\&gt; -I \&lt;path to anat
+folder\&gt;/sub-BHBMEG\&lt;subject_id\&gt;\_ses-eegfmri_T1W.nii.gz -i
+sub-BHBMEG\&lt;subject_id\&gt;\_ses-brainmap_T1W.nii.gz -sd \&lt;path to BIDS
+folder\&gt;/BHBMEG\&lt;subject_id\&gt;/derivatives/freesurfer -all</code></pre>
+<p>Be sure to record the&nbsp;freesurfer&nbsp;subject as&nbsp;<code>sub-BHBMEG&lt;id_number&gt;</code> in the <code>derivatives/freesurfer</code> folder. Use the instructions at &nbsp;<a href="https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all"><u>https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all</u></a>&nbsp;if you need help setting this up.</p>
+</section>
+<section id="run-fmriprep-using-the-python-interface" class="level3">
+<h3 class="anchored" data-anchor-id="run-fmriprep-using-the-python-interface">Run fMRIprep using the python interface</h3>
+<p>Install MNE if you haven’t done so already (<a href="https://mne.tools/stable/install/manual_install.html#manual-install" class="uri">https://mne.tools/stable/install/manual_install.html#manual-install</a>).</p>
+<pre class="shell"><code>conda install --channel=conda-forge --name=base conda-libmamba-solver
+conda create --solver=libmamba --override-channels
+--channel=conda-forge --name=mne mne</code></pre>
+<p>If you don't already have them, also install&nbsp;<code>docker</code> (<a href="https://docs.docker.com/desktop/install/mac-install/"><u>https://docs.docker.com/desktop/install/mac-install/</u></a>) and add the&nbsp;<code>fmriprep</code>&nbsp;command to your anaconda installation (<a href="https://www.anaconda.com/download"><u>https://www.anaconda.com/download</u></a>) using:</p>
+<pre class="shell"><code>conda activate mne
+pip install fmriprep-docker
+conda deactivate</code></pre>
+<p>Then at the command line enter:</p>
+<pre class="shell"><code>conda activate mne
+
+cd &lt;BIDS_root&gt;code
+zsh fmriprep_command.sh
+conda deactivate</code></pre>
+<p>This will preprocess the fMRI data in your&nbsp;<code>BHBMEG&lt;subject_id&gt;</code>&nbsp;folder. Be sure to check the quality assurance document that gets outputted in the&nbsp;<code>derivatives/fmriprep</code>&nbsp;folder. If necessary, adjust&nbsp;<code>fmriprep_command.sh</code>&nbsp;and rerun.</p>
+</section>
+</section>
+<section id="eeg-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="eeg-cleaning">EEG Cleaning</h2>
+<p>Make a directory called&nbsp;<code>eeg</code>&nbsp;in the sourcedata folder. Copy all the EEG data files from <code>NetStation</code> in&nbsp;<code>.mff</code>&nbsp;format into the&nbsp;<code>sourcedata/eeg</code>&nbsp;folder.</p>
+<p>Open <code>Spyder</code> from the command line in <code>Terminal</code>.</p>
+<pre class="shell"><code>Spyder</code></pre>
+<p>Change Spyder's Python interpreter to that in the MNE Environment. Click on the wrench in the toolbar. When the dialogue box opens, select Python Interpreter in the left column. Select the mne python interpreter in the list of the python interpreters on the right. It should have your anaconda3 install in the python interpreter name. Mine is:</p>
+<p>![[Pasted image 20240213120910.png]]</p>
+<p>Click <code>OK</code>.</p>
+<p>Open the&nbsp;<code>convert_mff_to_bids.py</code>&nbsp;script. It is in the&nbsp;<code>code</code>&nbsp;directory in your subject’s BIDS directory.</p>
+<p>Update&nbsp;<code>convert_mff_to_bids.py</code>&nbsp;to list the EEG files from <code>NetStation</code> if you haven't already done so. Enter the filenames for each file. There will be somewhere between 1 and the number of MR resting state + the hand stim task runs of EEG data.</p>
+<p>If the number of EEG runs is equal to the number of MR runs, use the first and last data points as the EEG run start and end (default). If the number of EEG runs is less than the number of MR runs, use the notes taken during acquisition to determine which MR runs are included in each EEG run. Once the distribution of MR runs in each EEG file is determined, open the data in your favourite viewer and mark timepoints between runs (this is the “quiet” periods between MR gradient artifacts. Pick a point about midway between the 2 MR runs and note the value in milliseconds. This will be the end point of your EEG run. Add one millisecond and this will be the beginning of the next MR run.</p>
+<p>Once you have determined the break point values, run the script.</p>
+<section id="create-scalp-and-skin-surfaces-from-freesurfer-output" class="level3">
+<h3 class="anchored" data-anchor-id="create-scalp-and-skin-surfaces-from-freesurfer-output">Create scalp and skin surfaces from freesurfer output</h3>
+<p>The first thing to be created is the&nbsp;<code>bem</code>&nbsp;folder in the&nbsp;<code>derivatives/freesurfer/sub-BHBMEG&lt;subject_id&gt;</code>&nbsp;folder. The <code>make_bem</code> flag in <code>convert_mff_to_bids.py</code> needs to be set to True.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>make_bem <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The&nbsp;<code>freesurfer&nbsp;recon-all</code> run above needs to have completed before doing this. This will create the head and scalp surfaces from your&nbsp;<code>freesurfer</code>&nbsp;output.</p>
+</section>
+<section id="create-translation-i.e.-.trans-file" class="level3">
+<h3 class="anchored" data-anchor-id="create-translation-i.e.-.trans-file">Create translation (i.e., .trans) file</h3>
+<p>If you don't already have a <code>.trans</code>&nbsp;file in your&nbsp;<code>derivatives/mne</code>&nbsp;folder, we will now create one. When you run <code>convert_mff_to_bids.py</code>, the graphical user interface for&nbsp;<code>PyVista</code> will open. Be patient with&nbsp;<code>PyVista</code>, it takes a very long time to load. You will see the outer skin surface with 3 marks. This is the program's best guess at where the nasion and preauricular points are on the scalp surface.</p>
+<p><img src="./images/Pasted image 20240213121504.png" class="img-fluid"></p>
+<p>If the points don't align with the marks from the EEG net, realign the points to correspond to where the EEG net was placed.</p>
+<p>On the left side, if the Lock fiducials checkbox is checked, uncheck it. Underneath you have LPA. This is the left preauricular point. Click on the radio button beside LPA.</p>
+<p><img src="./images/Pasted image 20240213121532.png" class="img-fluid"></p>
+<p>Move the red fiducial marker to the circleish place in front of the ear corresponding to the placement of the preauricular point from the EEG net.</p>
+<p><img src="./images/Pasted image 20240213121556.png" class="img-fluid"></p>
+<p>This gives the relationship between the EEG net placement and the underlying MR anatomy.</p>
+<p>Now click on the radio button beside Nasion. Move the green fiducial marker to where the EEG net is sitting on the face.</p>
+<p><img src="./images/Pasted image 20240213121623.png" class="img-fluid"></p>
+<p>Repeat for the right preauricular point (RPA).</p>
+<p><img src="./images/Pasted image 20240213121641.png" class="img-fluid"></p>
+</section>
+<section id="enter-mr-runs-contained-in-each-eeg-run" class="level3">
+<h3 class="anchored" data-anchor-id="enter-mr-runs-contained-in-each-eeg-run">Enter MR runs contained in each EEG run</h3>
+<p>Fill in the MR runs contained in each EEG run. The script will ask you for this information. Remember to include the opening and closing square brackets (e.g., [3, 4, 5, …]) for the list of MR runs contained in the EEG run. The MR run will not have a value of less than 3 because of the calibration scans preceding the scan.</p>
+<p>Enter the start and end points of each MR run in the EEG data when asked to do so if more than one MR run is in an EEG run (i.e., n_mr_runs &gt; n_eeg_runs) in the&nbsp;<code>convert_mff_to_bids.py</code>&nbsp;script.</p>
+<p>This script will save a&nbsp;EEGLAB&nbsp;.set&nbsp;file in the <code>derivatives/mne</code>&nbsp;directory for the eeg data corresponding to each MR run labeled with the run numbers in the&nbsp;BIDS directory.</p>
+</section>
+<section id="open-.set-files-in-eeglab-and-matlab" class="level3">
+<h3 class="anchored" data-anchor-id="open-.set-files-in-eeglab-and-matlab">Open .set file(s) in EEGLAB and Matlab</h3>
+<p>Download&nbsp;<strong>EEGLAB</strong>&nbsp;from&nbsp;<a href="https://sccn.ucsd.edu/eeglab/download.php"><u>https://sccn.ucsd.edu/eeglab/download.php</u></a>. Follow the install instructions. Add the&nbsp;<strong>EEGLAB</strong>&nbsp;path to your&nbsp;<strong>Matlab</strong>&nbsp;path.</p>
+<p>In the <strong>Matlab</strong> command window, type</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="va">eeglab</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will open the following dialogue box:</p>
+<p><img src="./images/Picture1.png" class="img-fluid"></p>
+<p>If you haven't already done so, add the <code>fMRIb MRI Tools</code>. In the main <code>EEGLAB</code> window, go to&nbsp;<code>File &gt; Manage EEGLAB</code> extensions. This will open another dialogue box:</p>
+<p><img src="./images/Picture2.png" class="img-fluid"></p>
+<p>In the search bar, type in&nbsp;<code>MRI</code>.</p>
+<p><img src="./images/Picture3.png" class="img-fluid"></p>
+<p>Select the extension labelled&nbsp;<code>fMRIb</code>&nbsp;(download the latest stable version).</p>
+<p><img src="./images/Picture4.png" class="img-fluid"></p>
+<p>Click&nbsp;<code>Install/Update</code>.</p>
+<p>Close the main <code>EEGLAB</code> window.</p>
+</section>
+</section>
+<section id="remove-mr-gradient-artifact-using-fimrib-eeglab-plugin" class="level2">
+<h2 class="anchored" data-anchor-id="remove-mr-gradient-artifact-using-fimrib-eeglab-plugin">Remove MR Gradient Artifact using FIMRIB EEGLAB Plugin</h2>
+<p>Change the&nbsp;<code>Matlab</code>&nbsp;directory to the root of your BIDS folder structure for your subject. In <code>Matlab 2022a</code>, this is:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="va">cd</span> <span class="op">&lt;</span><span class="va">path</span> <span class="va">to</span> <span class="va">BIDS</span> <span class="va">root</span><span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that you must use <code>Matlab 2018b</code> or above with the signal processing and the stats toolboxes. If you don’t have the toolboxes, contact BCCHR IT.</p>
+<p>You want to open the <strong>.set</strong> file for the EEG-MRI run stored in your&nbsp;<code>derivatives/mne/sub-&lt;subject_id&gt;</code>&nbsp;folder.</p>
+<p>Open the main&nbsp;<code>EEGLAB</code> window.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="va">eeglab</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Click&nbsp;<code>File &gt; Load existing dataset</code>. Navigate to the&nbsp;<code>derivatives/mne/sub-&lt;subject_id&gt;</code>&nbsp;folder. Select the <code>.set</code> file for the EEG-fMRI run you want to process.</p>
+<p><img src="./images/Picture5.png" class="img-fluid"></p>
+<p>Now we need to get the TRs. They have been saved as an extra channel. They should be stored in channel 258, but we want to check first. Go to&nbsp;<code>Plot &gt; Channel data (scroll)</code>.</p>
+<p><img src="./images/Picture6.png" class="img-fluid"></p>
+<p>However, the display is too busy. Go to&nbsp;<code>Settings &gt; Number of channels</code>&nbsp;to display. In the pop-up dialogue box, put a number between 10 and 25, depending upon the size of your monitor and what you feel more comfortable with. Click&nbsp;<code>Ok</code>. Scroll down using the bar on the left. Check that TR is listed as channel 258.</p>
+<p><img src="./images/Picture7.png" class="img-fluid"></p>
+<p>The noise in the data is the gradient artifact.</p>
+<p>Now that we have verified that the TRs are stored in channel 258 click&nbsp;<code>CANCEL</code>.</p>
+<p>Now we need the TRs as events and not as a channel. Go to&nbsp;<code>File &gt; Import event data &gt; From data channel</code>.</p>
+<p><img src="./images/Picture8.png" class="img-fluid"></p>
+<p>Enter 258 for&nbsp;<code>Event channel(s)</code>. Be sure to unclick&nbsp;<code>Delete event channel(s)</code>&nbsp;and&nbsp;<code>Delete old events&nbsp;if any</code>. Your display should look like the above dialogue box. Click&nbsp;<code>Ok</code>.</p>
+<p>In the original dialogue box, go to&nbsp;<code>Tools &gt; FMRIB Tools &gt; FASTR: Remove MRI gradient artifacts</code>. Again, this will open another dialogue box.</p>
+<p><img src="./images/Picture9.png" class="img-fluid"></p>
+<p>The TRs come one for every volume. Change <code>Artifact timing event</code> to <code>Volume/Section</code>. Make sure that the <code>Artifact timing event</code> reads either <code>TR</code> or the channel that you entered for the TR signal from the previous step (usually <code>chan258</code>, but check to be sure). Check the box beside <code>Adaptive Noise Cancellation</code>.</p>
+<p><img src="./images/Picture10.png" class="img-fluid"></p>
+<p>Press <code>Ok</code>.</p>
+<p>Repeat for all other functional MR runs.</p>
+<section id="compute-sppeaks-from-channel-data-in-matlab-using-custom-.mlx-script" class="level3">
+<h3 class="anchored" data-anchor-id="compute-sppeaks-from-channel-data-in-matlab-using-custom-.mlx-script">Compute SPPEAKS from Channel Data in Matlab using custom .mlx script</h3>
+<p>This algorithm uses Cameron Rodriguez's (2016) method to derive the cardiac signal from selected channels in the EEG signal. Please see&nbsp;<a href="https://escholarship.org/uc/item/3gg3z2q6">Rodriguez (2016)</a>&nbsp;for more details.</p>
+<p>In&nbsp;<code>Matlab</code>&nbsp;open the&nbsp;<code>RemoveBallistocardiogram.mlx</code>&nbsp;file from the&nbsp;<code>code</code>&nbsp;directory in your subject's root BIDS directory. Note that you need to be using&nbsp;<code>Matlab 2022a or above</code>&nbsp;and have the&nbsp;<code>signal processing toolbox</code>&nbsp;installed. If you don't have these, contact BCCHR/UBC IT to find out how to get these for your account.</p>
+<p>Once&nbsp;<code>RemoveBallistocardiogram.mlx</code>&nbsp;is open, change the data in boxes 1 through 3. In the first box, change&nbsp;<code>e</code>&nbsp;to the number of MR runs of resting state data that you have (e.g., e = 7 MR runs). Next, change the names of the output files in BIDS format to fit your data. You should only have to change the&nbsp;<code>sub-BHBMEG&lt;subject_id&gt;**</code>&nbsp;part and change the number of successful MR runs. This will put&nbsp;<code>.txt</code>&nbsp;files with the SPPeaks of the cardiac signal.</p>
+<p><img src="./images/Picture11.png" class="img-fluid"></p>
+<p>Next, we need to add the path to our gradient removed eeg data in the <code>./derivatives/mne</code> folder of the root BIDS directory.</p>
+<p><img src="./images/Picture12.png" class="img-fluid"></p>
+<p>Once you have your directory path set, fill in the names of each of your gradient cleaned EEG runs.</p>
+<p><img src="./images/Picture13.png" class="img-fluid"></p>
+<p>Now in&nbsp;<code>Matlab\'s LIVE EDITOR</code>&nbsp;window, press the&nbsp;<code>run</code>&nbsp;button (green right pointing arrowhead). The script will loop through your EEG runs for each MR run and output a <code>.txt</code> file for each run. These are the SPPeaks from the cardiac symbol.</p>
+<p><img src="./images/Picture14.png" class="img-fluid"></p>
+</section>
+<section id="remove-ballistocardiogram-using-fimrib-eeglab-plugin" class="level3">
+<h3 class="anchored" data-anchor-id="remove-ballistocardiogram-using-fimrib-eeglab-plugin">Remove Ballistocardiogram using FIMRIB EEGLAB Plugin</h3>
+<p>Now that you have the files with the SP Peaks, you are ready to remove the ballistocardiogram from your EEG signal. In&nbsp;<code>Matlab</code>, open&nbsp;<code>EEGLAB</code>:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="va">eeglab</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the <code>EEGLAB</code> main window, open the first of your gradient cleaned EEG <code>.set</code> files (i.e.,&nbsp;<code>sub-BHBMEG&lt;subject_id&gt;_ses-eegfmri_task-rest_run-&lt;run number&gt;_desc-gr_eeg.set</code>) using&nbsp;<code>File \&gt; Load existing dataset</code>. Once opened, we need to import the <strong>.txt</strong> file with the events corresponding to the SP Peaks in that particular run. To do that, we go to <code>File &gt; Import event info &gt; From MATLAB array or ASCII file</code>. This will open the following dialogue box:</p>
+<p><img src="./images/Picture15.png" class="img-fluid"></p>
+<p>Select Browse and select the&nbsp;<code>BHBMEG&lt;subject_id&gt;_ses-eegfmri_task-rest_run-&lt;run number&gt;_desc-gr-sppeak_eeg.txt</code>&nbsp;file corresponding to the EEG run you loaded previously. Add the words <code>latency type</code> to the <code>Input field (column) names</code> box, change the <code>Number of file header lines</code> to <code>1</code>, the <code>Time unit (sec)</code> to <code>NaN</code> and uncheck the <code>**Auto adjust new events sampling rate</code>. Your dialogue box should look like the following:</p>
+<p><img src="./images/Picture16.png" class="img-fluid"></p>
+<p>Press <code>Ok</code>.</p>
+<p>Check that the file loaded in the main <code>EEGLAB</code> window. The number of events should increase by at least approximately six hundred to fifteen hundred (give or take a bit to adjust for changes and individual differences in heart rate).</p>
+<p><img src="./images/Picture17.png" class="img-fluid"></p>
+<p>Now we need to go to <code>Tools &gt; fMRIb Tools &gt; Remove pulse artifacts</code>. This will open the following dialogue box:</p>
+<p><img src="./images/Picture18.png" class="img-fluid"></p>
+<p>Make sure <code>QRS/Heartbeat Event</code> is <code>sppeak</code>. Select <code>Optimal Basis Set</code>. Leave the default value of <code>3</code> in the <code>Number of PCs to use</code>. Press <code>Ok</code>.</p>
+<p>You will see the progress in the <code>Matlab</code> Console window.</p>
+<p><img src="./images/Picture19.png" class="img-fluid"></p>
+<p>Once completed, be sure to save the new file as&nbsp;<code>BHBMEG&lt;subject_id&gt;_ses-eegfmri_task-rest_run-&lt;run number&gt;_desc-gr-sppeak-qrs_eeg.set.</code> Overwrite the gradient cleaned version in the main <code>EEGLAB</code> window.</p>
+<p><img src="./images/Picture20.png" class="img-fluid"></p>
+<p>Check the data by opening the file in the <code>EEGLAB</code> viewer. Go to <code>Plot &gt; Channel data (scroll</code>. In the plot window, select <code>Display &gt; Remove DC offset</code> and <code>Settings &gt; Number of channels to display</code>. Set the number in the new dialogue box to somewhere between 10 and 20 channels depending upon your preference.</p>
+<p><img src="./images/Picture21.png" class="img-fluid"></p>
+<p>Export the data in&nbsp;<code>.edf</code>&nbsp;format so that the epileptologist can view the file in&nbsp;<code>Natus</code>&nbsp;(the proprietary system used in the EEG department) or <code>NetStation</code>. In the main <code>EEGLAB</code>&nbsp;window, select <code>File \&gt; Export \&gt; Data&nbsp;to EDF/BDF/GDF</code> file. If you are asked to install the <code>Biosig</code> extension, press&nbsp;<code>Yes</code>. Save the file as&nbsp;<code>sub-BHBMEG\&lt;subject_id\&gt;\_ses-eegfmri_task-rest_run-\&lt;run number\&gt;\_desc-gr-sppeak-qrs_eeg.edf</code>. Make sure to use the <code>.edf</code> file extension. This will open a dialogue box:</p>
+<p><img src="./images/Picture22.png" class="img-fluid"></p>
+<p>Highlight <code>EDF</code> and press <code>Ok</code>. This will write the EDF file to disk.</p>
+<p>Repeat the <code>Remove Ballistocardiogram using FIMRIB EEGLAB Plugin</code> steps for all other MR/EEG gradient cleaned files (one corresponding to each MR run).</p>
+</section>
+<section id="spike-reading-for-epilepsy-patients-only" class="level3">
+<h3 class="anchored" data-anchor-id="spike-reading-for-epilepsy-patients-only">Spike Reading (for epilepsy patients only)</h3>
+<p>Once you are finished cleaning and checking the EEG data, notify the epileptologist who made the referral for spike reading in the EEG file. Ask if they would prefer to read the spikes in&nbsp;<code>Natus</code>&nbsp;or&nbsp;<code>Netstation</code> and prepare the software accordingly. If using <code>Natus</code>, you will need to make arrangements with the EEG department to bring the files over and have them installed on their&nbsp;<code>Natus</code>&nbsp;system. If loading in <code>Natus</code>, be sure to bring the patient’s name and date of birth along with the anonymized&nbsp;<code>.edf</code>&nbsp;files as the records will become part of the EEG department’s records for that patient/subject. If you don’t want the results to become part of the patient’s medical record, make sure the epileptologist reads the data in <code>NetStation</code> in the Brain Mapping Lab.</p>
+<p>Once the epileptologist has read the spikes in each run, export the events from either&nbsp;<code>Netstation</code>&nbsp;or&nbsp;<code>Natus</code>&nbsp;for each run to a&nbsp;.txt&nbsp;(ASCII file). It is these events that will be used to</p>
+<ol type="1">
+<li><p>run an&nbsp;<em>event-related design</em>&nbsp;for your fMRI runs in&nbsp;<code>FSL FEAT</code>, and</p></li>
+<li><p>create <em>epochs</em> and run a&nbsp;<em>beamformer</em>&nbsp;in&nbsp;<code>MNE</code>.</p></li>
+</ol>
+<p><strong>References</strong></p>
+<p>Rodriguez, C. (2016).&nbsp;<em>Improvements to Simultaneous Electroencepalography-Functional Magnetic Resonance Imaging and Electroencepalographic Source Localization</em>. Dissertation.&nbsp;<a href="https://escholarship.org/uc/item/3gg3z2q6">https://escholarship.org/uc/item/3gg3z2q6</a></p>
+
+
+</section>
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/BCCH-MRI-Research-Facility\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrimethods/eeg-fmri/gradient-removal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrimethods/eeg-fmri/gradient-removal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

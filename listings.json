@@ -9,17 +9,6 @@
   },
   {
     "listing": "/tutorials/index.html",
-    "items": [
-      "/tutorials/eeg-fmri/index.html",
-      "/tutorials/eeg-fmri/ballistocardiogram-removal.html"
-    ]
-  },
-  {
-    "listing": "/mrimethods/index.html",
-    "items": []
-  },
-  {
-    "listing": "/mrisoftware/index.html",
     "items": []
   },
   {
@@ -27,6 +16,18 @@
     "items": [
       "/orientation/mrisafetyfaq.html",
       "/orientation/instantmessaging.html"
+    ]
+  },
+  {
+    "listing": "/mrisoftware/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mrimethods/index.html",
+    "items": [
+      "/mrimethods/anat/acpc-align.html",
+      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html",
+      "/mrimethods/eeg-fmri/gradient-removal.html"
     ]
   },
   {
