@@ -40,7 +40,7 @@ This high-level overview provides a foundational understanding of the procedural
 
 Use the subject id from the MR scanner EEG-fMRI session.
 
-```shell
+```{.shell}
 cd BHBMEG<subject_id>
 ```
 ### Put the MRI data in BIDS format
@@ -51,13 +51,13 @@ Install `anaconda` if you haven't already done so. Go to <https://www.anaconda.c
 
 Open a `Terminal` window. Check your Python version. At the command prompt, type
 
-```shell
+```{.shell}
 which python
 ```
 
 If the command should return a path with `anaconda3` in it. For example,
 
-```shell
+```{.shell}
 /Users/lj/anaconda3/bin/python
 ```
 
@@ -75,25 +75,25 @@ dependencies:\
 
 and in ``Terminal`` create the environment:
 
-```shell
+```{.shell}
 conda env create --file environment.yml*
 ```
 
 Activate your new python environment. By running
 
-```shell
+```{.shell}
 conda activate dcm2bids
 ```
 
 Test your `dcm2bids` installation.
 
-```shell
+```{.shell}
 dcm2bids *\--help*
 ```
 
 You should get the help file for `dcm2bids`:
 
-```shell
+```{.shell}
 usage: dcm2bids [-h] -d DICOM_DIR [DICOM_DIR ...] -p PARTICIPANT [-s SESSION]  
                 -c CONFIG [-o OUTPUT_DIR] [_--auto_extract_entities]_                [_--bids_validate] [--force_dcm2bids] [--skip_dcm2niix]_                [_--clobber] [-l {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [-v]_Reorganising NIfTI files from dcm2niix into the Brain Imaging Data Structure  
   
@@ -108,14 +108,14 @@ options:
 
 Make a directory for your BIDS root directory:
 
-```shell
+```{.shell}
 mkdir BIDS\
 cd BIDS
 ```
 
 Create the scaffold for your BIDS root directory:
 
-```shell 
+```{.shell} 
 dcm2bids_scaffold -o BHBMEG<subject_id\>
 cd BHBMEG<subject_id>
 ```
@@ -124,27 +124,27 @@ Download your MRI data from XNAT for BHBMEG\<subject_id\>.
 
 Put the MRI data in the `sourcedata` folder created by the scaffold.
 
-```shell
+```{.shell}
 unzip \<xnat-username\>-\<download-date\>\_\<download-time\>.zip -d
 sourcedata/
 ```
 
 For example,
 
-```shell
+```{.shell}
 unzip lwilliams-20240109_134304.zip -d sourcedata/
 ```
 
 Change the folder name to `mri`.
 
-```shell
+```{.shell}
 mv ./sourcedata/\<xnat-username\>-\<download-date\>\_\<download-time\>
 mri
 ```
 
 For example,
 
-```shell
+```{.shell}
 mv ./sourcedata/ lwilliams-20240109_134304 mri
 ```
 
@@ -167,25 +167,25 @@ In the `dcm2bids_config.json` file in the editor window, add the following:
 
 Change directory back to the `sourcedata/mri` folder:
 
-```shell
+```{.shell}
 cd <path to BHBMEG<subject_id> directory>/sourcedata/mri
 ```
 
 Run the `dcm2bids_helper` function:
 
-```shell
+```{.shell}
 dcm2bids_helper -d . 
 ```
 
 Note that the period indicates to run `dcm2bids_helper` function in the current directory.  It will create a folder in that directory call `tmp_dcm2bids/helper`. Here you will find your NIFTI files using the names given by the scanner console. You can check what is in the folder by running `ls`:
 
-```shell
+```{.shell}
 ls tmp_dcm2bids/helper 
 ```
 
 For each scan, there will be 2 files: the NIFTI file and a `.json` sidecar:
 
-```shell
+```{.shell}
 ls tmp/dcm2bids/helper/*
 003\_.\_RESEARCH\_-\_BHBEP_20190314111207.json
 003\_.\_RESEARCH\_-\_BHBEP_20190314111207.nii.gz
@@ -222,13 +222,13 @@ cat ./sourcedata/mri/tmp_dcm2bids/helper/
 
 Change directories into the `helper` folder:
 
-```shell
+```{.shell}
 cd <Path to BHBMEG<subject_id> folder>/sourcedata/mri/tmp_dcm2bids/helper
 ```
 
 Find the Series Description using `grep`. For example,
 
-```shell
+```{.shell}
 grep SeriesDescription *.json
 ```
 
@@ -393,7 +393,7 @@ Make sure that the "criteria" together identify only one MRI sequence. Look at `
 
 Once you are done, you can run `dcm2bids`.
 
-```shell
+```{.shell}
 dcm2bids -c code/dcm2bids_config.json -p BHBMEG<subject_id> -d
 sourcedata/mri/ --auto_extract_entities
 ```
@@ -498,7 +498,7 @@ BHBMEG004
 
 Deactivate the `dcm2bids` environment in `Terminal`.
 
-```shell
+```{.shell}
 conda deactivate
 ```
 
@@ -506,7 +506,7 @@ conda deactivate
 
 For the T1 scan(s) for both the BHBEP and BHBMEG sessions, get the `freesurfer` surfaces and inflated spheres using `recon-all`. We will need these to align the EEG data with the MRI data. Include the T1 from the brain mapping session if there is one.
 
-```shell
+```{.shell}
 mkdir BIDS/BHBMEG<subject_id>/derivatives/freesurfer
 
 recon-all -subject sub-BHBMEG\<subject_id\> -I \<path to anat
@@ -521,7 +521,7 @@ Be sure to record the freesurfer subject as `sub-BHBMEG<id_number>` in the `d
 
 Install MNE if you haven't done so already (<https://mne.tools/stable/install/manual_install.html#manual-install>).
 
-```shell
+```{.shell}
 conda install --channel=conda-forge --name=base conda-libmamba-solver
 conda create --solver=libmamba --override-channels
 --channel=conda-forge --name=mne mne
@@ -529,7 +529,7 @@ conda create --solver=libmamba --override-channels
 
 If you don\'t already have them, also install `docker` ([[https://docs.docker.com/desktop/install/mac-install/]{.underline}](https://docs.docker.com/desktop/install/mac-install/)) and add the `fmriprep` command to your anaconda installation ([[https://www.anaconda.com/download]{.underline}](https://www.anaconda.com/download)) using:
 
-```shell
+```{.shell}
 conda activate mne
 pip install fmriprep-docker
 conda deactivate
@@ -537,7 +537,7 @@ conda deactivate
 
 Then at the command line enter:
 
-```shell
+```{.shell}
 conda activate mne
 
 cd <BIDS_root>code
@@ -553,7 +553,7 @@ Make a directory called `eeg` in the sourcedata folder. Copy all the EEG data 
 
 Open `Spyder` from the command line in `Terminal`.
 
-```shell
+```{.shell}
 Spyder
 ```
 
@@ -579,7 +579,7 @@ The first thing to be created is the `bem` folder in
 the `derivatives/freesurfer/sub-BHBMEG<subject_id>` folder. The
 `make_bem` flag in `convert_mff_to_bids.py` needs to be set to True.
 
-```
+```{.python}
 make_bem = True
 ```
 
@@ -590,28 +590,28 @@ The `freesurfer recon-all` run above needs to have completed before doing this
 If you don\'t already have a `.trans` file in
 your `derivatives/mne` folder, we will now create one. When you run `convert_mff_to_bids.py`, the graphical user interface for `PyVista` will open. Be patient with `PyVista`, it takes a very long time to load. You will see the outer skin surface with 3 marks. This is the program\'s best guess at where the nasion and preauricular points are on the scalp surface.
 
-![[Pasted image 20240213121504.png]]
+![](./images/Pasted image 20240213121504.png)
 
 If the points don\'t align with the marks from the EEG net, realign the points to correspond to where the EEG net was placed.
 
 On the left side, if the Lock fiducials checkbox is checked, uncheck it. Underneath you have LPA. This is the left preauricular point. Click on the radio button beside LPA.
 
-![[Pasted image 20240213121532.png]]
+![](./images/Pasted image 20240213121532.png)
 
 Move the red fiducial marker to the circleish place in front of the ear corresponding to the placement of the preauricular point from the EEG net.
 
-![[Pasted image 20240213121556.png]]
+![](./images/Pasted image 20240213121556.png)
 
 
 This gives the relationship between the EEG net placement and the underlying MR anatomy.
 
 Now click on the radio button beside Nasion. Move the green fiducial marker to where the EEG net is sitting on the face.
 
-![[Pasted image 20240213121623.png]]
+![](./images/Pasted image 20240213121623.png)
 
 Repeat for the right preauricular point (RPA).
 
-![[Pasted image 20240213121641.png]]
+![](./images/Pasted image 20240213121641.png)
 
 ### Enter MR runs contained in each EEG run
 
@@ -629,7 +629,7 @@ Follow the install instructions. Add the **EEGLAB** path to your **Matlab** 
 
 In the **Matlab** command window, type
 
-```matlab
+```{.matlab}
 eeglab
 ```
 
@@ -657,7 +657,7 @@ Close the main `EEGLAB` window.
 
 Change the `Matlab` directory to the root of your BIDS folder structure for your subject. In `Matlab 2022a`, this is:
 
-```matlab
+```{.matlab}
 cd <path to BIDS root>
 ```
 
@@ -668,7 +668,7 @@ your `derivatives/mne/sub-<subject_id>` folder.
 
 Open the main `EEGLAB` window.
 
-```matlab
+```{.matlab}
 eeglab
 ```
 
@@ -735,7 +735,7 @@ Now in `Matlab\'s LIVE EDITOR` window, press the `run` button (green right p
 
 Now that you have the files with the SP Peaks, you are ready to remove the ballistocardiogram from your EEG signal. In ``Matlab``, open `EEGLAB`:
 
-```matlab
+```{.matlab}
 eeglab
 ```
 
@@ -783,7 +783,7 @@ Highlight `EDF` and press `Ok`. This will write the EDF file to disk.
 
 Repeat the `Remove Ballistocardiogram using FIMRIB EEGLAB Plugin` steps for all other MR/EEG gradient cleaned files (one corresponding to each MR run).
 
-### Spike Reading
+### Spike Reading (for epilepsy patients only)
 
 Once you are finished cleaning and checking the EEG data, notify the epileptologist who made the referral for spike reading in the EEG file. Ask if they would prefer to read the spikes in `Natus` or `Netstation` and prepare the software accordingly. If using `Natus`, you will need to make arrangements with the EEG department to bring the files over and have them installed on
 their `Natus` system. If loading in `Natus`, be sure to bring the patient's name and date of birth along with the anonymized `.edf` files as the records will become part of the EEG department's records for that patient/subject. If you don't want the results to become part of the patient's medical record, make sure the epileptologist reads the data in `NetStation` in the Brain Mapping
