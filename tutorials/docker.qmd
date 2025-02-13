@@ -10,6 +10,8 @@ categories:
     - reproducible
 ---
 
+![dockerlogo](../img/dockerlogo.png)
+
 # Introduction
 
 ## What is Docker
@@ -113,7 +115,10 @@ docker rm <name-of-image>
 ```
 
 If the Docker container creates/manipulates files, unless otherwise specified these files are part of the container and will be removed when the container is. Read more about it [here](https://flaviocopes.com/docker-access-files-outside-container/)
-You need to pass the **-v flag**.
+
+You will need to pass the **-v flag**.
+
 For example:
+
 - Inside the container the app creates **/usr/src/app/logs**
 - To map to host machine **-v ~/logs:/usr/src/app/logs**
