@@ -1,42 +1,60 @@
 [
   {
-    "objectID": "studentresources/index.html",
-    "href": "studentresources/index.html",
-    "title": "Student Resources",
+    "objectID": "investigatorresources/index.html",
+    "href": "investigatorresources/index.html",
+    "title": "Investigator Resources",
     "section": "",
     "text": "No matching items\n\n Back to top",
     "crumbs": [
       "Home",
-      "Student Resources"
+      "Investigator Resources"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BCCH MRI Research Facility Wiki Page",
+    "objectID": "orientation/index.html",
+    "href": "orientation/index.html",
+    "title": "Orientation",
     "section": "",
-    "text": "Overview\nThis page serves as a Wiki and collection of resources for users of BC Children’s MRI Research Facility\nYou can search this page using the magnifying glass in the top right 🔍\nOr you can navigate using the sidebar on the left 👈\nIf you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us (similar to Slack or Microsoft Teams).\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "scienceresources/index.html",
-    "href": "scienceresources/index.html",
-    "title": "Science Resources",
-    "section": "",
-    "text": "No matching items\n\n Back to top",
+    "text": "MRI Safety FAQ\n\n\n\n\n\n\nsafety\n\n\nmri\n\n\n\nYour frequently asked MRI safety questions answered\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMattermost: Instant Messaging / Stay in Touch\n\n\n\n\n\n\ncollaboration\n\n\nsoftware\n\n\ninstant messaging\n\n\n\nInstant messaging app for users of the research MRI facility\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
-      "Science Resources"
+      "Orientation"
     ]
   },
   {
-    "objectID": "tutorials/index.html",
-    "href": "tutorials/index.html",
-    "title": "Tutorials",
+    "objectID": "orientation/mrisafetyfaq.html",
+    "href": "orientation/mrisafetyfaq.html",
+    "title": "MRI Safety FAQ",
+    "section": "",
+    "text": "Frequencly Asked Questions Answered\n[Note: the following was taken from here.\nThis is a rough guide; some things may no longer be accurate for our facility]\n\nCan you have an MRI if you have fillings, retainers or braces on your teeth?\n\nThe metal in most fillings is not affected by the MRI system’s magnetic field. However, the fillings may cause some distortion of the images if you are having a scan of the brain or facial area.\n\nCan I have an MRI exam if I have a permanent retainer or braces on my teeth?\n\nThe recommendation is not to scan a subject with retainers or braces because of distortion can occur that can affect the quality of the data.\n\nCan you have make-up on for an MRI?\n\nSome cosmetics contain metals that can interact with MRI magnets, so on the day of the MRI, if possible, ask your subject to not wear makeup. Also, minimize hairspray and forgo antiperspirants and sunscreens, which contain metals, that could interfere with the scan and reduce the quality of the images.\n\nCan you put on deodorant for an MRI?\n\nPlease refrain from wearing any powder, perfumes, deodorant and/or lotions on your underarms and breasts prior to the procedure. Since the MRI is a magnet, please let us know if you have any metal in or on your body.\n\nIs titanium safe for MRI?\n\nTitanium implants are MRI compatible. Subjects with nontitanium implants should inform the MRI safety officer 7 days prior to the procedure to check with the manufacture for condition that allow safely conducting an MRI scan.\n\nWhat do you wear for an MRI?\n\nIf the subject’s clothes have any metal fasteners or metallic design in close proximity to the anatomy being scanned, you should ask the subject to change into a hospital gown. If the clothing is made of a stretchy material, the subject must change into a hospital gown as a precautionary measure of safety to prevent possible burns to the skin. A locker will be supplied to secure their belongings.\n\nIs it safe to have an MRI while pregnant?\n\nUnless the research MRI study involves prenatal or pregnant subjects, pregnant subjects are excluded.\n\nAre piercings safe for MRI?\n\nIt is the policy to remove all piercings before you scan your subject to avoid any possible burns due to heating of the metal used in the piercings. Piercings, if not removed, i.e. earrings, will cause distortion to the image.\n\n\nSafety of frequently asked implant MRI compatibility:\nIf a subject has an implant it must be reviewed by the MRI safety officer before the subject can be scanned. Written documentation must be provided to determine the type of implant.\n\nHearing Aids and Other Hearing Systems\nUnsafe.\n\n\nHeart Valves and Annuloplasty Rings\nSafe to scan at 3T or less.\n\n\nHemostatic clips, other clips, fasteners, staples\nSafe at 3T or less.\n\n\nIUDs and other contraceptive devices\n\nCopper T and Copper 7: Safe at 1.5 T or less.\nCopper T 380A: Safe at 3T or less.\nStainless steel IUDs: Unsafe.\nMirena IUD: Safe.\nImplanon implant: Safe.\nEssure: Safe to scan at 3T or less.\n\n\n\nMagnetically activated implants and devices\nUnsafe.\n\n\nNeurostimulation system\nUnsafe.\n\n\nOtologic Implants\nUnsafe.\n\n\nPenile Implants\nUnsafe – Duraphase or Omniphase.\n\n\nPessary/Pessaries\nUnsafe – metallic. Safe – nonmetallic.\n\n\nOrthopedic implants\nMust check manufactures conditions for MRI safety.\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Orientation",
+      "MRI Safety FAQ"
+    ]
+  },
+  {
+    "objectID": "mriscanners/index.html",
+    "href": "mriscanners/index.html",
+    "title": "MRI Scanners",
     "section": "",
     "text": "No matching items\n\n Back to top",
     "crumbs": [
       "Home",
-      "Tutorials"
+      "MRI Scanners"
+    ]
+  },
+  {
+    "objectID": "mrimethods/anat/acpc-align.html",
+    "href": "mrimethods/anat/acpc-align.html",
+    "title": "Align AC PC to horizontal",
+    "section": "",
+    "text": "Align to the Anterior Commissure-Posterior Commisure Line\nIf you need help determining where the Anterior and Posterior Commisures are in your image, please see Commissural Pathways, available online, or Catani & Thiebaut de Schotten (2012), which is available from the UBC Library.\n\nDownload the acpc_align script from here. Be sure the code is in the folder where your participant’s structural scans are.\nMake the acpc_align.sh script executable.\n\nchmod 755 acpc_align.sh\n\nOpen your structural scan in your faviourite viewer. Here we are using FSLeyes.\n\n\n\n\nFSLeyes\n\n\n\nGet the X, Y and Z coordinates of the anterior commissure in voxel space by placing your cursor on the anterior commissure. The anterior commissure is located in the anterior wall of the third ventricle. It runs transversely anterior to the anterior columns of the fornix, above the basal forebrain and beneath the medial and ventral aspect of the anterior limb of the internal capsule. Save the X, Y, and Z coordinates.\n\n\n\n\nAnterior Commissure\n\n\n\nGet the X, Y, and Z coordinates of the posterior commissure in voxel space by placing your cursor on the posterior commissure. The posterior commissure is the inferior lamina or stalk of the pineal gland. Save the X, Y, and Z coordinates.\n\n\n\n\nPosterior Commissure\n\n\n\nIn your terminal (MacOS or Linux) run\n\nacpc_align subjectbrain.nii.gz -a x y z -p x y z\nto produce the realigned image for subject-specific to acpc alignment.\nIn the example, this is\nsh acpc_align.sh T1_reoriented.nii.gz -a 93 130 153 -p 93 98 152\n\n\n\nacpc aligned image\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anat",
+      "Align AC PC to horizontal"
     ]
   },
   {
@@ -77,6 +95,161 @@
       "EEG-fMRI",
       "EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)"
     ]
+  },
+  {
+    "objectID": "scienceresources/index.html",
+    "href": "scienceresources/index.html",
+    "title": "Science Resources",
+    "section": "",
+    "text": "No matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Science Resources"
+    ]
+  },
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Docker\n\n\n\n\n\n\nsoftware\n\n\nreproducible\n\n\n\nAutomates the Deployment of Software Applications Inside Containers\n\n\n\n\n\nFeb 13, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Tutorials"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "The BC Children’s Hospital MRI Research Facility is one of Canada’s top centres for pediatric brain mapping and imaging sciences research.\nA core facility of the BC Children’s Hospital’s Research Institute and affiliated with the University of British Columbia, the child-friendly environment of the MRI Research Facility is ideally situated to optimize opportunities for widespread research collaborations with the highly skilled staff found at BC Children’s Hospital and BC Women’s Hospital + Health Centre.\nThe MRI Research Facility features a GE Discovery MR750 3.0 Tesla MRI scanner for functional MRI, structural MRI and spectroscopy. The current scanner software version is DV26.0_R03.\nTogether, with our child-friendly MRI simulator, the MRI Research Facility provides an excellent platform for performing research studies on babies and young children.\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "About"
+    ]
+  },
+  {
+    "objectID": "tutorials/Docker/docker.html",
+    "href": "tutorials/Docker/docker.html",
+    "title": "Docker",
+    "section": "",
+    "text": "an open-source project that automates the deployment of software applications inside containers by providing an additional layer of abstraction and automation of OS-level virtualization on Linux.\n\nLet’s begin with a lengthy analogy that will hopefully motivate the usefulness of Docker (and send light on the wordy definitions, as given above). I have summarised the analogy from this post, so have a look there if anything immediately below does not make sense.\nLet’s think about shipping containers (part of Docker logo). Before shipping containers were used, international trade was inefficient, workers would fill ships up with cargo of different sizes and requirements (e.g. fragile or refrigerated). Depending on the size and shape of the ship vs. the size and shape of the cargo a lot of the time the cargo was not compatible or would result in it perishing/breaking.\nThen came along containers,\n\nContainers were standardised so that loading and unloading became efficient.\nAnything that happened inside the container was the containers fault and not the ships. The merchants were responsible for securing everything inside.\nThe containers only need a sturdy enough ship to carry them (i.e. they don’t care about model, shape or size).\n\nWhat happens if the ship sinks (i.e. computer goes down, OS runs out of memory), unlike a shipping container where its contents are lost. You use a Dockerfile (analogous to a seed) to sprout up a new container. Re-creating the container is very easy, they can also be set-up so that backups are kept or that another container will be automatically birthed and carry on the task if one goes down.\nWhy hasn’t Docker taken over. Similar to international trade, shipping containers are very helpful, but they need someone to load, unload and ship. In the same way, the infrastructure necessary to fully take advantage of Docker is still on its way.\nTake away\n\nDocker containers package everything needed. e.g. If you order a car building kit you would get a big container containing all the different parts in smaller boxes vs. picking all individual parts at separate stores.\nPredictable environment. To re-make another car you can re-order the same package and be confident you’ll get the exact same kit vs. having to revisit all the stores again, likely to make a mistake.\nDocker isolated from other packages. e.g. If you are building your car alongside a motorbike project you would two separate piles for your parts vs. having all the parts in one pile and accidentally using a screw that may initially fit but ends up falling out and ruining the car.\n\n\n\n\n\n\n\ndockervsvirtual\n\n\nBelow is a summary of the following post, I would encourage reading through the post for more detail.\n\n\nA virtual machine is a virtual server that emulates a hardware server. i.e Hardware not in your computer is used to create a full computer environment that you can use to run an application. For example parallels can be used as an Apple user to run Windows applications on their Apple computer. NOTE: You will be in a Windows environment so you cannot run an Apple application but you can transfer files back and forth.\n\n\n\nDocker uses containers that are platform independent (run across Windows and Linux). It’s main purpose is to run microservice applications, exactly what we need for neuroimaging applications. Docker is not a one-size-fits-all solution.\n\n\n\n\nDocker isolates individual applications vs. VM isolating entire systems (i.e. you can use containers inside VM’s)\nA Docker container can boot in less than a second vs. VM can take up to a few minutes\nUse a Docker container to package code and its dependencies so that the code is easily shared with Dev, QA and IT.\nDocker has version control, can be compared to GitHub\n\nNOTE: Docker containers are lightweight compared to VM’s however, similar to having an empty or even unused container on a ship. It is advised to remove the container, remember (like a seed) it is easy to re-create the container if you have a Docker File.",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/Docker/docker.html#what-is-docker",
+    "href": "tutorials/Docker/docker.html#what-is-docker",
+    "title": "Docker",
+    "section": "",
+    "text": "an open-source project that automates the deployment of software applications inside containers by providing an additional layer of abstraction and automation of OS-level virtualization on Linux.\n\nLet’s begin with a lengthy analogy that will hopefully motivate the usefulness of Docker (and send light on the wordy definitions, as given above). I have summarised the analogy from this post, so have a look there if anything immediately below does not make sense.\nLet’s think about shipping containers (part of Docker logo). Before shipping containers were used, international trade was inefficient, workers would fill ships up with cargo of different sizes and requirements (e.g. fragile or refrigerated). Depending on the size and shape of the ship vs. the size and shape of the cargo a lot of the time the cargo was not compatible or would result in it perishing/breaking.\nThen came along containers,\n\nContainers were standardised so that loading and unloading became efficient.\nAnything that happened inside the container was the containers fault and not the ships. The merchants were responsible for securing everything inside.\nThe containers only need a sturdy enough ship to carry them (i.e. they don’t care about model, shape or size).\n\nWhat happens if the ship sinks (i.e. computer goes down, OS runs out of memory), unlike a shipping container where its contents are lost. You use a Dockerfile (analogous to a seed) to sprout up a new container. Re-creating the container is very easy, they can also be set-up so that backups are kept or that another container will be automatically birthed and carry on the task if one goes down.\nWhy hasn’t Docker taken over. Similar to international trade, shipping containers are very helpful, but they need someone to load, unload and ship. In the same way, the infrastructure necessary to fully take advantage of Docker is still on its way.\nTake away\n\nDocker containers package everything needed. e.g. If you order a car building kit you would get a big container containing all the different parts in smaller boxes vs. picking all individual parts at separate stores.\nPredictable environment. To re-make another car you can re-order the same package and be confident you’ll get the exact same kit vs. having to revisit all the stores again, likely to make a mistake.\nDocker isolated from other packages. e.g. If you are building your car alongside a motorbike project you would two separate piles for your parts vs. having all the parts in one pile and accidentally using a screw that may initially fit but ends up falling out and ruining the car.",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/Docker/docker.html#docker-vs.-virtual-machine",
+    "href": "tutorials/Docker/docker.html#docker-vs.-virtual-machine",
+    "title": "Docker",
+    "section": "",
+    "text": "dockervsvirtual\n\n\nBelow is a summary of the following post, I would encourage reading through the post for more detail.\n\n\nA virtual machine is a virtual server that emulates a hardware server. i.e Hardware not in your computer is used to create a full computer environment that you can use to run an application. For example parallels can be used as an Apple user to run Windows applications on their Apple computer. NOTE: You will be in a Windows environment so you cannot run an Apple application but you can transfer files back and forth.\n\n\n\nDocker uses containers that are platform independent (run across Windows and Linux). It’s main purpose is to run microservice applications, exactly what we need for neuroimaging applications. Docker is not a one-size-fits-all solution.\n\n\n\n\nDocker isolates individual applications vs. VM isolating entire systems (i.e. you can use containers inside VM’s)\nA Docker container can boot in less than a second vs. VM can take up to a few minutes\nUse a Docker container to package code and its dependencies so that the code is easily shared with Dev, QA and IT.\nDocker has version control, can be compared to GitHub\n\nNOTE: Docker containers are lightweight compared to VM’s however, similar to having an empty or even unused container on a ship. It is advised to remove the container, remember (like a seed) it is easy to re-create the container if you have a Docker File.",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/Docker/docker.html#getting-started",
+    "href": "tutorials/Docker/docker.html#getting-started",
+    "title": "Docker",
+    "section": "Getting Started",
+    "text": "Getting Started\nDocker’s own Getting Started Guide",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/Docker/docker.html#install",
+    "href": "tutorials/Docker/docker.html#install",
+    "title": "Docker",
+    "section": "Install",
+    "text": "Install\nMac, Linux, and Windows",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/Docker/docker.html#terminology",
+    "href": "tutorials/Docker/docker.html#terminology",
+    "title": "Docker",
+    "section": "Terminology",
+    "text": "Terminology\n\nImages: The blueprints of our application which form the basis of containers.\nContainers: Created from Docker images and run the actual application.\nDocker Daemon: The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system which clients talk to.\nDocker Client: The command line tool that allows the user to interact with the daemon.\nDocker Hub: A registry of Docker images (similar idea to GitHub or HomeBrew).",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/Docker/docker.html#set-up",
+    "href": "tutorials/Docker/docker.html#set-up",
+    "title": "Docker",
+    "section": "Set-up",
+    "text": "Set-up\nTest the install with\ndocker run hello-world",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/Docker/docker.html#commands",
+    "href": "tutorials/Docker/docker.html#commands",
+    "title": "Docker",
+    "section": "Commands",
+    "text": "Commands\nTo take an image from the Docker Hub\ndocker pull &lt;name-of-image&gt;\nTo check the images on the system\ndocker images\nTo run a Docker container based on the image. NOTE: Without any arguments, generally not much will happen. If you run a neuroimaging function, generally the function usage will be output.\ndocker run &lt;name-of-image&gt;\nHere is a helpful link for docker run options: link\nUsing the container ID output from ‘docker images’ you can remove the container to free up space.\ndocker rm &lt;name-of-image&gt;\nIf the Docker container creates/manipulates files, unless otherwise specified these files are part of the container and will be removed when the container is. Read more about it here You need to pass the -v flag. For example: - Inside the container the app creates /usr/src/app/logs - To map to host machine -v ~/logs:/usr/src/app/logs",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "studentresources/index.html",
+    "href": "studentresources/index.html",
+    "title": "Student Resources",
+    "section": "",
+    "text": "No matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Student Resources"
+    ]
+  },
+  {
+    "objectID": "mrimethods/eeg-fmri/index.html",
+    "href": "mrimethods/eeg-fmri/index.html",
+    "title": "EEG-fMRI",
+    "section": "",
+    "text": "Back to top"
   },
   {
     "objectID": "mrimethods/eeg-fmri/gradient-removal.html",
@@ -144,38 +317,22 @@
     ]
   },
   {
-    "objectID": "orientation/index.html",
-    "href": "orientation/index.html",
-    "title": "Orientation",
+    "objectID": "mrimethods/index.html",
+    "href": "mrimethods/index.html",
+    "title": "MRI Methods",
     "section": "",
-    "text": "MRI Safety FAQ\n\n\n\n\n\n\nsafety\n\n\nmri\n\n\n\nYour frequently asked MRI safety questions answered\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMattermost: Instant Messaging / Stay in Touch\n\n\n\n\n\n\ncollaboration\n\n\nsoftware\n\n\ninstant messaging\n\n\n\nInstant messaging app for users of the research MRI facility\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Align AC PC to horizontal\n\n\n\n\n\n\nanat\n\n\nshell\n\n\ncode\n\n\nvisualization\n\n\nalignment\n\n\n\nTranslate your structural scans to AC-PC alignment for visualization and display.\n\n\n\n\n\nDec 4, 2024\n\n\nDanny Kim\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Data Cleaning & Forward Solution\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\neeglab\n\n\nmne\n\n\nfreesurfer\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nFeb 13, 2024\n\n\nLynne Williams\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
-      "Orientation"
+      "MRI Methods"
     ]
   },
   {
-    "objectID": "orientation/mrisafetyfaq.html",
-    "href": "orientation/mrisafetyfaq.html",
-    "title": "MRI Safety FAQ",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BCCH MRI Research Facility Wiki Page",
     "section": "",
-    "text": "Frequencly Asked Questions Answered\n[Note: the following was taken from here.\nThis is a rough guide; some things may no longer be accurate for our facility]\n\nCan you have an MRI if you have fillings, retainers or braces on your teeth?\n\nThe metal in most fillings is not affected by the MRI system’s magnetic field. However, the fillings may cause some distortion of the images if you are having a scan of the brain or facial area.\n\nCan I have an MRI exam if I have a permanent retainer or braces on my teeth?\n\nThe recommendation is not to scan a subject with retainers or braces because of distortion can occur that can affect the quality of the data.\n\nCan you have make-up on for an MRI?\n\nSome cosmetics contain metals that can interact with MRI magnets, so on the day of the MRI, if possible, ask your subject to not wear makeup. Also, minimize hairspray and forgo antiperspirants and sunscreens, which contain metals, that could interfere with the scan and reduce the quality of the images.\n\nCan you put on deodorant for an MRI?\n\nPlease refrain from wearing any powder, perfumes, deodorant and/or lotions on your underarms and breasts prior to the procedure. Since the MRI is a magnet, please let us know if you have any metal in or on your body.\n\nIs titanium safe for MRI?\n\nTitanium implants are MRI compatible. Subjects with nontitanium implants should inform the MRI safety officer 7 days prior to the procedure to check with the manufacture for condition that allow safely conducting an MRI scan.\n\nWhat do you wear for an MRI?\n\nIf the subject’s clothes have any metal fasteners or metallic design in close proximity to the anatomy being scanned, you should ask the subject to change into a hospital gown. If the clothing is made of a stretchy material, the subject must change into a hospital gown as a precautionary measure of safety to prevent possible burns to the skin. A locker will be supplied to secure their belongings.\n\nIs it safe to have an MRI while pregnant?\n\nUnless the research MRI study involves prenatal or pregnant subjects, pregnant subjects are excluded.\n\nAre piercings safe for MRI?\n\nIt is the policy to remove all piercings before you scan your subject to avoid any possible burns due to heating of the metal used in the piercings. Piercings, if not removed, i.e. earrings, will cause distortion to the image.\n\n\nSafety of frequently asked implant MRI compatibility:\nIf a subject has an implant it must be reviewed by the MRI safety officer before the subject can be scanned. Written documentation must be provided to determine the type of implant.\n\nHearing Aids and Other Hearing Systems\nUnsafe.\n\n\nHeart Valves and Annuloplasty Rings\nSafe to scan at 3T or less.\n\n\nHemostatic clips, other clips, fasteners, staples\nSafe at 3T or less.\n\n\nIUDs and other contraceptive devices\n\nCopper T and Copper 7: Safe at 1.5 T or less.\nCopper T 380A: Safe at 3T or less.\nStainless steel IUDs: Unsafe.\nMirena IUD: Safe.\nImplanon implant: Safe.\nEssure: Safe to scan at 3T or less.\n\n\n\nMagnetically activated implants and devices\nUnsafe.\n\n\nNeurostimulation system\nUnsafe.\n\n\nOtologic Implants\nUnsafe.\n\n\nPenile Implants\nUnsafe – Duraphase or Omniphase.\n\n\nPessary/Pessaries\nUnsafe – metallic. Safe – nonmetallic.\n\n\nOrthopedic implants\nMust check manufactures conditions for MRI safety.\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "Orientation",
-      "MRI Safety FAQ"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/index.html",
-    "href": "mrisoftware/index.html",
-    "title": "MRI Software",
-    "section": "",
-    "text": "No matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "MRI Software"
-    ]
+    "text": "Overview\nThis page serves as a Wiki and collection of resources for users of BC Children’s MRI Research Facility\nYou can search this page using the magnifying glass in the top right 🔍\nOr you can navigate using the sidebar on the left 👈\nIf you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us (similar to Slack or Microsoft Teams).\n\n\n\n\n Back to top"
   },
   {
     "objectID": "orientation/instantmessaging.html",
@@ -238,67 +395,14 @@
     ]
   },
   {
-    "objectID": "mrimethods/anat/acpc-align.html",
-    "href": "mrimethods/anat/acpc-align.html",
-    "title": "Align AC PC to horizontal",
-    "section": "",
-    "text": "Align to the Anterior Commissure-Posterior Commisure Line\nIf you need help determining where the Anterior and Posterior Commisures are in your image, please see Commissural Pathways, available online, or Catani & Thiebaut de Schotten (2012), which is available from the UBC Library.\n\nDownload the acpc_align script from here. Be sure the code is in the folder where your participant’s structural scans are.\nMake the acpc_align.sh script executable.\n\nchmod 755 acpc_align.sh\n\nOpen your structural scan in your faviourite viewer. Here we are using FSLeyes.\n\n\n\n\nFSLeyes\n\n\n\nGet the X, Y and Z coordinates of the anterior commissure in voxel space by placing your cursor on the anterior commissure. The anterior commissure is located in the anterior wall of the third ventricle. It runs transversely anterior to the anterior columns of the fornix, above the basal forebrain and beneath the medial and ventral aspect of the anterior limb of the internal capsule. Save the X, Y, and Z coordinates.\n\n\n\n\nAnterior Commissure\n\n\n\nGet the X, Y, and Z coordinates of the posterior commissure in voxel space by placing your cursor on the posterior commissure. The posterior commissure is the inferior lamina or stalk of the pineal gland. Save the X, Y, and Z coordinates.\n\n\n\n\nPosterior Commissure\n\n\n\nIn your terminal (MacOS or Linux) run\n\nacpc_align subjectbrain.nii.gz -a x y z -p x y z\nto produce the realigned image for subject-specific to acpc alignment.\nIn the example, this is\nsh acpc_align.sh T1_reoriented.nii.gz -a 93 130 153 -p 93 98 152\n\n\n\nacpc aligned image\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "MRI Methods",
-      "Anat",
-      "Align AC PC to horizontal"
-    ]
-  },
-  {
-    "objectID": "mrimethods/eeg-fmri/index.html",
-    "href": "mrimethods/eeg-fmri/index.html",
-    "title": "EEG-fMRI",
-    "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "mrimethods/index.html",
-    "href": "mrimethods/index.html",
-    "title": "MRI Methods",
-    "section": "",
-    "text": "Align AC PC to horizontal\n\n\n\n\n\n\nanat\n\n\nshell\n\n\ncode\n\n\nvisualization\n\n\nalignment\n\n\n\nTranslate your structural scans to AC-PC alignment for visualization and display.\n\n\n\n\n\nDec 4, 2024\n\n\nDanny Kim\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Data Cleaning & Forward Solution\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\neeglab\n\n\nmne\n\n\nfreesurfer\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nFeb 13, 2024\n\n\nLynne Williams\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "MRI Methods"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "The BC Children’s Hospital MRI Research Facility is one of Canada’s top centres for pediatric brain mapping and imaging sciences research.\nA core facility of the BC Children’s Hospital’s Research Institute and affiliated with the University of British Columbia, the child-friendly environment of the MRI Research Facility is ideally situated to optimize opportunities for widespread research collaborations with the highly skilled staff found at BC Children’s Hospital and BC Women’s Hospital + Health Centre.\nThe MRI Research Facility features a GE Discovery MR750 3.0 Tesla MRI scanner for functional MRI, structural MRI and spectroscopy. The current scanner software version is DV26.0_R03.\nTogether, with our child-friendly MRI simulator, the MRI Research Facility provides an excellent platform for performing research studies on babies and young children.\n\n\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "About"
-    ]
-  },
-  {
-    "objectID": "mriscanners/index.html",
-    "href": "mriscanners/index.html",
-    "title": "MRI Scanners",
+    "objectID": "mrisoftware/index.html",
+    "href": "mrisoftware/index.html",
+    "title": "MRI Software",
     "section": "",
     "text": "No matching items\n\n Back to top",
     "crumbs": [
       "Home",
-      "MRI Scanners"
-    ]
-  },
-  {
-    "objectID": "investigatorresources/index.html",
-    "href": "investigatorresources/index.html",
-    "title": "Investigator Resources",
-    "section": "",
-    "text": "No matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "Investigator Resources"
+      "MRI Software"
     ]
   }
 ]

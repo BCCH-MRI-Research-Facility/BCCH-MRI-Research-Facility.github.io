@@ -1,14 +1,6 @@
 [
   {
-    "listing": "/studentresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/scienceresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/tutorials/index.html",
+    "listing": "/investigatorresources/index.html",
     "items": []
   },
   {
@@ -19,7 +11,21 @@
     ]
   },
   {
-    "listing": "/mrisoftware/index.html",
+    "listing": "/mriscanners/index.html",
+    "items": []
+  },
+  {
+    "listing": "/scienceresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/tutorials/index.html",
+    "items": [
+      "/tutorials/Docker/docker.html"
+    ]
+  },
+  {
+    "listing": "/studentresources/index.html",
     "items": []
   },
   {
@@ -31,11 +37,7 @@
     ]
   },
   {
-    "listing": "/mriscanners/index.html",
-    "items": []
-  },
-  {
-    "listing": "/investigatorresources/index.html",
+    "listing": "/mrisoftware/index.html",
     "items": []
   }
 ]
