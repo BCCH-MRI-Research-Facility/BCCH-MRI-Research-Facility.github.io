@@ -20,9 +20,7 @@
   },
   {
     "listing": "/tutorials/index.html",
-    "items": [
-      "/tutorials/Docker/docker.html"
-    ]
+    "items": []
   },
   {
     "listing": "/studentresources/index.html",

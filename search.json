@@ -112,7 +112,7 @@
     "href": "tutorials/index.html",
     "title": "Tutorials",
     "section": "",
-    "text": "Docker\n\n\n\n\n\n\nsoftware\n\n\nreproducible\n\n\n\nAutomates the Deployment of Software Applications Inside Containers\n\n\n\n\n\nFeb 13, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "No matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "Tutorials"
@@ -130,106 +130,98 @@
     ]
   },
   {
-    "objectID": "tutorials/Docker/docker.html",
-    "href": "tutorials/Docker/docker.html",
+    "objectID": "tutorials/docker.html",
+    "href": "tutorials/docker.html",
     "title": "Docker",
     "section": "",
-    "text": "an open-source project that automates the deployment of software applications inside containers by providing an additional layer of abstraction and automation of OS-level virtualization on Linux.\n\nLet’s begin with a lengthy analogy that will hopefully motivate the usefulness of Docker (and send light on the wordy definitions, as given above). I have summarised the analogy from this post, so have a look there if anything immediately below does not make sense.\nLet’s think about shipping containers (part of Docker logo). Before shipping containers were used, international trade was inefficient, workers would fill ships up with cargo of different sizes and requirements (e.g. fragile or refrigerated). Depending on the size and shape of the ship vs. the size and shape of the cargo a lot of the time the cargo was not compatible or would result in it perishing/breaking.\nThen came along containers,\n\nContainers were standardised so that loading and unloading became efficient.\nAnything that happened inside the container was the containers fault and not the ships. The merchants were responsible for securing everything inside.\nThe containers only need a sturdy enough ship to carry them (i.e. they don’t care about model, shape or size).\n\nWhat happens if the ship sinks (i.e. computer goes down, OS runs out of memory), unlike a shipping container where its contents are lost. You use a Dockerfile (analogous to a seed) to sprout up a new container. Re-creating the container is very easy, they can also be set-up so that backups are kept or that another container will be automatically birthed and carry on the task if one goes down.\nWhy hasn’t Docker taken over. Similar to international trade, shipping containers are very helpful, but they need someone to load, unload and ship. In the same way, the infrastructure necessary to fully take advantage of Docker is still on its way.\nTake away\n\nDocker containers package everything needed. e.g. If you order a car building kit you would get a big container containing all the different parts in smaller boxes vs. picking all individual parts at separate stores.\nPredictable environment. To re-make another car you can re-order the same package and be confident you’ll get the exact same kit vs. having to revisit all the stores again, likely to make a mistake.\nDocker isolated from other packages. e.g. If you are building your car alongside a motorbike project you would two separate piles for your parts vs. having all the parts in one pile and accidentally using a screw that may initially fit but ends up falling out and ruining the car.\n\n\n\n\n\n\n\ndockervsvirtual\n\n\nBelow is a summary of the following post, I would encourage reading through the post for more detail.\n\n\nA virtual machine is a virtual server that emulates a hardware server. i.e Hardware not in your computer is used to create a full computer environment that you can use to run an application. For example parallels can be used as an Apple user to run Windows applications on their Apple computer. NOTE: You will be in a Windows environment so you cannot run an Apple application but you can transfer files back and forth.\n\n\n\nDocker uses containers that are platform independent (run across Windows and Linux). It’s main purpose is to run microservice applications, exactly what we need for neuroimaging applications. Docker is not a one-size-fits-all solution.\n\n\n\n\nDocker isolates individual applications vs. VM isolating entire systems (i.e. you can use containers inside VM’s)\nA Docker container can boot in less than a second vs. VM can take up to a few minutes\nUse a Docker container to package code and its dependencies so that the code is easily shared with Dev, QA and IT.\nDocker has version control, can be compared to GitHub\n\nNOTE: Docker containers are lightweight compared to VM’s however, similar to having an empty or even unused container on a ship. It is advised to remove the container, remember (like a seed) it is easy to re-create the container if you have a Docker File.",
+    "text": "dockerlogo",
     "crumbs": [
       "Home",
       "Tutorials",
-      "Docker",
       "Docker"
     ]
   },
   {
-    "objectID": "tutorials/Docker/docker.html#what-is-docker",
-    "href": "tutorials/Docker/docker.html#what-is-docker",
+    "objectID": "tutorials/docker.html#what-is-docker",
+    "href": "tutorials/docker.html#what-is-docker",
     "title": "Docker",
-    "section": "",
-    "text": "an open-source project that automates the deployment of software applications inside containers by providing an additional layer of abstraction and automation of OS-level virtualization on Linux.\n\nLet’s begin with a lengthy analogy that will hopefully motivate the usefulness of Docker (and send light on the wordy definitions, as given above). I have summarised the analogy from this post, so have a look there if anything immediately below does not make sense.\nLet’s think about shipping containers (part of Docker logo). Before shipping containers were used, international trade was inefficient, workers would fill ships up with cargo of different sizes and requirements (e.g. fragile or refrigerated). Depending on the size and shape of the ship vs. the size and shape of the cargo a lot of the time the cargo was not compatible or would result in it perishing/breaking.\nThen came along containers,\n\nContainers were standardised so that loading and unloading became efficient.\nAnything that happened inside the container was the containers fault and not the ships. The merchants were responsible for securing everything inside.\nThe containers only need a sturdy enough ship to carry them (i.e. they don’t care about model, shape or size).\n\nWhat happens if the ship sinks (i.e. computer goes down, OS runs out of memory), unlike a shipping container where its contents are lost. You use a Dockerfile (analogous to a seed) to sprout up a new container. Re-creating the container is very easy, they can also be set-up so that backups are kept or that another container will be automatically birthed and carry on the task if one goes down.\nWhy hasn’t Docker taken over. Similar to international trade, shipping containers are very helpful, but they need someone to load, unload and ship. In the same way, the infrastructure necessary to fully take advantage of Docker is still on its way.\nTake away\n\nDocker containers package everything needed. e.g. If you order a car building kit you would get a big container containing all the different parts in smaller boxes vs. picking all individual parts at separate stores.\nPredictable environment. To re-make another car you can re-order the same package and be confident you’ll get the exact same kit vs. having to revisit all the stores again, likely to make a mistake.\nDocker isolated from other packages. e.g. If you are building your car alongside a motorbike project you would two separate piles for your parts vs. having all the parts in one pile and accidentally using a screw that may initially fit but ends up falling out and ruining the car.",
+    "section": "What is Docker",
+    "text": "What is Docker\n\nan open-source project that automates the deployment of software applications inside containers by providing an additional layer of abstraction and automation of OS-level virtualization on Linux.\n\nLet’s begin with a lengthy analogy that will hopefully motivate the usefulness of Docker (and send light on the wordy definitions, as given above). I have summarised the analogy from this post, so have a look there if anything immediately below does not make sense.\nLet’s think about shipping containers (part of Docker logo). Before shipping containers were used, international trade was inefficient, workers would fill ships up with cargo of different sizes and requirements (e.g. fragile or refrigerated). Depending on the size and shape of the ship vs. the size and shape of the cargo a lot of the time the cargo was not compatible or would result in it perishing/breaking.\nThen came along containers,\n\nContainers were standardised so that loading and unloading became efficient.\nAnything that happened inside the container was the containers fault and not the ships. The merchants were responsible for securing everything inside.\nThe containers only need a sturdy enough ship to carry them (i.e. they don’t care about model, shape or size).\n\nWhat happens if the ship sinks (i.e. computer goes down, OS runs out of memory), unlike a shipping container where its contents are lost. You use a Dockerfile (analogous to a seed) to sprout up a new container. Re-creating the container is very easy, they can also be set-up so that backups are kept or that another container will be automatically birthed and carry on the task if one goes down.\nWhy hasn’t Docker taken over. Similar to international trade, shipping containers are very helpful, but they need someone to load, unload and ship. In the same way, the infrastructure necessary to fully take advantage of Docker is still on its way.\nTake away\n\nDocker containers package everything needed. e.g. If you order a car building kit you would get a big container containing all the different parts in smaller boxes vs. picking all individual parts at separate stores.\nPredictable environment. To re-make another car you can re-order the same package and be confident you’ll get the exact same kit vs. having to revisit all the stores again, likely to make a mistake.\nDocker isolated from other packages. e.g. If you are building your car alongside a motorbike project you would two separate piles for your parts vs. having all the parts in one pile and accidentally using a screw that may initially fit but ends up falling out and ruining the car.",
     "crumbs": [
       "Home",
       "Tutorials",
-      "Docker",
       "Docker"
     ]
   },
   {
-    "objectID": "tutorials/Docker/docker.html#docker-vs.-virtual-machine",
-    "href": "tutorials/Docker/docker.html#docker-vs.-virtual-machine",
+    "objectID": "tutorials/docker.html#docker-vs.-virtual-machine",
+    "href": "tutorials/docker.html#docker-vs.-virtual-machine",
     "title": "Docker",
-    "section": "",
-    "text": "dockervsvirtual\n\n\nBelow is a summary of the following post, I would encourage reading through the post for more detail.\n\n\nA virtual machine is a virtual server that emulates a hardware server. i.e Hardware not in your computer is used to create a full computer environment that you can use to run an application. For example parallels can be used as an Apple user to run Windows applications on their Apple computer. NOTE: You will be in a Windows environment so you cannot run an Apple application but you can transfer files back and forth.\n\n\n\nDocker uses containers that are platform independent (run across Windows and Linux). It’s main purpose is to run microservice applications, exactly what we need for neuroimaging applications. Docker is not a one-size-fits-all solution.\n\n\n\n\nDocker isolates individual applications vs. VM isolating entire systems (i.e. you can use containers inside VM’s)\nA Docker container can boot in less than a second vs. VM can take up to a few minutes\nUse a Docker container to package code and its dependencies so that the code is easily shared with Dev, QA and IT.\nDocker has version control, can be compared to GitHub\n\nNOTE: Docker containers are lightweight compared to VM’s however, similar to having an empty or even unused container on a ship. It is advised to remove the container, remember (like a seed) it is easy to re-create the container if you have a Docker File.",
+    "section": "Docker vs. Virtual Machine",
+    "text": "Docker vs. Virtual Machine\n\n\n\ndockervsvirtual\n\n\nBelow is a summary of the following post, I would encourage reading through the post for more detail.\n\nVirtual Machine\nA virtual machine is a virtual server that emulates a hardware server. i.e Hardware not in your computer is used to create a full computer environment that you can use to run an application. For example parallels can be used as an Apple user to run Windows applications on their Apple computer. NOTE: You will be in a Windows environment so you cannot run an Apple application but you can transfer files back and forth.\n\n\nDocker\nDocker uses containers that are platform independent (run across Windows and Linux). It’s main purpose is to run microservice applications, exactly what we need for neuroimaging applications. Docker is not a one-size-fits-all solution.\n\n\nDifferences\n\nDocker isolates individual applications vs. VM isolating entire systems (i.e. you can use containers inside VM’s)\nA Docker container can boot in less than a second vs. VM can take up to a few minutes\nUse a Docker container to package code and its dependencies so that the code is easily shared with Dev, QA and IT.\nDocker has version control, can be compared to GitHub\n\nNOTE: Docker containers are lightweight compared to VM’s however, similar to having an empty or even unused container on a ship. It is advised to remove the container, remember (like a seed) it is easy to re-create the container if you have a Docker File.",
     "crumbs": [
       "Home",
       "Tutorials",
-      "Docker",
       "Docker"
     ]
   },
   {
-    "objectID": "tutorials/Docker/docker.html#getting-started",
-    "href": "tutorials/Docker/docker.html#getting-started",
+    "objectID": "tutorials/docker.html#getting-started",
+    "href": "tutorials/docker.html#getting-started",
     "title": "Docker",
     "section": "Getting Started",
     "text": "Getting Started\nDocker’s own Getting Started Guide",
     "crumbs": [
       "Home",
       "Tutorials",
-      "Docker",
       "Docker"
     ]
   },
   {
-    "objectID": "tutorials/Docker/docker.html#install",
-    "href": "tutorials/Docker/docker.html#install",
+    "objectID": "tutorials/docker.html#install",
+    "href": "tutorials/docker.html#install",
     "title": "Docker",
     "section": "Install",
     "text": "Install\nMac, Linux, and Windows",
     "crumbs": [
       "Home",
       "Tutorials",
-      "Docker",
       "Docker"
     ]
   },
   {
-    "objectID": "tutorials/Docker/docker.html#terminology",
-    "href": "tutorials/Docker/docker.html#terminology",
+    "objectID": "tutorials/docker.html#terminology",
+    "href": "tutorials/docker.html#terminology",
     "title": "Docker",
     "section": "Terminology",
     "text": "Terminology\n\nImages: The blueprints of our application which form the basis of containers.\nContainers: Created from Docker images and run the actual application.\nDocker Daemon: The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system which clients talk to.\nDocker Client: The command line tool that allows the user to interact with the daemon.\nDocker Hub: A registry of Docker images (similar idea to GitHub or HomeBrew).",
     "crumbs": [
       "Home",
       "Tutorials",
-      "Docker",
       "Docker"
     ]
   },
   {
-    "objectID": "tutorials/Docker/docker.html#set-up",
-    "href": "tutorials/Docker/docker.html#set-up",
+    "objectID": "tutorials/docker.html#set-up",
+    "href": "tutorials/docker.html#set-up",
     "title": "Docker",
     "section": "Set-up",
     "text": "Set-up\nTest the install with\ndocker run hello-world",
     "crumbs": [
       "Home",
       "Tutorials",
-      "Docker",
       "Docker"
     ]
   },
   {
-    "objectID": "tutorials/Docker/docker.html#commands",
-    "href": "tutorials/Docker/docker.html#commands",
+    "objectID": "tutorials/docker.html#commands",
+    "href": "tutorials/docker.html#commands",
     "title": "Docker",
     "section": "Commands",
-    "text": "Commands\nTo take an image from the Docker Hub\ndocker pull &lt;name-of-image&gt;\nTo check the images on the system\ndocker images\nTo run a Docker container based on the image. NOTE: Without any arguments, generally not much will happen. If you run a neuroimaging function, generally the function usage will be output.\ndocker run &lt;name-of-image&gt;\nHere is a helpful link for docker run options: link\nUsing the container ID output from ‘docker images’ you can remove the container to free up space.\ndocker rm &lt;name-of-image&gt;\nIf the Docker container creates/manipulates files, unless otherwise specified these files are part of the container and will be removed when the container is. Read more about it here You need to pass the -v flag. For example: - Inside the container the app creates /usr/src/app/logs - To map to host machine -v ~/logs:/usr/src/app/logs",
+    "text": "Commands\nTo take an image from the Docker Hub\ndocker pull &lt;name-of-image&gt;\nTo check the images on the system\ndocker images\nTo run a Docker container based on the image. NOTE: Without any arguments, generally not much will happen. If you run a neuroimaging function, generally the function usage will be output.\ndocker run &lt;name-of-image&gt;\nHere is a helpful link for docker run options: link\nUsing the container ID output from ‘docker images’ you can remove the container to free up space.\ndocker rm &lt;name-of-image&gt;\nIf the Docker container creates/manipulates files, unless otherwise specified these files are part of the container and will be removed when the container is. Read more about it here\nYou will need to pass the -v flag.\nFor example:\n\nInside the container the app creates /usr/src/app/logs\nTo map to host machine -v ~/logs:/usr/src/app/logs",
     "crumbs": [
       "Home",
       "Tutorials",
-      "Docker",
       "Docker"
     ]
   },
