@@ -10,7 +10,7 @@ categories:
     - reproducible
 ---
 
-![dockerlogo](../img/dockerlogo.png)
+![](../img/dockerlogo.png)
 
 # Introduction
 
@@ -44,7 +44,7 @@ Similar to international trade, shipping containers are very helpful, but they n
 
 ## Docker vs. Virtual Machine
 
-![dockervsvirtual](../../img/docker.png)
+![](../../img/docker.png)
 
 Below is a summary of the [following post](hhttps://www.aquasec.com/cloud-native-academy/docker-container/docker-containers-vs-virtual-machines/ttps://link), I would encourage reading through the post for more detail.
 
