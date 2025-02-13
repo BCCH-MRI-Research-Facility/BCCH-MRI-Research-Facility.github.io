@@ -1,0 +1,167 @@
+---
+title: "Git"
+description: "Allows you to keep track of changes to documents, and also to collaborate and work together"
+author: "Alexander Weber"
+date: "2025-02-13"
+date-modified: "2025-02-13"
+highlight-style: github
+categories:
+    - software
+    - version control
+---
+
+![](../img/gitlogo.png)
+
+# Intro {#GitforVersionControl-Intro}
+
+A beginner's guide:
+[link](https://developers.redhat.com/articles/2023/08/02/beginners-guide-git-version-control#publishing_changes__git_push)
+
+## What is Version Control?
+
+Git version control is an excellent application that allows you to keep
+track of changes to documents, and also to collaborate and work
+together. We use it a lot in the lab to save our code, share our code
+publicly with the science community, and to collaborate on projects.
+
+Software Carpentry has a good tutorial: [Version Control with Git](http://swcarpentry.github.io/git-novice)
+
+# Install
+
+[Install guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+# Github 
+
+Git and Github are two different things that sometimes get confused for each other. Basically, Git is a version control system that lets you manage and keep track of your source code history. GitHub is a cloud-based hosting service (owned by Microsoft) that lets you manage Git repositories. Alternatives to Github include: [GitLab](https://about.gitlab.com/), [Bitbucket](hhttps://bitbucket.org/product/ttps://), Codebase, and more.
+
+BCCHR's github is located at [https://github.com/BCCH-MRI-Research-Facility/](https://github.com/BCCH-MRI-Research-Facility/)
+
+**If you don't yet have a** [**github.com**](http://github.com) **account, you should go there and create one.**
+
+Github often uses Markdown in order to facility writing well organized files. A cheatsheet for Markdown syntax can be found [here](https://www.markdownguide.org/cheat-sheet/)
+
+## Connecting to Github with SSH
+
+If you don\'t want to have to put your username and password in every time:
+
+[No Password Guide](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
+
+Basically, you will create a SSH key (or use an existing one):
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+Then you will run:
+
+```bash
+gh ssh-key add ~/.ssh/id_ed25519.pub
+```
+
+Note, you will need to install `gh`, and run `gh auth login`
+
+For `gh auth login`, pick:
+
+- GitHub.com
+- SSH
+- your key you want to upload
+- Login with a web browser
+
+# Useful Git Commands
+
+## Start a repository
+
+Create a folder, enter the folder, then type:
+
+```bash
+git init .
+```
+Now, head to your Github account and [create a new repo](https://github.com/organizations/WeberLab/repositories/new)
+
+Name your new repo and click `Create New Repository`
+
+Now, in the command line type:
+
+```bash
+echo "# Title" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:WeberLab/Title.git
+git push -u origin main
+```
+
+Where `Title` is the name of your new repo
+
+## Update a repository
+
+Check status of remote origin (if any changes have been made on the Github):
+
+```bash
+git remote update
+git pull
+```
+
+## Clone a repository
+
+You can clone a remote repository to create a local repository on your computer
+
+For example,
+
+```bash
+git clone https://github.com/<YourGithubAccountName>/<YourRepoName>
+```
+
+## Push to the repository
+
+You can push any changes you make on your local repository to the remote repository. Make sure your current working directory is your local repository, then use the following commands:
+
+```bash
+git add <filename>
+git commit -m "Comment about what you added"
+git push origin <branchname>
+```
+
+## Branches
+
+You can create branches to add or modify features of the master code.\
+To create a new branch, use command:
+
+```bash
+git checkout -b <branchname>
+```
+
+Then you can add, commit and push to that branch as specified above.
+Note: use \<branchname\> main if you want to commit to main.
+
+You can switch between branches using the command:
+
+```bash
+git checkout <branchname>
+```
+
+You can check what branch you are in using the command:
+
+```bash
+git branch
+```
+
+Since branches are such an important topic, check out this website which is an excellent resource to understand them more intuitively:
+[https://learngitbranching.js.org/](https://learngitbranching.js.org/)
+
+# Making a GitHub Website with RStudio and GitHub Pages
+
+[https://resources.github.com/whitepapers/github-and-rstudio/](https://resources.github.com/whitepapers/github-and-rstudio/)
+
+# Git Large File Storage
+
+\[Git Large File Storage
+[https://git-lfs.github.com/](https://git-lfs.github.com/) \] can be used to store and retrieve large files.\
+If you\'ve pulled a repo and the files seem incredibly small for what
+they should be, try:
+
+```bash
+git lfs pull
+```
+
