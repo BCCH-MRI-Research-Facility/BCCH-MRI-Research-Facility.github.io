@@ -108,25 +108,87 @@
     ]
   },
   {
-    "objectID": "tutorials/index.html",
-    "href": "tutorials/index.html",
-    "title": "Tutorials",
-    "section": "",
-    "text": "No matching items\n\n Back to top",
+    "objectID": "tutorials/git.html#what-is-version-control",
+    "href": "tutorials/git.html#what-is-version-control",
+    "title": "Git",
+    "section": "What is Version Control?",
+    "text": "What is Version Control?\nGit version control is an excellent application that allows you to keep track of changes to documents, and also to collaborate and work together. We use it a lot in the lab to save our code, share our code publicly with the science community, and to collaborate on projects.\nSoftware Carpentry has a good tutorial: Version Control with Git",
     "crumbs": [
       "Home",
-      "Tutorials"
+      "Tutorials",
+      "Git"
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "The BC Children’s Hospital MRI Research Facility is one of Canada’s top centres for pediatric brain mapping and imaging sciences research.\nA core facility of the BC Children’s Hospital’s Research Institute and affiliated with the University of British Columbia, the child-friendly environment of the MRI Research Facility is ideally situated to optimize opportunities for widespread research collaborations with the highly skilled staff found at BC Children’s Hospital and BC Women’s Hospital + Health Centre.\nThe MRI Research Facility features a GE Discovery MR750 3.0 Tesla MRI scanner for functional MRI, structural MRI and spectroscopy. The current scanner software version is DV26.0_R03.\nTogether, with our child-friendly MRI simulator, the MRI Research Facility provides an excellent platform for performing research studies on babies and young children.\n\n\n\n Back to top",
+    "objectID": "tutorials/git.html#connecting-to-github-with-ssh",
+    "href": "tutorials/git.html#connecting-to-github-with-ssh",
+    "title": "Git",
+    "section": "Connecting to Github with SSH",
+    "text": "Connecting to Github with SSH\nIf you don't want to have to put your username and password in every time:\nNo Password Guide\nBasically, you will create a SSH key (or use an existing one):\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nThen you will run:\ngh ssh-key add ~/.ssh/id_ed25519.pub\nNote, you will need to install gh, and run gh auth login\nFor gh auth login, pick:\n\nGitHub.com\nSSH\nyour key you want to upload\nLogin with a web browser",
     "crumbs": [
       "Home",
-      "About"
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#start-a-repository",
+    "href": "tutorials/git.html#start-a-repository",
+    "title": "Git",
+    "section": "Start a repository",
+    "text": "Start a repository\nCreate a folder, enter the folder, then type:\ngit init .\nNow, head to your Github account and create a new repo\nName your new repo and click Create New Repository\nNow, in the command line type:\necho \"# Title\" &gt;&gt; README.md\ngit init\ngit add README.md\ngit commit -m \"first commit\"\ngit branch -M main\ngit remote add origin git@github.com:WeberLab/Title.git\ngit push -u origin main\nWhere Title is the name of your new repo",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#update-a-repository",
+    "href": "tutorials/git.html#update-a-repository",
+    "title": "Git",
+    "section": "Update a repository",
+    "text": "Update a repository\nCheck status of remote origin (if any changes have been made on the Github):\ngit remote update\ngit pull",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#clone-a-repository",
+    "href": "tutorials/git.html#clone-a-repository",
+    "title": "Git",
+    "section": "Clone a repository",
+    "text": "Clone a repository\nYou can clone a remote repository to create a local repository on your computer\nFor example,\ngit clone https://github.com/&lt;YourGithubAccountName&gt;/&lt;YourRepoName&gt;",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#push-to-the-repository",
+    "href": "tutorials/git.html#push-to-the-repository",
+    "title": "Git",
+    "section": "Push to the repository",
+    "text": "Push to the repository\nYou can push any changes you make on your local repository to the remote repository. Make sure your current working directory is your local repository, then use the following commands:\ngit add &lt;filename&gt;\ngit commit -m \"Comment about what you added\"\ngit push origin &lt;branchname&gt;",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#branches",
+    "href": "tutorials/git.html#branches",
+    "title": "Git",
+    "section": "Branches",
+    "text": "Branches\nYou can create branches to add or modify features of the master code.\nTo create a new branch, use command:\ngit checkout -b &lt;branchname&gt;\nThen you can add, commit and push to that branch as specified above. Note: use &lt;branchname&gt; main if you want to commit to main.\nYou can switch between branches using the command:\ngit checkout &lt;branchname&gt;\nYou can check what branch you are in using the command:\ngit branch\nSince branches are such an important topic, check out this website which is an excellent resource to understand them more intuitively: https://learngitbranching.js.org/",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
     ]
   },
   {
@@ -211,6 +273,28 @@
       "Home",
       "Tutorials",
       "Docker"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "The BC Children’s Hospital MRI Research Facility is one of Canada’s top centres for pediatric brain mapping and imaging sciences research.\nA core facility of the BC Children’s Hospital’s Research Institute and affiliated with the University of British Columbia, the child-friendly environment of the MRI Research Facility is ideally situated to optimize opportunities for widespread research collaborations with the highly skilled staff found at BC Children’s Hospital and BC Women’s Hospital + Health Centre.\nThe MRI Research Facility features a GE Discovery MR750 3.0 Tesla MRI scanner for functional MRI, structural MRI and spectroscopy. The current scanner software version is DV26.0_R03.\nTogether, with our child-friendly MRI simulator, the MRI Research Facility provides an excellent platform for performing research studies on babies and young children.\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "About"
+    ]
+  },
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "No matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Tutorials"
     ]
   },
   {

@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Alexander Weber">
+<meta name="dcterms.date" content="2025-02-13">
+<meta name="description" content="Allows you to keep track of changes to documents, and also to collaborate and work together">
 
-<title>Tutorials – BC Children’s Research MRI Wiki</title>
+<title>Git – BC Children’s Research MRI Wiki</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,17 +68,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="..//img/magnet.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-86daaaaad7353f9cc0c554efc1dd6d94.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-be42407f4aef0d90c43f9db1a885ba93.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-04f3ac84f1421427d3afd98e7345bfb5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -71,35 +106,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B9X9W6319W"></script>
 
 <script type="text/javascript">
@@ -110,40 +116,14 @@ gtag('js', new Date());
 gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Tutorials – BC Children’s Research MRI Wiki">
-<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io//img/banner.png">
+<meta property="og:title" content="Git – BC Children’s Research MRI Wiki">
+<meta property="og:description" content="Allows you to keep track of changes to documents, and also to collaborate and work together">
+<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/img/gitlogo.png">
 <meta property="og:site_name" content="BC Children's Research MRI Wiki">
+<meta property="og:image:height" content="145">
+<meta property="og:image:width" content="347">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -206,7 +186,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/index.html">Tutorials</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/index.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/git.html">Git</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -272,7 +252,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../tutorials/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../tutorials/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tutorials</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -287,7 +267,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/git.html" class="sidebar-item-text sidebar-link">
+  <a href="../tutorials/git.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
@@ -368,22 +348,73 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#GitforVersionControl-Intro" id="toc-GitforVersionControl-Intro" class="nav-link active" data-scroll-target="#GitforVersionControl-Intro">Intro</a>
+  <ul class="collapse">
+  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
+  </ul></li>
+  <li><a href="#install" id="toc-install" class="nav-link" data-scroll-target="#install">Install</a></li>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">Github</a>
+  <ul class="collapse">
+  <li><a href="#connecting-to-github-with-ssh" id="toc-connecting-to-github-with-ssh" class="nav-link" data-scroll-target="#connecting-to-github-with-ssh">Connecting to Github with SSH</a></li>
+  </ul></li>
+  <li><a href="#useful-git-commands" id="toc-useful-git-commands" class="nav-link" data-scroll-target="#useful-git-commands">Useful Git Commands</a>
+  <ul class="collapse">
+  <li><a href="#start-a-repository" id="toc-start-a-repository" class="nav-link" data-scroll-target="#start-a-repository">Start a repository</a></li>
+  <li><a href="#update-a-repository" id="toc-update-a-repository" class="nav-link" data-scroll-target="#update-a-repository">Update a repository</a></li>
+  <li><a href="#clone-a-repository" id="toc-clone-a-repository" class="nav-link" data-scroll-target="#clone-a-repository">Clone a repository</a></li>
+  <li><a href="#push-to-the-repository" id="toc-push-to-the-repository" class="nav-link" data-scroll-target="#push-to-the-repository">Push to the repository</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
+  </ul></li>
+  <li><a href="#making-a-github-website-with-rstudio-and-github-pages" id="toc-making-a-github-website-with-rstudio-and-github-pages" class="nav-link" data-scroll-target="#making-a-github-website-with-rstudio-and-github-pages">Making a GitHub Website with RStudio and GitHub Pages</a></li>
+  <li><a href="#git-large-file-storage" id="toc-git-large-file-storage" class="nav-link" data-scroll-target="#git-large-file-storage">Git Large File Storage</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/tutorials/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/tutorials/git.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/index.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/git.html">Git</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tutorials</h1>
-</div>
+<h1 class="title">Git</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">software</div>
+    <div class="quarto-category">version control</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Allows you to keep track of changes to documents, and also to collaborate and work together
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alexander Weber </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 13, 2025</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">February 13, 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -392,18 +423,108 @@ window.Quarto = {
 </header>
 
 
+<p><img src="../img/gitlogo.png" class="img-fluid"></p>
+<section id="GitforVersionControl-Intro" class="level1">
+<h1>Intro</h1>
+<p>A beginner’s guide: <a href="https://developers.redhat.com/articles/2023/08/02/beginners-guide-git-version-control#publishing_changes__git_push">link</a></p>
+<section id="what-is-version-control" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
+<p>Git version control is an excellent application that allows you to keep track of changes to documents, and also to collaborate and work together. We use it a lot in the lab to save our code, share our code publicly with the science community, and to collaborate on projects.</p>
+<p>Software Carpentry has a good tutorial: <a href="http://swcarpentry.github.io/git-novice">Version Control with Git</a></p>
+</section>
+</section>
+<section id="install" class="level1">
+<h1>Install</h1>
+<p><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install guide</a></p>
+</section>
+<section id="github" class="level1">
+<h1>Github</h1>
+<p>Git and Github are two different things that sometimes get confused for each other. Basically, Git is a version control system that lets you manage and keep track of your source code history. GitHub is a cloud-based hosting service (owned by Microsoft) that lets you manage Git repositories. Alternatives to Github include: <a href="https://about.gitlab.com/">GitLab</a>, <a href="hhttps://bitbucket.org/product/ttps://">Bitbucket</a>, Codebase, and more.</p>
+<p>BCCHR’s github is located at <a href="https://github.com/BCCH-MRI-Research-Facility/">https://github.com/BCCH-MRI-Research-Facility/</a></p>
+<p><strong>If you don’t yet have a</strong> <a href="http://github.com"><strong>github.com</strong></a> <strong>account, you should go there and create one.</strong></p>
+<p>Github often uses Markdown in order to facility writing well organized files. A cheatsheet for Markdown syntax can be found <a href="https://www.markdownguide.org/cheat-sheet/">here</a></p>
+<section id="connecting-to-github-with-ssh" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-to-github-with-ssh">Connecting to Github with SSH</h2>
+<p>If you don't want to have to put your username and password in every time:</p>
+<p><a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">No Password Guide</a></p>
+<p>Basically, you will create a SSH key (or use an existing one):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then you will run:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> ssh-key add ~/.ssh/id_ed25519.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note, you will need to install <code>gh</code>, and run <code>gh auth login</code></p>
+<p>For <code>gh auth login</code>, pick:</p>
+<ul>
+<li>GitHub.com</li>
+<li>SSH</li>
+<li>your key you want to upload</li>
+<li>Login with a web browser</li>
+</ul>
+</section>
+</section>
+<section id="useful-git-commands" class="level1">
+<h1>Useful Git Commands</h1>
+<section id="start-a-repository" class="level2">
+<h2 class="anchored" data-anchor-id="start-a-repository">Start a repository</h2>
+<p>Create a folder, enter the folder, then type:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, head to your Github account and <a href="https://github.com/organizations/WeberLab/repositories/new">create a new repo</a></p>
+<p>Name your new repo and click <code>Create New Repository</code></p>
+<p>Now, in the command line type:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"# Title"</span> <span class="op">&gt;&gt;</span> README.md</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add README.md</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"first commit"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin git@github.com:WeberLab/Title.git</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Where <code>Title</code> is the name of your new repo</p>
+</section>
+<section id="update-a-repository" class="level2">
+<h2 class="anchored" data-anchor-id="update-a-repository">Update a repository</h2>
+<p>Check status of remote origin (if any changes have been made on the Github):</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote update</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="clone-a-repository" class="level2">
+<h2 class="anchored" data-anchor-id="clone-a-repository">Clone a repository</h2>
+<p>You can clone a remote repository to create a local repository on your computer</p>
+<p>For example,</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>YourGithubAccountName<span class="op">&gt;</span>/<span class="op">&lt;</span>YourRepoName<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="push-to-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="push-to-the-repository">Push to the repository</h2>
+<p>You can push any changes you make on your local repository to the remote repository. Make sure your current working directory is your local repository, then use the following commands:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="op">&lt;</span>filename<span class="op">&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Comment about what you added"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branchname<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="branches" class="level2">
+<h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<p>You can create branches to add or modify features of the master code.<br>
+To create a new branch, use command:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> <span class="op">&lt;</span>branchname<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then you can add, commit and push to that branch as specified above. Note: use &lt;branchname&gt; main if you want to commit to main.</p>
+<p>You can switch between branches using the command:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>branchname<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can check what branch you are in using the command:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Since branches are such an important topic, check out this website which is an excellent resource to understand them more intuitively: <a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></p>
+</section>
+</section>
+<section id="making-a-github-website-with-rstudio-and-github-pages" class="level1">
+<h1>Making a GitHub Website with RStudio and GitHub Pages</h1>
+<p><a href="https://resources.github.com/whitepapers/github-and-rstudio/">https://resources.github.com/whitepapers/github-and-rstudio/</a></p>
+</section>
+<section id="git-large-file-storage" class="level1">
+<h1>Git Large File Storage</h1>
+<p>[Git Large File Storage <a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a> ] can be used to store and retrieve large files.<br>
+If you've pulled a repo and the files seem incredibly small for what they should be, try:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> lfs pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -826,4 +947,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/tutorials/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/tutorials/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/tutorials/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/tutorials/git.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
