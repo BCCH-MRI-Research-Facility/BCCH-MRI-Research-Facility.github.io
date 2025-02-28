@@ -1,29 +1,6 @@
 [
   {
-    "listing": "/investigatorresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/orientation/index.html",
-    "items": [
-      "/orientation/mrisafetyfaq.html",
-      "/orientation/instantmessaging.html"
-    ]
-  },
-  {
-    "listing": "/mriscanners/index.html",
-    "items": []
-  },
-  {
-    "listing": "/scienceresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/tutorials/index.html",
-    "items": []
-  },
-  {
-    "listing": "/studentresources/index.html",
+    "listing": "/mrisoftware/index.html",
     "items": []
   },
   {
@@ -35,7 +12,30 @@
     ]
   },
   {
-    "listing": "/mrisoftware/index.html",
+    "listing": "/studentresources/index.html",
     "items": []
+  },
+  {
+    "listing": "/tutorials/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mriscanners/index.html",
+    "items": []
+  },
+  {
+    "listing": "/scienceresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/investigatorresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/orientation/index.html",
+    "items": [
+      "/orientation/mrisafetyfaq.html",
+      "/orientation/instantmessaging.html"
+    ]
   }
 ]
