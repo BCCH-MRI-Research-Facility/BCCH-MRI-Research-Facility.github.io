@@ -2,78 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://BCCH-MRI-Research-Facility.github.io/mrisoftware/3D-Slicer.html</loc>
-    <lastmod>2025-03-11T17:44:56.632Z</lastmod>
+    <lastmod>2025-03-11T18:02:08.631Z</lastmod>
   </url>
   <url>
     <loc>https://BCCH-MRI-Research-Facility.github.io/orientation/mrisafetyfaq.html</loc>
-    <lastmod>2025-03-11T17:44:56.723Z</lastmod>
+    <lastmod>2025-03-11T18:02:08.719Z</lastmod>
   </url>
   <url>
     <loc>https://BCCH-MRI-Research-Facility.github.io/orientation/index.html</loc>
-    <lastmod>2025-03-11T17:44:56.723Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/mrimethods/eeg-fmri/ballistocardiogram-removal.html</loc>
-    <lastmod>2025-03-11T17:44:56.624Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/mrimethods/anat/acpc-align.html</loc>
-    <lastmod>2025-03-11T17:44:56.617Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/investigatorresources/index.html</loc>
-    <lastmod>2025-03-11T17:44:56.617Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/tutorials/git.html</loc>
-    <lastmod>2025-03-11T17:44:56.724Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/tutorials/docker.html</loc>
-    <lastmod>2025-03-11T17:44:56.724Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/scienceresources/index.html</loc>
-    <lastmod>2025-03-11T17:44:56.723Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/mriscanners/index.html</loc>
-    <lastmod>2025-03-11T17:44:56.632Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/index.html</loc>
-    <lastmod>2025-03-11T17:44:56.616Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/about.html</loc>
-    <lastmod>2025-03-11T17:44:56.614Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/tutorials/index.html</loc>
-    <lastmod>2025-03-11T17:44:56.724Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/tutorials/Python.html</loc>
-    <lastmod>2025-03-11T17:44:56.724Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/studentresources/index.html</loc>
-    <lastmod>2025-03-11T17:44:56.723Z</lastmod>
-  </url>
-  <url>
-    <loc>https://BCCH-MRI-Research-Facility.github.io/mrimethods/index.html</loc>
-    <lastmod>2025-03-11T17:44:56.632Z</lastmod>
+    <lastmod>2025-03-11T18:02:08.719Z</lastmod>
   </url>
   <url>
     <loc>https://BCCH-MRI-Research-Facility.github.io/mrimethods/eeg-fmri/gradient-removal.html</loc>
-    <lastmod>2025-03-11T17:44:56.624Z</lastmod>
+    <lastmod>2025-03-11T18:02:08.620Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/mrimethods/index.html</loc>
+    <lastmod>2025-03-11T18:02:08.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/studentresources/index.html</loc>
+    <lastmod>2025-03-11T18:02:08.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/tutorials/Python.html</loc>
+    <lastmod>2025-03-11T18:02:08.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/tutorials/index.html</loc>
+    <lastmod>2025-03-11T18:02:08.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/about.html</loc>
+    <lastmod>2025-03-11T18:02:08.610Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/index.html</loc>
+    <lastmod>2025-03-11T18:02:08.613Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/mriscanners/index.html</loc>
+    <lastmod>2025-03-11T18:02:08.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/scienceresources/index.html</loc>
+    <lastmod>2025-03-11T18:02:08.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/tutorials/docker.html</loc>
+    <lastmod>2025-03-11T18:02:08.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/tutorials/git.html</loc>
+    <lastmod>2025-03-11T18:02:08.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/investigatorresources/index.html</loc>
+    <lastmod>2025-03-11T18:02:08.613Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/mrimethods/anat/acpc-align.html</loc>
+    <lastmod>2025-03-11T18:02:08.613Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/mrimethods/eeg-fmri/ballistocardiogram-removal.html</loc>
+    <lastmod>2025-03-11T18:02:08.620Z</lastmod>
+  </url>
+  <url>
+    <loc>https://BCCH-MRI-Research-Facility.github.io/mrimethods/Anatomical.html</loc>
+    <lastmod>2025-03-11T18:02:08.613Z</lastmod>
   </url>
   <url>
     <loc>https://BCCH-MRI-Research-Facility.github.io/orientation/instantmessaging.html</loc>
-    <lastmod>2025-03-11T17:44:56.723Z</lastmod>
+    <lastmod>2025-03-11T18:02:08.719Z</lastmod>
   </url>
   <url>
     <loc>https://BCCH-MRI-Research-Facility.github.io/mrisoftware/index.html</loc>
-    <lastmod>2025-03-11T17:44:56.723Z</lastmod>
+    <lastmod>2025-03-11T18:02:08.718Z</lastmod>
   </url>
 </urlset>

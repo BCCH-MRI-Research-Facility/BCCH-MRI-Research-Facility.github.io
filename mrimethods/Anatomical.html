@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alex Weber">
+<meta name="dcterms.date" content="2025-03-11">
+<meta name="description" content="All things anatomical MRI">
+
+<title>Anatomical – BC Children’s Research MRI Wiki</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//img/magnet.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2b55042a3c8d90f6e1a102917772f1dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B9X9W6319W"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Anatomical – BC Children’s Research MRI Wiki">
+<meta property="og:description" content="All things anatomical MRI">
+<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/mrimethods/img/brainextractioncomparison.png">
+<meta property="og:site_name" content="BC Children's Research MRI Wiki">
+<meta property="og:image:height" content="1087">
+<meta property="og:image:width" content="720">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/magnet.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">BC Children’s Research MRI Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../about.html" aria-current="page"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://bsky.app/profile/bcch-mri-research.bsky.social"> 
+<span class="menu-text"><i class="fa-brands fa-bluesky" aria-label="bluesky"></i></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io">
+            Source Code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues">
+            Report a Bug
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../mrimethods/index.html">MRI Methods</a></li><li class="breadcrumb-item"><a href="../mrimethods/Anatomical.html">Anatomical</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+  <div id="quarto-announcement" data-announcement-id="f8092d23da6c63237c7941459c020985" class="alert alert-primary hidden"><div class="quarto-announcement-content">
+<p>🎉 Join our <a href="../orientation/instantmessaging.html">Mattermost</a> server to chat and collaborate; and follow us on <a href="https://bsky.app/profile/bcch-mri-research.bsky.social">Bluesky</a></p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../orientation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Orientation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../orientation/instantmessaging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mattermost: Instant Messaging / Stay in Touch</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../orientation/mrisafetyfaq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Safety FAQ</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../investigatorresources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Investigator Resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../studentresources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Student Resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scienceresources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Science Resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../tutorials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/docker.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Docker</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/Python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../mrisoftware/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Software</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrisoftware/3D-Slicer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3D Slicer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../mrimethods/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrimethods/Anatomical.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Anatomical</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Anat</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrimethods/anat/acpc-align.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Align AC PC to horizontal</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">EEG-fMRI</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrimethods/eeg-fmri/ballistocardiogram-removal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrimethods/eeg-fmri/gradient-removal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EEG-fMRI Data Cleaning &amp; Forward Solution</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mriscanners/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Scanners</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#registration" id="toc-registration" class="nav-link active" data-scroll-target="#registration">Registration</a>
+  <ul class="collapse">
+  <li><a href="#make-your-own-template" id="toc-make-your-own-template" class="nav-link" data-scroll-target="#make-your-own-template">Make your own template:</a></li>
+  <li><a href="#tips" id="toc-tips" class="nav-link" data-scroll-target="#tips">Tips</a></li>
+  </ul></li>
+  <li><a href="#bias-field-removal" id="toc-bias-field-removal" class="nav-link" data-scroll-target="#bias-field-removal">Bias Field Removal</a></li>
+  <li><a href="#neck-removal" id="toc-neck-removal" class="nav-link" data-scroll-target="#neck-removal">Neck removal</a></li>
+  <li><a href="#brain-segmentation-skull-stripping" id="toc-brain-segmentation-skull-stripping" class="nav-link" data-scroll-target="#brain-segmentation-skull-stripping">Brain Segmentation / Skull Stripping</a>
+  <ul class="collapse">
+  <li><a href="#comparison-of-methods" id="toc-comparison-of-methods" class="nav-link" data-scroll-target="#comparison-of-methods">Comparison of methods</a></li>
+  <li><a href="#bet" id="toc-bet" class="nav-link" data-scroll-target="#bet">BET</a></li>
+  <li><a href="#dskullstrip-afni" id="toc-dskullstrip-afni" class="nav-link" data-scroll-target="#dskullstrip-afni">3dSkullStrip (AFNI)</a></li>
+  <li><a href="#ants" id="toc-ants" class="nav-link" data-scroll-target="#ants">ANTs</a></li>
+  <li><a href="#antspynet" id="toc-antspynet" class="nav-link" data-scroll-target="#antspynet">ANTsPyNet</a></li>
+  <li><a href="#beast" id="toc-beast" class="nav-link" data-scroll-target="#beast">BEaST</a>
+  <ul class="collapse">
+  <li><a href="#installation-on-ubuntu" id="toc-installation-on-ubuntu" class="nav-link" data-scroll-target="#installation-on-ubuntu">Installation on Ubuntu:</a></li>
+  <li><a href="#script-to-run-beast" id="toc-script-to-run-beast" class="nav-link" data-scroll-target="#script-to-run-beast">Script to run BEaST:</a></li>
+  <li><a href="#git-script" id="toc-git-script" class="nav-link" data-scroll-target="#git-script">Git Script</a></li>
+  </ul></li>
+  <li><a href="#Anatomical-T1T2CombinationTechnique" id="toc-Anatomical-T1T2CombinationTechnique" class="nav-link" data-scroll-target="#Anatomical-T1T2CombinationTechnique">T1T2 Combination Technique</a>
+  <ul class="collapse">
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#robex" id="toc-robex" class="nav-link" data-scroll-target="#robex">ROBEX</a></li>
+  <li><a href="#flabel" id="toc-flabel" class="nav-link" data-scroll-target="#flabel">fLABEL</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#to-run" id="toc-to-run" class="nav-link" data-scroll-target="#to-run">To Run:</a></li>
+  </ul></li>
+  <li><a href="#neonates" id="toc-neonates" class="nav-link" data-scroll-target="#neonates">Neonates</a>
+  <ul class="collapse">
+  <li><a href="#dhcp-anatomical-pipeline" id="toc-dhcp-anatomical-pipeline" class="nav-link" data-scroll-target="#dhcp-anatomical-pipeline">dHCP Anatomical Pipeline</a></li>
+  </ul></li>
+  <li><a href="#ibeat" id="toc-ibeat" class="nav-link" data-scroll-target="#ibeat">iBEAT</a></li>
+  </ul></li>
+  <li><a href="#tissue-segmentation" id="toc-tissue-segmentation" class="nav-link" data-scroll-target="#tissue-segmentation">Tissue Segmentation</a>
+  <ul class="collapse">
+  <li><a href="#fsl_anat" id="toc-fsl_anat" class="nav-link" data-scroll-target="#fsl_anat">FSL_ANAT</a></li>
+  <li><a href="#fmriprep" id="toc-fmriprep" class="nav-link" data-scroll-target="#fmriprep">fmriprep</a></li>
+  <li><a href="#freesurfer" id="toc-freesurfer" class="nav-link" data-scroll-target="#freesurfer">Freesurfer</a></li>
+  <li><a href="#volbrain-online-tool" id="toc-volbrain-online-tool" class="nav-link" data-scroll-target="#volbrain-online-tool">VolBrain (online tool)</a></li>
+  </ul></li>
+  <li><a href="#creating-binary-masks-from-a-parcellation-scheme" id="toc-creating-binary-masks-from-a-parcellation-scheme" class="nav-link" data-scroll-target="#creating-binary-masks-from-a-parcellation-scheme">Creating Binary Masks from a Parcellation Scheme</a></li>
+  <li><a href="#newborn-brain-atlas-templates" id="toc-newborn-brain-atlas-templates" class="nav-link" data-scroll-target="#newborn-brain-atlas-templates">Newborn Brain Atlas / Templates</a></li>
+  <li><a href="#all-templates" id="toc-all-templates" class="nav-link" data-scroll-target="#all-templates">All templates:</a></li>
+  <li><a href="#d-print-your-brain" id="toc-d-print-your-brain" class="nav-link" data-scroll-target="#d-print-your-brain">3D Print Your Brain!</a></li>
+  <li><a href="#defacing-anonymizing" id="toc-defacing-anonymizing" class="nav-link" data-scroll-target="#defacing-anonymizing">Defacing (Anonymizing)</a>
+  <ul class="collapse">
+  <li><a href="#edit-header-info-on-nifti-files" id="toc-edit-header-info-on-nifti-files" class="nav-link" data-scroll-target="#edit-header-info-on-nifti-files">Edit Header Info on Nifti Files</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrimethods/Anatomical.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrimethods/Anatomical.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../mrimethods/index.html">MRI Methods</a></li><li class="breadcrumb-item"><a href="../mrimethods/Anatomical.html">Anatomical</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Anatomical</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">anat</div>
+    <div class="quarto-category">visualization</div>
+    <div class="quarto-category">alignment</div>
+    <div class="quarto-category">registration</div>
+    <div class="quarto-category">brain extraction</div>
+    <div class="quarto-category">segmentation</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    All things anatomical MRI
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alex Weber </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 11, 2025</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">March 11, 2025</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="registration" class="level1">
+<h1>Registration</h1>
+<p>This is a large topic, and you probably want to check out <a href="ANTs_224165953.html">ANTs</a></p>
+<p>But here is a nice tutorial to get you started on the ideas (linear, non-linear, inverse, apply warp, etc.)</p>
+<p><a href="https://fsl.fmrib.ox.ac.uk/fslcourse/graduate/lectures/practicals/registration/">https://fsl.fmrib.ox.ac.uk/fslcourse/graduate/lectures/practicals/registration/</a></p>
+<section id="make-your-own-template" class="level2">
+<h2 class="anchored" data-anchor-id="make-your-own-template">Make your own template:</h2>
+<p><a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT/FAQ#How_do_I_make_my_own_study-specific_template_image_with_FLIRT.3F">https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT/FAQ#How_do_I_make_my_own_study-specific_template_image_with_FLIRT.3F</a></p>
+<p>Or try ANTs: <code>antsMultivariateTemplateConstruction2.sh</code></p>
+</section>
+<section id="tips" class="level2">
+<h2 class="anchored" data-anchor-id="tips">Tips</h2>
+<p>Generally you want to register low to high resolution. Then, if that isn't he actual direction you want to go, you would invert the registration matrix and apply it in the oppposite direction.</p>
+</section>
+</section>
+<section id="bias-field-removal" class="level1">
+<h1>Bias Field Removal</h1>
+<p>See <a href="ANTs_224165953.html">ANTS</a></p>
+</section>
+<section id="neck-removal" class="level1">
+<h1>Neck removal</h1>
+<p>FSL Robust FOV will remove lower head and neck, which might help with later stages in brain extraction</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">robustfov</span> <span class="at">-i</span> <span class="op">&lt;</span>input<span class="op">&gt;</span> -r <span class="op">&lt;</span>output<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="brain-segmentation-skull-stripping" class="level1">
+<h1>Brain Segmentation / Skull Stripping</h1>
+<p>Brain extraction is one of the most important preprocessing steps in MRI analysis. The accuracy of brain segmentation is largely dependant on the precision of the brain extraction procedure used to remove non-brain tissues including scalp, fat, muscle, neck and eyeballs from head MR images.</p>
+<p>Developed methods for automatic brain extraction from adult brain MR images are classified into:</p>
+<ul>
+<li>Mathematical morphology-based methods</li>
+<li>Intensity-based methods</li>
+<li>Deformable surface-based methods</li>
+<li>Classification-based methods</li>
+<li>Atlas-based methods</li>
+</ul>
+<p><strong>Mathematical morphology-based methods</strong></p>
+<p>Sensitive to size and shape of structure elements used in morphological operations.</p>
+<p><strong>Intensity-based methods</strong></p>
+<p>The intensity bias caused by low resolution, low contrast, high imaging artefacts and high levels of noise reduces the accuracy.</p>
+<p><strong>Deformable surface-based methods</strong></p>
+<p>The performance depends on the noise level and the initial location of the evolving surface.</p>
+<p><strong>Classification-based methods</strong></p>
+<p><strong>Atlas-based methods</strong></p>
+<p>Most errors are due to registration errors. To reduce these errors, multi-atlas-based brain extraction methods have been proposed.</p>
+<section id="comparison-of-methods" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-of-methods">Comparison of methods</h2>
+<p><a href="https://sci-hub.st/10.1016/j.neuroimage.2017.08.021">Check this paper out</a></p>
+<blockquote class="blockquote">
+<p>"The overall analysis of the skull stripping techniques against the “silver-standard” consensus showed that <strong>STAPLE, ANTS and BEaST achieved the highest Dice coefficient metrics and had smaller variance (standard deviation), therefore they have high agreement with the consensus mask and their performance was consistent</strong>. STAPLE's Dice coefficient was significantly different compared to all the methods, except for ANTs and MBWSS.<br>
+The Dice coefficient metric represents a compromise between sensitivity (including brain tissue) and specificity (not including non-brain tissue). STAPLE, OPTIBET, BEaST and ANTS were found to be robust techniques; their Dice coefficients were higher than 0.9 for all 359 subjects assessed (Table 7). BSE, BET are the less consistent (robust) with higher standard deviations. MBWSS has the fourth highest Dice coefficient, it suffers from failing in some cases (13 subjects; Dice &lt;0.9) by leaving a big portion of the brain out of the segmentation mask. If we excluded these failures, MBWSS would have an average Dice coefficient of 97.58&nbsp;1.4 ± 9, which is close to the results obtained by ANTs and STAPLE."</p>
+</blockquote>
+<p>My own attempts, looking at ANTsPyNet, optimized bet, BEaST, and FastSurfer are as follows:</p>
+<p><img src="img/brainextractioncomparison.png" class="img-fluid"></p>
+</section>
+<section id="bet" class="level2">
+<h2 class="anchored" data-anchor-id="bet">BET</h2>
+<p>The go-to method (although probably shouldn't be)</p>
+<p>See <a href="FSL_224035133.html">FSL</a>'s page</p>
+<p>See this paper on optimizing: <a href="https://pubmed.ncbi.nlm.nih.gov/22484407/">https://pubmed.ncbi.nlm.nih.gov/22484407/</a></p>
+<blockquote class="blockquote">
+<p>"The removal of the neck slices, either externally or within BET, has a marked positive effect on the brain extraction quality. BET option "B" with f=0.1 after removal of the neck slices seems to work best for all acquisition protocols. "</p>
+</blockquote>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">robustfov</span> <span class="at">-i</span> T1w.nii.gz <span class="at">-r</span> T1w_noneck</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bet</span> T1w_noneck.nii.gz brain <span class="at">-m</span> <span class="at">-R</span> <span class="at">-B</span> <span class="at">-f</span> 0.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="dskullstrip-afni" class="level2">
+<h2 class="anchored" data-anchor-id="dskullstrip-afni">3dSkullStrip (AFNI)</h2>
+<p>To run, type <code>3dSkullStrip</code> to get a list of inputs/parameters</p>
+<p>Basic run:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">3dSkullStrip</span> <span class="at">-input</span> input_image.nii.gz <span class="at">-prefix</span> output_image.nii.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[note: final product may be deobliqued and no longer align with original image…]</p>
+<p>OR you can run @SSwarper [note: takes about 1hr]:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">@SSwarper</span> <span class="at">-input</span> ../T1w.nii.gz <span class="at">-base</span> MNI152_2009_template_SSW.nii.gz <span class="at">-subid</span> sub-001 <span class="at">-odir</span> group/o.aw_sub-001</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[note: final product may be deobliqued and no longer align with original image…]</p>
+</section>
+<section id="ants" class="level2">
+<h2 class="anchored" data-anchor-id="ants">ANTs</h2>
+<p><a href="https://andysbrainbook.readthedocs.io/en/latest/ANTs/ANTs_Overview.html">https://andysbrainbook.readthedocs.io/en/latest/ANTs/ANTs_Overview.html</a></p>
+<p><a href="https://dpaniukov.github.io/2016/06/06/brain-extraction-with-ants.html">https://dpaniukov.github.io/2016/06/06/brain-extraction-with-ants.html</a></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">antsBrainExtraction.sh</span> <span class="at">-d</span> 3 <span class="at">-a</span> sub-001_T1w_202.nii.gz <span class="at">-e</span> brainWithSkullTemplate.nii.gz <span class="at">-m</span> brainPrior.nii.gz <span class="at">-o</span> anat_Stripped.nii</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The option “-d 3” means that it is a three-dimensional image; “-a” indicates the anatomical image to be stripped; and “-e” is used to supply a template for skull-stripping. (which ones?) “-m” will generate a brain mask, and “-o” is the label for the output.</p>
+<p>Templates can be downloaded here: <a href="https://figshare.com/articles/dataset/ANTs_ANTsR_Brain_Templates/915436">https://figshare.com/articles/dataset/ANTs_ANTsR_Brain_Templates/915436</a></p>
+<p>[note: final product may be aligned to the template you use and no longer aligned with original image]</p>
+</section>
+<section id="antspynet" class="level2">
+<h2 class="anchored" data-anchor-id="antspynet">ANTsPyNet</h2>
+<p>I actually prefer this version of ANTs Brain Extraction to the above.</p>
+<p><a href="https://github.com/ANTsX/ANTsPy">https://github.com/ANTsX/ANTsPy</a><br>
+and <a href="https://github.com/ANTsX/ANTsPyNet">https://github.com/ANTsX/ANTsPyNet</a></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install antspyx</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install antspynet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In Python:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> antspynet <span class="im">import</span> brain_extraction</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ants <span class="im">import</span> atropos, get_ants_data, image_read, resample_image, get_mask</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>example_filename <span class="op">=</span> os.path.join(<span class="st">'../..'</span>, <span class="st">'T1w.nii.gz'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> image_read(example_filename)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>probability_brain_mask <span class="op">=</span> brain_extraction(img, modality<span class="op">=</span><span class="st">"t1"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>probability_brain_mask.to_file(<span class="st">'antsbrainmask.nii.gz'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bash:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> antsbrainmask.nii.gz <span class="at">-ref</span> ../../T1w.nii.gz <span class="at">-out</span> antsbrainmask_orig.nii.gz <span class="at">-applyxfm</span> <span class="at">-usesqform</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> antsbrainmask_orig.nii.gz <span class="at">-thr</span> 0.5 <span class="at">-bin</span> antsbrainmask_orig.nii.gz</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> antsbrainmask_orig.nii.gz <span class="at">-mul</span> ../../T1w.nii.gz antsbrain.nii.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or just use this one simple script: <a href="https://github.com/WeberLab/SkullStrip_ANTsPyNet/tree/main">https://github.com/WeberLab/SkullStrip_ANTsPyNet/tree/main</a></p>
+</section>
+<section id="beast" class="level2">
+<h2 class="anchored" data-anchor-id="beast">BEaST</h2>
+<p>BEaST is a software toolkit to extract brain from hight resolution T1 images. BEaST refers to Brain Extraction based on non-local Segmentation Technique which was published in Neuroimage by Eskildsen and colleagues (Eskildsen et al, 2012).</p>
+<p>Installation and tutorial can be found here:</p>
+<p><a href="https://rpubs.com/conge/beast_intro">https://rpubs.com/conge/beast_intro</a></p>
+<p>Citation: Simon F. Eskildsen, Pierrick Coupé, Vladimir Fonov, José V. Manjón, Kelvin K. Leung, Nicolas Guizard, Shafik N. Wassef, Lasse R. Østergaard, D. Louis Collins, and The Alzheimer's Disease Neuroimaging Initiative, BEaST: Brain extraction based on nonlocal segmentation technique, NeuroImage, vol.&nbsp;59(3), pp.&nbsp;2362-2373. ISSN 1053-8119, 10.1016/j.neuroimage.2011.09.012.</p>
+<section id="installation-on-ubuntu" class="level3">
+<h3 class="anchored" data-anchor-id="installation-on-ubuntu">Installation on Ubuntu:</h3>
+<p><strong>Dependencies</strong></p>
+<ol start="0" type="1">
+<li>You might need these installed:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install cmake-curses-gui</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>First install MINC</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://packages.bic.mni.mcgill.ca/minc-toolkit/Debian/minc-toolkit-1.9.18-20200813-Ubuntu_20.04-x86_64.deb</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> minc-toolkit-1.9.18-20200813-Ubuntu_20.04-x86_64.deb</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /opt/minc/1.9.18/minc-toolkit-config.sh</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBMINC_DIR</span><span class="op">=</span>/opt/minc/1.9.18/lib/cmake/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[note: please add source /opt/minc/1.9.18/minc-toolkit-config.sh into your bashrc file so you don't have to do it every time before running the toolkit:]</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"source /opt/minc/minc-toolkit-config.sh"</span> <span class="op">&gt;&gt;</span> ~/.bashrc<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[NOTE: if the above doesn't work, try: <a href="https://github.com/BIC-MNI/minc-toolkit-v2">https://github.com/BIC-MNI/minc-toolkit-v2</a> ]</p>
+<ol start="2" type="1">
+<li>Install NIfTI libraries</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install libnifti-dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Install library for Hierarchical Data Format 5 support</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install libhdf5-dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>BEaST Proper</strong></p>
+<ol start="4" type="1">
+<li>Download source code:</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo clone BIC-MNI/BEaST <span class="co">#note: this uses the git hub cli client; see [[[git]]]</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> BEaST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Compile and Install BEaST</li>
+</ol>
+<p>Run the code below to configure the installation.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ccmake</span> CMakeLists.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>At the step, you need to make sure all the path is correct in the CMakeList.txt. Type “c” to configure the installation and type “g” to generate configuration. If everything is correct, runt the code below to install BEaST to your system.</p>
+<p>For me, I needed to edit and include: /opt/minc/1.9.18/lib/cmake/</p>
+<p>More Troubleshooting:</p>
+<ul>
+<li>NIFTI_ROOT should be set to /usr if you installed NIfTI libraries</li>
+</ul>
+<p>using the package libnifti-dev</p>
+<ul>
+<li>If the compiler cannot find hdf5.h you probably need to install</li>
+</ul>
+<p>libhdf5-serial-dev</p>
+<ul>
+<li>If you get the message: "Could not find module FindLIBMINC.cmake or</li>
+</ul>
+<p>a configuration file for package LIBMINC.", you must point to the<br>
+directory containing either FindLIBMINC.cmake or<br>
+LIBMINCConfig.cmake. If you have installed MINC Tool Kit,<br>
+<a href="http://www.bic.mni.mcgill.ca/ServicesSoftware/ServicesSoftwareMincToolKit">http://www.bic.mni.mcgill.ca/ServicesSoftware/ServicesSoftwareMincToolKit</a> ,<br>
+the directory is most likely /opt/minc/lib</p>
+<ul>
+<li>make sure fsl's path isn't before your major ones: put this at the very end of your ~/.bashrc file:</li>
+</ul>
+<p>export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>Install BEaST Libraries</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://packages.bic.mni.mcgill.ca/tgz/beast-library-1.1.tar.gz</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> xzf beast-library-1.1.tar.gz</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv beast-library-1.1 /opt/minc/1.9.18share/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="script-to-run-beast" class="level3">
+<h3 class="anchored" data-anchor-id="script-to-run-beast">Script to run BEaST:</h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># BEaSTSkullStrip.sh</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using BEaST to do SkullStriping</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># [see here](https://github.com/FCP-INDI/C-PAC/wiki/Concise-Installation-Guide-for-BEaST) for instructions for BEaST.</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Qingyang Li</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2013-07-29</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># With major edits from Alex W</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co">#  </span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="co"># The script requires FSL, AFNI, BEaST, and MINC toolkit.</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="va">SECONDS</span><span class="op">=</span>0</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="va">MincPATH</span><span class="op">=</span><span class="st">'/opt/minc/1.9.18'</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> <span class="va">$MincPATH</span>/minc-toolkit-config.sh</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="va">MincLibPATH</span><span class="op">=</span><span class="st">"</span><span class="va">$MincPATH</span><span class="st">/share/beast-library-1.1/"</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="va">MNItemplatePATH</span><span class="op">=</span>~/Atlas/</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="va">MNI_DATAPATH</span><span class="op">=</span>~/Atlas/</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="va">cwd</span><span class="op">=</span><span class="va">$PWD</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$#</span> <span class="ot">-lt</span> 1  <span class="bu">]</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a><span class="cf">then</span></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">" USAGE ::  "</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"  BEaSTSkullStrip.sh &lt;input&gt; [output prefix] "</span> </span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"   input: anatomical image with skull, in nifti format "</span> </span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"   output: The program will output two nifti files "</span> </span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"      1) a skull stripped brain image; "</span>  </span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"      2) a skull stripped brain mask. "</span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"   Option: output prefix: the filename of the output files without extention"</span></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">" Example: BEaSTSkullStrip.sh ~/data/head.nii.gz ~/brain "</span> </span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>  <span class="bu">exit</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$#</span> <span class="ot">-eq</span> 1 <span class="bu">]</span></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a><span class="cf">then</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>  <span class="va">inputDir</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span> <span class="va">$1)</span></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="va">$inputDir</span> <span class="ot">==</span> <span class="st">"."</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>    <span class="va">inputDir</span><span class="op">=</span><span class="va">$cwd</span></span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>  <span class="va">filename</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">$1)</span></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>  <span class="va">inputFile</span><span class="op">=</span><span class="va">$inputDir</span>/<span class="va">$filename</span></span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>  <span class="va">extension</span><span class="op">=</span><span class="st">"</span><span class="va">${filename</span><span class="op">##</span><span class="pp">*</span>.<span class="va">}</span><span class="st">"</span></span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="va">$extension</span> <span class="ot">==</span> <span class="st">"gz"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a>    <span class="va">filename</span><span class="op">=</span><span class="st">"</span><span class="va">${filename</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span><span class="st">"</span></span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
+<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a>  <span class="va">filename</span><span class="op">=</span><span class="st">"</span><span class="va">${filename</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span><span class="st">"</span></span>
+<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>  <span class="va">outputDir</span><span class="op">=</span><span class="va">$inputDir</span></span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a>  <span class="va">out</span><span class="op">=</span><span class="va">$inputDir</span>/<span class="va">${filename}</span>_brain</span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a>  <span class="va">outputDir</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span> <span class="va">$2)</span></span>
+<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-61"><a href="#cb18-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="va">$outputDir</span> <span class="ot">==</span> <span class="st">"."</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb18-62"><a href="#cb18-62" aria-hidden="true" tabindex="-1"></a>    <span class="va">outputDir</span><span class="op">=</span><span class="va">$cwd</span></span>
+<span id="cb18-63"><a href="#cb18-63" aria-hidden="true" tabindex="-1"></a>    <span class="va">outfile</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">$2)</span></span>
+<span id="cb18-64"><a href="#cb18-64" aria-hidden="true" tabindex="-1"></a>    <span class="va">out</span><span class="op">=</span><span class="va">$outputDir</span>/<span class="va">$outfile</span></span>
+<span id="cb18-65"><a href="#cb18-65" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb18-66"><a href="#cb18-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$outputDir</span></span>
+<span id="cb18-67"><a href="#cb18-67" aria-hidden="true" tabindex="-1"></a>    <span class="va">out</span><span class="op">=</span><span class="va">$2</span></span>
+<span id="cb18-68"><a href="#cb18-68" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
+<span id="cb18-69"><a href="#cb18-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-70"><a href="#cb18-70" aria-hidden="true" tabindex="-1"></a>  <span class="va">inputDir</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span> <span class="va">$1)</span></span>
+<span id="cb18-71"><a href="#cb18-71" aria-hidden="true" tabindex="-1"></a>  <span class="va">filename</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">$1)</span></span>
+<span id="cb18-72"><a href="#cb18-72" aria-hidden="true" tabindex="-1"></a>  <span class="va">inputFile</span><span class="op">=</span><span class="va">$inputDir</span>/<span class="va">$filename</span></span>
+<span id="cb18-73"><a href="#cb18-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-74"><a href="#cb18-74" aria-hidden="true" tabindex="-1"></a>  <span class="va">extension</span><span class="op">=</span><span class="st">"</span><span class="va">${filename</span><span class="op">##</span><span class="pp">*</span>.<span class="va">}</span><span class="st">"</span></span>
+<span id="cb18-75"><a href="#cb18-75" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="va">$extension</span> <span class="ot">==</span> <span class="st">"gz"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb18-76"><a href="#cb18-76" aria-hidden="true" tabindex="-1"></a>    <span class="va">filename</span><span class="op">=</span><span class="st">"</span><span class="va">${filename</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span><span class="st">"</span></span>
+<span id="cb18-77"><a href="#cb18-77" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
+<span id="cb18-78"><a href="#cb18-78" aria-hidden="true" tabindex="-1"></a>  <span class="va">filename</span><span class="op">=</span><span class="st">"</span><span class="va">${filename</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span><span class="st">"</span></span>
+<span id="cb18-79"><a href="#cb18-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-80"><a href="#cb18-80" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb18-81"><a href="#cb18-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-82"><a href="#cb18-82" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">" ++ input directory is </span><span class="va">$inputDir</span><span class="st">"</span></span>
+<span id="cb18-83"><a href="#cb18-83" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">" ++ input basename is </span><span class="va">$filename</span><span class="st">"</span></span>
+<span id="cb18-84"><a href="#cb18-84" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">" ++ output directory is </span><span class="va">$outputDir</span><span class="st">"</span></span>
+<span id="cb18-85"><a href="#cb18-85" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">" ++ output will be </span><span class="va">$out</span><span class="st">"</span></span>
+<span id="cb18-86"><a href="#cb18-86" aria-hidden="true" tabindex="-1"></a><span class="va">tmpdir</span><span class="op">=</span><span class="va">$(</span><span class="fu">mktemp</span> <span class="at">-d</span> <span class="va">$outputDir</span>/tmp.XXXXXXXXXX<span class="va">)</span></span>
+<span id="cb18-87"><a href="#cb18-87" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">" ++ working dir will be </span><span class="va">$tmpdir</span><span class="st">"</span></span>
+<span id="cb18-88"><a href="#cb18-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$tmpdir</span></span>
+<span id="cb18-90"><a href="#cb18-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-91"><a href="#cb18-91" aria-hidden="true" tabindex="-1"></a><span class="ex">imcp</span> <span class="va">${inputFile}</span> head</span>
+<span id="cb18-92"><a href="#cb18-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a><span class="va">headfile</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> head.<span class="pp">*</span><span class="va">)</span></span>
+<span id="cb18-94"><a href="#cb18-94" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$headfile</span></span>
+<span id="cb18-95"><a href="#cb18-95" aria-hidden="true" tabindex="-1"></a><span class="va">headextension</span><span class="op">=</span><span class="st">"</span><span class="va">${headfile</span><span class="op">##</span><span class="pp">*</span>.<span class="va">}</span><span class="st">"</span></span>
+<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$headextension</span> <span class="ot">==</span> <span class="st">"gz"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gunzip</span> <span class="va">$headfile</span></span>
+<span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a><span class="ex">nii2mnc</span> head.nii head.mnc</span>
+<span id="cb18-101"><a href="#cb18-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-102"><a href="#cb18-102" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize the input</span></span>
+<span id="cb18-103"><a href="#cb18-103" aria-hidden="true" tabindex="-1"></a><span class="ex">beast_normalize</span> head.mnc head_mni.mnc anat2mni.xfm <span class="at">-modeldir</span> <span class="va">$MNItemplatePATH</span></span>
+<span id="cb18-104"><a href="#cb18-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-105"><a href="#cb18-105" aria-hidden="true" tabindex="-1"></a><span class="co"># Run BEaST to do SkullStripping</span></span>
+<span id="cb18-106"><a href="#cb18-106" aria-hidden="true" tabindex="-1"></a><span class="co"># configuration file can be replaced by $MincLibPATH/default.2mm.conf or $MincLibPATH/default.4mm.conf</span></span>
+<span id="cb18-107"><a href="#cb18-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-108"><a href="#cb18-108" aria-hidden="true" tabindex="-1"></a><span class="ex">mincbeast</span> <span class="at">-fill</span> <span class="at">-median</span> <span class="at">-conf</span> <span class="va">$MincLibPATH</span>/default.1mm.conf <span class="va">$MincLibPATH</span> head_mni.mnc brain_mask_mni.mnc</span>
+<span id="cb18-109"><a href="#cb18-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-110"><a href="#cb18-110" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform brain mask to it's original space</span></span>
+<span id="cb18-111"><a href="#cb18-111" aria-hidden="true" tabindex="-1"></a><span class="ex">mincresample</span> <span class="at">-invert_transformation</span> <span class="at">-like</span> head.mnc <span class="at">-transformation</span> anat2mni.xfm brain_mask_mni.mnc brain_mask.mnc</span>
+<span id="cb18-112"><a href="#cb18-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert image from MNC to NII format.</span></span>
+<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-115"><a href="#cb18-115" aria-hidden="true" tabindex="-1"></a><span class="ex">mnc2nii</span> brain_mask.mnc brain_mask_tmp.nii</span>
+<span id="cb18-116"><a href="#cb18-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-117"><a href="#cb18-117" aria-hidden="true" tabindex="-1"></a><span class="co"># Resample mask to original image</span></span>
+<span id="cb18-118"><a href="#cb18-118" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> brain_mask_tmp.nii <span class="at">-ref</span> head.nii <span class="at">-applyxfm</span> <span class="at">-usesqform</span> <span class="at">-out</span> brain_mask</span>
+<span id="cb18-119"><a href="#cb18-119" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> brain_mask <span class="at">-thr</span> 0.5 <span class="at">-bin</span> brain_mask</span>
+<span id="cb18-120"><a href="#cb18-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-121"><a href="#cb18-121" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate and output brain image and brain mask</span></span>
+<span id="cb18-122"><a href="#cb18-122" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> head.nii <span class="at">-mul</span> brain_mask <span class="va">${out}</span>_brain</span>
+<span id="cb18-123"><a href="#cb18-123" aria-hidden="true" tabindex="-1"></a><span class="ex">immv</span> brain_mask <span class="va">${out}</span>_brain_mask</span>
+<span id="cb18-124"><a href="#cb18-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-125"><a href="#cb18-125" aria-hidden="true" tabindex="-1"></a><span class="co"># delete all intermediate files</span></span>
+<span id="cb18-126"><a href="#cb18-126" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$cwd</span></span>
+<span id="cb18-127"><a href="#cb18-127" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> <span class="va">$tmpdir</span></span>
+<span id="cb18-128"><a href="#cb18-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-129"><a href="#cb18-129" aria-hidden="true" tabindex="-1"></a><span class="va">duration</span><span class="op">=</span><span class="va">$SECONDS</span></span>
+<span id="cb18-130"><a href="#cb18-130" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$(($duration</span> <span class="op">/</span> <span class="dv">60</span><span class="va">))</span><span class="st"> minutes and </span><span class="va">$(($duration</span> <span class="op">%</span> <span class="dv">60</span><span class="va">))</span><span class="st"> seconds elapsed."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="git-script" class="level3">
+<h3 class="anchored" data-anchor-id="git-script">Git Script</h3>
+<p><a href="https://github.com/WeberLab/BEaST">https://github.com/WeberLab/BEaST</a></p>
+</section>
+</section>
+<section id="Anatomical-T1T2CombinationTechnique" class="level2">
+<h2 class="anchored" data-anchor-id="Anatomical-T1T2CombinationTechnique">T1T2 Combination Technique</h2>
+<p>This idea comes from: <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.25560">https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.25560</a> :</p>
+<p>Essentially run your skullstripping algorithm on a combination image (CI) of T1w and scaled T2w (sT2w):<br>
+CI = (T1w-sT2w)/(T1w+sT2w)</p>
+<p>"The CI image values range from −1.0 to 1.0, with negative values in the CSF, positive values in the WM, and values near 0 in the GM. To facilitate visualization and image processing, the CI was scaled within the union mask to set the minimum at zero and the median at a value where the median intensity of all voxels equaled that of the T1w image."</p>
+<p>"The scaling factor was calculated to adjust the graymatter (GM) voxel intensities in the T2w image so that their median value equaled that of the GM voxel intensities in the T1w image."</p>
+<p>"The scaling factor was calculated as MG_T1/MG_T2, where MG_T1 and MG_T2 are the median values of GM voxels of T1w and T2w, respectively. The term sT2w designates the T2w image scaled by this value: sT2w = MG_T1/MG_T2 × T2w."</p>
+<p>"The T2w image was aligned to the T1w image using align_epi_anat.py script in Analysis of Functional NeuroImages (AFNI)"</p>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>First I bias field corrected my images (see above)</p>
+<ol type="1">
+<li>Register T2 to T1</li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> T2w_N4.nii.gz <span class="at">-ref</span> T1w_N4.nii.gz <span class="at">-out</span> T2-to-T1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Find the scaling factor (median T1 of gm / median T2 of gm)</li>
+</ol>
+<p>I just guessed this by clicking around: 3.45</p>
+<p>Then multiply the T2 image by this factor:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T2-to-T1.nii.gz <span class="at">-mul</span> 3.45 sT2w.nii.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Now calculate the CI image:</li>
+</ol>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T1w_N4.nii.gz <span class="at">-sub</span> sT2w.nii.gz T1w-sT2w</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T1w_N4.nii.gz <span class="at">-add</span> sT2w.nii.gz T1w+sT2w</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T1w-sT2w.nii.gz <span class="at">-div</span> T1w+sT2w.nii.gz CI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Next find the median value of all the T1w file</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslstats</span> T1w_N4.nii.gz <span class="at">-P</span> 50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In my case it turned out to be: 388</p>
+<ol start="5" type="1">
+<li>Then set the CI to be between 0 and 1, then multiply by that median number:</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> CI.nii.gz <span class="at">-add</span> 1 <span class="at">-div</span> 2 <span class="at">-mul</span> 388 sCI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>Now apply bet?</li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">robustfov</span> <span class="at">-i</span> sCI.nii.gz <span class="at">-r</span> sCI_robust</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bet</span> sCI_robust.nii.gz sCI_robust_brain <span class="at">-o</span> <span class="at">-m</span> <span class="at">-f</span> 0.1 <span class="at">-B</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>::::</p>
+<p>This failed pretty remarkably…</p>
+</section>
+</section>
+<section id="robex" class="level2">
+<h2 class="anchored" data-anchor-id="robex">ROBEX</h2>
+<p>ROBEX receives a volume as an input and provides the stripped output.<br>
+Optional: Corresponding binary mask. However, the volume has to be in the same orientation as the provided reference volume.</p>
+<p>ROBEX works with any ITK-friendly format e.g.&nbsp;HDR/img, nii, dcm</p>
+<p>On LINUX: <strong>runROBEX.sh inputFile strippedFile [outputMaskFile]</strong></p>
+<p>Read about ROBEX in <a href="https://sci-hub.se/10.1109/tmi.2011.2138152">Robust Brain Extraction Across Datasets and Comparison with Publicly Available Methods</a><br>
+<a href="https://www.nitrc.org/projects/robex/">Download</a></p>
+</section>
+<section id="flabel" class="level2">
+<h2 class="anchored" data-anchor-id="flabel">fLABEL</h2>
+<p>SkullStrippingToolkit <a href="https://www.nitrc.org/projects/skulltoolkit">https://www.nitrc.org/projects/skulltoolkit</a></p>
+<p>"A matlab-based code for skull stripping on infant and adult MR images."</p>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">Setup</h3>
+<p>Currently installed on AdaL:</p>
+<p>Add this to your ~/bashrc file:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LABELDIR</span><span class="op">=</span>/usr/local/skullStrippingToolkit</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">${PATH}</span>:<span class="va">${LABELDIR}</span>/bin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>then add this to your ~/matlab/startup.m file:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">%-----------</span> add fLABEL for brain extraction <span class="at">---------------%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">LABELDIR</span> = <span class="st">'/usr/local/skullStrippingToolkit'</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">addpath</span><span class="er">(</span><span class="ex">genpath</span><span class="er">(</span><span class="ex">LABELDIR</span><span class="kw">));</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">%-----------------------------------------------------%</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>after your <code>source ~/.bashrc</code> you should be good to go:</p>
+</section>
+<section id="to-run" class="level3">
+<h3 class="anchored" data-anchor-id="to-run">To Run:</h3>
+<ol type="1">
+<li><p>The input image should be in nii format (better to perform bias correction first using tools such as N3).</p></li>
+<li><p>Type in fLABEL and the program option will be listed.</p></li>
+<li><p>Follow the example to run the algorithm.</p></li>
+</ol>
+</section>
+</section>
+<section id="neonates" class="level2">
+<h2 class="anchored" data-anchor-id="neonates">Neonates</h2>
+<p>Unlike adults, using a T2w image for brain extraction may work best with a T2 image. Be careful, as a lot of brain extraction methods have been optimized on T1w images.</p>
+<section id="dhcp-anatomical-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="dhcp-anatomical-pipeline">dHCP Anatomical Pipeline</h3>
+<p><strong>Installation:</strong></p>
+<p>First step is make sure docker is installed and that your user is added to the docker usergroup</p>
+<p>Installation and Troubleshooting for docker should be found here: <a href="http://weberlab.wikidot.com/fmri-prep#toc14">fmri-prep</a></p>
+<p>Next step:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> pull biomedia/dhcp-structural-pipeline:latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will take a while to download and install</p>
+<p><strong>Example Script</strong></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Uses dHCP anatomical docker image to segment brains</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># from images in Raw5 folder</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1) N4 correction</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2) Register T1 to T2</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3) Run dHCP pipeline</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># change lines necessary: 17, 20, 39, 40, 41 &amp;&amp; unnecessary: 23, 35, 47</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># based on below parameters this</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) script path = /mnt/WeberLab/Projects/NeonateSucrose/SickKids/dhcp-anat.sh</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) working directory = /home/johann.drayne/dhcptesting/</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) output directory = /home/johann.drayne/dhcptesting/run-single/</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co"># change to the folder where you have this script saved</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="va">highDir</span><span class="op">=</span>/mnt/WeberLab/Projects/NeonateSucrose/SickKids</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co"># change to where you want output folder to be</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="va">curDir</span><span class="op">=</span>/home/johann.drayne/dhcptesting/</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="co"># change after ${curDir} to change name of output folder</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="va">dataDir</span><span class="op">=</span><span class="va">${curDir}</span>run-single/</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">${curDir}</span></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="va">${dataDir}</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="co"># rename for T1, T2 and age variables</span></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="va">subjectid</span><span class="op">=</span>MS040054 <span class="co"># change this to whatever, dHCP likes using the subject name</span></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>                   <span class="co"># in their scripts</span></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="va">agescan</span><span class="op">=</span>34                  <span class="co"># rename to the subjects age at scan</span></span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a><span class="va">ogt1</span><span class="op">=</span><span class="va">${subject}</span>/t1/<span class="pp">*</span>.nii.gz <span class="co"># rename to your t1 file</span></span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a><span class="va">ogt2</span><span class="op">=</span><span class="va">${subject}</span>/t2/<span class="pp">*</span>.nii.gz <span class="co"># rename to your t2 file</span></span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a><span class="va">baset1</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${ogt1})</span></span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a><span class="va">baset2</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${ogt2})</span></span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="va">tempDir</span><span class="op">=</span><span class="va">${curDir}</span>temp-dhcp-working-<span class="va">${subjectid}</span>/</span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="va">${tempDir}</span></span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a><span class="co"># N4 correction</span></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a><span class="va">N4t1</span><span class="op">=</span><span class="va">${tempDir}</span>N4_<span class="va">${subjectid}</span>t1.nii.gz</span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a><span class="va">N4t2</span><span class="op">=</span><span class="va">${tempDir}</span>N4_<span class="va">${subjectid}</span>t2.nii.gz</span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a><span class="ex">N4BiasFieldCorrection</span> <span class="at">-d</span> 3 <span class="at">-i</span> <span class="va">${ogt1}</span> <span class="at">-o</span> <span class="va">${N4t1}</span></span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a><span class="ex">N4BiasFieldCorrection</span> <span class="at">-d</span> 3 <span class="at">-i</span> <span class="va">${ogt2}</span> <span class="at">-o</span> <span class="va">${N4t2}</span></span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-f</span>  <span class="va">${N4t2}</span> <span class="va">${dataDir}</span></span>
+<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a><span class="va">t1</span><span class="op">=</span><span class="va">${dataDir}</span>N4_Warped<span class="va">${baset1}</span></span>
+<span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a><span class="va">t2</span><span class="op">=</span><span class="va">${dataDir}</span>N4_<span class="va">${baset2}</span></span>
+<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="va">${dataDir}</span>N4_<span class="va">${subjectid}</span>t2.nii.gz <span class="va">${t2}</span></span>
+<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">${highDir}</span></span>
+<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Register T1 to T2</span></span>
+<span id="cb28-63"><a href="#cb28-63" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<span id="cb28-64"><a href="#cb28-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-65"><a href="#cb28-65" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"----- Starting Registration </span><span class="va">${subjectid}</span><span class="st"> -----"</span></span>
+<span id="cb28-66"><a href="#cb28-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-67"><a href="#cb28-67" aria-hidden="true" tabindex="-1"></a><span class="ex">antsRegistration</span> <span class="at">--dimensionality</span> 3 <span class="at">--float</span> 0 <span class="dt">\</span></span>
+<span id="cb28-68"><a href="#cb28-68" aria-hidden="true" tabindex="-1"></a>        <span class="at">--output</span> <span class="pp">[</span><span class="ss">${tempDir},${t1}</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb28-69"><a href="#cb28-69" aria-hidden="true" tabindex="-1"></a>        <span class="at">--interpolation</span> Linear <span class="dt">\</span></span>
+<span id="cb28-70"><a href="#cb28-70" aria-hidden="true" tabindex="-1"></a>        <span class="at">--winsorize-image-intensities</span> <span class="pp">[</span><span class="ss">0.005,0.995</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb28-71"><a href="#cb28-71" aria-hidden="true" tabindex="-1"></a>        <span class="at">--use-histogram-matching</span> 0 <span class="dt">\</span></span>
+<span id="cb28-72"><a href="#cb28-72" aria-hidden="true" tabindex="-1"></a>        <span class="at">--initial-moving-transform</span> <span class="pp">[</span><span class="ss">${N4t2},${N4t1},1</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb28-73"><a href="#cb28-73" aria-hidden="true" tabindex="-1"></a>        <span class="at">--transform</span> Rigid<span class="pp">[</span><span class="ss">0.08</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb28-74"><a href="#cb28-74" aria-hidden="true" tabindex="-1"></a>        <span class="at">--metric</span> MI<span class="pp">[</span><span class="ss">${N4t2},${N4t1},1,64,Regular,0.20</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb28-75"><a href="#cb28-75" aria-hidden="true" tabindex="-1"></a>        <span class="at">--convergence</span> <span class="pp">[</span><span class="ss">5000x2500x1000x500,1e</span><span class="pp">-</span><span class="ss">10,10</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb28-76"><a href="#cb28-76" aria-hidden="true" tabindex="-1"></a>        <span class="at">--shrink-factors</span> 8x4x2x1 <span class="dt">\</span></span>
+<span id="cb28-77"><a href="#cb28-77" aria-hidden="true" tabindex="-1"></a>        <span class="at">--smoothing-sigmas</span> 0x0x0x0vox</span>
+<span id="cb28-78"><a href="#cb28-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-79"><a href="#cb28-79" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"----- Registration completed for </span><span class="va">${subjectid}</span><span class="st"> -----"</span></span>
+<span id="cb28-80"><a href="#cb28-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-81"><a href="#cb28-81" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> <span class="va">${tempDir}</span></span>
+<span id="cb28-82"><a href="#cb28-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-83"><a href="#cb28-83" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb28-84"><a href="#cb28-84" aria-hidden="true" tabindex="-1"></a><span class="co">##    --verbose 1</span></span>
+<span id="cb28-85"><a href="#cb28-85" aria-hidden="true" tabindex="-1"></a><span class="co">##</span></span>
+<span id="cb28-86"><a href="#cb28-86" aria-hidden="true" tabindex="-1"></a><span class="co">##        --transform Affine[0.08] \</span></span>
+<span id="cb28-87"><a href="#cb28-87" aria-hidden="true" tabindex="-1"></a><span class="co">##        --metric MI[${N4t2},${N4t1},1,64,Regular,0.25] \</span></span>
+<span id="cb28-88"><a href="#cb28-88" aria-hidden="true" tabindex="-1"></a><span class="co">##        --convergence [1000x1000x500x200,1e-10,10] \</span></span>
+<span id="cb28-89"><a href="#cb28-89" aria-hidden="true" tabindex="-1"></a><span class="co">##        --shrink-factors 8x4x2x1 \</span></span>
+<span id="cb28-90"><a href="#cb28-90" aria-hidden="true" tabindex="-1"></a><span class="co">##        --smoothing-sigmas 3x2x1x0vox</span></span>
+<span id="cb28-91"><a href="#cb28-91" aria-hidden="true" tabindex="-1"></a><span class="co">##</span></span>
+<span id="cb28-92"><a href="#cb28-92" aria-hidden="true" tabindex="-1"></a><span class="co">##        --transform SyN[0.08,3,0] \</span></span>
+<span id="cb28-93"><a href="#cb28-93" aria-hidden="true" tabindex="-1"></a><span class="co">##        --metric MI[${N4t2},${N4t1},1,64,Regular,0.25] \</span></span>
+<span id="cb28-94"><a href="#cb28-94" aria-hidden="true" tabindex="-1"></a><span class="co">##        --convergence [300x2000x100x500,1e-10,10] \</span></span>
+<span id="cb28-95"><a href="#cb28-95" aria-hidden="true" tabindex="-1"></a><span class="co">##        --shrink-factors 8x4x2x1 \</span></span>
+<span id="cb28-96"><a href="#cb28-96" aria-hidden="true" tabindex="-1"></a><span class="co">##        --smoothing-sigmas 3x2x1x0vox \</span></span>
+<span id="cb28-97"><a href="#cb28-97" aria-hidden="true" tabindex="-1"></a><span class="co">##        --verbose 1</span></span>
+<span id="cb28-98"><a href="#cb28-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-99"><a href="#cb28-99" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<span id="cb28-100"><a href="#cb28-100" aria-hidden="true" tabindex="-1"></a><span class="co"># Run docker image</span></span>
+<span id="cb28-101"><a href="#cb28-101" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<span id="cb28-102"><a href="#cb28-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-103"><a href="#cb28-103" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-t</span> <span class="dt">\</span></span>
+<span id="cb28-104"><a href="#cb28-104" aria-hidden="true" tabindex="-1"></a>    <span class="at">-u</span> <span class="va">$(</span><span class="fu">id</span> <span class="at">-u</span><span class="va">)</span>:<span class="va">$(</span><span class="fu">id</span> <span class="at">-g</span><span class="va">)</span> <span class="dt">\</span></span>
+<span id="cb28-105"><a href="#cb28-105" aria-hidden="true" tabindex="-1"></a>    <span class="at">-v</span> <span class="va">${dataDir}</span>:<span class="va">${dataDir}</span> <span class="dt">\</span></span>
+<span id="cb28-106"><a href="#cb28-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">-w</span> <span class="va">${dataDir}</span> <span class="dt">\</span></span>
+<span id="cb28-107"><a href="#cb28-107" aria-hidden="true" tabindex="-1"></a>    biomedia/dhcp-structural-pipeline:latest <span class="va">${subjectid}</span> session1 <span class="va">${agescan}</span> <span class="at">-T1</span> N4_Warped<span class="va">${baset1}</span> <span class="at">-T2</span> N4_<span class="va">${baset2}</span> <span class="at">-t</span> 16</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>I have commented the lines that need edited. 5 lines are necessary, 3 lines don't need to be changed but probably better if you do.</p></li>
+<li><p>You'll notice I also commented the Affine and SyN parts of antsRegistration, I found the Rigid transform was pretty decent. The Affine and SyN took very long, maybe this is an option if you are playing with the single subject for the moment or the rigid registration is not good enough.</p></li>
+<li><p>You will also need to get the latest version from <a href="https://github.com/BioMedIA/dhcp-structural-pipeline" class="external-link" rel="nofollow">dHCP</a> docker pull biomedia/dhcp-structural-pipeline:latest should do the trick</p></li>
+<li><p>If you run this script on Pierce, you will need to change the -t flag on line 115 (to probably 6), this specifies the number of CPU cores</p></li>
+</ul>
+<p><strong>dHCP anat output</strong></p>
+<p>When you run the script, sometimes it will fail out before completely finishing. If you are only looking for the segmentations, this is ok as they are almost always completed.<br>
+This is generally how your output folder will look when running on multiple subjects.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">output</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> logs</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> derivatives</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>            <span class="ex">-</span> sub-<span class="va">${subid}</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> ses-session1</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>                            <span class="ex">-</span> anat</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="ex">-</span> output images</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> sourcedata</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> workdir</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>            <span class="ex">-</span> <span class="va">${subid}</span>-session1</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> bias    </span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> dofs</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> logs</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> masks</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> N4</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> posteriors</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> restore</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> segmentations</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> segmentations-data</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> surfaces</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> T1</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> T2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The two most important folder are derivatives (subjects that have fully run) and workdir (subjects that failed in pipeline)</p>
+<p>Here is a rough guide as to what image is what (workdir 1st derivatives equivalent 2nd)</p>
+<ul>
+<li><p>T2 restored: <strong>restore/T2/${subid}-session1_restore.nii.gz</strong> &amp;&amp; <strong>sub-${subid}_ses-session1_T2w_restore</strong></p></li>
+<li><p>T2 skull strip: <strong>restore/T2/${subid}-session1_restore_brain.nii.gz</strong> &amp;&amp; <strong>sub-${subid}_ses-session1_T2w_restore_brain</strong></p></li>
+<li><p>T2 tissue segmented: <strong>segmentations/${subid}-${sesid}_all_labels.nii.gz</strong> &amp;&amp; <strong>sub-${subid}_ses-session1_drawem_all_labels</strong></p></li>
+</ul>
+<p>More detail into how the <a href="https://github.com/amakropoulos/structural-pipeline-measures/tree/master/label_names">segmentations are indexed</a><br>
+When writing a pipeline for picking these images a nice bash way (no if statement needed) to do it is.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="va">workingt2</span><span class="op">=</span><span class="va">${dhcpanat}</span>workdir/<span class="va">${subid}</span>-<span class="va">${sesid}</span>/restore/T2/<span class="va">${subid}</span>-<span class="va">${sesid}</span>_restore</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="va">derivt2</span><span class="op">=</span><span class="va">${dhcpanat}</span>derivatives/sub-<span class="va">${subid}</span>/ses-<span class="va">${sesid}</span>/anat/sub-<span class="va">${subid}</span>_ses-<span class="va">${sesid}</span>_T2w_restore</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span> <span class="ot">-f</span> <span class="va">${workingt2}</span>.nii.gz <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="va">t2</span><span class="op">=</span><span class="va">${workingt2}</span> <span class="kw">||</span> <span class="va">t2</span><span class="op">=</span><span class="va">${derivt2}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>The first two lines are paths to the image in the derivatives and workdir folder as we don't know.</p></li>
+<li><p>The third line asks if the image exists in the workdir folder, if it does then the variable t2 equals the path to the workdir folder</p></li>
+<li><p>If [[ -f ${workingt2}.nii.gz ]] is false then the variable t2 will equal the path to the derivatives folder</p></li>
+</ul>
+</section>
+</section>
+<section id="ibeat" class="level2">
+<h2 class="anchored" data-anchor-id="ibeat">iBEAT</h2>
+<p><a href="https://ibeat.wildapricot.org/">https://ibeat.wildapricot.org/</a></p>
+<p>Infant Brain Extraction and Analysis Toolbox</p>
+</section>
+</section>
+<section id="tissue-segmentation" class="level1">
+<h1>Tissue Segmentation</h1>
+<section id="fsl_anat" class="level2">
+<h2 class="anchored" data-anchor-id="fsl_anat">FSL_ANAT</h2>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fsl_anat</span> <span class="at">-i</span> T1.nii.gz <span class="at">-o</span> output/location</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Example outputs:</p>
+<p>lesionmaskinv.nii.gz T1_biascorr.nii.gz T1_fast_totbias.nii.gz T1_nonroi2roi.mat T1_to_MNI_lin.mat<br>
+lesionmask.nii.gz T1_fast_bias_idxmask.nii.gz T1_fullfov.nii.gz T1_orig2roi.mat T1_to_MNI_lin.nii.gz<br>
+log.txt T1_fast_bias_init.nii.gz T1_initfast2_brain_mask2.nii.gz T1_orig2std.mat T1_to_MNI_nonlin_coeff.nii.gz<br>
+MNI152_T1_2mm_brain_mask_dil1.nii.gz T1_fast_bias.nii.gz T1_initfast2_brain_mask.nii.gz T1_orig.nii.gz T1_to_MNI_nonlin_field.nii.gz<br>
+MNI_to_T1_nonlin_field.nii.gz T1_fast_bias_vol2.nii.gz T1_initfast2_brain.nii.gz T1_roi2nonroi.mat T1_to_MNI_nonlin_jac.nii.gz<br>
+T1_biascorr_brain_mask.nii.gz T1_fast_bias_vol32.nii.gz T1_initfast2_maskedrestore.nii.gz T1_roi2orig.mat T1_to_MNI_nonlin.nii.gz<br>
+T1_biascorr_brain.nii.gz T1_fast_restore.nii.gz T1_initfast2_restore.nii.gz T1_roi.log T1_to_MNI_nonlin.txt<br>
+T1_biascorr_maskedbrain.nii.gz T1_fast_seg.nii.gz T1.nii.gz T1_std2orig.mat</p>
+<p>Segmentation index:<br>
+3- White Matter<br>
+2- Grey Matter<br>
+1- CSF</p>
+</section>
+<section id="fmriprep" class="level2">
+<h2 class="anchored" data-anchor-id="fmriprep">fmriprep</h2>
+<p>fmriprep will run freesurfer on the anatomical data</p>
+</section>
+<section id="freesurfer" class="level2">
+<h2 class="anchored" data-anchor-id="freesurfer">Freesurfer</h2>
+<p>To run freesurfer yourself and get cortical segmentation (note: takes HOURS):</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">recon-all</span> <span class="at">-i</span> T1w_robust.nii.gz <span class="at">-s</span> <span class="op">&lt;</span>subid<span class="op">&gt;</span> -sd <span class="va">${PWD}</span> <span class="at">-all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To run freesurfer and just get a simple segmentation:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">recon-all</span> <span class="at">-i</span> T1w_robust.nii.gz <span class="at">-s</span> <span class="op">&lt;</span>subid<span class="op">&gt;</span> -sd <span class="va">${PWD}</span> <span class="at">-autorecon1</span> <span class="at">-autorecon2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After this, you will need to convert to nifti, and reorient:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mri_convert</span> aseg.auto_noCCseg.mgz aseg.auto_noCCseg.nii.gz</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fslreorient2std</span> aseg.auto_noCCseg.nii.gz aseg.auto_noCCseg_r2std</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> aseg.auto_noCCseg_r2std.nii.gz <span class="at">-ref</span> T1w_robust.nii.gz <span class="at">-out</span> segment <span class="at">-applyxfm</span> <span class="at">-usesqform</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here are the tissue labels:<br>
+2 Left_Cerebral_White_Matter<br>
+3 Left_Cerebral_Cortex<br>
+4 Left_Lateral_Ventricle<br>
+5 Left_Inf_Lat_Vent<br>
+7 Left_Cerebellum_White_Matter<br>
+8 Left_Cerebellum_Cortex<br>
+10 Left_Thalamus<br>
+11 Left_Caudate<br>
+12 Left_Putamen<br>
+13 Left_Pallidum<br>
+14 Third_Ventricle<br>
+15 Fourth_Ventricle<br>
+16 Brain_Stem<br>
+17 Left_Hippocampus<br>
+18 Left_Amygdala<br>
+24 CSF<br>
+26 Left_Accumbens_area<br>
+28 Left_VentralDC<br>
+30 Left-vessel<br>
+31 Left-choroid-plexus<br>
+41 Right_Cerebral_White_Matter<br>
+42 Right_Cerebral_Cortex<br>
+43 Right_Lateral_Ventricle<br>
+44 Right_Inf_Lat_Vent<br>
+46 Right_Cerebellum_White_Matter<br>
+47 Right_Cerebellum_Cortex<br>
+49 Right_Thalamus<br>
+50 Right_Caudate<br>
+51 Right_Putamen<br>
+52 Right_Pallidum<br>
+53 Right_Hippocampus<br>
+54 Right_Amygdala<br>
+58 Right_Accumbens_area<br>
+60 Right_VentralDC<br>
+62 Right-vessel<br>
+63 Right-choroid-plexus<br>
+77 WM_hypointensities<br>
+85 Optic-Chiasm</p>
+</section>
+<section id="volbrain-online-tool" class="level2">
+<h2 class="anchored" data-anchor-id="volbrain-online-tool">VolBrain (online tool)</h2>
+<p><a href="https://volbrain.net/services">https://volbrain.net/services</a></p>
+</section>
+</section>
+<section id="creating-binary-masks-from-a-parcellation-scheme" class="level1">
+<h1>Creating Binary Masks from a Parcellation Scheme</h1>
+<p>Output a binarized 3D image file (nifti) of a region-of-interest in a parcellation scheme that is indexed by number of parcels (such as what you might get from segmentation)</p>
+<p>Requires AFNI</p>
+<p>Example using the Harvard Oxford Atlas:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="va">ATLAS_FILENAME</span><span class="op">=</span><span class="st">'Harvard_Oxford_Atlas.nii.gz'</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="va">MASK_NAME</span><span class="op">=</span><span class="st">'r_amygdala'</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="va">ROI_INDEX</span><span class="op">=</span>102 <span class="co"># index assigned to parcel/region of interest in atlas parcellation scheme (the index for right amygdala in Harvard Oxford atlas is 102)</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="ex">3dcalc</span> <span class="at">-a</span> <span class="va">${ATLAS_FILENAME}</span> <span class="at">-prefix</span> <span class="va">${MASK_NAME}</span>.nii.gz <span class="at">-expr</span> <span class="st">"amongst(a,</span><span class="va">${ROI_INDEX}</span><span class="st">)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can also extract all parcels using a .txt file containing a parcel name on each row:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="va">ATLAS_FILENAME</span><span class="op">=</span><span class="st">'Harvard_Oxford_Atlas.nii.gz'</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="va">MASKLIST_FILENAME</span><span class="op">=</span><span class="st">'Harvard_Oxford_Atlas_ROIs.txt'</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="va">ROI_INDEX</span><span class="op">=</span>0</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> MASK_NAME <span class="kw">in</span> <span class="va">$(</span><span class="fu">cat</span> <span class="st">"</span><span class="va">${MASKLIST_FILENAME}</span><span class="st">); do</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="st">    ROI_INDEX=</span><span class="va">$((COUNTER</span><span class="op">+</span><span class="dv">1</span><span class="va">))</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="st">    3dcalc -a </span><span class="va">${ATLAS_FILENAME}</span><span class="st"> -prefix </span><span class="va">${MASK_NAME}</span><span class="st">.nii.gz -expr "</span>amongst<span class="er">(</span><span class="ex">a,</span><span class="va">${ROI_INDEX}</span><span class="kw">)</span><span class="st">"</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="st">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="newborn-brain-atlas-templates" class="level1">
+<h1>Newborn Brain Atlas / Templates</h1>
+<p><a href="https://github.com/templateflow/templateflow">https://github.com/templateflow/templateflow</a></p>
+</section>
+<section id="all-templates" class="level1">
+<h1>All templates:</h1>
+<p><a href="https://www.templateflow.org/browse/">https://www.templateflow.org/browse/</a></p>
+</section>
+<section id="d-print-your-brain" class="level1">
+<h1>3D Print Your Brain!</h1>
+<p>see section under Freesurfer if you have that data available: <a href="freesurfer_224166050.html">freesurfer</a></p>
+<p>Otherwise:</p>
+<ol start="0" type="1">
+<li>Get a binary brain you want to print. For example, if you have run freesurfer but want to print the whole brain (including cerebellum and brain stem (aseg volume file in FreesSurfer)), you could do the following:</li>
+</ol>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mri_convert</span> mri/aseg.mgz ./aseg.nii.gz</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> aseg.nii.gz <span class="at">-bin</span> aseg.nii.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>If you have AFNI installed, run:</li>
+</ol>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">IsoSurface</span> <span class="at">-isoval</span> 1 <span class="at">-input</span> aseg.nii.gz <span class="at">-Tsmooth</span> 0.1 100  <span class="at">-remesh</span> 0.5 <span class="at">-overwrite</span> <span class="at">-autocrop</span> <span class="at">-o</span> aseg.stl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The output of this command is not necessarily a 2-manifold. Thus, the 3D-printer cannot print it. It can be corrected, however, with netfabb.</p>
+<p>Install netfabb basic: <a href="https://github.com/3DprintFIT/netfabb-basic-download">https://github.com/3DprintFIT/netfabb-basic-download</a></p>
+<p>(you will need to register with an e-mail which will provide you with a key)</p>
+<ol start="2" type="1">
+<li><p>Open netfabb-basic and load in the STL file that needs to be fixed for non-manifolds (Project &gt; Open &gt; aseg.stl)</p></li>
+<li><p>Click on the repair symbol (red cross; top right)</p></li>
+<li><p>Click on Automatic repair and Apply repair.</p></li>
+</ol>
+<p>[note: I got a lot of 'netfab_free' is not responding. Ignore these]</p>
+<ol start="5" type="1">
+<li><p>Click Apply Repair again, and discard old parts</p></li>
+<li><p>Save: Part &gt; Export Part &gt; As STL</p></li>
+</ol>
+<p>More edits / simplification can be made by following the 3D Print Your Brain! instructions from the <a href="http://weberlab.wikidot.com/freesurfer">freesurfer</a> page</p>
+</section>
+<section id="defacing-anonymizing" class="level1">
+<h1>Defacing (Anonymizing)</h1>
+<p>Freesurfer has one option:<br>
+<a href="https://surfer.nmr.mgh.harvard.edu/fswiki/mri_deface">https://surfer.nmr.mgh.harvard.edu/fswiki/mri_deface</a></p>
+<p>Here is a host of options:<br>
+<a href="https://open-brain-consent.readthedocs.io/en/stable/anon_tools.html">https://open-brain-consent.readthedocs.io/en/stable/anon_tools.html</a></p>
+<section id="edit-header-info-on-nifti-files" class="level2">
+<h2 class="anchored" data-anchor-id="edit-header-info-on-nifti-files">Edit Header Info on Nifti Files</h2>
+<p>fsledithd - allows the header information in and image to be edited in a text-based xml-style format (like the output of fslhd -x but with redundant fields removed and some help text provided). Note that the default text editor used is nano, but other editors can be specified by the second argument.</p>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/BCCH-MRI-Research-Facility\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrimethods/Anatomical.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrimethods/Anatomical.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
