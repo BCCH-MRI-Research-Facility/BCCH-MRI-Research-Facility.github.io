@@ -431,6 +431,11 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
   <ul class="collapse">
   <li><a href="#curve-and-surface-fits" id="toc-curve-and-surface-fits" class="nav-link" data-scroll-target="#curve-and-surface-fits">Curve and Surface fits</a></li>
   <li><a href="#d-function-fit" id="toc-d-function-fit" class="nav-link" data-scroll-target="#d-function-fit">2d function fit</a></li>
+  <li><a href="#d-function-fit-1" id="toc-d-function-fit-1" class="nav-link" data-scroll-target="#d-function-fit-1">3d function fit</a></li>
+  </ul></li>
+  <li><a href="#misc" id="toc-misc" class="nav-link" data-scroll-target="#misc">Misc</a>
+  <ul class="collapse">
+  <li><a href="#read-matlab-.mat-files" id="toc-read-matlab-.mat-files" class="nav-link" data-scroll-target="#read-matlab-.mat-files">Read Matlab .mat files:</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/tutorials/Python.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/tutorials/Python.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -589,6 +594,7 @@ and<br>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()             <span class="co"># Create a figure containing a single Axes.</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>])  <span class="co"># Plot some data on the Axes.</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>plt.show()                           <span class="co"># Show the figure.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="img/matplotlibexample.png" class="img-fluid"></p>
 </section>
 <section id="transparent-color" class="level3">
 <h3 class="anchored" data-anchor-id="transparent-color">Transparent color</h3>
@@ -894,11 +900,9 @@ NOTE: It will also produce a residual plot which is good visual way to check the
 <span id="cb47-65"><a href="#cb47-65" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(x_name))</span>
 <span id="cb47-66"><a href="#cb47-66" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'Measureed - Theoretical </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(y_name))</span>
 <span id="cb47-67"><a href="#cb47-67" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>::: ::::</p>
 <p>The reason for the odd input data numpy shape is because of pandas data frames. To create a numpy array for this function from your data frame</p>
-<div class="code panel pdl" style="border-width: 1px;">
-<div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"><code>2d_fit_input = df[['x_var', 'y_var']].to_numpy()</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="er">d_fit_input</span> <span class="op">=</span> df[[<span class="st">'x_var'</span>, <span class="st">'y_var'</span>]].to_numpy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="d-function-fit-1" class="level2">
 <h2 class="anchored" data-anchor-id="d-function-fit-1">3d function fit</h2>
 <div class="sourceCode" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scatter_3d(data, Z, x_name, y_name, z_name):</span>
@@ -987,6 +991,7 @@ NOTE: It will also produce a residual plot which is good visual way to check the
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>figx <span class="op">=</span> pickle.load(<span class="bu">open</span>(path, <span class="st">'rb'</span>))</span>
 <span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>figx.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+</section>
 <section id="misc" class="level1">
 <h1>Misc</h1>
 <section id="read-matlab-.mat-files" class="level2">
@@ -1002,10 +1007,6 @@ NOTE: It will also produce a residual plot which is good visual way to check the
 <span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array(data) <span class="co"># For converting to a NumPy array</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
-</section>
-</div>
-</div>
 </section>
 </section>
 
