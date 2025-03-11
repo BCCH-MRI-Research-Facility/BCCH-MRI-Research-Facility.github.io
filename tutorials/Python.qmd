@@ -194,6 +194,8 @@ ax.plot([1, 2, 3, 4], [1, 4, 2, 3])  # Plot some data on the Axes.
 plt.show()                           # Show the figure.
 ```
 
+![](img/matplotlibexample.png)
+
 ### Transparent color 
 
 [https://stackoverflow.com/questions/62453018/matplotlib-colourmap-from-transparent](https://stackoverflow.com/questions/62453018/matplotlib-colourmap-from-transparent)
@@ -664,15 +666,11 @@ def 2d_fit_residual(data, x_name, y_name):
     plt.ylabel('Measureed - Theoretical {}'.format(y_name))
     plt.show()
 ```
-:::
-::::
 
 The reason for the odd input data numpy shape is because of pandas data
 frames. To create a numpy array for this function from your data frame
 
-:::: {.code .panel .pdl style="border-width: 1px;"}
-::: {.codeContent .panelContent .pdl}
-``` {.syntaxhighlighter-pre syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" theme="Confluence"}
+```python
 2d_fit_input = df[['x_var', 'y_var']].to_numpy()
 ```
 
