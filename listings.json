@@ -7,23 +7,7 @@
     ]
   },
   {
-    "listing": "/mrimethods/index.html",
-    "items": [
-      "/mrimethods/anat/acpc-align.html",
-      "/mrimethods/eeg-fmri/gradient-removal.html",
-      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html"
-    ]
-  },
-  {
-    "listing": "/studentresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/tutorials/index.html",
-    "items": []
-  },
-  {
-    "listing": "/mriscanners/index.html",
+    "listing": "/investigatorresources/index.html",
     "items": []
   },
   {
@@ -31,8 +15,23 @@
     "items": []
   },
   {
-    "listing": "/investigatorresources/index.html",
+    "listing": "/mriscanners/index.html",
     "items": []
+  },
+  {
+    "listing": "/tutorials/index.html",
+    "items": []
+  },
+  {
+    "listing": "/studentresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mrimethods/index.html",
+    "items": [
+      "/mrimethods/eeg-fmri/gradient-removal.html",
+      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html"
+    ]
   },
   {
     "listing": "/mrisoftware/index.html",

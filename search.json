@@ -143,25 +143,245 @@
     "text": "Back to top"
   },
   {
-    "objectID": "mrimethods/index.html",
-    "href": "mrimethods/index.html",
-    "title": "MRI Methods",
+    "objectID": "mrimethods/acpc-align.html",
+    "href": "mrimethods/acpc-align.html",
+    "title": "Align AC PC to horizontal",
     "section": "",
-    "text": "Align AC PC to horizontal\n\n\n\n\n\n\nanat\n\n\nshell\n\n\ncode\n\n\nvisualization\n\n\nalignment\n\n\n\nTranslate your structural scans to AC-PC alignment for visualization and display.\n\n\n\n\n\nDec 4, 2024\n\n\nDanny Kim\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Data Cleaning & Forward Solution\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\neeglab\n\n\nmne\n\n\nfreesurfer\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nFeb 13, 2024\n\n\nLynne Williams\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Align to the Anterior Commissure-Posterior Commisure Line\nIf you need help determining where the Anterior and Posterior Commisures are in your image, please see Commissural Pathways, available online, or Catani & Thiebaut de Schotten (2012), which is available from the UBC Library.\n\nDownload the acpc_align script from here. Be sure the code is in the folder where your participant’s structural scans are.\nMake the acpc_align.sh script executable.\n\nchmod 755 acpc_align.sh\n\nOpen your structural scan in your faviourite viewer. Here we are using FSLeyes.\n\n\n\n\nFSLeyes\n\n\n\nGet the X, Y and Z coordinates of the anterior commissure in voxel space by placing your cursor on the anterior commissure. The anterior commissure is located in the anterior wall of the third ventricle. It runs transversely anterior to the anterior columns of the fornix, above the basal forebrain and beneath the medial and ventral aspect of the anterior limb of the internal capsule. Save the X, Y, and Z coordinates.\n\n\n\n\nAnterior Commissure\n\n\n\nGet the X, Y, and Z coordinates of the posterior commissure in voxel space by placing your cursor on the posterior commissure. The posterior commissure is the inferior lamina or stalk of the pineal gland. Save the X, Y, and Z coordinates.\n\n\n\n\nPosterior Commissure\n\n\n\nIn your terminal (MacOS or Linux) run\n\nacpc_align subjectbrain.nii.gz -a x y z -p x y z\nto produce the realigned image for subject-specific to acpc alignment.\nIn the example, this is\nsh acpc_align.sh T1_reoriented.nii.gz -a 93 130 153 -p 93 98 152\n\n\n\nacpc aligned image\n\n\n\n\n\n\n Back to top",
     "crumbs": [
       "Home",
-      "MRI Methods"
+      "MRI Methods",
+      "Align AC PC to horizontal"
     ]
   },
   {
-    "objectID": "studentresources/index.html",
-    "href": "studentresources/index.html",
-    "title": "Student Resources",
+    "objectID": "investigatorresources/index.html",
+    "href": "investigatorresources/index.html",
+    "title": "Investigator Resources",
     "section": "",
     "text": "No matching items\n\n Back to top",
     "crumbs": [
       "Home",
-      "Student Resources"
+      "Investigator Resources"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#what-is-version-control",
+    "href": "tutorials/git.html#what-is-version-control",
+    "title": "Git",
+    "section": "What is Version Control?",
+    "text": "What is Version Control?\nGit version control is an excellent application that allows you to keep track of changes to documents, and also to collaborate and work together. We use it a lot in the lab to save our code, share our code publicly with the science community, and to collaborate on projects.\nSoftware Carpentry has a good tutorial: Version Control with Git",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#connecting-to-github-with-ssh",
+    "href": "tutorials/git.html#connecting-to-github-with-ssh",
+    "title": "Git",
+    "section": "Connecting to Github with SSH",
+    "text": "Connecting to Github with SSH\nIf you don't want to have to put your username and password in every time:\nNo Password Guide\nBasically, you will create a SSH key (or use an existing one):\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nThen you will run:\ngh ssh-key add ~/.ssh/id_ed25519.pub\nNote, you will need to install gh, and run gh auth login\nFor gh auth login, pick:\n\nGitHub.com\nSSH\nyour key you want to upload\nLogin with a web browser",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#start-a-repository",
+    "href": "tutorials/git.html#start-a-repository",
+    "title": "Git",
+    "section": "Start a repository",
+    "text": "Start a repository\nCreate a folder, enter the folder, then type:\ngit init .\nNow, head to your Github account and create a new repo\nName your new repo and click Create New Repository\nNow, in the command line type:\necho \"# Title\" &gt;&gt; README.md\ngit init\ngit add README.md\ngit commit -m \"first commit\"\ngit branch -M main\ngit remote add origin git@github.com:WeberLab/Title.git\ngit push -u origin main\nWhere Title is the name of your new repo",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#update-a-repository",
+    "href": "tutorials/git.html#update-a-repository",
+    "title": "Git",
+    "section": "Update a repository",
+    "text": "Update a repository\nCheck status of remote origin (if any changes have been made on the Github):\ngit remote update\ngit pull",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#clone-a-repository",
+    "href": "tutorials/git.html#clone-a-repository",
+    "title": "Git",
+    "section": "Clone a repository",
+    "text": "Clone a repository\nYou can clone a remote repository to create a local repository on your computer\nFor example,\ngit clone https://github.com/&lt;YourGithubAccountName&gt;/&lt;YourRepoName&gt;",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#push-to-the-repository",
+    "href": "tutorials/git.html#push-to-the-repository",
+    "title": "Git",
+    "section": "Push to the repository",
+    "text": "Push to the repository\nYou can push any changes you make on your local repository to the remote repository. Make sure your current working directory is your local repository, then use the following commands:\ngit add &lt;filename&gt;\ngit commit -m \"Comment about what you added\"\ngit push origin &lt;branchname&gt;",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#branches",
+    "href": "tutorials/git.html#branches",
+    "title": "Git",
+    "section": "Branches",
+    "text": "Branches\nYou can create branches to add or modify features of the master code.\nTo create a new branch, use command:\ngit checkout -b &lt;branchname&gt;\nThen you can add, commit and push to that branch as specified above. Note: use &lt;branchname&gt; main if you want to commit to main.\nYou can switch between branches using the command:\ngit checkout &lt;branchname&gt;\nYou can check what branch you are in using the command:\ngit branch\nSince branches are such an important topic, check out this website which is an excellent resource to understand them more intuitively: https://learngitbranching.js.org/",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/docker.html#what-is-docker",
+    "href": "tutorials/docker.html#what-is-docker",
+    "title": "Docker",
+    "section": "What is Docker",
+    "text": "What is Docker\n\nan open-source project that automates the deployment of software applications inside containers by providing an additional layer of abstraction and automation of OS-level virtualization on Linux.\n\nLet’s begin with a lengthy analogy that will hopefully motivate the usefulness of Docker (and send light on the wordy definitions, as given above). I have summarised the analogy from this post, so have a look there if anything immediately below does not make sense.\nLet’s think about shipping containers (part of Docker logo). Before shipping containers were used, international trade was inefficient, workers would fill ships up with cargo of different sizes and requirements (e.g. fragile or refrigerated). Depending on the size and shape of the ship vs. the size and shape of the cargo a lot of the time the cargo was not compatible or would result in it perishing/breaking.\nThen came along containers,\n\nContainers were standardised so that loading and unloading became efficient.\nAnything that happened inside the container was the containers fault and not the ships. The merchants were responsible for securing everything inside.\nThe containers only need a sturdy enough ship to carry them (i.e. they don’t care about model, shape or size).\n\nWhat happens if the ship sinks (i.e. computer goes down, OS runs out of memory), unlike a shipping container where its contents are lost. You use a Dockerfile (analogous to a seed) to sprout up a new container. Re-creating the container is very easy, they can also be set-up so that backups are kept or that another container will be automatically birthed and carry on the task if one goes down.\nWhy hasn’t Docker taken over. Similar to international trade, shipping containers are very helpful, but they need someone to load, unload and ship. In the same way, the infrastructure necessary to fully take advantage of Docker is still on its way.\nTake away\n\nDocker containers package everything needed. e.g. If you order a car building kit you would get a big container containing all the different parts in smaller boxes vs. picking all individual parts at separate stores.\nPredictable environment. To re-make another car you can re-order the same package and be confident you’ll get the exact same kit vs. having to revisit all the stores again, likely to make a mistake.\nDocker isolated from other packages. e.g. If you are building your car alongside a motorbike project you would two separate piles for your parts vs. having all the parts in one pile and accidentally using a screw that may initially fit but ends up falling out and ruining the car.",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/docker.html#docker-vs.-virtual-machine",
+    "href": "tutorials/docker.html#docker-vs.-virtual-machine",
+    "title": "Docker",
+    "section": "Docker vs. Virtual Machine",
+    "text": "Docker vs. Virtual Machine\n\nBelow is a summary of the following post, I would encourage reading through the post for more detail.\n\nVirtual Machine\nA virtual machine is a virtual server that emulates a hardware server. i.e Hardware not in your computer is used to create a full computer environment that you can use to run an application. For example parallels can be used as an Apple user to run Windows applications on their Apple computer. NOTE: You will be in a Windows environment so you cannot run an Apple application but you can transfer files back and forth.\n\n\nDocker\nDocker uses containers that are platform independent (run across Windows and Linux). It’s main purpose is to run microservice applications, exactly what we need for neuroimaging applications. Docker is not a one-size-fits-all solution.\n\n\nDifferences\n\nDocker isolates individual applications vs. VM isolating entire systems (i.e. you can use containers inside VM’s)\nA Docker container can boot in less than a second vs. VM can take up to a few minutes\nUse a Docker container to package code and its dependencies so that the code is easily shared with Dev, QA and IT.\nDocker has version control, can be compared to GitHub\n\nNOTE: Docker containers are lightweight compared to VM’s however, similar to having an empty or even unused container on a ship. It is advised to remove the container, remember (like a seed) it is easy to re-create the container if you have a Docker File.",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/docker.html#getting-started",
+    "href": "tutorials/docker.html#getting-started",
+    "title": "Docker",
+    "section": "Getting Started",
+    "text": "Getting Started\nDocker’s own Getting Started Guide",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/docker.html#install",
+    "href": "tutorials/docker.html#install",
+    "title": "Docker",
+    "section": "Install",
+    "text": "Install\nMac, Linux, and Windows",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/docker.html#terminology",
+    "href": "tutorials/docker.html#terminology",
+    "title": "Docker",
+    "section": "Terminology",
+    "text": "Terminology\n\nImages: The blueprints of our application which form the basis of containers.\nContainers: Created from Docker images and run the actual application.\nDocker Daemon: The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system which clients talk to.\nDocker Client: The command line tool that allows the user to interact with the daemon.\nDocker Hub: A registry of Docker images (similar idea to GitHub or HomeBrew).",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/docker.html#set-up",
+    "href": "tutorials/docker.html#set-up",
+    "title": "Docker",
+    "section": "Set-up",
+    "text": "Set-up\nTest the install with\ndocker run hello-world",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "tutorials/docker.html#commands",
+    "href": "tutorials/docker.html#commands",
+    "title": "Docker",
+    "section": "Commands",
+    "text": "Commands\nTo take an image from the Docker Hub\ndocker pull &lt;name-of-image&gt;\nTo check the images on the system\ndocker images\nTo run a Docker container based on the image. NOTE: Without any arguments, generally not much will happen. If you run a neuroimaging function, generally the function usage will be output.\ndocker run &lt;name-of-image&gt;\nHere is a helpful link for docker run options: link\nUsing the container ID output from ‘docker images’ you can remove the container to free up space.\ndocker rm &lt;name-of-image&gt;\nIf the Docker container creates/manipulates files, unless otherwise specified these files are part of the container and will be removed when the container is. Read more about it here\nYou will need to pass the -v flag.\nFor example:\n\nInside the container the app creates /usr/src/app/logs\nTo map to host machine -v ~/logs:/usr/src/app/logs",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Docker"
+    ]
+  },
+  {
+    "objectID": "scienceresources/index.html",
+    "href": "scienceresources/index.html",
+    "title": "Science Resources",
+    "section": "",
+    "text": "No matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Science Resources"
+    ]
+  },
+  {
+    "objectID": "mriscanners/index.html",
+    "href": "mriscanners/index.html",
+    "title": "MRI Scanners",
+    "section": "",
+    "text": "No matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "MRI Scanners"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BCCH MRI Research Facility Wiki Page",
+    "section": "",
+    "text": "Overview\nThis page serves as a Wiki and collection of resources for users of BC Children’s MRI Research Facility\nYou can search this page using the magnifying glass in the top right 🔍\nOr you can navigate using the sidebar on the left 👈\nIf you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us (similar to Slack or Microsoft Teams).\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "The BC Children’s Hospital MRI Research Facility is one of Canada’s top centres for pediatric brain mapping and imaging sciences research.\nA core facility of the BC Children’s Hospital’s Research Institute and affiliated with the University of British Columbia, the child-friendly environment of the MRI Research Facility is ideally situated to optimize opportunities for widespread research collaborations with the highly skilled staff found at BC Children’s Hospital and BC Women’s Hospital + Health Centre.\nThe MRI Research Facility features a GE Discovery MR750 3.0 Tesla MRI scanner for functional MRI, structural MRI and spectroscopy. The current scanner software version is DV26.0_R03.\nTogether, with our child-friendly MRI simulator, the MRI Research Facility provides an excellent platform for performing research studies on babies and young children.\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "About"
+    ]
+  },
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "No matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Tutorials"
     ]
   },
   {
@@ -465,246 +685,85 @@
     ]
   },
   {
-    "objectID": "tutorials/index.html",
-    "href": "tutorials/index.html",
-    "title": "Tutorials",
+    "objectID": "studentresources/index.html",
+    "href": "studentresources/index.html",
+    "title": "Student Resources",
     "section": "",
     "text": "No matching items\n\n Back to top",
     "crumbs": [
       "Home",
-      "Tutorials"
+      "Student Resources"
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "mrimethods/index.html",
+    "href": "mrimethods/index.html",
+    "title": "MRI Methods",
     "section": "",
-    "text": "The BC Children’s Hospital MRI Research Facility is one of Canada’s top centres for pediatric brain mapping and imaging sciences research.\nA core facility of the BC Children’s Hospital’s Research Institute and affiliated with the University of British Columbia, the child-friendly environment of the MRI Research Facility is ideally situated to optimize opportunities for widespread research collaborations with the highly skilled staff found at BC Children’s Hospital and BC Women’s Hospital + Health Centre.\nThe MRI Research Facility features a GE Discovery MR750 3.0 Tesla MRI scanner for functional MRI, structural MRI and spectroscopy. The current scanner software version is DV26.0_R03.\nTogether, with our child-friendly MRI simulator, the MRI Research Facility provides an excellent platform for performing research studies on babies and young children.\n\n\n\n Back to top",
+    "text": "EEG-fMRI Data Cleaning & Forward Solution\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\neeglab\n\n\nmne\n\n\nfreesurfer\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nFeb 13, 2024\n\n\nLynne Williams\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
-      "About"
+      "MRI Methods"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BCCH MRI Research Facility Wiki Page",
+    "objectID": "mrimethods/ASL.html",
+    "href": "mrimethods/ASL.html",
+    "title": "Arterial Spin Labelling",
     "section": "",
-    "text": "Overview\nThis page serves as a Wiki and collection of resources for users of BC Children’s MRI Research Facility\nYou can search this page using the magnifying glass in the top right 🔍\nOr you can navigate using the sidebar on the left 👈\nIf you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us (similar to Slack or Microsoft Teams).\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "mriscanners/index.html",
-    "href": "mriscanners/index.html",
-    "title": "MRI Scanners",
-    "section": "",
-    "text": "No matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "MRI Scanners"
-    ]
-  },
-  {
-    "objectID": "scienceresources/index.html",
-    "href": "scienceresources/index.html",
-    "title": "Science Resources",
-    "section": "",
-    "text": "No matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "Science Resources"
-    ]
-  },
-  {
-    "objectID": "tutorials/docker.html#what-is-docker",
-    "href": "tutorials/docker.html#what-is-docker",
-    "title": "Docker",
-    "section": "What is Docker",
-    "text": "What is Docker\n\nan open-source project that automates the deployment of software applications inside containers by providing an additional layer of abstraction and automation of OS-level virtualization on Linux.\n\nLet’s begin with a lengthy analogy that will hopefully motivate the usefulness of Docker (and send light on the wordy definitions, as given above). I have summarised the analogy from this post, so have a look there if anything immediately below does not make sense.\nLet’s think about shipping containers (part of Docker logo). Before shipping containers were used, international trade was inefficient, workers would fill ships up with cargo of different sizes and requirements (e.g. fragile or refrigerated). Depending on the size and shape of the ship vs. the size and shape of the cargo a lot of the time the cargo was not compatible or would result in it perishing/breaking.\nThen came along containers,\n\nContainers were standardised so that loading and unloading became efficient.\nAnything that happened inside the container was the containers fault and not the ships. The merchants were responsible for securing everything inside.\nThe containers only need a sturdy enough ship to carry them (i.e. they don’t care about model, shape or size).\n\nWhat happens if the ship sinks (i.e. computer goes down, OS runs out of memory), unlike a shipping container where its contents are lost. You use a Dockerfile (analogous to a seed) to sprout up a new container. Re-creating the container is very easy, they can also be set-up so that backups are kept or that another container will be automatically birthed and carry on the task if one goes down.\nWhy hasn’t Docker taken over. Similar to international trade, shipping containers are very helpful, but they need someone to load, unload and ship. In the same way, the infrastructure necessary to fully take advantage of Docker is still on its way.\nTake away\n\nDocker containers package everything needed. e.g. If you order a car building kit you would get a big container containing all the different parts in smaller boxes vs. picking all individual parts at separate stores.\nPredictable environment. To re-make another car you can re-order the same package and be confident you’ll get the exact same kit vs. having to revisit all the stores again, likely to make a mistake.\nDocker isolated from other packages. e.g. If you are building your car alongside a motorbike project you would two separate piles for your parts vs. having all the parts in one pile and accidentally using a screw that may initially fit but ends up falling out and ruining the car.",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Docker"
-    ]
-  },
-  {
-    "objectID": "tutorials/docker.html#docker-vs.-virtual-machine",
-    "href": "tutorials/docker.html#docker-vs.-virtual-machine",
-    "title": "Docker",
-    "section": "Docker vs. Virtual Machine",
-    "text": "Docker vs. Virtual Machine\n\nBelow is a summary of the following post, I would encourage reading through the post for more detail.\n\nVirtual Machine\nA virtual machine is a virtual server that emulates a hardware server. i.e Hardware not in your computer is used to create a full computer environment that you can use to run an application. For example parallels can be used as an Apple user to run Windows applications on their Apple computer. NOTE: You will be in a Windows environment so you cannot run an Apple application but you can transfer files back and forth.\n\n\nDocker\nDocker uses containers that are platform independent (run across Windows and Linux). It’s main purpose is to run microservice applications, exactly what we need for neuroimaging applications. Docker is not a one-size-fits-all solution.\n\n\nDifferences\n\nDocker isolates individual applications vs. VM isolating entire systems (i.e. you can use containers inside VM’s)\nA Docker container can boot in less than a second vs. VM can take up to a few minutes\nUse a Docker container to package code and its dependencies so that the code is easily shared with Dev, QA and IT.\nDocker has version control, can be compared to GitHub\n\nNOTE: Docker containers are lightweight compared to VM’s however, similar to having an empty or even unused container on a ship. It is advised to remove the container, remember (like a seed) it is easy to re-create the container if you have a Docker File.",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Docker"
-    ]
-  },
-  {
-    "objectID": "tutorials/docker.html#getting-started",
-    "href": "tutorials/docker.html#getting-started",
-    "title": "Docker",
-    "section": "Getting Started",
-    "text": "Getting Started\nDocker’s own Getting Started Guide",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Docker"
-    ]
-  },
-  {
-    "objectID": "tutorials/docker.html#install",
-    "href": "tutorials/docker.html#install",
-    "title": "Docker",
-    "section": "Install",
-    "text": "Install\nMac, Linux, and Windows",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Docker"
-    ]
-  },
-  {
-    "objectID": "tutorials/docker.html#terminology",
-    "href": "tutorials/docker.html#terminology",
-    "title": "Docker",
-    "section": "Terminology",
-    "text": "Terminology\n\nImages: The blueprints of our application which form the basis of containers.\nContainers: Created from Docker images and run the actual application.\nDocker Daemon: The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system which clients talk to.\nDocker Client: The command line tool that allows the user to interact with the daemon.\nDocker Hub: A registry of Docker images (similar idea to GitHub or HomeBrew).",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Docker"
-    ]
-  },
-  {
-    "objectID": "tutorials/docker.html#set-up",
-    "href": "tutorials/docker.html#set-up",
-    "title": "Docker",
-    "section": "Set-up",
-    "text": "Set-up\nTest the install with\ndocker run hello-world",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Docker"
-    ]
-  },
-  {
-    "objectID": "tutorials/docker.html#commands",
-    "href": "tutorials/docker.html#commands",
-    "title": "Docker",
-    "section": "Commands",
-    "text": "Commands\nTo take an image from the Docker Hub\ndocker pull &lt;name-of-image&gt;\nTo check the images on the system\ndocker images\nTo run a Docker container based on the image. NOTE: Without any arguments, generally not much will happen. If you run a neuroimaging function, generally the function usage will be output.\ndocker run &lt;name-of-image&gt;\nHere is a helpful link for docker run options: link\nUsing the container ID output from ‘docker images’ you can remove the container to free up space.\ndocker rm &lt;name-of-image&gt;\nIf the Docker container creates/manipulates files, unless otherwise specified these files are part of the container and will be removed when the container is. Read more about it here\nYou will need to pass the -v flag.\nFor example:\n\nInside the container the app creates /usr/src/app/logs\nTo map to host machine -v ~/logs:/usr/src/app/logs",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Docker"
-    ]
-  },
-  {
-    "objectID": "tutorials/git.html#what-is-version-control",
-    "href": "tutorials/git.html#what-is-version-control",
-    "title": "Git",
-    "section": "What is Version Control?",
-    "text": "What is Version Control?\nGit version control is an excellent application that allows you to keep track of changes to documents, and also to collaborate and work together. We use it a lot in the lab to save our code, share our code publicly with the science community, and to collaborate on projects.\nSoftware Carpentry has a good tutorial: Version Control with Git",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Git"
-    ]
-  },
-  {
-    "objectID": "tutorials/git.html#connecting-to-github-with-ssh",
-    "href": "tutorials/git.html#connecting-to-github-with-ssh",
-    "title": "Git",
-    "section": "Connecting to Github with SSH",
-    "text": "Connecting to Github with SSH\nIf you don't want to have to put your username and password in every time:\nNo Password Guide\nBasically, you will create a SSH key (or use an existing one):\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nThen you will run:\ngh ssh-key add ~/.ssh/id_ed25519.pub\nNote, you will need to install gh, and run gh auth login\nFor gh auth login, pick:\n\nGitHub.com\nSSH\nyour key you want to upload\nLogin with a web browser",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Git"
-    ]
-  },
-  {
-    "objectID": "tutorials/git.html#start-a-repository",
-    "href": "tutorials/git.html#start-a-repository",
-    "title": "Git",
-    "section": "Start a repository",
-    "text": "Start a repository\nCreate a folder, enter the folder, then type:\ngit init .\nNow, head to your Github account and create a new repo\nName your new repo and click Create New Repository\nNow, in the command line type:\necho \"# Title\" &gt;&gt; README.md\ngit init\ngit add README.md\ngit commit -m \"first commit\"\ngit branch -M main\ngit remote add origin git@github.com:WeberLab/Title.git\ngit push -u origin main\nWhere Title is the name of your new repo",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Git"
-    ]
-  },
-  {
-    "objectID": "tutorials/git.html#update-a-repository",
-    "href": "tutorials/git.html#update-a-repository",
-    "title": "Git",
-    "section": "Update a repository",
-    "text": "Update a repository\nCheck status of remote origin (if any changes have been made on the Github):\ngit remote update\ngit pull",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Git"
-    ]
-  },
-  {
-    "objectID": "tutorials/git.html#clone-a-repository",
-    "href": "tutorials/git.html#clone-a-repository",
-    "title": "Git",
-    "section": "Clone a repository",
-    "text": "Clone a repository\nYou can clone a remote repository to create a local repository on your computer\nFor example,\ngit clone https://github.com/&lt;YourGithubAccountName&gt;/&lt;YourRepoName&gt;",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Git"
-    ]
-  },
-  {
-    "objectID": "tutorials/git.html#push-to-the-repository",
-    "href": "tutorials/git.html#push-to-the-repository",
-    "title": "Git",
-    "section": "Push to the repository",
-    "text": "Push to the repository\nYou can push any changes you make on your local repository to the remote repository. Make sure your current working directory is your local repository, then use the following commands:\ngit add &lt;filename&gt;\ngit commit -m \"Comment about what you added\"\ngit push origin &lt;branchname&gt;",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Git"
-    ]
-  },
-  {
-    "objectID": "tutorials/git.html#branches",
-    "href": "tutorials/git.html#branches",
-    "title": "Git",
-    "section": "Branches",
-    "text": "Branches\nYou can create branches to add or modify features of the master code.\nTo create a new branch, use command:\ngit checkout -b &lt;branchname&gt;\nThen you can add, commit and push to that branch as specified above. Note: use &lt;branchname&gt; main if you want to commit to main.\nYou can switch between branches using the command:\ngit checkout &lt;branchname&gt;\nYou can check what branch you are in using the command:\ngit branch\nSince branches are such an important topic, check out this website which is an excellent resource to understand them more intuitively: https://learngitbranching.js.org/",
-    "crumbs": [
-      "Home",
-      "Tutorials",
-      "Git"
-    ]
-  },
-  {
-    "objectID": "investigatorresources/index.html",
-    "href": "investigatorresources/index.html",
-    "title": "Investigator Resources",
-    "section": "",
-    "text": "No matching items\n\n Back to top",
-    "crumbs": [
-      "Home",
-      "Investigator Resources"
-    ]
-  },
-  {
-    "objectID": "mrimethods/anat/acpc-align.html",
-    "href": "mrimethods/anat/acpc-align.html",
-    "title": "Align AC PC to horizontal",
-    "section": "",
-    "text": "Align to the Anterior Commissure-Posterior Commisure Line\nIf you need help determining where the Anterior and Posterior Commisures are in your image, please see Commissural Pathways, available online, or Catani & Thiebaut de Schotten (2012), which is available from the UBC Library.\n\nDownload the acpc_align script from here. Be sure the code is in the folder where your participant’s structural scans are.\nMake the acpc_align.sh script executable.\n\nchmod 755 acpc_align.sh\n\nOpen your structural scan in your faviourite viewer. Here we are using FSLeyes.\n\n\n\n\nFSLeyes\n\n\n\nGet the X, Y and Z coordinates of the anterior commissure in voxel space by placing your cursor on the anterior commissure. The anterior commissure is located in the anterior wall of the third ventricle. It runs transversely anterior to the anterior columns of the fornix, above the basal forebrain and beneath the medial and ventral aspect of the anterior limb of the internal capsule. Save the X, Y, and Z coordinates.\n\n\n\n\nAnterior Commissure\n\n\n\nGet the X, Y, and Z coordinates of the posterior commissure in voxel space by placing your cursor on the posterior commissure. The posterior commissure is the inferior lamina or stalk of the pineal gland. Save the X, Y, and Z coordinates.\n\n\n\n\nPosterior Commissure\n\n\n\nIn your terminal (MacOS or Linux) run\n\nacpc_align subjectbrain.nii.gz -a x y z -p x y z\nto produce the realigned image for subject-specific to acpc alignment.\nIn the example, this is\nsh acpc_align.sh T1_reoriented.nii.gz -a 93 130 153 -p 93 98 152\n\n\n\nacpc aligned image\n\n\n\n\n\n\n Back to top",
+    "text": "Arterial Spin Labelling can be used to calculate the cerebral blood flow (CBF) in the brain: \"perfusion MRI permits noninvasive quantification of blood flow, which is an important physiological parameter\"\nEssentially it 'tags' arterial blood and then measures it in the brain as it perfuses through (very neat)\nThis is a good resource:\nwww.ncbi.nlm.nih.gov/pmc/articles/PMC4190138/\nAs well as this:\nmri-q.com/quantifying-flow.html",
     "crumbs": [
       "Home",
       "MRI Methods",
-      "Anat",
-      "Align AC PC to horizontal"
+      "Arterial Spin Labelling"
+    ]
+  },
+  {
+    "objectID": "mrimethods/ASL.html#arterial-spin-labelling",
+    "href": "mrimethods/ASL.html#arterial-spin-labelling",
+    "title": "Arterial Spin Labelling",
+    "section": "",
+    "text": "Arterial Spin Labelling can be used to calculate the cerebral blood flow (CBF) in the brain: \"perfusion MRI permits noninvasive quantification of blood flow, which is an important physiological parameter\"\nEssentially it 'tags' arterial blood and then measures it in the brain as it perfuses through (very neat)\nThis is a good resource:\nwww.ncbi.nlm.nih.gov/pmc/articles/PMC4190138/\nAs well as this:\nmri-q.com/quantifying-flow.html",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Arterial Spin Labelling"
+    ]
+  },
+  {
+    "objectID": "mrimethods/ASL.html#install-w-docker",
+    "href": "mrimethods/ASL.html#install-w-docker",
+    "title": "Arterial Spin Labelling",
+    "section": "Install w Docker",
+    "text": "Install w Docker\nIt is recommended to use a docker or singularity\ndocker pull pennlinc/aslprep:latest",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Arterial Spin Labelling"
+    ]
+  },
+  {
+    "objectID": "mrimethods/ASL.html#run-w-docker",
+    "href": "mrimethods/ASL.html#run-w-docker",
+    "title": "Arterial Spin Labelling",
+    "section": "Run w Docker",
+    "text": "Run w Docker\nExample:\ndocker run -ti -m 12GB --rm \\\n    -v $HOME/ds000240:/data:ro \\\n    -v $HOME/ds000240-results:/out:rw \\\n    -v $HOME/tmp/ds000240-workdir:/work \\\n    -v ${FREESURFER_HOME}:/fs \\\n    pennlinc/aslprep:&lt;latest-version&gt; \\\n    /data /out/aslprep-&lt;latest-version&gt; \\\n    participant \\\n    --participant-label '01'\n    --fs-license-file ${FREESURFER_HOME}/license.txt\n    -w /work\nExplanation:\ndocker run -ti -m 12GB --rm                         # attach to the container interactively\n-v $HOME/license.txt:/license/license.txt           # mount the freesurfer license directory\n-v $HOME/ds000240:/data:ro                          # mount the data directory to the container directory\n-v $HOME/ds000240-results:/out:rw                   # mount the output directory to the container directory\n-v $HOME/tmp/ds000240-workdir:/work                 # mount working directory\npennlinc/aslprep                                    # the container name: aslprep\n/data                                               # the data directory\n/out/aslprep                                        # the output directory\nparticipant                                         # analysis type: participant\n--participant-label 01                              # select participant 01\n--fs-license-file /license/license.txt              # setting freesurfer license file\n-w /work                                            # setting working directory\nCommand-Line Arguments:\nusage: aslprep [-h] [--version] [--skip_bids_validation]\n               [--participant-label PARTICIPANT_LABEL [PARTICIPANT_LABEL ...]]\n               [--echo-idx ECHO_IDX] [--bids-filter-file FILE]\n               [--anat-derivatives PATH] [--nprocs NPROCS]\n               [--omp-nthreads OMP_NTHREADS] [--mem MEMORY_GB] [--low-mem]\n               [--use-plugin FILE] [--anat-only] [--boilerplate_only]\n               [--md-only-boilerplate] [-v]\n               [--ignore {fieldmaps,slicetiming,sbref} [{fieldmaps,slicetiming,sbref} ...]]\n               [--longitudinal]\n               [--output-spaces [OUTPUT_SPACES [OUTPUT_SPACES ...]]]\n               [--asl2t1w-init {register,header}] [--asl2t1w-dof {6,9,12}]\n               [--force-bbr] [--force-no-bbr] [--m0_scale M0_SCALE]\n               [--random-seed RANDOM_SEED] [--dummy-vols DUMMY_VOLS]\n               [--smooth_kernel SMOOTH_KERNEL] [--scorescrub] [--basil]\n               [--skull-strip-template SKULL_STRIP_TEMPLATE]\n               [--skull-strip-fixed-seed]\n               [--skull-strip-t1w {auto,skip,force}] [--fmap-bspline]\n               [--fmap-no-demean] [--use-syn-sdc] [--force-syn]\n               [--fs-license-file FILE] [-w WORK_DIR] [--clean-workdir]\n               [--resource-monitor] [--reports-only] [--run-uuid RUN_UUID]\n               [--write-graph] [--stop-on-first-crash] [--notrack] [--sloppy]\n               bids_dir output_dir {participant}",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Arterial Spin Labelling"
+    ]
+  },
+  {
+    "objectID": "mrimethods/ASL.html#instructions",
+    "href": "mrimethods/ASL.html#instructions",
+    "title": "Arterial Spin Labelling",
+    "section": "Instructions:",
+    "text": "Instructions:\nInstructions I wrote: instructions",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Arterial Spin Labelling"
     ]
   },
   {

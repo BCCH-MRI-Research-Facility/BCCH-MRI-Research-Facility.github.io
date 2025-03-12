@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alexander Weber">
-<meta name="dcterms.date" content="2025-02-28">
-<meta name="description" content="3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.">
+<meta name="author" content="Alex Weber">
+<meta name="dcterms.date" content="2025-03-11">
+<meta name="description" content="Measuring cerebral blood flow">
 
-<title>3D Slicer – BC Children’s Research MRI Wiki</title>
+<title>Arterial Spin Labelling – BC Children’s Research MRI Wiki</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -84,12 +118,10 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="3D Slicer – BC Children’s Research MRI Wiki">
-<meta property="og:description" content="3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.">
-<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/mrisoftware/img/3dslicer.png">
+<meta property="og:title" content="Arterial Spin Labelling – BC Children’s Research MRI Wiki">
+<meta property="og:description" content="Measuring cerebral blood flow">
+<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io//img/banner.png">
 <meta property="og:site_name" content="BC Children's Research MRI Wiki">
-<meta property="og:image:height" content="1231">
-<meta property="og:image:width" content="1195">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -152,7 +184,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../mrisoftware/index.html">MRI Software</a></li><li class="breadcrumb-item"><a href="../mrisoftware/3D-Slicer.html">3D Slicer</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../mrimethods/index.html">MRI Methods</a></li><li class="breadcrumb-item"><a href="../mrimethods/ASL.html">Arterial Spin Labelling</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -256,7 +288,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../mrisoftware/3D-Slicer.html" class="sidebar-item-text sidebar-link active">
+  <a href="../mrisoftware/3D-Slicer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3D Slicer</span></a>
   </div>
 </li>
@@ -285,7 +317,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../mrimethods/ASL.html" class="sidebar-item-text sidebar-link">
+  <a href="../mrimethods/ASL.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Arterial Spin Labelling</span></a>
   </div>
 </li>
@@ -336,37 +368,31 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#download-and-install" id="toc-download-and-install" class="nav-link" data-scroll-target="#download-and-install">Download and Install</a></li>
-  <li><a href="#tutorial" id="toc-tutorial" class="nav-link" data-scroll-target="#tutorial">Tutorial</a>
+  <li><a href="#arterial-spin-labelling" id="toc-arterial-spin-labelling" class="nav-link active" data-scroll-target="#arterial-spin-labelling">Arterial Spin Labelling</a></li>
+  <li><a href="#asl-prep" id="toc-asl-prep" class="nav-link" data-scroll-target="#asl-prep">ASL Prep</a>
   <ul class="collapse">
-  <li><a href="#loading-nifti-files" id="toc-loading-nifti-files" class="nav-link" data-scroll-target="#loading-nifti-files">Loading Nifti Files</a></li>
-  <li><a href="#d-rendering" id="toc-d-rendering" class="nav-link" data-scroll-target="#d-rendering">3D Rendering</a></li>
-  </ul></li>
-  <li><a href="#read-more" id="toc-read-more" class="nav-link" data-scroll-target="#read-more">Read more</a>
-  <ul class="collapse">
-  <li><a href="#manual" id="toc-manual" class="nav-link" data-scroll-target="#manual">Manual</a></li>
-  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">FAQ</a></li>
+  <li><a href="#install-w-docker" id="toc-install-w-docker" class="nav-link" data-scroll-target="#install-w-docker">Install w Docker</a></li>
+  <li><a href="#run-w-docker" id="toc-run-w-docker" class="nav-link" data-scroll-target="#run-w-docker">Run w Docker</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions:</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrisoftware/3D-Slicer.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrisoftware/3D-Slicer.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrimethods/ASL.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrimethods/ASL.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../mrisoftware/index.html">MRI Software</a></li><li class="breadcrumb-item"><a href="../mrisoftware/3D-Slicer.html">3D Slicer</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../mrimethods/index.html">MRI Methods</a></li><li class="breadcrumb-item"><a href="../mrimethods/ASL.html">Arterial Spin Labelling</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">3D Slicer</h1>
+<h1 class="title">Arterial Spin Labelling</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">software</div>
-    <div class="quarto-category">visualization</div>
-    <div class="quarto-category">medical imaging</div>
+    <div class="quarto-category">arterial spin labelling</div>
+    <div class="quarto-category">blood flow</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.
+    Measuring cerebral blood flow
   </div>
 </div>
 
@@ -376,21 +402,21 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Alexander Weber </p>
+             <p>Alex Weber </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 28, 2025</p>
+      <p class="date">March 11, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 28, 2025</p>
+      <p class="date-modified">March 11, 2025</p>
     </div>
   </div>
     
@@ -401,58 +427,94 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </header>
 
 
-<p><img src="img/3dslicer.png" class="img-fluid"></p>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>3D Slicer is a free, open source software for visualization, processing, segmentation, registration, and analysis of medical, biomedical, and other 3D images and meshes; and planning and navigating image-guided procedures.</p>
+<section id="arterial-spin-labelling" class="level2">
+<h2 class="anchored" data-anchor-id="arterial-spin-labelling">Arterial Spin Labelling</h2>
+<p>Arterial Spin Labelling can be used to calculate the cerebral blood flow (CBF) in the brain: "perfusion MRI permits noninvasive quantification of blood flow, which is an important physiological parameter"</p>
+<p>Essentially it 'tags' arterial blood and then measures it in the brain as it perfuses through (very neat)</p>
+<p>This is a good resource:<br>
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4190138/">www.ncbi.nlm.nih.gov/pmc/articles/PMC4190138/</a></p>
+<p>As well as this:<br>
+<a href="https://mri-q.com/quantifying-flow.html">mri-q.com/quantifying-flow.html</a></p>
 </section>
-<section id="download-and-install" class="level1">
-<h1>Download and Install</h1>
-<p>3D Slicer is available for Windows, Mac and Linux</p>
-<p><a href="https://download.slicer.org/">download.slicer.org/</a></p>
-<p>You will likely want the ‘Stable Release’</p>
-<p><img src="img/download3dslicer.png" class="img-fluid"></p>
-<p>After downloading, install using your usual operating system method.</p>
-<p>You may have to read and agree to their terms and conditions.</p>
-</section>
-<section id="tutorial" class="level1">
-<h1>Tutorial</h1>
-<p>Now that 3D Slicer is installed, open it how you would usually open applications on your operating system.</p>
-<p>This is how it looks when I first load it up [Note: it may look different on your computer depending on if a newer version has been released]</p>
-<p><img src="img/3dslicerfirstimage.png" class="img-fluid"></p>
-<section id="loading-nifti-files" class="level2">
-<h2 class="anchored" data-anchor-id="loading-nifti-files">Loading Nifti Files</h2>
-<p>Many medical imaging files come in what’s called the ‘NIfTI’ format (stands for Neuroimaging Informatics Technology Initiative). These files will end in either <code>.nii</code> or a compressed version <code>.nii.gz</code></p>
-<p>To load a <code>.nii</code> or <code>.nii.gz</code> file:</p>
-<p>File &gt; Add Data &gt; Choose File(s) to Add</p>
-<p><img src="img/fileadd.png" class="img-fluid"></p>
-<p>Now you should be able to view three different ‘slices’ of your brain: <img src="img/firstimages.png" class="img-fluid"></p>
-<p>Using your mouse, hover over the view you want to interact with, and use your scroll wheel to navigate through slices. Or hold down CTRL while using the scroll wheel to zoom in.</p>
-<p>To move the image around (in case you want to zoom into a particular area), hold down your scroll-wheel and move your cursor.</p>
-</section>
-<section id="d-rendering" class="level2">
-<h2 class="anchored" data-anchor-id="d-rendering">3D Rendering</h2>
-<p>Would you like to see your brain in 3D and perform a ‘virtual dissection’?</p>
+<section id="asl-prep" class="level1">
+<h1>ASL Prep</h1>
+<p>similar to <code>fmriprep</code> or <code>qsiprep</code> if you are familiar</p>
+<blockquote class="blockquote">
+<p>ASLPrep is a Arterial Spin Labeling (ASL) data preprocessing and Cerebral Blood FLow (CBF) computation pipeline that is designed to provide an easily accessible, state-of-the-art interface that is robust to variations in scan acquisition protocols and that requires minimal user input, while providing easily interpretable and comprehensive error and output reporting. It performs basic processing steps (coregistration, normalization, unwarping, noise component extraction, segmentation, skullstripping etc.), CBF computation, denoising CBF, CBF partial volume correction and providing outputs that can be easily submitted to a variety of group level analyses, including task-based or resting-state CBF, graph theory measures, surface or volume-based statistics, etc.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The ASLPrep pipeline uses a combination of tools from well-known software packages, including FSL, ANTs, FreeSurfer and AFNI . This pipeline was designed to provide the best software implementation for each state of preprocessing, and will be updated as newer and better neuroimaging software become available.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>This tool allows you to easily do the following:</p>
+</blockquote>
 <ul>
-<li>Click on the "Welcome to Slicer" drop down menu (Top left)</li>
-<li>Click on "Volume Rendering"</li>
-<li>Click on the 'closed eye' in the top left (beside the name of the image)</li>
-<li>You can then do a digital dissection by clicking on Crop: Enable; Display ROI, then click on the green, red, blue whatever circles to move the planes to dissect</li>
+<li>Take ASL data from raw to fully preprocessed form.</li>
+<li>Compute Cerebral Blood Flow(CBF), denoising and partial volume correction</li>
+<li>Implement tools from different software packages.</li>
+<li>Achieve optimal data processing quality by using the best tools available.</li>
+<li>Receive verbose output concerning the stage of preprocessing for each subject, including meaningful errors.</li>
+<li>Automate and parallelize processing steps, which provides a significant speed-up from typical linear, manual processing.</li>
 </ul>
-<p>Here is a gif that shows these steps in detail [Note: if the image is too small, right-click, and press ‘Open Image in New Tab’]</p>
-<p><img src="./img/3dslicergif.gif" class="img-fluid"></p>
-<p>More info: <a href="https://slicer.readthedocs.io/en/latest/user_guide/modules/volumerendering.html">slicer.readthedocs.io/en/latest/user_guide/modules/volumerendering.html</a></p>
+<section id="install-w-docker" class="level2">
+<h2 class="anchored" data-anchor-id="install-w-docker">Install w Docker</h2>
+<p>It is recommended to use a docker or singularity</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> pull pennlinc/aslprep:latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="run-w-docker" class="level2">
+<h2 class="anchored" data-anchor-id="run-w-docker">Run w Docker</h2>
+<p>Example:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-ti</span> <span class="at">-m</span> 12GB <span class="at">--rm</span> <span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">-v</span> <span class="va">$HOME</span>/ds000240:/data:ro <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">-v</span> <span class="va">$HOME</span>/ds000240-results:/out:rw <span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">-v</span> <span class="va">$HOME</span>/tmp/ds000240-workdir:/work <span class="dt">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">-v</span> <span class="va">${FREESURFER_HOME}</span>:/fs <span class="dt">\</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    pennlinc/aslprep:<span class="op">&lt;</span>latest-version<span class="op">&gt;</span> <span class="dt">\</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    /data /out/aslprep-<span class="op">&lt;</span>latest-version<span class="op">&gt;</span> <span class="dt">\</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    participant <span class="dt">\</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">--participant-label</span> <span class="st">'01'</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">--fs-license-file</span> <span class="va">${FREESURFER_HOME}</span>/license.txt</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-w</span> /work</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Explanation:</p>
+<pre><code>docker run -ti -m 12GB --rm                         # attach to the container interactively
+-v $HOME/license.txt:/license/license.txt           # mount the freesurfer license directory
+-v $HOME/ds000240:/data:ro                          # mount the data directory to the container directory
+-v $HOME/ds000240-results:/out:rw                   # mount the output directory to the container directory
+-v $HOME/tmp/ds000240-workdir:/work                 # mount working directory
+pennlinc/aslprep                                    # the container name: aslprep
+/data                                               # the data directory
+/out/aslprep                                        # the output directory
+participant                                         # analysis type: participant
+--participant-label 01                              # select participant 01
+--fs-license-file /license/license.txt              # setting freesurfer license file
+-w /work                                            # setting working directory</code></pre>
+<p>Command-Line Arguments:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">usage:</span> aslprep <span class="pp">[-</span><span class="ss">h</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">version</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">skip_bids_validation</span><span class="pp">]</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--participant-label</span> PARTICIPANT_LABEL [PARTICIPANT_LABEL ...]]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--echo-idx</span> ECHO_IDX] [--bids-filter-file FILE]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--anat-derivatives</span> PATH] [--nprocs NPROCS]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--omp-nthreads</span> OMP_NTHREADS] [--mem MEMORY_GB] <span class="pp">[--</span><span class="ss">low</span><span class="pp">-</span><span class="ss">mem</span><span class="pp">]</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--use-plugin</span> FILE] <span class="pp">[--</span><span class="ss">anat</span><span class="pp">-</span><span class="ss">only</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">boilerplate_only</span><span class="pp">]</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--md-only-boilerplate]</span> <span class="pp">[-</span><span class="ss">v</span><span class="pp">]</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--ignore</span> <span class="dt">{fieldmaps</span><span class="op">,</span><span class="dt">slicetiming</span><span class="op">,</span><span class="dt">sbref}</span> [<span class="dt">{fieldmaps</span><span class="op">,</span><span class="dt">slicetiming</span><span class="op">,</span><span class="dt">sbref}</span> ...]]</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--longitudinal]</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--output-spaces</span> [OUTPUT_SPACES [OUTPUT_SPACES ...]]]</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--asl2t1w-init</span> <span class="dt">{register</span><span class="op">,</span><span class="dt">header}</span>] [--asl2t1w-dof <span class="dt">{6</span><span class="op">,</span><span class="dt">9</span><span class="op">,</span><span class="dt">12}</span>]</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--force-bbr]</span> <span class="pp">[--</span><span class="ss">force</span><span class="pp">-</span><span class="ss">no</span><span class="pp">-</span><span class="ss">bbr</span><span class="pp">]</span> [--m0_scale M0_SCALE]</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--random-seed</span> RANDOM_SEED] [--dummy-vols DUMMY_VOLS]</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--smooth_kernel</span> SMOOTH_KERNEL] <span class="pp">[--</span><span class="ss">scorescrub</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">basil</span><span class="pp">]</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--skull-strip-template</span> SKULL_STRIP_TEMPLATE]</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--skull-strip-fixed-seed]</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--skull-strip-t1w</span> <span class="dt">{auto</span><span class="op">,</span><span class="dt">skip</span><span class="op">,</span><span class="dt">force}</span>] <span class="pp">[--</span><span class="ss">fmap</span><span class="pp">-</span><span class="ss">bspline</span><span class="pp">]</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--fmap-no-demean]</span> <span class="pp">[--</span><span class="ss">use</span><span class="pp">-</span><span class="ss">syn</span><span class="pp">-</span><span class="ss">sdc</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">force</span><span class="pp">-</span><span class="ss">syn</span><span class="pp">]</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--fs-license-file</span> FILE] [-w WORK_DIR] <span class="pp">[--</span><span class="ss">clean</span><span class="pp">-</span><span class="ss">workdir</span><span class="pp">]</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--resource-monitor]</span> <span class="pp">[--</span><span class="ss">reports</span><span class="pp">-</span><span class="ss">only</span><span class="pp">]</span> [--run-uuid RUN_UUID]</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>               <span class="ex">[--write-graph]</span> <span class="pp">[--</span><span class="ss">stop</span><span class="pp">-</span><span class="ss">on</span><span class="pp">-</span><span class="ss">first</span><span class="pp">-</span><span class="ss">crash</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">notrack</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">sloppy</span><span class="pp">]</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>               <span class="ex">bids_dir</span> output_dir {participant}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="read-more" class="level1">
-<h1>Read more</h1>
-<section id="manual" class="level2">
-<h2 class="anchored" data-anchor-id="manual">Manual</h2>
-<p><a href="https://slicer.readthedocs.io/en/latest/">slicer.readthedocs.io/en/latest/</a></p>
-</section>
-<section id="faq" class="level2">
-<h2 class="anchored" data-anchor-id="faq">FAQ</h2>
-<p><a href="https://www.slicer.org/wiki/Documentation/4.5/FAQ/General">slicer.org/wiki/Documentation/4.5/FAQ/General</a></p>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions:</h2>
+<p>Instructions I wrote: <a href="attachments/instructions.pdf">instructions</a></p>
 
 
 </section>
@@ -881,4 +943,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrisoftware/3D-Slicer.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrisoftware/3D-Slicer.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrimethods/ASL.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrimethods/ASL.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
