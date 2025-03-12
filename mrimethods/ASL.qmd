@@ -1,0 +1,139 @@
+---
+title: "Arterial Spin Labelling"
+description: "Measuring cerebral blood flow"
+author: "Alex Weber"
+date: "2025-03-11"
+date-modified: "2025-03-11"
+highlight-style: github
+categories:
+    - arterial spin labelling
+    - blood flow
+---
+
+## Arterial Spin Labelling 
+
+Arterial Spin Labelling can be used to calculate the cerebral blood flow
+(CBF) in the brain: \"perfusion MRI permits noninvasive quantification
+of blood flow, which is an important physiological parameter\"
+
+Essentially it \'tags\' arterial blood and then measures it in the brain
+as it perfuses through (very neat)
+
+This is a good resource:\
+[www.ncbi.nlm.nih.gov/pmc/articles/PMC4190138/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4190138/)
+
+As well as this:\
+[mri-q.com/quantifying-flow.html](https://mri-q.com/quantifying-flow.html)
+
+# ASL Prep 
+
+similar to `fmriprep` or `qsiprep` if you are familiar
+
+> ASLPrep is a Arterial Spin Labeling (ASL) data preprocessing and
+> Cerebral Blood FLow (CBF) computation pipeline that is designed to
+> provide an easily accessible, state-of-the-art interface that is
+> robust to variations in scan acquisition protocols and that requires
+> minimal user input, while providing easily interpretable and
+> comprehensive error and output reporting. It performs basic processing
+> steps (coregistration, normalization, unwarping, noise component
+> extraction, segmentation, skullstripping etc.), CBF computation,
+> denoising CBF, CBF partial volume correction and providing outputs
+> that can be easily submitted to a variety of group level analyses,
+> including task-based or resting-state CBF, graph theory measures,
+> surface or volume-based statistics, etc.
+
+> The ASLPrep pipeline uses a combination of tools from well-known
+> software packages, including FSL, ANTs, FreeSurfer and AFNI . This
+> pipeline was designed to provide the best software implementation for
+> each state of preprocessing, and will be updated as newer and better
+> neuroimaging software become available.
+
+> This tool allows you to easily do the following:
+
+-   Take ASL data from raw to fully preprocessed form.
+-   Compute Cerebral Blood Flow(CBF), denoising and partial volume
+    correction
+-   Implement tools from different software packages.
+-   Achieve optimal data processing quality by using the best tools
+    available.
+-   Receive verbose output concerning the stage of preprocessing for
+    each subject, including meaningful errors.
+-   Automate and parallelize processing steps, which provides a
+    significant speed-up from typical linear, manual processing.
+
+## Install w Docker 
+
+It is recommended to use a docker or singularity
+
+```bash
+docker pull pennlinc/aslprep:latest
+```
+
+## Run w Docker 
+
+Example:
+
+```bash
+docker run -ti -m 12GB --rm \
+    -v $HOME/ds000240:/data:ro \
+    -v $HOME/ds000240-results:/out:rw \
+    -v $HOME/tmp/ds000240-workdir:/work \
+    -v ${FREESURFER_HOME}:/fs \
+    pennlinc/aslprep:<latest-version> \
+    /data /out/aslprep-<latest-version> \
+    participant \
+    --participant-label '01'
+    --fs-license-file ${FREESURFER_HOME}/license.txt
+    -w /work
+```
+
+Explanation:
+
+```
+docker run -ti -m 12GB --rm                         # attach to the container interactively
+-v $HOME/license.txt:/license/license.txt           # mount the freesurfer license directory
+-v $HOME/ds000240:/data:ro                          # mount the data directory to the container directory
+-v $HOME/ds000240-results:/out:rw                   # mount the output directory to the container directory
+-v $HOME/tmp/ds000240-workdir:/work                 # mount working directory
+pennlinc/aslprep                                    # the container name: aslprep
+/data                                               # the data directory
+/out/aslprep                                        # the output directory
+participant                                         # analysis type: participant
+--participant-label 01                              # select participant 01
+--fs-license-file /license/license.txt              # setting freesurfer license file
+-w /work                                            # setting working directory
+```
+
+Command-Line Arguments:
+
+```bash
+usage: aslprep [-h] [--version] [--skip_bids_validation]
+               [--participant-label PARTICIPANT_LABEL [PARTICIPANT_LABEL ...]]
+               [--echo-idx ECHO_IDX] [--bids-filter-file FILE]
+               [--anat-derivatives PATH] [--nprocs NPROCS]
+               [--omp-nthreads OMP_NTHREADS] [--mem MEMORY_GB] [--low-mem]
+               [--use-plugin FILE] [--anat-only] [--boilerplate_only]
+               [--md-only-boilerplate] [-v]
+               [--ignore {fieldmaps,slicetiming,sbref} [{fieldmaps,slicetiming,sbref} ...]]
+               [--longitudinal]
+               [--output-spaces [OUTPUT_SPACES [OUTPUT_SPACES ...]]]
+               [--asl2t1w-init {register,header}] [--asl2t1w-dof {6,9,12}]
+               [--force-bbr] [--force-no-bbr] [--m0_scale M0_SCALE]
+               [--random-seed RANDOM_SEED] [--dummy-vols DUMMY_VOLS]
+               [--smooth_kernel SMOOTH_KERNEL] [--scorescrub] [--basil]
+               [--skull-strip-template SKULL_STRIP_TEMPLATE]
+               [--skull-strip-fixed-seed]
+               [--skull-strip-t1w {auto,skip,force}] [--fmap-bspline]
+               [--fmap-no-demean] [--use-syn-sdc] [--force-syn]
+               [--fs-license-file FILE] [-w WORK_DIR] [--clean-workdir]
+               [--resource-monitor] [--reports-only] [--run-uuid RUN_UUID]
+               [--write-graph] [--stop-on-first-crash] [--notrack] [--sloppy]
+               bids_dir output_dir {participant}
+```
+
+## Instructions: 
+
+Instructions I wrote:
+[instructions](attachments/instructions.pdf)
+
+
