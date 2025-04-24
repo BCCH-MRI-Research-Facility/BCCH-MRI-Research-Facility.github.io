@@ -86,7 +86,7 @@
     "href": "mrisoftware/index.html",
     "title": "MRI Software",
     "section": "",
-    "text": "No matching items\n\n Back to top",
+    "text": "3D Slicer\n\n\n\n\n\n\nsoftware\n\n\nvisualization\n\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "MRI Software"
@@ -97,7 +97,7 @@
     "href": "mrimethods/index.html",
     "title": "MRI Methods",
     "section": "",
-    "text": "Align AC PC to horizontal\n\n\n\n\n\n\nanat\n\n\nshell\n\n\ncode\n\n\nvisualization\n\n\nalignment\n\n\n\nTranslate your structural scans to AC-PC alignment for visualization and display.\n\n\n\n\n\nDec 4, 2024\n\n\nDanny Kim\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Data Cleaning & Forward Solution\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\neeglab\n\n\nmne\n\n\nfreesurfer\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nFeb 13, 2024\n\n\nLynne Williams\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "EEG-fMRI Data Cleaning & Forward Solution\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\neeglab\n\n\nmne\n\n\nfreesurfer\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nFeb 13, 2024\n\n\nLynne Williams\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "MRI Methods"
@@ -499,6 +499,822 @@
       "Home",
       "Tutorials",
       "Docker"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/3D-Slicer.html#loading-nifti-files",
+    "href": "mrisoftware/3D-Slicer.html#loading-nifti-files",
+    "title": "3D Slicer",
+    "section": "Loading Nifti Files",
+    "text": "Loading Nifti Files\nMany medical imaging files come in what’s called the ‘NIfTI’ format (stands for Neuroimaging Informatics Technology Initiative). These files will end in either .nii or a compressed version .nii.gz\nTo load a .nii or .nii.gz file:\nFile &gt; Add Data &gt; Choose File(s) to Add\n\nNow you should be able to view three different ‘slices’ of your brain: \nUsing your mouse, hover over the view you want to interact with, and use your scroll wheel to navigate through slices. Or hold down CTRL while using the scroll wheel to zoom in.\nTo move the image around (in case you want to zoom into a particular area), hold down your scroll-wheel and move your cursor.",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "3D Slicer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/3D-Slicer.html#d-rendering",
+    "href": "mrisoftware/3D-Slicer.html#d-rendering",
+    "title": "3D Slicer",
+    "section": "3D Rendering",
+    "text": "3D Rendering\nWould you like to see your brain in 3D and perform a ‘virtual dissection’?\n\nClick on the \"Welcome to Slicer\" drop down menu (Top left)\nClick on \"Volume Rendering\"\nClick on the 'closed eye' in the top left (beside the name of the image)\nYou can then do a digital dissection by clicking on Crop: Enable; Display ROI, then click on the green, red, blue whatever circles to move the planes to dissect\n\nHere is a gif that shows these steps in detail [Note: if the image is too small, right-click, and press ‘Open Image in New Tab’]\n\nMore info: slicer.readthedocs.io/en/latest/user_guide/modules/volumerendering.html",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "3D Slicer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/3D-Slicer.html#manual",
+    "href": "mrisoftware/3D-Slicer.html#manual",
+    "title": "3D Slicer",
+    "section": "Manual",
+    "text": "Manual\nslicer.readthedocs.io/en/latest/",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "3D Slicer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/3D-Slicer.html#faq",
+    "href": "mrisoftware/3D-Slicer.html#faq",
+    "title": "3D Slicer",
+    "section": "FAQ",
+    "text": "FAQ\nslicer.org/wiki/Documentation/4.5/FAQ/General",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "3D Slicer"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html",
+    "href": "mrimethods/Anatomical.html",
+    "title": "Anatomical",
+    "section": "",
+    "text": "This is a large topic, and you probably want to check out ANTs\nBut here is a nice tutorial to get you started on the ideas (linear, non-linear, inverse, apply warp, etc.)\nhttps://fsl.fmrib.ox.ac.uk/fslcourse/graduate/lectures/practicals/registration/\n\n\nhttps://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT/FAQ#How_do_I_make_my_own_study-specific_template_image_with_FLIRT.3F\nOr try ANTs: antsMultivariateTemplateConstruction2.sh\n\n\n\nGenerally you want to register low to high resolution. Then, if that isn't he actual direction you want to go, you would invert the registration matrix and apply it in the oppposite direction.",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#make-your-own-template",
+    "href": "mrimethods/Anatomical.html#make-your-own-template",
+    "title": "Anatomical",
+    "section": "",
+    "text": "https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT/FAQ#How_do_I_make_my_own_study-specific_template_image_with_FLIRT.3F\nOr try ANTs: antsMultivariateTemplateConstruction2.sh",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#tips",
+    "href": "mrimethods/Anatomical.html#tips",
+    "title": "Anatomical",
+    "section": "",
+    "text": "Generally you want to register low to high resolution. Then, if that isn't he actual direction you want to go, you would invert the registration matrix and apply it in the oppposite direction.",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#comparison-of-methods",
+    "href": "mrimethods/Anatomical.html#comparison-of-methods",
+    "title": "Anatomical",
+    "section": "Comparison of methods",
+    "text": "Comparison of methods\nCheck this paper out\n\n\"The overall analysis of the skull stripping techniques against the “silver-standard” consensus showed that STAPLE, ANTS and BEaST achieved the highest Dice coefficient metrics and had smaller variance (standard deviation), therefore they have high agreement with the consensus mask and their performance was consistent. STAPLE's Dice coefficient was significantly different compared to all the methods, except for ANTs and MBWSS.\nThe Dice coefficient metric represents a compromise between sensitivity (including brain tissue) and specificity (not including non-brain tissue). STAPLE, OPTIBET, BEaST and ANTS were found to be robust techniques; their Dice coefficients were higher than 0.9 for all 359 subjects assessed (Table 7). BSE, BET are the less consistent (robust) with higher standard deviations. MBWSS has the fourth highest Dice coefficient, it suffers from failing in some cases (13 subjects; Dice &lt;0.9) by leaving a big portion of the brain out of the segmentation mask. If we excluded these failures, MBWSS would have an average Dice coefficient of 97.58 1.4 ± 9, which is close to the results obtained by ANTs and STAPLE.\"\n\nMy own attempts, looking at ANTsPyNet, optimized bet, BEaST, and FastSurfer are as follows:",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#bet",
+    "href": "mrimethods/Anatomical.html#bet",
+    "title": "Anatomical",
+    "section": "BET",
+    "text": "BET\nThe go-to method (although probably shouldn't be)\nSee FSL's page\nSee this paper on optimizing: https://pubmed.ncbi.nlm.nih.gov/22484407/\n\n\"The removal of the neck slices, either externally or within BET, has a marked positive effect on the brain extraction quality. BET option \"B\" with f=0.1 after removal of the neck slices seems to work best for all acquisition protocols. \"\n\nrobustfov -i T1w.nii.gz -r T1w_noneck\nbet T1w_noneck.nii.gz brain -m -R -B -f 0.1",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#dskullstrip-afni",
+    "href": "mrimethods/Anatomical.html#dskullstrip-afni",
+    "title": "Anatomical",
+    "section": "3dSkullStrip (AFNI)",
+    "text": "3dSkullStrip (AFNI)\nTo run, type 3dSkullStrip to get a list of inputs/parameters\nBasic run:\n3dSkullStrip -input input_image.nii.gz -prefix output_image.nii.gz\n[note: final product may be deobliqued and no longer align with original image…]\nOR you can run @SSwarper [note: takes about 1hr]:\n@SSwarper -input ../T1w.nii.gz -base MNI152_2009_template_SSW.nii.gz -subid sub-001 -odir group/o.aw_sub-001\n[note: final product may be deobliqued and no longer align with original image…]",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#ants",
+    "href": "mrimethods/Anatomical.html#ants",
+    "title": "Anatomical",
+    "section": "ANTs",
+    "text": "ANTs\nhttps://andysbrainbook.readthedocs.io/en/latest/ANTs/ANTs_Overview.html\nhttps://dpaniukov.github.io/2016/06/06/brain-extraction-with-ants.html\nantsBrainExtraction.sh -d 3 -a sub-001_T1w_202.nii.gz -e brainWithSkullTemplate.nii.gz -m brainPrior.nii.gz -o anat_Stripped.nii\nThe option “-d 3” means that it is a three-dimensional image; “-a” indicates the anatomical image to be stripped; and “-e” is used to supply a template for skull-stripping. (which ones?) “-m” will generate a brain mask, and “-o” is the label for the output.\nTemplates can be downloaded here: https://figshare.com/articles/dataset/ANTs_ANTsR_Brain_Templates/915436\n[note: final product may be aligned to the template you use and no longer aligned with original image]",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#antspynet",
+    "href": "mrimethods/Anatomical.html#antspynet",
+    "title": "Anatomical",
+    "section": "ANTsPyNet",
+    "text": "ANTsPyNet\nI actually prefer this version of ANTs Brain Extraction to the above.\nhttps://github.com/ANTsX/ANTsPy\nand https://github.com/ANTsX/ANTsPyNet\npip install antspyx\npip install antspynet\nIn Python:\nfrom antspynet import brain_extraction\nimport os\nfrom ants import atropos, get_ants_data, image_read, resample_image, get_mask\nexample_filename = os.path.join('../..', 'T1w.nii.gz')\nimages = image_read(example_filename)\nprobability_brain_mask = brain_extraction(images, modality=\"t1\")\nprobability_brain_mask.to_file('antsbrainmask.nii.gz')\nBash:\nflirt -in antsbrainmask.nii.gz -ref ../../T1w.nii.gz -out antsbrainmask_orig.nii.gz -applyxfm -usesqform\nfslmaths antsbrainmask_orig.nii.gz -thr 0.5 -bin antsbrainmask_orig.nii.gz\nfslmaths antsbrainmask_orig.nii.gz -mul ../../T1w.nii.gz antsbrain.nii.gz\nOr just use this one simple script: https://github.com/WeberLab/SkullStrip_ANTsPyNet/tree/main",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#beast",
+    "href": "mrimethods/Anatomical.html#beast",
+    "title": "Anatomical",
+    "section": "BEaST",
+    "text": "BEaST\nBEaST is a software toolkit to extract brain from hight resolution T1 images. BEaST refers to Brain Extraction based on non-local Segmentation Technique which was published in Neuroimage by Eskildsen and colleagues (Eskildsen et al, 2012).\nInstallation and tutorial can be found here:\nhttps://rpubs.com/conge/beast_intro\nCitation: Simon F. Eskildsen, Pierrick Coupé, Vladimir Fonov, José V. Manjón, Kelvin K. Leung, Nicolas Guizard, Shafik N. Wassef, Lasse R. Østergaard, D. Louis Collins, and The Alzheimer's Disease Neuroimaging Initiative, BEaST: Brain extraction based on nonlocal segmentation technique, NeuroImage, vol. 59(3), pp. 2362-2373. ISSN 1053-8119, 10.1016/j.neuroimage.2011.09.012.\n\nInstallation on Ubuntu:\nDependencies\n\nYou might need these installed:\n\nsudo apt install cmake-curses-gui\n\nFirst install MINC\n\ncd ~/Downloads\nwget http://packages.bic.mni.mcgill.ca/minc-toolkit/Debian/minc-toolkit-1.9.18-20200813-Ubuntu_20.04-x86_64.deb\nsudo dpkg -i minc-toolkit-1.9.18-20200813-Ubuntu_20.04-x86_64.deb\nsource /opt/minc/1.9.18/minc-toolkit-config.sh\nexport LIBMINC_DIR=/opt/minc/1.9.18/lib/cmake/\n[note: please add source /opt/minc/1.9.18/minc-toolkit-config.sh into your bashrc file so you don't have to do it every time before running the toolkit:]\necho \"source /opt/minc/minc-toolkit-config.sh\" &gt;&gt; ~/.bashrc;\n[NOTE: if the above doesn't work, try: https://github.com/BIC-MNI/minc-toolkit-v2 ]\n\nInstall NIfTI libraries\n\nsudo apt-get install libnifti-dev\n\nInstall library for Hierarchical Data Format 5 support\n\nsudo apt-get install libhdf5-dev\nBEaST Proper\n\nDownload source code:\n\ncd ~/Downloads\ngh repo clone BIC-MNI/BEaST #note: this uses the git hub cli client; see [[[git]]]\ncd BEaST\n\nCompile and Install BEaST\n\nRun the code below to configure the installation.\nccmake CMakeLists.txt\nAt the step, you need to make sure all the path is correct in the CMakeList.txt. Type “c” to configure the installation and type “g” to generate configuration. If everything is correct, runt the code below to install BEaST to your system.\nFor me, I needed to edit and include: /opt/minc/1.9.18/lib/cmake/\nMore Troubleshooting:\n\nNIFTI_ROOT should be set to /usr if you installed NIfTI libraries\n\nusing the package libnifti-dev\n\nIf the compiler cannot find hdf5.h you probably need to install\n\nlibhdf5-serial-dev\n\nIf you get the message: \"Could not find module FindLIBMINC.cmake or\n\na configuration file for package LIBMINC.\", you must point to the\ndirectory containing either FindLIBMINC.cmake or\nLIBMINCConfig.cmake. If you have installed MINC Tool Kit,\nhttp://www.bic.mni.mcgill.ca/ServicesSoftware/ServicesSoftwareMincToolKit ,\nthe directory is most likely /opt/minc/lib\n\nmake sure fsl's path isn't before your major ones: put this at the very end of your ~/.bashrc file:\n\nexport PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH\nmake\nsudo make install\n\nInstall BEaST Libraries\n\ncd ~/Downloads\nwget http://packages.bic.mni.mcgill.ca/tgz/beast-library-1.1.tar.gz\ntar xzf beast-library-1.1.tar.gz\nsudo mv beast-library-1.1 /opt/minc/1.9.18share/\n\n\nScript to run BEaST:\n#!/usr/bin/env bash\n# \n# BEaSTSkullStrip.sh\n# Using BEaST to do SkullStriping\n# [see here](https://github.com/FCP-INDI/C-PAC/wiki/Concise-Installation-Guide-for-BEaST) for instructions for BEaST.\n# \n# Qingyang Li\n# 2013-07-29\n\n# With major edits from Alex W\n#  \n# The script requires FSL, AFNI, BEaST, and MINC toolkit.\n\nSECONDS=0\n\nMincPATH='/opt/minc/1.9.18'\nsource $MincPATH/minc-toolkit-config.sh\n\nMincLibPATH=\"$MincPATH/share/beast-library-1.1/\"\n\nMNItemplatePATH=~/Atlas/\nMNI_DATAPATH=~/Atlas/\n\ncwd=$PWD\n\nif [ $# -lt 1  ]\nthen\n  echo \" USAGE ::  \"\n  echo \"  BEaSTSkullStrip.sh &lt;input&gt; [output prefix] \" \n  echo \"   input: anatomical image with skull, in nifti format \" \n  echo \"   output: The program will output two nifti files \" \n  echo \"      1) a skull stripped brain image; \"  \n  echo \"      2) a skull stripped brain mask. \"\n  echo \"   Option: output prefix: the filename of the output files without extention\"\n  echo \" Example: BEaSTSkullStrip.sh ~/data/head.nii.gz ~/brain \" \n  exit\nfi\n\nif [ $# -eq 1 ]\nthen\n  inputDir=$(dirname $1)\n  if [ $inputDir == \".\" ]; then\n    inputDir=$cwd\n  fi\n\n  filename=$(basename $1)\n  inputFile=$inputDir/$filename\n\n  extension=\"${filename##*.}\"\n  if [ $extension == \"gz\" ]; then\n    filename=\"${filename%.*}\"\n  fi\n  filename=\"${filename%.*}\"\n\n  outputDir=$inputDir\n  out=$inputDir/${filename}_brain\n\nelse\n  outputDir=$(dirname $2)\n\n  if [ $outputDir == \".\" ]; then\n    outputDir=$cwd\n    outfile=$(basename $2)\n    out=$outputDir/$outfile\n  else\n    mkdir -p $outputDir\n    out=$2\n  fi\n\n  inputDir=$(dirname $1)\n  filename=$(basename $1)\n  inputFile=$inputDir/$filename\n\n  extension=\"${filename##*.}\"\n  if [ $extension == \"gz\" ]; then\n    filename=\"${filename%.*}\"\n  fi\n  filename=\"${filename%.*}\"\n\nfi\n\necho \" ++ input directory is $inputDir\"\necho \" ++ input basename is $filename\"\necho \" ++ output directory is $outputDir\"\necho \" ++ output will be $out\"\ntmpdir=$(mktemp -d $outputDir/tmp.XXXXXXXXXX)\necho \" ++ working dir will be $tmpdir\"\n\ncd $tmpdir\n\nimcp ${inputFile} head\n\nheadfile=$(ls head.*)\necho $headfile\nheadextension=\"${headfile##*.}\"\nif [ $headextension == \"gz\" ]; then\n  gunzip $headfile\nfi\n\nnii2mnc head.nii head.mnc\n\n# Normalize the input\nbeast_normalize head.mnc head_mni.mnc anat2mni.xfm -modeldir $MNItemplatePATH\n\n# Run BEaST to do SkullStripping\n# configuration file can be replaced by $MincLibPATH/default.2mm.conf or $MincLibPATH/default.4mm.conf\n\nmincbeast -fill -median -conf $MincLibPATH/default.1mm.conf $MincLibPATH head_mni.mnc brain_mask_mni.mnc\n\n# Transform brain mask to it's original space\nmincresample -invert_transformation -like head.mnc -transformation anat2mni.xfm brain_mask_mni.mnc brain_mask.mnc\n\n# Convert image from MNC to NII format.\n\nmnc2nii brain_mask.mnc brain_mask_tmp.nii\n\n# Resample mask to original image\nflirt -in brain_mask_tmp.nii -ref head.nii -applyxfm -usesqform -out brain_mask\nfslmaths brain_mask -thr 0.5 -bin brain_mask\n\n# Generate and output brain image and brain mask\nfslmaths head.nii -mul brain_mask ${out}_brain\nimmv brain_mask ${out}_brain_mask\n\n# delete all intermediate files\ncd $cwd\nrm -rf $tmpdir\n\nduration=$SECONDS\necho \"$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed.\"\n\n\nGit Script\nhttps://github.com/WeberLab/BEaST",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#Anatomical-T1T2CombinationTechnique",
+    "href": "mrimethods/Anatomical.html#Anatomical-T1T2CombinationTechnique",
+    "title": "Anatomical",
+    "section": "T1T2 Combination Technique",
+    "text": "T1T2 Combination Technique\nThis idea comes from: https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.25560 :\nEssentially run your skullstripping algorithm on a combination image (CI) of T1w and scaled T2w (sT2w):\nCI = (T1w-sT2w)/(T1w+sT2w)\n\"The CI image values range from −1.0 to 1.0, with negative values in the CSF, positive values in the WM, and values near 0 in the GM. To facilitate visualization and image processing, the CI was scaled within the union mask to set the minimum at zero and the median at a value where the median intensity of all voxels equaled that of the T1w image.\"\n\"The scaling factor was calculated to adjust the graymatter (GM) voxel intensities in the T2w image so that their median value equaled that of the GM voxel intensities in the T1w image.\"\n\"The scaling factor was calculated as MG_T1/MG_T2, where MG_T1 and MG_T2 are the median values of GM voxels of T1w and T2w, respectively. The term sT2w designates the T2w image scaled by this value: sT2w = MG_T1/MG_T2 × T2w.\"\n\"The T2w image was aligned to the T1w image using align_epi_anat.py script in Analysis of Functional NeuroImages (AFNI)\"\n\nExample\nFirst I bias field corrected my images (see above)\n\nRegister T2 to T1\n\nflirt -in T2w_N4.nii.gz -ref T1w_N4.nii.gz -out T2-to-T1\n\nFind the scaling factor (median T1 of gm / median T2 of gm)\n\nI just guessed this by clicking around: 3.45\nThen multiply the T2 image by this factor:\nfslmaths T2-to-T1.nii.gz -mul 3.45 sT2w.nii.gz\n\nNow calculate the CI image:\n\nfslmaths T1w_N4.nii.gz -sub sT2w.nii.gz T1w-sT2w\nfslmaths T1w_N4.nii.gz -add sT2w.nii.gz T1w+sT2w\nfslmaths T1w-sT2w.nii.gz -div T1w+sT2w.nii.gz CI\n\nNext find the median value of all the T1w file\n\nfslstats T1w_N4.nii.gz -P 50\nIn my case it turned out to be: 388\n\nThen set the CI to be between 0 and 1, then multiply by that median number:\n\nfslmaths CI.nii.gz -add 1 -div 2 -mul 388 sCI\n\nNow apply bet?\n\nrobustfov -i sCI.nii.gz -r sCI_robust\nbet sCI_robust.nii.gz sCI_robust_brain -o -m -f 0.1 -B\n::::\nThis failed pretty remarkably…",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#robex",
+    "href": "mrimethods/Anatomical.html#robex",
+    "title": "Anatomical",
+    "section": "ROBEX",
+    "text": "ROBEX\nROBEX receives a volume as an input and provides the stripped output.\nOptional: Corresponding binary mask. However, the volume has to be in the same orientation as the provided reference volume.\nROBEX works with any ITK-friendly format e.g. HDR/images, nii, dcm\nOn LINUX: runROBEX.sh inputFile strippedFile [outputMaskFile]\nRead about ROBEX in Robust Brain Extraction Across Datasets and Comparison with Publicly Available Methods\nDownload",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#flabel",
+    "href": "mrimethods/Anatomical.html#flabel",
+    "title": "Anatomical",
+    "section": "fLABEL",
+    "text": "fLABEL\nSkullStrippingToolkit https://www.nitrc.org/projects/skulltoolkit\n\"A matlab-based code for skull stripping on infant and adult MR images.\"\n\nSetup\nCurrently installed on AdaL:\nAdd this to your ~/bashrc file:\nexport LABELDIR=/usr/local/skullStrippingToolkit\nexport PATH=${PATH}:${LABELDIR}/bin\nthen add this to your ~/matlab/startup.m file:\n%----------- add fLABEL for brain extraction ---------------%\nLABELDIR = '/usr/local/skullStrippingToolkit'\naddpath(genpath(LABELDIR));\n%-----------------------------------------------------%\nafter your source ~/.bashrc you should be good to go:\n\n\nTo Run:\n\nThe input image should be in nii format (better to perform bias correction first using tools such as N3).\nType in fLABEL and the program option will be listed.\nFollow the example to run the algorithm.",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#neonates",
+    "href": "mrimethods/Anatomical.html#neonates",
+    "title": "Anatomical",
+    "section": "Neonates",
+    "text": "Neonates\nUnlike adults, using a T2w image for brain extraction may work best with a T2 image. Be careful, as a lot of brain extraction methods have been optimized on T1w images.\n\ndHCP Anatomical Pipeline\nInstallation:\nFirst step is make sure docker is installed and that your user is added to the docker usergroup\nInstallation and Troubleshooting for docker should be found here: fmri-prep\nNext step:\ndocker pull biomedia/dhcp-structural-pipeline:latest\nThis will take a while to download and install\nExample Script\n######################################################˚\n# Uses dHCP anatomical docker image to segment brains\n# from images in Raw5 folder\n# Step 1) N4 correction\n# Step 2) Register T1 to T2\n# Step 3) Run dHCP pipeline\n######################################################˚\n# change lines necessary: 17, 20, 39, 40, 41 && unnecessary: 23, 35, 47\n\n# based on below parameters this\n# 1) script path = /mnt/WeberLab/Projects/NeonateSucrose/SickKids/dhcp-anat.sh\n# 2) working directory = /home/johann.drayne/dhcptesting/\n# 3) output directory = /home/johann.drayne/dhcptesting/run-single/\n\n# change to the folder where you have this script saved\nhighDir=/mnt/WeberLab/Projects/NeonateSucrose/SickKids\n\n# change to where you want output folder to be\ncurDir=/home/johann.drayne/dhcptesting/\n\n# change after ${curDir} to change name of output folder\ndataDir=${curDir}run-single/\n\ncd ${curDir}\nmkdir ${dataDir}\n\n######################################################˚\n# rename for T1, T2 and age variables\n######################################################˚\n\nsubjectid=MS040054 # change this to whatever, dHCP likes using the subject name\n                   # in their scripts\n\nagescan=34                  # rename to the subjects age at scan\nogt1=${subject}/t1/*.nii.gz # rename to your t1 file\nogt2=${subject}/t2/*.nii.gz # rename to your t2 file\n\nbaset1=$(basename ${ogt1})\nbaset2=$(basename ${ogt2})\n\ntempDir=${curDir}temp-dhcp-working-${subjectid}/\nmkdir ${tempDir}\n\n######################################################˚\n# N4 correction\n######################################################˚\n\nN4t1=${tempDir}N4_${subjectid}t1.nii.gz\nN4t2=${tempDir}N4_${subjectid}t2.nii.gz\n\nN4BiasFieldCorrection -d 3 -i ${ogt1} -o ${N4t1}\nN4BiasFieldCorrection -d 3 -i ${ogt2} -o ${N4t2}\n\ncp -f  ${N4t2} ${dataDir}\nt1=${dataDir}N4_Warped${baset1}\nt2=${dataDir}N4_${baset2}\nmv ${dataDir}N4_${subjectid}t2.nii.gz ${t2}\n\ncd ${highDir}\n\n######################################################˚\n# Register T1 to T2\n######################################################˚\n\necho \"----- Starting Registration ${subjectid} -----\"\n\nantsRegistration --dimensionality 3 --float 0 \\\n        --output [${tempDir},${t1}] \\\n        --interpolation Linear \\\n        --winsorize-image-intensities [0.005,0.995] \\\n        --use-histogram-matching 0 \\\n        --initial-moving-transform [${N4t2},${N4t1},1] \\\n        --transform Rigid[0.08] \\\n        --metric MI[${N4t2},${N4t1},1,64,Regular,0.20] \\\n        --convergence [5000x2500x1000x500,1e-10,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 0x0x0x0vox\n\necho \"----- Registration completed for ${subjectid} -----\"\n\nrm -r ${tempDir}\n\n#\n##    --verbose 1\n##\n##        --transform Affine[0.08] \\\n##        --metric MI[${N4t2},${N4t1},1,64,Regular,0.25] \\\n##        --convergence [1000x1000x500x200,1e-10,10] \\\n##        --shrink-factors 8x4x2x1 \\\n##        --smoothing-sigmas 3x2x1x0vox\n##\n##        --transform SyN[0.08,3,0] \\\n##        --metric MI[${N4t2},${N4t1},1,64,Regular,0.25] \\\n##        --convergence [300x2000x100x500,1e-10,10] \\\n##        --shrink-factors 8x4x2x1 \\\n##        --smoothing-sigmas 3x2x1x0vox \\\n##        --verbose 1\n\n######################################################˚\n# Run docker image\n######################################################˚\n\ndocker run --rm -t \\\n    -u $(id -u):$(id -g) \\\n    -v ${dataDir}:${dataDir} \\\n    -w ${dataDir} \\\n    biomedia/dhcp-structural-pipeline:latest ${subjectid} session1 ${agescan} -T1 N4_Warped${baset1} -T2 N4_${baset2} -t 16\n\nI have commented the lines that need edited. 5 lines are necessary, 3 lines don't need to be changed but probably better if you do.\nYou'll notice I also commented the Affine and SyN parts of antsRegistration, I found the Rigid transform was pretty decent. The Affine and SyN took very long, maybe this is an option if you are playing with the single subject for the moment or the rigid registration is not good enough.\nYou will also need to get the latest version from dHCP docker pull biomedia/dhcp-structural-pipeline:latest should do the trick\nIf you run this script on Pierce, you will need to change the -t flag on line 115 (to probably 6), this specifies the number of CPU cores\n\ndHCP anat output\nWhen you run the script, sometimes it will fail out before completely finishing. If you are only looking for the segmentations, this is ok as they are almost always completed.\nThis is generally how your output folder will look when running on multiple subjects.\noutput\n    - logs\n    - derivatives\n            - sub-${subid}\n                    - ses-session1\n                            - anat\n                                    - output images\n    - sourcedata\n    - workdir\n            - ${subid}-session1\n                    - bias    \n                    - dofs\n                    - logs\n                    - masks\n                    - N4\n                    - posteriors\n                    - restore\n                    - segmentations\n                    - segmentations-data\n                    - surfaces\n                    - T1\n                    - T2\nThe two most important folder are derivatives (subjects that have fully run) and workdir (subjects that failed in pipeline)\nHere is a rough guide as to what image is what (workdir 1st derivatives equivalent 2nd)\n\nT2 restored: restore/T2/${subid}-session1_restore.nii.gz && sub-${subid}_ses-session1_T2w_restore\nT2 skull strip: restore/T2/${subid}-session1_restore_brain.nii.gz && sub-${subid}_ses-session1_T2w_restore_brain\nT2 tissue segmented: segmentations/${subid}-${sesid}_all_labels.nii.gz && sub-${subid}_ses-session1_drawem_all_labels\n\nMore detail into how the segmentations are indexed\nWhen writing a pipeline for picking these images a nice bash way (no if statement needed) to do it is.\nworkingt2=${dhcpanat}workdir/${subid}-${sesid}/restore/T2/${subid}-${sesid}_restore\nderivt2=${dhcpanat}derivatives/sub-${subid}/ses-${sesid}/anat/sub-${subid}_ses-${sesid}_T2w_restore\n[[ -f ${workingt2}.nii.gz ]] && t2=${workingt2} || t2=${derivt2}\n\nThe first two lines are paths to the image in the derivatives and workdir folder as we don't know.\nThe third line asks if the image exists in the workdir folder, if it does then the variable t2 equals the path to the workdir folder\nIf [[ -f ${workingt2}.nii.gz ]] is false then the variable t2 will equal the path to the derivatives folder",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#ibeat",
+    "href": "mrimethods/Anatomical.html#ibeat",
+    "title": "Anatomical",
+    "section": "iBEAT",
+    "text": "iBEAT\nhttps://ibeat.wildapricot.org/\nInfant Brain Extraction and Analysis Toolbox",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#fsl_anat",
+    "href": "mrimethods/Anatomical.html#fsl_anat",
+    "title": "Anatomical",
+    "section": "FSL_ANAT",
+    "text": "FSL_ANAT\nfsl_anat -i T1.nii.gz -o output/location\nExample outputs:\nlesionmaskinv.nii.gz T1_biascorr.nii.gz T1_fast_totbias.nii.gz T1_nonroi2roi.mat T1_to_MNI_lin.mat\nlesionmask.nii.gz T1_fast_bias_idxmask.nii.gz T1_fullfov.nii.gz T1_orig2roi.mat T1_to_MNI_lin.nii.gz\nlog.txt T1_fast_bias_init.nii.gz T1_initfast2_brain_mask2.nii.gz T1_orig2std.mat T1_to_MNI_nonlin_coeff.nii.gz\nMNI152_T1_2mm_brain_mask_dil1.nii.gz T1_fast_bias.nii.gz T1_initfast2_brain_mask.nii.gz T1_orig.nii.gz T1_to_MNI_nonlin_field.nii.gz\nMNI_to_T1_nonlin_field.nii.gz T1_fast_bias_vol2.nii.gz T1_initfast2_brain.nii.gz T1_roi2nonroi.mat T1_to_MNI_nonlin_jac.nii.gz\nT1_biascorr_brain_mask.nii.gz T1_fast_bias_vol32.nii.gz T1_initfast2_maskedrestore.nii.gz T1_roi2orig.mat T1_to_MNI_nonlin.nii.gz\nT1_biascorr_brain.nii.gz T1_fast_restore.nii.gz T1_initfast2_restore.nii.gz T1_roi.log T1_to_MNI_nonlin.txt\nT1_biascorr_maskedbrain.nii.gz T1_fast_seg.nii.gz T1.nii.gz T1_std2orig.mat\nSegmentation index:\n3- White Matter\n2- Grey Matter\n1- CSF",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#fmriprep",
+    "href": "mrimethods/Anatomical.html#fmriprep",
+    "title": "Anatomical",
+    "section": "fmriprep",
+    "text": "fmriprep\nfmriprep will run freesurfer on the anatomical data",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#freesurfer",
+    "href": "mrimethods/Anatomical.html#freesurfer",
+    "title": "Anatomical",
+    "section": "Freesurfer",
+    "text": "Freesurfer\nTo run freesurfer yourself and get cortical segmentation (note: takes HOURS):\nrecon-all -i T1w_robust.nii.gz -s &lt;subid&gt; -sd ${PWD} -all\nTo run freesurfer and just get a simple segmentation:\nrecon-all -i T1w_robust.nii.gz -s &lt;subid&gt; -sd ${PWD} -autorecon1 -autorecon2\nAfter this, you will need to convert to nifti, and reorient:\nmri_convert aseg.auto_noCCseg.mgz aseg.auto_noCCseg.nii.gz\nfslreorient2std aseg.auto_noCCseg.nii.gz aseg.auto_noCCseg_r2std\nflirt -in aseg.auto_noCCseg_r2std.nii.gz -ref T1w_robust.nii.gz -out segment -applyxfm -usesqform\nHere are the tissue labels:\n2 Left_Cerebral_White_Matter\n3 Left_Cerebral_Cortex\n4 Left_Lateral_Ventricle\n5 Left_Inf_Lat_Vent\n7 Left_Cerebellum_White_Matter\n8 Left_Cerebellum_Cortex\n10 Left_Thalamus\n11 Left_Caudate\n12 Left_Putamen\n13 Left_Pallidum\n14 Third_Ventricle\n15 Fourth_Ventricle\n16 Brain_Stem\n17 Left_Hippocampus\n18 Left_Amygdala\n24 CSF\n26 Left_Accumbens_area\n28 Left_VentralDC\n30 Left-vessel\n31 Left-choroid-plexus\n41 Right_Cerebral_White_Matter\n42 Right_Cerebral_Cortex\n43 Right_Lateral_Ventricle\n44 Right_Inf_Lat_Vent\n46 Right_Cerebellum_White_Matter\n47 Right_Cerebellum_Cortex\n49 Right_Thalamus\n50 Right_Caudate\n51 Right_Putamen\n52 Right_Pallidum\n53 Right_Hippocampus\n54 Right_Amygdala\n58 Right_Accumbens_area\n60 Right_VentralDC\n62 Right-vessel\n63 Right-choroid-plexus\n77 WM_hypointensities\n85 Optic-Chiasm",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#volbrain-online-tool",
+    "href": "mrimethods/Anatomical.html#volbrain-online-tool",
+    "title": "Anatomical",
+    "section": "VolBrain (online tool)",
+    "text": "VolBrain (online tool)\nhttps://volbrain.net/services",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/Anatomical.html#edit-header-info-on-nifti-files",
+    "href": "mrimethods/Anatomical.html#edit-header-info-on-nifti-files",
+    "title": "Anatomical",
+    "section": "Edit Header Info on Nifti Files",
+    "text": "Edit Header Info on Nifti Files\nfsledithd - allows the header information in and image to be edited in a text-based xml-style format (like the output of fslhd -x but with redundant fields removed and some help text provided). Note that the default text editor used is nano, but other editors can be specified by the second argument.",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Anatomical"
+    ]
+  },
+  {
+    "objectID": "mrimethods/acpc-align.html",
+    "href": "mrimethods/acpc-align.html",
+    "title": "Align AC PC to horizontal",
+    "section": "",
+    "text": "Align to the Anterior Commissure-Posterior Commisure Line\nIf you need help determining where the Anterior and Posterior Commisures are in your image, please see Commissural Pathways, available online, or Catani & Thiebaut de Schotten (2012), which is available from the UBC Library.\n\nDownload the acpc_align script from here. Be sure the code is in the folder where your participant’s structural scans are.\nMake the acpc_align.sh script executable.\n\nchmod 755 acpc_align.sh\n\nOpen your structural scan in your faviourite viewer. Here we are using FSLeyes.\n\n\n\n\nFSLeyes\n\n\n\nGet the X, Y and Z coordinates of the anterior commissure in voxel space by placing your cursor on the anterior commissure. The anterior commissure is located in the anterior wall of the third ventricle. It runs transversely anterior to the anterior columns of the fornix, above the basal forebrain and beneath the medial and ventral aspect of the anterior limb of the internal capsule. Save the X, Y, and Z coordinates.\n\n\n\n\nAnterior Commissure\n\n\n\nGet the X, Y, and Z coordinates of the posterior commissure in voxel space by placing your cursor on the posterior commissure. The posterior commissure is the inferior lamina or stalk of the pineal gland. Save the X, Y, and Z coordinates.\n\n\n\n\nPosterior Commissure\n\n\n\nIn your terminal (MacOS or Linux) run\n\nacpc_align subjectbrain.nii.gz -a x y z -p x y z\nto produce the realigned image for subject-specific to acpc alignment.\nIn the example, this is\nsh acpc_align.sh T1_reoriented.nii.gz -a 93 130 153 -p 93 98 152\n\n\n\nacpc aligned image\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Align AC PC to horizontal"
+    ]
+  },
+  {
+    "objectID": "mrimethods/ASL.html",
+    "href": "mrimethods/ASL.html",
+    "title": "Arterial Spin Labelling",
+    "section": "",
+    "text": "Arterial Spin Labelling can be used to calculate the cerebral blood flow (CBF) in the brain: \"perfusion MRI permits noninvasive quantification of blood flow, which is an important physiological parameter\"\nEssentially it 'tags' arterial blood and then measures it in the brain as it perfuses through (very neat)\nThis is a good resource:\nwww.ncbi.nlm.nih.gov/pmc/articles/PMC4190138/\nAs well as this:\nmri-q.com/quantifying-flow.html",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Arterial Spin Labelling"
+    ]
+  },
+  {
+    "objectID": "mrimethods/ASL.html#arterial-spin-labelling",
+    "href": "mrimethods/ASL.html#arterial-spin-labelling",
+    "title": "Arterial Spin Labelling",
+    "section": "",
+    "text": "Arterial Spin Labelling can be used to calculate the cerebral blood flow (CBF) in the brain: \"perfusion MRI permits noninvasive quantification of blood flow, which is an important physiological parameter\"\nEssentially it 'tags' arterial blood and then measures it in the brain as it perfuses through (very neat)\nThis is a good resource:\nwww.ncbi.nlm.nih.gov/pmc/articles/PMC4190138/\nAs well as this:\nmri-q.com/quantifying-flow.html",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Arterial Spin Labelling"
+    ]
+  },
+  {
+    "objectID": "mrimethods/ASL.html#install-w-docker",
+    "href": "mrimethods/ASL.html#install-w-docker",
+    "title": "Arterial Spin Labelling",
+    "section": "Install w Docker",
+    "text": "Install w Docker\nIt is recommended to use a docker or singularity\ndocker pull pennlinc/aslprep:latest",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Arterial Spin Labelling"
+    ]
+  },
+  {
+    "objectID": "mrimethods/ASL.html#run-w-docker",
+    "href": "mrimethods/ASL.html#run-w-docker",
+    "title": "Arterial Spin Labelling",
+    "section": "Run w Docker",
+    "text": "Run w Docker\nExample:\ndocker run -ti -m 12GB --rm \\\n    -v $HOME/ds000240:/data:ro \\\n    -v $HOME/ds000240-results:/out:rw \\\n    -v $HOME/tmp/ds000240-workdir:/work \\\n    -v ${FREESURFER_HOME}:/fs \\\n    pennlinc/aslprep:&lt;latest-version&gt; \\\n    /data /out/aslprep-&lt;latest-version&gt; \\\n    participant \\\n    --participant-label '01'\n    --fs-license-file ${FREESURFER_HOME}/license.txt\n    -w /work\nExplanation:\ndocker run -ti -m 12GB --rm                         # attach to the container interactively\n-v $HOME/license.txt:/license/license.txt           # mount the freesurfer license directory\n-v $HOME/ds000240:/data:ro                          # mount the data directory to the container directory\n-v $HOME/ds000240-results:/out:rw                   # mount the output directory to the container directory\n-v $HOME/tmp/ds000240-workdir:/work                 # mount working directory\npennlinc/aslprep                                    # the container name: aslprep\n/data                                               # the data directory\n/out/aslprep                                        # the output directory\nparticipant                                         # analysis type: participant\n--participant-label 01                              # select participant 01\n--fs-license-file /license/license.txt              # setting freesurfer license file\n-w /work                                            # setting working directory\nCommand-Line Arguments:\nusage: aslprep [-h] [--version] [--skip_bids_validation]\n               [--participant-label PARTICIPANT_LABEL [PARTICIPANT_LABEL ...]]\n               [--echo-idx ECHO_IDX] [--bids-filter-file FILE]\n               [--anat-derivatives PATH] [--nprocs NPROCS]\n               [--omp-nthreads OMP_NTHREADS] [--mem MEMORY_GB] [--low-mem]\n               [--use-plugin FILE] [--anat-only] [--boilerplate_only]\n               [--md-only-boilerplate] [-v]\n               [--ignore {fieldmaps,slicetiming,sbref} [{fieldmaps,slicetiming,sbref} ...]]\n               [--longitudinal]\n               [--output-spaces [OUTPUT_SPACES [OUTPUT_SPACES ...]]]\n               [--asl2t1w-init {register,header}] [--asl2t1w-dof {6,9,12}]\n               [--force-bbr] [--force-no-bbr] [--m0_scale M0_SCALE]\n               [--random-seed RANDOM_SEED] [--dummy-vols DUMMY_VOLS]\n               [--smooth_kernel SMOOTH_KERNEL] [--scorescrub] [--basil]\n               [--skull-strip-template SKULL_STRIP_TEMPLATE]\n               [--skull-strip-fixed-seed]\n               [--skull-strip-t1w {auto,skip,force}] [--fmap-bspline]\n               [--fmap-no-demean] [--use-syn-sdc] [--force-syn]\n               [--fs-license-file FILE] [-w WORK_DIR] [--clean-workdir]\n               [--resource-monitor] [--reports-only] [--run-uuid RUN_UUID]\n               [--write-graph] [--stop-on-first-crash] [--notrack] [--sloppy]\n               bids_dir output_dir {participant}",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Arterial Spin Labelling"
+    ]
+  },
+  {
+    "objectID": "mrimethods/ASL.html#instructions",
+    "href": "mrimethods/ASL.html#instructions",
+    "title": "Arterial Spin Labelling",
+    "section": "Instructions:",
+    "text": "Instructions:\nInstructions I wrote: instructions",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Arterial Spin Labelling"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#scripts-vs.-modules",
+    "href": "tutorials/Python.html#scripts-vs.-modules",
+    "title": "Python",
+    "section": "Scripts vs. Modules",
+    "text": "Scripts vs. Modules\nIt's also important to know the difference between a Script and a Module:\nPython Scripts and Modules\nand\nCode Reuse: Functions and Modules\nA plain text .py file containing Python code that is intended to be directly executed by the user is usually called a script\nA plain text .py file, which contains Python code that is designed to be imported and used from another Python file, is called a module\n\nHow to write a simple script:\nOpen a text file and save it as a filename with the suffix .py:\nOne good program to use for this is Sublime Text. Check it out.\nOr better yet, Visual Studio Code\nOr in terminal:\nnano filename.py\n[note: nano is a built in text editor you can run from the command line. It's very handy]\nAt the top, it should say: #!/usr/bin/env python3\nthen your code. Here's an example:\n#!/usr/bin/env python3\n\nprint('Hello World!')\nAfter, you will have to assign execution permissions to your file:\nchmod +x filename.py\nYou can run the script from the directory with './' before the filename:\n./hello.py\nYou can also store this file in a Script folder, which you can tell Python to search in for scripts:\nexport PATH=\"$PATH:/usr/local/bin/python\"\nwhere /usr/local/bin/python is replaced with the path to the folder you want Python to look for your scripts\nAfter you set the path, you don't need to be in the directory where your script is, and you don't need to include the './' before the script name. You can just type the script name from any directory and it will run it:\nfilename.py\n\n\nHow to write a simple module:\nOpen a text file and write some simple code:\ndef greeting(name):\n  print(\"Hello, \" + name)\nSave this file as something like mymodule.py\nPlace this file in one of the Python paths (see above about scripts)\nTo see what paths Python is searching, start a python environment and type:\nimport sys\nsys.path\nNow import the module in python:\nimport mymodule\nThen run it:\nmymodule.greeting(\"Jonathan\")",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#install-upgrade-packages",
+    "href": "tutorials/Python.html#install-upgrade-packages",
+    "title": "Python",
+    "section": "Install / Upgrade Packages",
+    "text": "Install / Upgrade Packages\npip install &lt;package_name&gt;\npip install &lt;package_name&gt; --upgrade",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#troubleshooting",
+    "href": "tutorials/Python.html#troubleshooting",
+    "title": "Python",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\ninstead of pip, you might have to call it this way:\npython3 -m pip",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#numpy",
+    "href": "tutorials/Python.html#numpy",
+    "title": "Python",
+    "section": "numpy",
+    "text": "numpy\nnumpy is for numbers\nimport numpy as np",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#pandas",
+    "href": "tutorials/Python.html#pandas",
+    "title": "Python",
+    "section": "pandas",
+    "text": "pandas\npandas is for dataframes\nimport pandas as pd",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#scipy",
+    "href": "tutorials/Python.html#scipy",
+    "title": "Python",
+    "section": "scipy",
+    "text": "scipy\nSciPy provides algorithms for optimization, integration, interpolation, eigenvalue problems, algebraic equations, differential equations, statistics and many other classes of problems.",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#matplotlib",
+    "href": "tutorials/Python.html#matplotlib",
+    "title": "Python",
+    "section": "matplotlib",
+    "text": "matplotlib\nhttps://matplotlib.org/\nMatplotlib is for visualizations\n\nExample\nimport matplotlib.pyplot as plt\nfig, ax = plt.subplots()             # Create a figure containing a single Axes.\nax.plot([1, 2, 3, 4], [1, 4, 2, 3])  # Plot some data on the Axes.\nplt.show()                           # Show the figure.\n\n\n\nTransparent color\nhttps://stackoverflow.com/questions/62453018/matplotlib-colourmap-from-transparent\nhttps://stackoverflow.com/questions/22669704/correct-way-to-set-color-to-transparent-with-matplotlib-pcolormesh",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#plotly",
+    "href": "tutorials/Python.html#plotly",
+    "title": "Python",
+    "section": "plotly",
+    "text": "plotly\nPlotly’s Python graphing library makes interactive, publication-quality graphs.\nplotly.com/python/",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#jupyter",
+    "href": "tutorials/Python.html#jupyter",
+    "title": "Python",
+    "section": "jupyter",
+    "text": "jupyter\nThe Jupyter Notebook is the original web application for creating and sharing computational documents. It offers a simple, streamlined, document-centric experience.\njupyter.org/\npip install jupyter installs the Jupyter Notebook, JupyterLab, and the IPython Kernel",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#nilearn",
+    "href": "tutorials/Python.html#nilearn",
+    "title": "Python",
+    "section": "nilearn",
+    "text": "nilearn\nNilearn enables approachable and versatile analyses of brain volumes. It provides statistical and machine-learning tools, with instructive documentation & open community.\nnilearn.github.io/stable/index.html",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#nibabel",
+    "href": "tutorials/Python.html#nibabel",
+    "title": "Python",
+    "section": "nibabel",
+    "text": "nibabel\nhttps://nipy.org/nibabel/\n\nRead and write access to common neuroimaging file formats, including: ANALYZE (plain, SPM99, SPM2 and later), GIFTI, NIfTI1, NIfTI2, CIFTI-2, MINC1, MINC2, AFNI BRIK/HEAD, ECAT and Philips PAR/REC. In addition, NiBabel also supports FreeSurfer’s MGH, geometry, annotation and morphometry files, and provides some limited support for DICOM.\nNiBabel’s API gives full or selective access to header information (metadata), and image data is made available via NumPy arrays. For more information, see NiBabel’s documentation site and API reference.\n\nimport nibabel as nib",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#seaborn",
+    "href": "tutorials/Python.html#seaborn",
+    "title": "Python",
+    "section": "seaborn",
+    "text": "seaborn\nseaborn is a high level interface for drawing statistical graphics with Matplotlib. It aims to make visualization a central part of exploring and understanding complex datasets.\nseaborn.pydata.org/",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#nibabel-1",
+    "href": "tutorials/Python.html#nibabel-1",
+    "title": "Python",
+    "section": "nibabel",
+    "text": "nibabel\nRead and write access to common neuroimaging file formats\ngithub.com/nipy/nibabel",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#nipy",
+    "href": "tutorials/Python.html#nipy",
+    "title": "Python",
+    "section": "nipy",
+    "text": "nipy\nThe aim of NIPY is to produce a platform-independent Python environment for the analysis of functional brain imaging data using an open development model.\ngithub.com/nipy/nipy",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#nipype",
+    "href": "tutorials/Python.html#nipype",
+    "title": "Python",
+    "section": "Nipype",
+    "text": "Nipype\nNipype, an open-source, community-developed initiative under the umbrella of NiPy, is a Python project that provides a uniform interface to existing neuroimaging software and facilitates interaction between these packages within a single workflow. Nipype provides an environment that encourages interactive exploration of algorithms from different packages (e.g., SPM, FSL, FreeSurfer, AFNI, Slicer, ANTS), eases the design of workflows within and between packages, and reduces the learning curve necessary to use different packages.\ngithub.com/nipy/nipype",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#using-poetry",
+    "href": "tutorials/Python.html#using-poetry",
+    "title": "Python",
+    "section": "Using poetry",
+    "text": "Using poetry\nhttps://python-poetry.org/\n\nExample\npoetry init # press enter for defaults or make changes\npoetry add numpy # libraries you want to use\nYou should now have a file called pyproject.toml that looks like this:\n[tool.poetry]\nname = \"poetry\"\nversion = \"0.1.0\"\ndescription = \"\"\nauthors = [\"\"]\n\n[tool.poetry.dependencies]\npython = \"^3.8\"\nnumpy = \"^1.21.1\"\n\n[build-system]\nrequires = [\"poetry-core&gt;=1.0.0\"]\nbuild-backend = \"poetry.core.masonry.api\"\nIf you get an error when trying to install a package that says something like:\n\nThe current project's supported Python range (&gt;=3.10,&lt;4.0) is not compatible with some of the required packages Python requirement:\n\nstochastic requires Python &gt;=3.8,&lt;3.11, so it will not be satisfied for Python &gt;=3.11,&lt;4.0\n\nBecause no versions of stochastic match &gt;0.7.0,&lt;0.8.0\nand stochastic (0.7.0) requires Python &gt;=3.8,&lt;3.11, stochastic is forbidden.\nSo, because pythonncctoolbox depends on stochastic (^0.7.0), version solving failed.\n\nCheck your dependencies Python requirement: The Python requirement can be specified via the python or markers properties\n\nFor stochastic, a possible solution would be to set the `python` property to \"&gt;=3.10,&lt;3.11\"\n\nTry editing the pyproject.toml file so it reads:\n[tool.poetry.dependencies]\npython = \"&gt;=3.10,&lt;3.11\"\nNow type\npoetry update\nThen try to install your package again:\npoetry add stochastic\n\n\nJupyter\nhttps://hippocampus-garden.com/jupyter_poetry_pipenv/\npoetry add -D jupyter # libraries for development use only\nnow just run\npoetry run jupyter notebook",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#using-virtualenv",
+    "href": "tutorials/Python.html#using-virtualenv",
+    "title": "Python",
+    "section": "Using virtualenv",
+    "text": "Using virtualenv\nFirst make sure virtualenv is installed:\npip install virtualenv\nNext create a virtual environment\nvirtualenv .venv -p python\nwhere .venv is what I’ve called my virtual environment (and it will place it in the current directory I’m in); and -p python tells the computer which python to use (it will be whatever is which python\nNow activate this environment:\nsource .venv/bin/activate\nNow when you type which python it should show your venv path\nAlso: which pip should do the same\nTo deactivate:\ndeactivate\nInclude in jupyter notebook:\npython -m ipykernel install --user --name=yourvenvname",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#install",
+    "href": "tutorials/Python.html#install",
+    "title": "Python",
+    "section": "Install",
+    "text": "Install\ncd ~/Downloads\nwget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\nbash Miniconda3-latest-Linux-x86_64.sh -b -p &lt;dir&gt;\nwhere &lt;dir&gt; is where you want to install (e.g. $HOME/miniconda3)\nthen\nsource &lt;dir&gt;/bin/activate\nUpdate\nconda update conda -y",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#conda-environments",
+    "href": "tutorials/Python.html#conda-environments",
+    "title": "Python",
+    "section": "Conda Environments",
+    "text": "Conda Environments\n\nUsing environments are highly recommended as a best practice for running scripts.\nConda environments are easier set-up than pip environments\nConda checks to makes sure all dependancies are met at all times, where as pip does not.\n\nExample\nconda create --name my-python38environment python=3.8\nTo activate:\nconda activate my-python38environment\nTo deactivate:\nconda deactivate\n\nBest practices\nTo list the conda environments:\nconda info --envs\nTo install a specific package into a specific environment\nconda install -n &lt;env_name&gt; &lt;package&gt;\ne.g. conda install -n first_r_python_env numpy\nSometimes you will have to specify a specific channel (similar idea to a repository) as not all packages are in the default conda channel.\nTry to install from the default channel or 'channel-forge' (a community managed channel) as these are the best managed channels.\nconda install -c conda-forge -n &lt;env_name&gt; &lt;package&gt;\nA list of the more common packages and where I found them.\n\nconda install -n &lt;env_name&gt; numpy\nconda install -n &lt;env_name&gt; pandas\nconda install -n &lt;env_name&gt; matplotlib\nconda install -n &lt;env_name&gt; seaborn\nconda install -c conda-forge -n &lt;env_name&gt; rpy2\nconda install -c conda-forge -n &lt;env_name&gt; statsmodels\nconda install -c conda-forge -n &lt;env_name&gt; nilearn\nconda install -c intel -n &lt;env_name&gt; scikit-learn\n\nYour .conda directory may get very large if you install multiple packages and create many virtual Conda environments. Make sure to clean the Conda cache and clean unused packages with:\nconda clean --all\nClean unused Conda environments by first listing the environments with:\nconda env list\n, and then removing unused ones:\nconda env remove --name &lt;yourenvironmentname&gt;\nYou can build Conda environments in different locations to save space on your home directory. You can use the —prefix flag when building your environment. For example:\nconda create myenv --prefix=/work/&lt;mygroup&gt;/&lt;mydirectory&gt;",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#troubleshooting-1",
+    "href": "tutorials/Python.html#troubleshooting-1",
+    "title": "Python",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nIf you'd prefer that conda's base environment not be activated on startup, set the auto_activate_base parameter to false:\nconda config --set auto_activate_base false",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#nipype-1",
+    "href": "tutorials/Python.html#nipype-1",
+    "title": "Python",
+    "section": "NiPype",
+    "text": "NiPype\nNiPype stands for Neuroimaging in Pythong Pipelines and Interfaces (link)\n\nFSL\nFSL can be run from NiPype\nimport nipype.interfaces.fsl as fsl\nHead here for documentation\nExample:\nfrom nipype.interfaces.fsl import Merge\nmerger = Merge()\nmerger.inputs.in_files = ['functional2.nii', 'functional3.nii']\nmerger.inputs.dimension = 't'\nmerger.inputs.output_type = 'NIFTI_GZ'\nmerger.cmdline\n'fslmerge -t functional2_merged.nii.gz functional2.nii functional3.nii'\nmerger.inputs.tr = 2.25\nmerger.cmdline\n'fslmerge -tr functional2_merged.nii.gz functional2.nii functional3.nii 2.25'",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#curve-and-surface-fits",
+    "href": "tutorials/Python.html#curve-and-surface-fits",
+    "title": "Python",
+    "section": "Curve and Surface fits",
+    "text": "Curve and Surface fits\nAdding a line or curve of best fit is a quick way of visualising the relationship between data.\nWe have to be mindful of the different ways of fitting data; you can underfit but also overfit.\nPackages to import\nimport numpy as np\nimport pandas as pd \nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy import stats\nfrom scipy.optimize import curve_fit\nimport pickle\nfrom scipy.stats import spearmanr\nfrom scipy.stats import pearsonr\nimport matplotlib.animation as animation",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#d-function-fit",
+    "href": "tutorials/Python.html#d-function-fit",
+    "title": "Python",
+    "section": "2d function fit",
+    "text": "2d function fit\nYou can plot a straight line fit quite easily with modules such as seaborn, you can even fit data with higher order polynomials\nBut for custom control over the fitting function I have provided a basic example script.\nNOTE: It will also produce a residual plot which is good visual way to check the 'goodness' of the fit.\ndef 2d_fit_residual(data, x_name, y_name):\n    \"\"\"\n    2d_fit_residual outputs a curve fitted plot of the input data points based on theoretical fitting function fit_function()\n    it also outputs a residual graph.\n\n    :data: np.array x,y data inputs expected to be in format [[x1, y1], [x2, y2], [x3, y3], ...]\n    :x_name: str x-axis variable name\n    :y_name: str y-axis variable name\n    :return: curve fitted plot and residual graph\n    \"\"\" \n\n    X = data[:,0]\n    Y = data[:,1]\n\n    ######################################################################\n    # custom function. If you change the number of parameters, you will \n    # need to update the guesses variable and any calls to fit_function()\n    ######################################################################\n    def fit_function(X_var, Y1, Y2, C):\n        return Y1*X_var**2 + Y2*X_var + C\n\n    ######################################################################\n    # curve fit part\n    ######################################################################\n    guesses = (1, 1, 1)\n    params, pcov = curve_fit(fit_function, X, Y, guesses, maxfev=10**8)\n\n    ######################################################################\n    # data scatter graph plot\n    ######################################################################\n    fig = plt.figure()\n    ax = plt.axes()\n    plt.title('{} vs. {}'.format(y_name, x_name))\n    plt.xlabel('{}'.format(x_name))\n    plt.ylabel('{}'.format(y_name))\n    ax.scatter(X, Y, c='green')\n\n    ######################################################################\n    # correlation coefficients. Pearsons assumes linear, Spearmans does not\n    ######################################################################\n    corr, _ = spearmanr(X, Y)\n    legs = 'Spearmans correlation: %.3f' % corr\n    # corrlin, _ = pearsonr(X, Y)\n    # legslin = 'Pearsons correlation: %.3f' % corr\n\n    ######################################################################\n    # plot fit onto graph\n    ######################################################################\n    xtheory = np.linspace(min(X), max(X), 10000)\n    z_theory = fit_function(xtheory, params[0], params[1], params[2])\n    ax.plot(xtheory, z_theory, label = legs)\n    ax.legend(loc = 'best')\n    plt.show()\n\n    ######################################################################\n    # residual to check fit\n    ######################################################################\n    y_theory = fit_function(np.array((X)), params[0], params[1], params[2])\n    y_diff = y_theory - Y\n    fig = plt.figure()\n    ax = plt.axes()\n    ax.scatter(X, y_diff, c='red', marker='x')\n    ax.plot(np.array((min(X), max(X))), np.array((0,0)))\n    plt.title('Residual graph of difference between model and data')\n    plt.xlabel('{}'.format(x_name))\n    plt.ylabel('Measureed - Theoretical {}'.format(y_name))\n    plt.show()\nThe reason for the odd input data numpy shape is because of pandas data frames. To create a numpy array for this function from your data frame\n2d_fit_input = df[['x_var', 'y_var']].to_numpy()",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#d-function-fit-1",
+    "href": "tutorials/Python.html#d-function-fit-1",
+    "title": "Python",
+    "section": "3d function fit",
+    "text": "3d function fit\ndef scatter_3d(data, Z, x_name, y_name, z_name):\n\n    \"\"\"\n    scatter_3d outputs a 3d surface fitted plot of the input data points based \n    on theoretical fitting function fit_function()\n    Will also retrun a pickle of the 3d plot in the directory you run this\n    script from. \n\n    :data: np.array x,y data inputs expected to be in format [[x1, y1], [x2, y2], [x3, y3], ...]\n    :Z: np.array z data inputs expected to be in format [z1, z2, z3, ...]\n    :x_name: str x-axis variable name\n    :y_name: str y-axis variable name\n    :z_name: str z-axis variable name\n    :return: surface fitted plot and a pickle of the surface fitted plot \n    \"\"\" \n\n    X = data[:,0]\n    Y = data[:,1]\n    def fit_function(data, X1, X2, X3, Y1, Y2, Y3, XY, C1, C2):\n        x = data[:,0]\n        y = data[:,1]\n        return -np.sqrt(X2*x + Y2*y + C1) + np.sqrt(X2*x + Y2*y + C1-(X1*x**2 + Y1*y**2 + XY*x*y + X3*x + Y3*y + C2))\n\n    ######################################################################\n    # curve fit part\n    ######################################################################\n    guesses = (-0.5,  100,  100,  -0.5, 1, 1, 0.0001, 100, -100)\n    params, pcov = curve_fit(fit_function, data, Z, guesses, maxfev=10**8)\n    print('Params = {}'.format(params))\n\n    ######################################################################\n    # 3d scatter graph plot\n    ######################################################################\n    fig = plt.figure()\n    ax = plt.axes(projection = '3d')\n    ax.set_title('{} vs. {} vs. {}'.format(z_name, y_name, x_name))\n    ax.set_xlabel('{}'.format(x_name))\n    ax.set_ylabel('{}'.format(y_name))\n    ax.set_zlabel('{}'.format(z_name))\n    ax.scatter(X, Y, Z, c='red', marker='x', label='data points')\n    ax.legend(loc='upper left')\n\n    ######################################################################\n    # plot fit onto 3d scatter\n    ######################################################################\n    X1 = params[0]\n    X2 = params[1]\n    X3 = params[2]\n    Y1 = params[3]\n    Y2 = params[4]\n    Y3 = params[5]\n    XY = params[6]\n    C1 = params[7]\n    C2 = params[8]\n\n    xtheory = np.linspace(1.05*min(X), max(X), 4000)\n    ytheory = np.linspace(1*min(Y), max(Y), 4000)\n    x_grid, y_grid = np.meshgrid(xtheory, ytheory)\n\n    x = x_grid\n    y = y_grid\n    z_grid = -np.sqrt(X2*x + Y2*y + C1) + np.sqrt(X2*x + Y2*y + C1-(X1*x**2 + Y1*y**2 + XY*x*y + X3*x + Y3*y + C2))\n\n    ax.plot_surface(x_grid, y_grid, z_grid)\n    ax.set_xlim(min(X), max(X))\n    ax.set_ylim(min(Y), max(Y))\n    ax.set_zlim(min(Z), max(Z))\n\n    #Change name if you want the pickle saved in a different folder\n    pickle.dump(fig, open('FigureObject.fig.pickle', 'wb'))\n\n    def rotate(angle):\n        ax.view_init(azim=angle)\n\n    #making an animation\n    rot_animation = animation.FuncAnimation(fig, rotate, frames=np.arange(0, 362, 2), interval=100)\n    rot_animation.save('rotation.gif', dpi=80, writer='imagemagick')\n\n    plt.show()\nSaving the 3d graph in a Pickle allows you send this by email and the receiver can open it and manipulate it vs. sending a stationary 2d plot.\nTo open a pickle\nimport pickle\npath='/Users/johanndrayne/Documents/Python/FigureObject.fig.pickle'\nfigx = pickle.load(open(path, 'rb'))\nfigx.show()",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "tutorials/Python.html#read-matlab-.mat-files",
+    "href": "tutorials/Python.html#read-matlab-.mat-files",
+    "title": "Python",
+    "section": "Read Matlab .mat files:",
+    "text": "Read Matlab .mat files:\nsee this thread: https://stackoverflow.com/questions/874461/read-mat-files-in-python\nimport scipy.io\nmat = scipy.io.loadmat('file.mat')\nor\nimport numpy as np\nimport h5py\nf = h5py.File('somefile.mat','r')\ndata = f.get('data/variable1')\ndata = np.array(data) # For converting to a NumPy array",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html",
+    "href": "mrimethods/DTI.html",
+    "title": "DTI",
+    "section": "",
+    "text": "Diffusion imaging is a magnetic resonance imaging (MRI) technique that measures the movement of water molecules in tissues, providing insights into tissue microstructure and organization.\n\n\n\nDiffusion-weighted MRI (DWI):\nThis type of MRI uses magnetic field gradients to create an image that is sensitive to the diffusion of water molecules.\nDiffusion Tensor Imaging (DTI):\nDTI builds upon DWI by measuring the direction and magnitude of water diffusion, allowing for the visualization of neural pathways and fiber tracts. Makes some assumptions / approximations that may not hold true.",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#dwi-vs-dti",
+    "href": "mrimethods/DTI.html#dwi-vs-dti",
+    "title": "DTI",
+    "section": "",
+    "text": "Diffusion-weighted MRI (DWI):\nThis type of MRI uses magnetic field gradients to create an image that is sensitive to the diffusion of water molecules.\nDiffusion Tensor Imaging (DTI):\nDTI builds upon DWI by measuring the direction and magnitude of water diffusion, allowing for the visualization of neural pathways and fiber tracts. Makes some assumptions / approximations that may not hold true.",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#DTI-AMICO",
+    "href": "mrimethods/DTI.html#DTI-AMICO",
+    "title": "DTI",
+    "section": "AMICO",
+    "text": "AMICO\nhttps://github.com/daducci/AMICO/wiki/Installation\n\n\npip install dmri-amico\n\n\nIn Python:\n\n\nimport amico\namico.setup()\namico.util.fsl2scheme(\"derivatives/qsirecon/sub-Pilot01/dwi/sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.bval\", \"derivatives/qsirecon/sub-Pilot01/dwi/sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.bvec\")\n\nae = amico.Evaluation(\"derivatives/qsirecon\", \"sub-Pilot01/dwi\")\nae.load_data( \"sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.nii.gz\", \"sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.scheme\", mask_filename=\"sub-Pilot01_space-T1w_desc-preproc_fslstd_mask.nii.gz\", b0_thr=0 )\n\nae.set_model(\"NODDI\")\nae.generate_kernels()\n\nae.load_kernels()\nae.fit()\nae.save_results()\n\n\nAs a Python Script you can run:\n\n\nimport amico\nimport os\nimport sys, getopt\n\ndef main(argv):\n   dwifile = ''\n   maskfile = ''\n   opts, args = getopt.getopt(argv,\"hd:m:\",[\"dfile=\",\"mfile=\"])\n   for opt, arg in opts:\n      if opt == '-h':\n         print ('test.py -d &lt;dwifile&gt; -m &lt;maskfile&gt;')\n         sys.exit()\n      elif opt in (\"-d\", \"--dwifile\"):\n         dwifile = arg\n      elif opt in (\"-m\", \"--maskfile\"):\n         maskfile = arg\n\n   basename=os.path.splitext(dwifile)[0]\n   schemefile=basename+'.scheme'\n   bvalfile=basename+'.bval'\n   bvecfile=basename+'.bvec'\n   print ('Bval file is ', bvalfile)\n   print ('Bvec file is ', bvecfile)\n   print ('Scheme file is ', schemefile)\n   print ('Dwi file is ', dwifile)\n   print ('Mask file is ', maskfile)\n\n   amico.setup()\n   amico.util.fsl2scheme(f\"{bvalfile}\", f\"{bvecfile}\")\n\n   ae = amico.Evaluation(\".\", \".\")\n   ae.load_data( f\"{dwifile}\", f\"{schemefile}\", mask_filename=f\"{maskfile}\", b0_thr=0 )\n\n   ae.set_model(\"NODDI\")\n   ae.generate_kernels()\n\n   ae.load_kernels()\n   ae.fit()\n   ae.save_results()\n\nif __name__ == \"__main__\":\n   main(sys.argv[1:])",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#DTI-MatlabToolbox",
+    "href": "mrimethods/DTI.html#DTI-MatlabToolbox",
+    "title": "DTI",
+    "section": "Matlab Toolbox",
+    "text": "Matlab Toolbox\nhttp://mig.cs.ucl.ac.uk/index.php?n=Tutorial.NODDImatlab\nThe toolbox requires:\n\nMatlab with the optimization toolbox\nNIFTI Matlab library: nifti_matlab\n\nI first run our https://github.com/WeberLab/Misc/blob/main/dtipipeline.sh script to get a 'topped-up' DTI and brain mask to use\nThen convert to Analyze:\n\n\n3dcalc -a eddy_corrected_data.nii -expr 'a' -prefix eddy_corrected_data.hdr\n3dcalc -a DTI_topupapplied_brain_mask.nii -expr 'a' -prefix DTI_topupapplied_brain_mask.hdr\n\n\nIn Matlab:\n\n\naddpath(genpath('/home/weberam2/matlab/NODDI_tool')) % or whever the NODDI from Github is\naddpath(genpath('/home/weberam2/matlab/nifti_matlab')) % or whever your nifti_matlab is\nCreateROI('eddy_corrected_data.hdr', 'DTI_topupapplied_brain_mask.hdr', 'NODDI_roi.mat');\nprotocol = FSL2Protocol('DTI.bval', 'DTI.bvec');\nnoddi = MakeModel('WatsonSHStickTortIsoV_B0');\nbatch_fitting('NODDI_roi.mat', protocol, noddi, 'FittedParams.mat', 8);\nSaveParamsAsNIfTI('FittedParams.mat', 'NODDI_roi.mat', 'DTI_topupapplied_brain_mask.hdr', 'outputname')",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#DTI-PythonVersion",
+    "href": "mrimethods/DTI.html#DTI-PythonVersion",
+    "title": "DTI",
+    "section": "Python Version",
+    "text": "Python Version\nhttps://github.com/dicemt/DTI-NODDI",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#probtrackx-fsl-dti-probtrackxfsl",
+    "href": "mrimethods/DTI.html#probtrackx-fsl-dti-probtrackxfsl",
+    "title": "DTI",
+    "section": "Probtrackx (FSL) {#DTI-Probtrackx(FSL)}",
+    "text": "Probtrackx (FSL) {#DTI-Probtrackx(FSL)}\nhttps://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FDT/UserGuide\nhttps://fsl.fmrib.ox.ac.uk/fslcourse/2019_Beijing/lectures/FDT/fdt2.html",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#DTI-MRTRIX3",
+    "href": "mrimethods/DTI.html#DTI-MRTRIX3",
+    "title": "DTI",
+    "section": "MRTRIX3",
+    "text": "MRTRIX3\nsee mritrix3",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#DTI-RadialDiffusivity",
+    "href": "mrimethods/DTI.html#DTI-RadialDiffusivity",
+    "title": "DTI",
+    "section": "Radial Diffusivity",
+    "text": "Radial Diffusivity\nRD = (L2 + L3) / 2\n\n\n$FSLDIR/bin/fslmaths ${dtifit_folder}/${subj}*_L2.nii.gz –add ${dtifit_folder}/${subj}*_L3.nii.gz \\\\\n       -div 2 ${parentDirectory}/RD/${subj}_RD.nii.gz\n\n\n:::::::::::::::::: :::::::::::::::::::: :::::::::::::::::::::::\n\n\nDocument generated by Confluence on Feb 13, 2025 22:21\n\nAtlassian\n\n\n\n:::::::::::::::::::::::::::",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#amico",
+    "href": "mrimethods/DTI.html#amico",
+    "title": "DTI",
+    "section": "AMICO",
+    "text": "AMICO\nhttps://github.com/daducci/AMICO/wiki/Installation\npip install dmri-amico\n\nExample:\nIn Python:\nimport amico\namico.setup()\namico.util.fsl2scheme(\"derivatives/qsirecon/sub-Pilot01/dwi/sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.bval\", \"derivatives/qsirecon/sub-Pilot01/dwi/sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.bvec\")\n\nae = amico.Evaluation(\"derivatives/qsirecon\", \"sub-Pilot01/dwi\")\nae.load_data( \"sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.nii.gz\", \"sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.scheme\", mask_filename=\"sub-Pilot01_space-T1w_desc-preproc_fslstd_mask.nii.gz\", b0_thr=0 )\n\nae.set_model(\"NODDI\")\nae.generate_kernels()\n\nae.load_kernels()\nae.fit()\nae.save_results()\nAs a Python Script you can run:\nimport amico\nimport os\nimport sys, getopt\n\ndef main(argv):\n   dwifile = ''\n   maskfile = ''\n   opts, args = getopt.getopt(argv,\"hd:m:\",[\"dfile=\",\"mfile=\"])\n   for opt, arg in opts:\n      if opt == '-h':\n         print ('test.py -d &lt;dwifile&gt; -m &lt;maskfile&gt;')\n         sys.exit()\n      elif opt in (\"-d\", \"--dwifile\"):\n         dwifile = arg\n      elif opt in (\"-m\", \"--maskfile\"):\n         maskfile = arg\n\n   basename=os.path.splitext(dwifile)[0]\n   schemefile=basename+'.scheme'\n   bvalfile=basename+'.bval'\n   bvecfile=basename+'.bvec'\n   print ('Bval file is ', bvalfile)\n   print ('Bvec file is ', bvecfile)\n   print ('Scheme file is ', schemefile)\n   print ('Dwi file is ', dwifile)\n   print ('Mask file is ', maskfile)\n\n   amico.setup()\n   amico.util.fsl2scheme(f\"{bvalfile}\", f\"{bvecfile}\")\n\n   ae = amico.Evaluation(\".\", \".\")\n   ae.load_data( f\"{dwifile}\", f\"{schemefile}\", mask_filename=f\"{maskfile}\", b0_thr=0 )\n\n   ae.set_model(\"NODDI\")\n   ae.generate_kernels()\n\n   ae.load_kernels()\n   ae.fit()\n   ae.save_results()\n\nif __name__ == \"__main__\":\n   main(sys.argv[1:])",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#matlab-toolbox",
+    "href": "mrimethods/DTI.html#matlab-toolbox",
+    "title": "DTI",
+    "section": "Matlab Toolbox",
+    "text": "Matlab Toolbox\nhttp://mig.cs.ucl.ac.uk/index.php?n=Tutorial.NODDImatlab\nThe toolbox requires:\n\nMatlab with the optimization toolbox\nNIFTI Matlab library: nifti_matlab\n\nFirst run the simple DTI script from before (https://github.com/WeberLab/Misc/blob/main/dtipipeline.sh) script to get a 'topped-up' DTI and brain mask to use.\nThen convert to Analyze (AFNI):\n3dcalc -a eddy_corrected_data.nii -expr 'a' -prefix eddy_corrected_data.hdr\n3dcalc -a DTI_topupapplied_brain_mask.nii -expr 'a' -prefix DTI_topupapplied_brain_mask.hdr\nIn Matlab:\naddpath(genpath('/home/weberam2/matlab/NODDI_tool')) % or whever the NODDI from Github is\naddpath(genpath('/home/weberam2/matlab/nifti_matlab')) % or whever your nifti_matlab is\nCreateROI('eddy_corrected_data.hdr', 'DTI_topupapplied_brain_mask.hdr', 'NODDI_roi.mat');\nprotocol = FSL2Protocol('DTI.bval', 'DTI.bvec');\nnoddi = MakeModel('WatsonSHStickTortIsoV_B0');\nbatch_fitting('NODDI_roi.mat', protocol, noddi, 'FittedParams.mat', 8);\nSaveParamsAsNIfTI('FittedParams.mat', 'NODDI_roi.mat', 'DTI_topupapplied_brain_mask.hdr', 'outputname')",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#python-version",
+    "href": "mrimethods/DTI.html#python-version",
+    "title": "DTI",
+    "section": "Python Version",
+    "text": "Python Version\nhttps://github.com/dicemt/DTI-NODDI",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#probtrackx-fsl",
+    "href": "mrimethods/DTI.html#probtrackx-fsl",
+    "title": "DTI",
+    "section": "Probtrackx (FSL)",
+    "text": "Probtrackx (FSL)\nhttps://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FDT/UserGuide\nhttps://fsl.fmrib.ox.ac.uk/fslcourse/2019_Beijing/lectures/FDT/fdt2.html",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#mrtrix3",
+    "href": "mrimethods/DTI.html#mrtrix3",
+    "title": "DTI",
+    "section": "MRTRIX3",
+    "text": "MRTRIX3\nsee add link",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/DTI.html#radial-diffusivity",
+    "href": "mrimethods/DTI.html#radial-diffusivity",
+    "title": "DTI",
+    "section": "Radial Diffusivity",
+    "text": "Radial Diffusivity\nRD = (L2 + L3) / 2\n$FSLDIR/bin/fslmaths ${dtifit_folder}/${subj}*_L2.nii.gz –add ${dtifit_folder}/${subj}*_L3.nii.gz \\\\\n       -div 2 ${parentDirectory}/RD/${subj}_RD.nii.gz",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "DTI"
     ]
   }
 ]

@@ -113,7 +113,7 @@ multi-atlas-based brain extraction methods have been proposed.
 My own attempts, looking at ANTsPyNet, optimized bet, BEaST, and
 FastSurfer are as follows:
 
-![](img/brainextractioncomparison.png)
+![](images/brainextractioncomparison.png)
 
 ## BET 
 
@@ -197,8 +197,8 @@ from antspynet import brain_extraction
 import os
 from ants import atropos, get_ants_data, image_read, resample_image, get_mask
 example_filename = os.path.join('../..', 'T1w.nii.gz')
-img = image_read(example_filename)
-probability_brain_mask = brain_extraction(img, modality="t1")
+images = image_read(example_filename)
+probability_brain_mask = brain_extraction(images, modality="t1")
 probability_brain_mask.to_file('antsbrainmask.nii.gz')
 ```
 
@@ -563,7 +563,7 @@ ROBEX receives a volume as an input and provides the stripped output.\
 Optional: Corresponding binary mask. However, the volume has to be in
 the same orientation as the provided reference volume.
 
-ROBEX works with any ITK-friendly format e.g. HDR/img, nii, dcm
+ROBEX works with any ITK-friendly format e.g. HDR/images, nii, dcm
 
 On LINUX: **runROBEX.sh inputFile strippedFile \[outputMaskFile\]**
 

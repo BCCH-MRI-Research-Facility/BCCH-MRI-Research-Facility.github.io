@@ -1,0 +1,207 @@
+---
+title: "DTI"
+description: "All things diffusion MRI"
+author: "Alex Weber"
+date: "2025-04-24"
+date-modified: "2025-04-24"
+highlight-style: github
+categories:
+    - diffusion
+    - eddy currents
+    - visualization
+    - tensor
+    - NODDI
+    - Tractography
+---
+
+# Intro
+
+Diffusion imaging is a magnetic resonance imaging (MRI) technique that measures the movement of water molecules in tissues, providing insights into tissue microstructure and organization.
+
+## DWI vs DTI
+
+- **Diffusion-weighted MRI (DWI):**  
+This type of MRI uses magnetic field gradients to create an image that is sensitive to the diffusion of water molecules.
+- **Diffusion Tensor Imaging (DTI):**  
+DTI builds upon DWI by measuring the direction and magnitude of water diffusion, allowing for the visualization of neural pathways and fiber tracts. _Makes some assumptions / approximations that may not hold true._
+
+# Simple DTI analysis
+
+[Here](https://github.com/WeberLab/Misc/blob/main/dtipipeline.sh) is a script that uses FSL to run a DTI analysis.
+
+Files need to be converted from source files (DICOM or PAR/REC for
+example) into NIFTI and BVEC/BVAL. This can be done using
+[dcm2niix](https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage)
+
+The pipeline requires two inputs: main DTI file *basename* in one phase
+direction; a DTI nifti file acquired in the opposite phase direction
+
+usage:
+
+```bash
+fsldti_pipeline <main_data_name> <b0oppositephase_name>.nii.gz
+```
+
+\[note: `main_data_name` doesn\'t have a suffix. Just the basename\]
+
+This pipeline also assumes you have `matlab`, `fsl`, and a version of
+`eddy_cuda` working.
+
+# Diffusion Imaging with Python (DIPY)
+
+Videos:\
+[https://www.youtube.com/c/DiffusionImaginginPython/videos](https://www.youtube.com/c/DiffusionImaginginPython/videos)
+
+# QSIPrep
+
+Like fmriprep for DTI:
+[QSIPrep](QSIPrep_224166153.html)
+
+# NODDI 
+
+What is it? Here is a good paper explaining the concept and clinical
+applications:
+[https://www.sciencedirect.com/science/article/pii/S0165027020303319](https://www.sciencedirect.com/science/article/pii/S0165027020303319)
+
+Basically:  
+NODDI stands for Neurite Orientation Dispersion and Density Imaging. It's a diffusion MRI technique used to estimate the microstructural complexity of axons and dendrites in the brain. This method provides more specific markers of brain tissue microstructure compared to traditional indices from diffusion tensor imaging (DTI). Usually requires more than one shell.
+
+## AMICO 
+
+[https://github.com/daducci/AMICO/wiki/Installation](https://github.com/daducci/AMICO/wiki/Installation)
+
+```bash
+pip install dmri-amico
+```
+
+### Example: 
+
+In Python:
+
+```python
+import amico
+amico.setup()
+amico.util.fsl2scheme("derivatives/qsirecon/sub-Pilot01/dwi/sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.bval", "derivatives/qsirecon/sub-Pilot01/dwi/sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.bvec")
+
+ae = amico.Evaluation("derivatives/qsirecon", "sub-Pilot01/dwi")
+ae.load_data( "sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.nii.gz", "sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.scheme", mask_filename="sub-Pilot01_space-T1w_desc-preproc_fslstd_mask.nii.gz", b0_thr=0 )
+
+ae.set_model("NODDI")
+ae.generate_kernels()
+
+ae.load_kernels()
+ae.fit()
+ae.save_results()
+```
+
+As a Python Script you can run:
+
+```python
+import amico
+import os
+import sys, getopt
+
+def main(argv):
+   dwifile = ''
+   maskfile = ''
+   opts, args = getopt.getopt(argv,"hd:m:",["dfile=","mfile="])
+   for opt, arg in opts:
+      if opt == '-h':
+         print ('test.py -d <dwifile> -m <maskfile>')
+         sys.exit()
+      elif opt in ("-d", "--dwifile"):
+         dwifile = arg
+      elif opt in ("-m", "--maskfile"):
+         maskfile = arg
+
+   basename=os.path.splitext(dwifile)[0]
+   schemefile=basename+'.scheme'
+   bvalfile=basename+'.bval'
+   bvecfile=basename+'.bvec'
+   print ('Bval file is ', bvalfile)
+   print ('Bvec file is ', bvecfile)
+   print ('Scheme file is ', schemefile)
+   print ('Dwi file is ', dwifile)
+   print ('Mask file is ', maskfile)
+
+   amico.setup()
+   amico.util.fsl2scheme(f"{bvalfile}", f"{bvecfile}")
+
+   ae = amico.Evaluation(".", ".")
+   ae.load_data( f"{dwifile}", f"{schemefile}", mask_filename=f"{maskfile}", b0_thr=0 )
+
+   ae.set_model("NODDI")
+   ae.generate_kernels()
+
+   ae.load_kernels()
+   ae.fit()
+   ae.save_results()
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
+```
+
+## Matlab Toolbox
+
+[http://mig.cs.ucl.ac.uk/index.php?n=Tutorial.NODDImatlab](http://mig.cs.ucl.ac.uk/index.php?n=Tutorial.NODDImatlab)
+
+The toolbox requires:
+
+-   Matlab with the optimization toolbox
+-   NIFTI Matlab library:
+    [nifti_matlab](https://github.com/NIFTI-Imaging/nifti_matlab)
+
+First run the simple DTI script from before ([https://github.com/WeberLab/Misc/blob/main/dtipipeline.sh](https://github.com/WeberLab/Misc/blob/main/dtipipeline.sh)) script to get a \'topped-up\'
+DTI and brain mask to use.
+
+Then convert to Analyze (AFNI):
+
+```bash
+3dcalc -a eddy_corrected_data.nii -expr 'a' -prefix eddy_corrected_data.hdr
+3dcalc -a DTI_topupapplied_brain_mask.nii -expr 'a' -prefix DTI_topupapplied_brain_mask.hdr
+```
+
+In Matlab:
+
+```matlab 
+addpath(genpath('/home/weberam2/matlab/NODDI_tool')) % or whever the NODDI from Github is
+addpath(genpath('/home/weberam2/matlab/nifti_matlab')) % or whever your nifti_matlab is
+CreateROI('eddy_corrected_data.hdr', 'DTI_topupapplied_brain_mask.hdr', 'NODDI_roi.mat');
+protocol = FSL2Protocol('DTI.bval', 'DTI.bvec');
+noddi = MakeModel('WatsonSHStickTortIsoV_B0');
+batch_fitting('NODDI_roi.mat', protocol, noddi, 'FittedParams.mat', 8);
+SaveParamsAsNIfTI('FittedParams.mat', 'NODDI_roi.mat', 'DTI_topupapplied_brain_mask.hdr', 'outputname')
+```
+
+## Python Version 
+
+[https://github.com/dicemt/DTI-NODDI](https://github.com/dicemt/DTI-NODDI)
+
+# dHCP DWI Pipeline 
+
+[https://git.fmrib.ox.ac.uk/matteob/dHCP_neo_dMRI_pipeline_release](https://git.fmrib.ox.ac.uk/matteob/dHCP_neo_dMRI_pipeline_release)
+
+# Tractrography 
+
+ractography is a 3D modeling technique in neuroscience that visually represents white matter pathways within the brain using data collected from diffusion MRI. This technique provides a non-invasive way to explore the brain's structural connectivity. 
+
+## Probtrackx (FSL) 
+
+[https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FDT/UserGuide](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FDT/UserGuide)
+
+[https://fsl.fmrib.ox.ac.uk/fslcourse/2019_Beijing/lectures/FDT/fdt2.html](https://fsl.fmrib.ox.ac.uk/fslcourse/2019_Beijing/lectures/FDT/fdt2.html)
+
+## MRTRIX3 
+
+see **add link**
+
+# FSL\'s DTIFIT 
+
+## Radial Diffusivity 
+
+RD = (L2 + L3) / 2
+
+```bash
+$FSLDIR/bin/fslmaths ${dtifit_folder}/${subj}*_L2.nii.gz –add ${dtifit_folder}/${subj}*_L3.nii.gz \\
+       -div 2 ${parentDirectory}/RD/${subj}_RD.nii.gz
+```
