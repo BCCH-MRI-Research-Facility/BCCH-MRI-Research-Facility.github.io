@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,10 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7fd0fe4245b865325b8ce8dccb604d59.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2b55042a3c8d90f6e1a102917772f1dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-43283dde4acf70d8ec52051d24fd1032.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -120,7 +120,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Anatomical – BC Children’s Research MRI Wiki">
 <meta property="og:description" content="All things anatomical MRI">
-<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/mrimethods/img/brainextractioncomparison.png">
+<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/mrimethods/images/brainextractioncomparison.png">
 <meta property="og:site_name" content="BC Children's Research MRI Wiki">
 <meta property="og:image:height" content="1087">
 <meta property="og:image:width" content="720">
@@ -321,6 +321,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
   <div class="sidebar-item-container"> 
   <a href="../mrimethods/ASL.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Arterial Spin Labelling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrimethods/DTI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DTI</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
@@ -529,7 +535,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 The Dice coefficient metric represents a compromise between sensitivity (including brain tissue) and specificity (not including non-brain tissue). STAPLE, OPTIBET, BEaST and ANTS were found to be robust techniques; their Dice coefficients were higher than 0.9 for all 359 subjects assessed (Table 7). BSE, BET are the less consistent (robust) with higher standard deviations. MBWSS has the fourth highest Dice coefficient, it suffers from failing in some cases (13 subjects; Dice &lt;0.9) by leaving a big portion of the brain out of the segmentation mask. If we excluded these failures, MBWSS would have an average Dice coefficient of 97.58&nbsp;1.4 ± 9, which is close to the results obtained by ANTs and STAPLE."</p>
 </blockquote>
 <p>My own attempts, looking at ANTsPyNet, optimized bet, BEaST, and FastSurfer are as follows:</p>
-<p><img src="img/brainextractioncomparison.png" class="img-fluid"></p>
+<p><img src="images/brainextractioncomparison.png" class="img-fluid"></p>
 </section>
 <section id="bet" class="level2">
 <h2 class="anchored" data-anchor-id="bet">BET</h2>
@@ -573,8 +579,8 @@ and <a href="https://github.com/ANTsX/ANTsPyNet">https://github.com/ANTsX/ANTsPy
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ants <span class="im">import</span> atropos, get_ants_data, image_read, resample_image, get_mask</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>example_filename <span class="op">=</span> os.path.join(<span class="st">'../..'</span>, <span class="st">'T1w.nii.gz'</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> image_read(example_filename)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>probability_brain_mask <span class="op">=</span> brain_extraction(img, modality<span class="op">=</span><span class="st">"t1"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>images <span class="op">=</span> image_read(example_filename)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>probability_brain_mask <span class="op">=</span> brain_extraction(images, modality<span class="op">=</span><span class="st">"t1"</span>)</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>probability_brain_mask.to_file(<span class="st">'antsbrainmask.nii.gz'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Bash:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> antsbrainmask.nii.gz <span class="at">-ref</span> ../../T1w.nii.gz <span class="at">-out</span> antsbrainmask_orig.nii.gz <span class="at">-applyxfm</span> <span class="at">-usesqform</span></span>
@@ -847,7 +853,7 @@ CI = (T1w-sT2w)/(T1w+sT2w)</p>
 <h2 class="anchored" data-anchor-id="robex">ROBEX</h2>
 <p>ROBEX receives a volume as an input and provides the stripped output.<br>
 Optional: Corresponding binary mask. However, the volume has to be in the same orientation as the provided reference volume.</p>
-<p>ROBEX works with any ITK-friendly format e.g.&nbsp;HDR/img, nii, dcm</p>
+<p>ROBEX works with any ITK-friendly format e.g.&nbsp;HDR/images, nii, dcm</p>
 <p>On LINUX: <strong>runROBEX.sh inputFile strippedFile [outputMaskFile]</strong></p>
 <p>Read about ROBEX in <a href="https://sci-hub.se/10.1109/tmi.2011.2138152">Robust Brain Extraction Across Datasets and Comparison with Publicly Available Methods</a><br>
 <a href="https://www.nitrc.org/projects/robex/">Download</a></p>

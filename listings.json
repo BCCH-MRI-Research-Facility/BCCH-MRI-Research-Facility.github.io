@@ -1,21 +1,6 @@
 [
   {
-    "listing": "/orientation/index.html",
-    "items": [
-      "/orientation/mrisafetyfaq.html",
-      "/orientation/instantmessaging.html"
-    ]
-  },
-  {
     "listing": "/investigatorresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/scienceresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/mriscanners/index.html",
     "items": []
   },
   {
@@ -23,7 +8,24 @@
     "items": []
   },
   {
-    "listing": "/studentresources/index.html",
+    "listing": "/orientation/index.html",
+    "items": [
+      "/orientation/mrisafetyfaq.html",
+      "/orientation/instantmessaging.html"
+    ]
+  },
+  {
+    "listing": "/scienceresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mrisoftware/index.html",
+    "items": [
+      "/mrisoftware/3D-Slicer.html"
+    ]
+  },
+  {
+    "listing": "/mriscanners/index.html",
     "items": []
   },
   {
@@ -34,9 +36,7 @@
     ]
   },
   {
-    "listing": "/mrisoftware/index.html",
-    "items": [
-      "/mrisoftware/3D-Slicer.html"
-    ]
+    "listing": "/studentresources/index.html",
+    "items": []
   }
 ]
