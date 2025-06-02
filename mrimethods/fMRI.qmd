@@ -37,7 +37,7 @@ If you are planning a study, here is some information to consider:
 
 ## Do you want a low TR? 
 
-### **So why would someone want low TR?:** 
+### **Why would someone want low TR?:** 
 
 1.  ***Improve temporal precision:***
 
@@ -161,13 +161,16 @@ fslmaths <input> -ing 10000 <output>
 
 ## Nuisance Variable Removal 
 
-### Nuisance regression of WM and CSF): 
+### Nuisance regression of WM and CSF: 
 
 1-a) With the WM, we can do:
+
+erode WM mask
 
 ``` 
 fslmaths WM_mask_in_highres_space -ero WM_mask_in_highres_space_eroded
 ```
+register to BOLD space
 
 ``` 
 flirt -in WM_mask_in_highres_space_eroded \
@@ -176,6 +179,7 @@ flirt -in WM_mask_in_highres_space_eroded \
 -ref  example_func.nii.gz \
 -out  WM_in_func_space
 ```
+`fslmeants` "Prints average timeseries (intensities) to the screen (or saves to a file)"
 
 ``` 
 fslmeants -i denoised_func_data.nii.gz -m WM_mask_in_func_space --no_bin -o WM_in_func_bin_timeseries
@@ -185,7 +189,7 @@ Note: (i) The WM_mask_highres_space can be obtained in several ways
 (e.g., FSL/fast, SPM12/segment)\
 Weighted segmentation information is actually good stuff because it
 allows more certainty for WM voxels (vs. non-WM voxels). To use the
-information, use ---no_bin in fslmeants.\
+information, use `--no_bin` in fslmeants.\
 (ii) You want to erode the WM mask to begin with, in order to increase
 the certainty (e.g., reducing some boundaries with GM).
 
@@ -194,15 +198,15 @@ CSF_in_func_bin_timeseries
 
 1-c) To regress out these two nuisance regressors:\
 paste WM_in_func_bin_timeseries and CSF_in_func_bin_timeseries into
-nuisance_timeseries
+nuisance_timeseries:
 
 ``` 
 fslmaths denoised_func_data -Tmean tempMean 
 fsl_glm -i denoised_func_data -d nuisance_timeseries -demean -res_out=residual
 ```
 
-Note: use ---demean to mean-center the nuisance timeseries so that the
-residual makes sense. Don't use ---des_norm or ---dat_norm because we
+Note: use `--demean` to mean-center the nuisance timeseries so that the
+residual makes sense. Don't use `--des_norm` or `--dat_norm` because we
 are looking at the residual (but not the GLM betas) here. You also want
 to add the mean back so that it is a firm data set (see step (3) below).
 
