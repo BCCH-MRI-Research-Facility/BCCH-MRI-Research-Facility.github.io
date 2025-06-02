@@ -1,10 +1,31 @@
 [
   {
-    "listing": "/investigatorresources/index.html",
+    "listing": "/tutorials/index.html",
     "items": []
   },
   {
-    "listing": "/tutorials/index.html",
+    "listing": "/mrisoftware/index.html",
+    "items": [
+      "/mrisoftware/3D-Slicer.html"
+    ]
+  },
+  {
+    "listing": "/mrimethods/index.html",
+    "items": [
+      "/mrimethods/eeg-fmri/gradient-removal.html",
+      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html"
+    ]
+  },
+  {
+    "listing": "/scienceresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/studentresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/investigatorresources/index.html",
     "items": []
   },
   {
@@ -15,28 +36,7 @@
     ]
   },
   {
-    "listing": "/scienceresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/mrisoftware/index.html",
-    "items": [
-      "/mrisoftware/3D-Slicer.html"
-    ]
-  },
-  {
     "listing": "/mriscanners/index.html",
-    "items": []
-  },
-  {
-    "listing": "/mrimethods/index.html",
-    "items": [
-      "/mrimethods/eeg-fmri/gradient-removal.html",
-      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html"
-    ]
-  },
-  {
-    "listing": "/studentresources/index.html",
     "items": []
   }
 ]
