@@ -354,7 +354,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
   <ul class="collapse">
   <li><a href="#do-you-want-a-low-tr" id="toc-do-you-want-a-low-tr" class="nav-link" data-scroll-target="#do-you-want-a-low-tr">Do you want a low TR?</a>
   <ul class="collapse">
-  <li><a href="#so-why-would-someone-want-low-tr" id="toc-so-why-would-someone-want-low-tr" class="nav-link" data-scroll-target="#so-why-would-someone-want-low-tr"><strong>So why would someone want low TR?:</strong></a></li>
+  <li><a href="#why-would-someone-want-low-tr" id="toc-why-would-someone-want-low-tr" class="nav-link" data-scroll-target="#why-would-someone-want-low-tr"><strong>Why would someone want low TR?:</strong></a></li>
   <li><a href="#why-would-someone-want-to-avoid-low-trs" id="toc-why-would-someone-want-to-avoid-low-trs" class="nav-link" data-scroll-target="#why-would-someone-want-to-avoid-low-trs"><strong>Why would someone want to avoid low TRs?</strong>:</a></li>
   <li><a href="#general-concensus" id="toc-general-concensus" class="nav-link" data-scroll-target="#general-concensus"><strong>General concensus:</strong></a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><strong>References:</strong></a></li>
@@ -367,7 +367,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
   <li><a href="#intensity-normalization" id="toc-intensity-normalization" class="nav-link" data-scroll-target="#intensity-normalization">Intensity Normalization</a></li>
   <li><a href="#nuisance-variable-removal" id="toc-nuisance-variable-removal" class="nav-link" data-scroll-target="#nuisance-variable-removal">Nuisance Variable Removal</a>
   <ul class="collapse">
-  <li><a href="#nuisance-regression-of-wm-and-csf" id="toc-nuisance-regression-of-wm-and-csf" class="nav-link" data-scroll-target="#nuisance-regression-of-wm-and-csf">Nuisance regression of WM and CSF):</a></li>
+  <li><a href="#nuisance-regression-of-wm-and-csf" id="toc-nuisance-regression-of-wm-and-csf" class="nav-link" data-scroll-target="#nuisance-regression-of-wm-and-csf">Nuisance regression of WM and CSF:</a></li>
   <li><a href="#using-outputs-from-fmriprep" id="toc-using-outputs-from-fmriprep" class="nav-link" data-scroll-target="#using-outputs-from-fmriprep">Using outputs from fmriprep:</a></li>
   </ul></li>
   <li><a href="#temporal-filtering" id="toc-temporal-filtering" class="nav-link" data-scroll-target="#temporal-filtering">Temporal Filtering</a></li>
@@ -495,8 +495,8 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <p>If you are planning a study, here is some information to consider:</p>
 <section id="do-you-want-a-low-tr" class="level2">
 <h2 class="anchored" data-anchor-id="do-you-want-a-low-tr">Do you want a low TR?</h2>
-<section id="so-why-would-someone-want-low-tr" class="level3">
-<h3 class="anchored" data-anchor-id="so-why-would-someone-want-low-tr"><strong>So why would someone want low TR?:</strong></h3>
+<section id="why-would-someone-want-low-tr" class="level3">
+<h3 class="anchored" data-anchor-id="why-would-someone-want-low-tr"><strong>Why would someone want low TR?:</strong></h3>
 <ol type="1">
 <li><strong><em>Improve temporal precision:</em></strong></li>
 </ol>
@@ -555,24 +555,27 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <section id="nuisance-variable-removal" class="level2">
 <h2 class="anchored" data-anchor-id="nuisance-variable-removal">Nuisance Variable Removal</h2>
 <section id="nuisance-regression-of-wm-and-csf" class="level3">
-<h3 class="anchored" data-anchor-id="nuisance-regression-of-wm-and-csf">Nuisance regression of WM and CSF):</h3>
+<h3 class="anchored" data-anchor-id="nuisance-regression-of-wm-and-csf">Nuisance regression of WM and CSF:</h3>
 <p>1-a) With the WM, we can do:</p>
+<p>erode WM mask</p>
 <pre><code>fslmaths WM_mask_in_highres_space -ero WM_mask_in_highres_space_eroded</code></pre>
+<p>register to BOLD space</p>
 <pre><code>flirt -in WM_mask_in_highres_space_eroded \
 -applyxfm \
 -init rest.feat/reg/highres2example_func.mat\
 -ref  example_func.nii.gz \
 -out  WM_in_func_space</code></pre>
+<p><code>fslmeants</code> “Prints average timeseries (intensities) to the screen (or saves to a file)”</p>
 <pre><code>fslmeants -i denoised_func_data.nii.gz -m WM_mask_in_func_space --no_bin -o WM_in_func_bin_timeseries</code></pre>
 <p>Note: (i) The WM_mask_highres_space can be obtained in several ways (e.g., FSL/fast, SPM12/segment)<br>
-Weighted segmentation information is actually good stuff because it allows more certainty for WM voxels (vs.&nbsp;non-WM voxels). To use the information, use —no_bin in fslmeants.<br>
+Weighted segmentation information is actually good stuff because it allows more certainty for WM voxels (vs.&nbsp;non-WM voxels). To use the information, use <code>--no_bin</code> in fslmeants.<br>
 (ii) You want to erode the WM mask to begin with, in order to increase the certainty (e.g., reducing some boundaries with GM).</p>
 <p>1-b) We can use similar procedure as above to obtain CSF_in_func_bin_timeseries</p>
 <p>1-c) To regress out these two nuisance regressors:<br>
-paste WM_in_func_bin_timeseries and CSF_in_func_bin_timeseries into nuisance_timeseries</p>
+paste WM_in_func_bin_timeseries and CSF_in_func_bin_timeseries into nuisance_timeseries:</p>
 <pre><code>fslmaths denoised_func_data -Tmean tempMean 
 fsl_glm -i denoised_func_data -d nuisance_timeseries -demean -res_out=residual</code></pre>
-<p>Note: use —demean to mean-center the nuisance timeseries so that the residual makes sense. Don’t use —des_norm or —dat_norm because we are looking at the residual (but not the GLM betas) here. You also want to add the mean back so that it is a firm data set (see step (3) below).</p>
+<p>Note: use <code>--demean</code> to mean-center the nuisance timeseries so that the residual makes sense. Don’t use <code>--des_norm</code> or <code>--dat_norm</code> because we are looking at the residual (but not the GLM betas) here. You also want to add the mean back so that it is a firm data set (see step (3) below).</p>
 </section>
 <section id="using-outputs-from-fmriprep" class="level3">
 <h3 class="anchored" data-anchor-id="using-outputs-from-fmriprep">Using outputs from fmriprep:</h3>
