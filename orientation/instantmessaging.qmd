@@ -31,7 +31,7 @@ Otherwise, you can follow these directions:
 [*NOTE: You will need a BCCHR username and password to gain access.*]
 
 1. First thing you will want to do is get invited to our 'team':  
-[Click here to be invited](https://im.bcchr.ca/signup_user_complete/?id=pfcuszqezjbhzyueaigfpooyka)  
+[Click here to be invited](https://im.bcchr.ca/signup_user_complete/?id=ib9zrrqq7jg75k1czjzdfxsomy&md=link&sbr=su)  
 If that link does not work, you can submit a request to IT via [support.bcchr.ca](https://support.bcchr.ca)
 2. You will be asked "Where would you like to view this?" For now, click "View in Browser"
 3. You will be asked to login with your BCCHR username and password:
