@@ -1,0 +1,16 @@
+---
+title: "fmriprep"
+description: "An automated and standardized way of preprocessing fmri data"
+author: "Alexander Weber"
+date: "2025-09-17"
+date-modified: "2025-09-17"
+highlight-style: github
+categories:
+  -software
+  -fmri
+  -reproducibility
+  -standardization
+  -preprocessing
+---
+
+# TODO

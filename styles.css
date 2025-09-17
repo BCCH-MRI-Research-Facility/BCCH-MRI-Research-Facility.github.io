@@ -1,1 +1,7 @@
 /* css styles */
+pre {
+  background-color: #f5f5f5 !important;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+}

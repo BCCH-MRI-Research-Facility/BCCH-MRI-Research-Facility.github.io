@@ -132,7 +132,7 @@ Sequences](https://medium.com/@m.b.wall/stop-using-crazy-multiband-sequences-for
 # Preprocessing 
 
 A lot of the preprocessing can be automated using fmriprep: see
-[fmri-prep](http://weberlab.wikidot.com/fmri-prep)
+[fmri-prep](../mrisoftware/fmriprep.qmd)
 
 A good paper that goes over some of the common steps is this alternative
 preprocessing software (FuNP):
