@@ -86,7 +86,7 @@
     "href": "mrisoftware/index.html",
     "title": "MRI Software",
     "section": "",
-    "text": "3D Slicer\n\n\n\n\n\n\nsoftware\n\n\nvisualization\n\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "3D Slicer\n\n\n\n\n\n\nsoftware\n\n\nvisualization\n\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nfmriprep\n\n\n\n\n\n\n-software -fmri -reproducibility -standardization -preprocessing\n\n\n\nAn automated and standardized way of preprocessing fmri data\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "MRI Software"
@@ -1591,6 +1591,318 @@
       "Home",
       "MRI Methods",
       "fMRI"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html",
+    "href": "tutorials/BIDS.html",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "",
+    "text": "Attention: the newest version of dcm2bids changed the way they write their config files…\n\n⚠️ Breaking changes alert ⚠️\ndcm2bids&gt;=3.0.0 is not compatible with config files made for v2.1.9 and below. In order to develop dcm2bids new features we had to rewrite some of its code.\nSince v3.0.0, dcm2bids has become more powerful and more flexible while reducing the burden of creating config files. Porting your config file should be relatively easy by following the How-to upgrade page. If you have any issues with it don’t hesitate to report it on Neurostars.\n\nBe sure to check out the dcm2bids website for info about the new conventions: https://unfmontreal.github.io/Dcm2Bids/dev/upgrade/#changes-to-existing-description-and-config-file-keys",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#file-organization",
+    "href": "tutorials/BIDS.html#file-organization",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "File organization",
+    "text": "File organization\nPart of BIDS is making sure all files are located and named in a standardized format. Generally it should look something like this:\nproject/\n└── subject\n    └── session\n        └── datatype\nMore specifically:\nmyProject/\n└── sub-01\n    └── ses-01\n        └── anat\nHere's an example:\nds001\n├── dataset_description.json\n├── participants.tsv\n├── sub-01\n│   ├── anat\n│   │   ├── sub-01_inplaneT2.nii.gz\n│   │   └── sub-01_T1w.nii.gz\n│   └── func\n│       ├── sub-01_task-balloonanalogrisktask_run-01_bold.nii.gz\n│       ├── sub-01_task-balloonanalogrisktask_run-01_events.tsv\n│       ├── sub-01_task-balloonanalogrisktask_run-02_bold.nii.gz\n│       ├── sub-01_task-balloonanalogrisktask_run-02_events.tsv\n│       ├── sub-01_task-balloonanalogrisktask_run-03_bold.nii.gz\n│       └── sub-01_task-balloonanalogrisktask_run-03_events.tsv\n├── sub-02\n│   ├── anat\n│   │   ├── sub-02_inplaneT2.nii.gz\n│   │   └── sub-02_T1w.nii.gz\n│   └── func\n│       ├── sub-02_task-balloonanalogrisktask_run-01_bold.nii.gz\n│       ├── sub-02_task-balloonanalogrisktask_run-01_events.tsv\n│       ├── sub-02_task-balloonanalogrisktask_run-02_bold.nii.gz\n│       ├── sub-02_task-balloonanalogrisktask_run-02_events.tsv\n│       ├── sub-02_task-balloonanalogrisktask_run-03_bold.nii.gz\n│       └── sub-02_task-balloonanalogrisktask_run-03_events.tsv\n...\n...\n└── task-balloonanalogrisktask_bold.json",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#config-examples-bidsbrainimagingdatastructure-configexamples",
+    "href": "tutorials/BIDS.html#config-examples-bidsbrainimagingdatastructure-configexamples",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Config Examples: {#BIDS(BrainImagingDataStructure)-ConfigExamples:}",
+    "text": "Config Examples: {#BIDS(BrainImagingDataStructure)-ConfigExamples:}\nExample config file:\nhttps://unfmontreal.github.io/Dcm2Bids/dev/how-to/create-config-file/\nAnother example for T1w, resting-state fMRI, and two short blip-up / blip-down spin-echo sequences for field-map estimation:\n{\n  \"dcm2niixOptions\": \"-b y -ba y -z y -f '%3s_%f_%d_%r'\",\n  \"descriptions\": [\n    {\n      \"datatype\": \"anat\",\n      \"suffix\": \"T1w\",\n      \"criteria\": {\n        \"SeriesDescription\": \"SAG_FSPGR_3D_.9X.9X.9\"\n      }\n    },\n    {\n      \"id\": \"task-rest\",\n      \"datatype\": \"func\",\n      \"suffix\": \"bold\",\n      \"custom_entities\": \"task-rest\",\n      \"criteria\": {\n        \"SeriesDescription\": \"RestStatefMRI_HB4PA1\"\n      },\n      \"sidecar_changes\": {\n        \"TaskName\": \"rest\"\n      }\n    },\n    {\n      \"datatype\": \"fmap\",\n      \"suffix\": \"epi\",\n      \"custom_entities\": \"dir-AP\",\n      \"criteria\": {\n        \"SeriesDescription\": \"SE_fMRI_pepolar_0\",\n        \"PhaseEncodingPolarityGE\": \"Unflipped\"\n      },\n      \"sidecar_changes\": {\n        \"IntendedFor\": [\n          \"task-rest\"\n        ],\n        \"B0FieldIdentifier\": \"pepolar_fmap0\"\n      }\n    },\n    {\n      \"datatype\": \"fmap\",\n      \"suffix\": \"epi\",\n      \"custom_entities\": \"dir-PA\",\n      \"criteria\": {\n        \"SeriesDescription\": \"SE_fMRI_pepolar_1\",\n        \"PhaseEncodingPolarityGE\": \"Flipped\"\n      },\n      \"sidecar_changes\": {\n        \"IntendedFor\": [\n          \"task-rest\"\n        ],\n        \"B0FieldIdentifier\": \"pepolar_fmap0\"\n      }\n    }\n  ]\n}\nNOTE:\nCurrently dcm2bids will create json files for the fmaps that have an IntendedFor field that fmriprep will not correctly know what to do with:\n\"IntendedFor\": \"bids::sub-AHIE001/func/sub-AHIE001_task-rest_dir-AP_bold.nii.gz\",\nYou will need to rewrite this for now to say:\n\"IntendedFor\": \"func/sub-AHIE001_task-rest_dir-AP_bold.nii.gz\",\nYou will notice that both the bids:: and the sub-AHIE001 has been removed.\nfmriprep plans to eventually fix this: https://neurostars.org/t/dcm2bids-version-3-1-0-intended-for-field/27888/4",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#info-and-tutorial-bidsbrainimagingdatastructure-infoandtutorial",
+    "href": "tutorials/BIDS.html#info-and-tutorial-bidsbrainimagingdatastructure-infoandtutorial",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Info and Tutorial {#BIDS(BrainImagingDataStructure)-InfoandTutorial}",
+    "text": "Info and Tutorial {#BIDS(BrainImagingDataStructure)-InfoandTutorial}\nhttps://unfmontreal.github.io/Dcm2Bids/",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#install-bidsbrainimagingdatastructure-install",
+    "href": "tutorials/BIDS.html#install-bidsbrainimagingdatastructure-install",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Install {#BIDS(BrainImagingDataStructure)-Install}",
+    "text": "Install {#BIDS(BrainImagingDataStructure)-Install}\nDependencies: you will need dcm2niix installed first though\npip install dcm2bids",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#upgrading-bidsbrainimagingdatastructure-upgrading",
+    "href": "tutorials/BIDS.html#upgrading-bidsbrainimagingdatastructure-upgrading",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Upgrading {#BIDS(BrainImagingDataStructure)-Upgrading}",
+    "text": "Upgrading {#BIDS(BrainImagingDataStructure)-Upgrading}\npip install --upgrade dcm2bids",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#example-bidsbrainimagingdatastructure-example",
+    "href": "tutorials/BIDS.html#example-bidsbrainimagingdatastructure-example",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Example {#BIDS(BrainImagingDataStructure)-Example}",
+    "text": "Example {#BIDS(BrainImagingDataStructure)-Example}\nan example folder can be found on CSPeirce: /mnt/WeberLab/Data/2020-09-17_BCCHR_test_AlexW/\nfor this, I did:\n\n\n\ncd /mnt/WeberLab/Data/ && mkdir 2020-09-17_BCCHR_test_AlexW/\n\n\n\ncd 2020-09-17_BCCHR_test_AlexW/\n\n\n\ndcm2bids_scaffold\nThis gives us several generics folders and files.\nOne of the created folders is named 'sourcedata/'\ndata from Xnat was downloaded as a zip into 'sourcedata/'\nthen:\ncd sourcedata\nunzip aweber-20200918_110552.zip\nwhich extracted the dicoms into a folder: aweber-20200918_110552/\ninside of which are numbered subfolders for each acquisition scan\ngoing back to /mnt/WeberLab/Data/2020-09-17_BCCHR_test_AlexW/\ncd ..\n\n\n\ndcm2bids_helper -d sourcedata/aweber-20200918_110552/\nThis command will convert the DICOMs files to NIfTI files and save them inside 'tmp_dcm2bids/helper/'\n[note: with GE data, I find this gives bad naming conventions. Alternatively you could run something like this:\ndcm2niix -o tmp_dcm2bids/helper -b y -ba y -z y -f ‘%3s %f %d %r’ sourcedata/AMW01/\nwhich translates to:\n-o = output folder [note: this folder should already exist]\n-b y = BIDS sidecar yes\n-ba y = anonymize BIDS yes\n-z y = gz compress images yes\n-f ‘%3s %f %d %r’ = filename with series number, folder name,\ndescription and instance number]\nWe should see a list of compressed NIfTI files (nii.gz) with their respective sidecar files (.json).\nFor this example, we will only be interested in three acquisitions:\n003_LONGMBfMRI_SAG_FSPGR_3D_.9X.9X.9_20200917132212.json\n003_LONGMBfMRI_SAG_FSPGR_3D_.9X.9X.9_20200917132212.nii.gz\n005_LONGMBfMRI_fMRI_Resting_State_AP_20200917132212.json\n005_LONGMBfMRI_fMRI_Resting_State_AP_20200917132212.nii.gz\n006_LONGMBfMRI_fMRI_Resting_State_PA_20200917132212.json\n006_LONGMBfMRI_fMRI_Resting_State_PA_20200917132212.nii.gz\n[note: because the dicoms were acquired with two fMRIs with the same name (fMRI_Resting_State_AP) I don't know how to include the third run…]\nI deleted all the other .nii.gz and .json files in order not to confuse BIDS, and also moved the dicom files we aren't interested in to another directory\n\nBuild your configuration file with the help of the content of tmp_dcm2bids/helper:\n\nNow we will create a configuration file called dcm2bids_config.json (this is just an example, it could be whatever we want) in the code/ folder.\nUse any text editor to create the file with the contents:\n{\n    \"descriptions\": [\n        {\n        \"suffix\": \"anat\",\n        \"modalitylabel\": \"T1w\",\n        \"criteria\": {\n            \"SeriesDescription\": \"SAG_FSPGR_3D_.9X.9X.9*\"\n            }\n        },\n        {\n        \"suffix\": \"func\",\n        \"modalitylabel\": \"bold\",\n        \"custom_entities\": \"task-rest-AP\",\n        \"criteria\": {\n            \"SeriesDescription\": \"fMRI_Resting_State_AP*\"\n            }\n        },\n        {\n        \"suffix\": \"func\",\n        \"modalitylabel\": \"bold\",\n        \"custom_entities\": \"task-rest-PA\",\n        \"criteria\": {\n            \"SeriesDescription\": \"fMRI_Resting_State_PA*\"\n            }\n        }\n    ]\n}\n\n\n\ndcm2bids -d sourcedata/aweber-20200918_110552/LONGMBfMRI/ -p 01 -c code/dcm2bids_config.json\nA bunch of information is printed to the terminal and we can verify that the data are now in BIDS.\nls sub-01/*\nsub-01/anat:\nsub-01_T1w.json sub-01_T1w.nii.gz\nsub-01/func:\nsub-01_task-rest_bold.json sub-01_task-rest_bold.nii.gz\nFollow the tutorial\ndcm2bids creates log files inside &lt;YOUR_FUTURE_BIDS_FOLDER&gt;/tmp_dcm2bids/log\nRun the bids-validator to check your directory. Don't forget to create a .bidsignore file at the root of your BIDS directory with tmp_dcm2bids/* inside.\nnano .bidsignore\nfill with:\ntmp_dcm2bids",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#automate-bidsbrainimagingdatastructure-automate",
+    "href": "tutorials/BIDS.html#automate-bidsbrainimagingdatastructure-automate",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Automate {#BIDS(BrainImagingDataStructure)-Automate}",
+    "text": "Automate {#BIDS(BrainImagingDataStructure)-Automate}\nHere is a tutorial on how to create a bash shell script to automate this process\nhttps://reproducibility.stanford.edu/bids-tutorial-series-part-1b/",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#jo-bidsbrainimagingdatastructure-jo",
+    "href": "tutorials/BIDS.html#jo-bidsbrainimagingdatastructure-jo",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "jo {#BIDS(BrainImagingDataStructure)-jo}",
+    "text": "jo {#BIDS(BrainImagingDataStructure)-jo}\njo is a simple program that makes writing json files easier (I think)\nhttps://github.com/jpmens/jo\nExample:\njo -p descriptions=$(jo -a $(jo dataType=anat modalityLabel=T1w criteria=$(jo SeriesDescription=SAG_FSPGR_3D_.9X_.9X.9*)) $(jo dataType=func modalityLabel=bold customLabels=task-rest-AP criteria=$(jo SeriesDescription=fMRI_Resting_State_AP*)))\nResults in:\n{\n   \"descriptions\": [\n      {\n         \"dataType\": \"anat\",\n         \"modalityLabel\": \"T1w\",\n         \"criteria\": {\n            \"SeriesDescription\": \"SAG_FSPGR_3D_.9X_.9X.9*\"\n         }\n      },\n      {\n         \"dataType\": \"func\",\n         \"modalityLabel\": \"bold\",\n         \"customLabels\": \"task-rest-AP\",\n         \"criteria\": {\n            \"SeriesDescription\": \"fMRI_Resting_State_AP*\"\n         }\n      }\n   ]\n}",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#install-bidsbrainimagingdatastructure-install.1",
+    "href": "tutorials/BIDS.html#install-bidsbrainimagingdatastructure-install.1",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Install {#BIDS(BrainImagingDataStructure)-Install.1}",
+    "text": "Install {#BIDS(BrainImagingDataStructure)-Install.1}\nsudo apt-get install nodejs\nsudo apt-get install npm\nsudo npm install -g bids-validator",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#run-bidsbrainimagingdatastructure-run",
+    "href": "tutorials/BIDS.html#run-bidsbrainimagingdatastructure-run",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Run {#BIDS(BrainImagingDataStructure)-Run}",
+    "text": "Run {#BIDS(BrainImagingDataStructure)-Run}\nbids-validator .\nOr, if you're using docker:\ndocker run -ti --rm -v /path/to/data:/data:ro bids/validator /data\nbut change /path/to/data to where you want\nIf you are in the directory ('.' is your current directory)\nDon't forget to create a .bidsignore file at the root of your BIDS directory with tmp_dcm2bids/* inside.",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#attachments",
+    "href": "tutorials/BIDS.html#attachments",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Attachments:",
+    "text": "Attachments:\n image-20230720-205258.png (image/png)\n\nDocument generated by Confluence on Feb 13, 2025 22:21\nAtlassian",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#resources",
+    "href": "tutorials/BIDS.html#resources",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Resources",
+    "text": "Resources\n\nMain website: https://bids.neuroimaging.io/\nHere is a great introductory resource: Getting started with BIDS\nDr. Alexander Weber gave a journal club presentation you can check out here: https://drive.google.com/file/d/1PLNlKTI0xGlbKmIgfwzR8j6nv9RlmxOa/preview",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#config-examples",
+    "href": "tutorials/BIDS.html#config-examples",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Config Examples:",
+    "text": "Config Examples:\n\n1. Example config file:\nhttps://unfmontreal.github.io/Dcm2Bids/dev/how-to/create-config-file/\n{\n  \"descriptions\": [\n    {\n      \"datatype\": \"anat\",\n      \"suffix\": \"T2w\",\n      \"criteria\": {\n        \"SeriesDescription\": \"*T2*\",\n        \"EchoTime\": 0.1\n      },\n      \"sidecar_changes\": {\n        \"ProtocolName\": \"T2\"\n      }\n    },\n    {\n      \"id\": \"task_rest\",\n      \"datatype\": \"func\",\n      \"suffix\": \"bold\",\n      \"custom_entities\": \"task-rest\",\n      \"criteria\": {\n        \"ProtocolName\": \"func_task-*\",\n        \"ImageType\": [\"ORIG*\", \"PRIMARY\", \"M\", \"MB\", \"ND\", \"MOSAIC\"]\n      }\n    },\n    {\n      \"datatype\": \"fmap\",\n      \"suffix\": \"fmap\",\n      \"criteria\": {\n        \"ProtocolName\": \"*field_mapping*\"\n      },\n      \"sidecar_changes\": {\n        \"IntendedFor\": \"task_rest\"\n      }\n    },\n    {\n      \"id\": \"id_task_learning\",\n      \"datatype\": \"func\",\n      \"suffix\": \"bold\",\n      \"custom_entities\": \"task-learning\",\n      \"criteria\": {\n        \"SeriesDescription\": \"bold_task-learning\"\n      },\n      \"sidecar_changes\": {\n        \"TaskName\": \"learning\"\n      }\n    },\n    {\n      \"datatype\": \"fmap\",\n      \"suffix\": \"epi\",\n      \"criteria\": {\n        \"SeriesDescription\": \"fmap_task-learning\"\n      },\n      \"sidecar_changes\": {\n        \"TaskName\": \"learning\",\n        \"IntendedFor\": \"id_task_learning\"\n      }\n    }\n  ]\n}\nWhere:\n\n“datatype” is the folder the file will be stored under. Can be:\n\nfunc (task based and resting state functional MRI)\ndwi (diffusion weighted imaging)\nfmap (field inhomogeneity mapping data such as field maps)\nanat (structural imaging such as T1, T2, PD, and so on)\nperf (perfusion)\nmeg (magnetoencephalography)\neeg (electroencephalography)\nieeg (intracranial electroencephalography)\nbeh (behavioral)\npet (positron emission tomography)\nmicr (microscopy)\nnirs (near infrared spectroscopy)\nmotion (motion)\nmrs (magnetic resonance spectroscopy)\nphenotype (measurement and survey data)\n\n“suffix” is literally what will be written at the end of the file. Common examples: T1w, T2w, epi, bold, dwi…\n“criteria” is what will be searched in the sidecar json file to identify your file.\n“id” this is literally an id you give this to use later when you need to refer to this scan. An example is when you need to set an “IntendedFor” for the fmap to point to the right func\n“custom_entities” is useful for things like fMRI, when you will want identify if it is rest, or listening, or motor, etc.\n“sidecare_changes” is when you are not happy with the json sidecar that is automatically made, and you need to add some information\n“B0FieldIdentifier” tells us what kind of correction you intend: e.g. “pepolar_fmap0”\n\nSo, the above example has:\n\na T2w scan, that will be stored in the anat folder\nan fMRI scan that will be stored in the func folder; has been given an ‘id’ for later when we need to associate fmaps to it; what kind of task it is (rest)\nan field map scan to be used with the rest task: “IntendedFor”\nanother fMRI scan that will be stored in the func folder; has been given a different ‘id’ for later when we need to associate fmaps to it; what kind of task it is (rest)\nanother field map to be used to correct the learning task\n\n\n\n2. Another example\nAnother example for T1w, resting-state fMRI, and two short blip-up / blip-down spin-echo sequences for field-map estimation:\n{\n  \"dcm2niixOptions\": \"-b y -ba y -z y -f '%3s_%f_%d_%r'\",\n  \"descriptions\": [\n    {\n      \"datatype\": \"anat\",\n      \"suffix\": \"T1w\",\n      \"criteria\": {\n        \"SeriesDescription\": \"SAG_FSPGR_3D_.9X.9X.9\"\n      }\n    },\n    {\n      \"id\": \"task-rest\",\n      \"datatype\": \"func\",\n      \"suffix\": \"bold\",\n      \"custom_entities\": \"task-rest\",\n      \"criteria\": {\n        \"SeriesDescription\": \"RestStatefMRI_HB4PA1\"\n      },\n      \"sidecar_changes\": {\n        \"TaskName\": \"rest\"\n      }\n    },\n    {\n      \"datatype\": \"fmap\",\n      \"suffix\": \"epi\",\n      \"custom_entities\": \"dir-AP\",\n      \"criteria\": {\n        \"SeriesDescription\": \"SE_fMRI_pepolar_0\",\n        \"PhaseEncodingPolarityGE\": \"Unflipped\"\n      },\n      \"sidecar_changes\": {\n        \"IntendedFor\": [\n          \"task-rest\"\n        ],\n        \"B0FieldIdentifier\": \"pepolar_fmap0\"\n      }\n    },\n    {\n      \"datatype\": \"fmap\",\n      \"suffix\": \"epi\",\n      \"custom_entities\": \"dir-PA\",\n      \"criteria\": {\n        \"SeriesDescription\": \"SE_fMRI_pepolar_1\",\n        \"PhaseEncodingPolarityGE\": \"Flipped\"\n      },\n      \"sidecar_changes\": {\n        \"IntendedFor\": [\n          \"task-rest\"\n        ],\n        \"B0FieldIdentifier\": \"pepolar_fmap0\"\n      }\n    }\n  ]\n}\n\n“dcm2niixOptions”: “-b y -ba y -z y -f ‘%3s_%f_%d_%r’”,\n\nThis tells dcm2bids how to run dcm2niix. I found this created more helpful filenames when running dcm2bids_helper\n\n\n\n\n\n\nNote\n\n\n\nCurrently dcm2bids will create json files for the fmaps that have an “IntendedFor”” field that fmriprep will not correctly know what to do with:\n\"IntendedFor\": \"bids::sub-AHIE001/func/sub-AHIE001_task-rest_dir-AP_bold.nii.gz\",\nYou will need to rewrite this for now to say:\n\"IntendedFor\": \"func/sub-AHIE001_task-rest_dir-AP_bold.nii.gz\",\nYou will notice that both the bids:: and the sub-AHIE001 has been removed.\nfmriprep plans to eventually fix this: https://neurostars.org/t/dcm2bids-version-3-1-0-intended-for-field/27888/4\n\nNot super helpful to anybody right now, but the next release will have experimental support for BIDS-URIs. (January 2024)",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#info-and-tutorial",
+    "href": "tutorials/BIDS.html#info-and-tutorial",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Info and Tutorial",
+    "text": "Info and Tutorial\nhttps://unfmontreal.github.io/Dcm2Bids/",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#install",
+    "href": "tutorials/BIDS.html#install",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Install",
+    "text": "Install\nDependencies: you will need dcm2niix installed first though\npip install dcm2bids\n\nUpgrading\npip install --upgrade dcm2bids",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#upgrading",
+    "href": "tutorials/BIDS.html#upgrading",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Upgrading",
+    "text": "Upgrading\npip install --upgrade dcm2bids",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#example",
+    "href": "tutorials/BIDS.html#example",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Example",
+    "text": "Example\nan example folder can be found on CSPeirce: /mnt/WeberLab/Data/2020-09-17_BCCHR_test_AlexW/\nfor this, I did:\n\n\n\ncd /mnt/WeberLab/Data/ && mkdir 2020-09-17_BCCHR_test_AlexW/\n\n\n\ncd 2020-09-17_BCCHR_test_AlexW/\n\n\n\ndcm2bids_scaffold\nThis gives us several generics folders and files.\nOne of the created folders is named 'sourcedata/'\ndata from Xnat was downloaded as a zip into 'sourcedata/'\nthen:\ncd sourcedata\nunzip aweber-20200918_110552.zip\nwhich extracted the dicoms into a folder: aweber-20200918_110552/\ninside of which are numbered subfolders for each acquisition scan\ngoing back to /mnt/WeberLab/Data/2020-09-17_BCCHR_test_AlexW/\ncd ..\n\n\n\ndcm2bids_helper -d sourcedata/aweber-20200918_110552/\nThis command will convert the DICOMs files to NIfTI files and save them inside 'tmp_dcm2bids/helper/'\n[note: with GE data, I find this gives bad naming conventions. Alternatively you could run something like this:\ndcm2niix -o tmp_dcm2bids/helper -b y -ba y -z y -f ‘%3s %f %d %r’ sourcedata/AMW01/\nwhich translates to:\n-o = output folder [note: this folder should already exist]\n-b y = BIDS sidecar yes\n-ba y = anonymize BIDS yes\n-z y = gz compress images yes\n-f ‘%3s %f %d %r’ = filename with series number, folder name,\ndescription and instance number]\nWe should see a list of compressed NIfTI files (nii.gz) with their respective sidecar files (.json).\nFor this example, we will only be interested in three acquisitions:\n003_LONGMBfMRI_SAG_FSPGR_3D_.9X.9X.9_20200917132212.json\n003_LONGMBfMRI_SAG_FSPGR_3D_.9X.9X.9_20200917132212.nii.gz\n005_LONGMBfMRI_fMRI_Resting_State_AP_20200917132212.json\n005_LONGMBfMRI_fMRI_Resting_State_AP_20200917132212.nii.gz\n006_LONGMBfMRI_fMRI_Resting_State_PA_20200917132212.json\n006_LONGMBfMRI_fMRI_Resting_State_PA_20200917132212.nii.gz\n[note: because the dicoms were acquired with two fMRIs with the same name (fMRI_Resting_State_AP) I don't know how to include the third run…]\nI deleted all the other .nii.gz and .json files in order not to confuse BIDS, and also moved the dicom files we aren't interested in to another directory\n\nBuild your configuration file with the help of the content of tmp_dcm2bids/helper:\n\nNow we will create a configuration file called dcm2bids_config.json (this is just an example, it could be whatever we want) in the code/ folder.\nUse any text editor to create the file with the contents:\n{\n    \"descriptions\": [\n        {\n        \"suffix\": \"anat\",\n        \"modalitylabel\": \"T1w\",\n        \"criteria\": {\n            \"SeriesDescription\": \"SAG_FSPGR_3D_.9X.9X.9*\"\n            }\n        },\n        {\n        \"suffix\": \"func\",\n        \"modalitylabel\": \"bold\",\n        \"custom_entities\": \"task-rest-AP\",\n        \"criteria\": {\n            \"SeriesDescription\": \"fMRI_Resting_State_AP*\"\n            }\n        },\n        {\n        \"suffix\": \"func\",\n        \"modalitylabel\": \"bold\",\n        \"custom_entities\": \"task-rest-PA\",\n        \"criteria\": {\n            \"SeriesDescription\": \"fMRI_Resting_State_PA*\"\n            }\n        }\n    ]\n}\n\n\n\ndcm2bids -d sourcedata/aweber-20200918_110552/LONGMBfMRI/ -p 01 -c code/dcm2bids_config.json\nA bunch of information is printed to the terminal and we can verify that the data are now in BIDS.\nls sub-01/*\nsub-01/anat:\nsub-01_T1w.json sub-01_T1w.nii.gz\nsub-01/func:\nsub-01_task-rest_bold.json sub-01_task-rest_bold.nii.gz\nFollow the tutorial\ndcm2bids creates log files inside &lt;YOUR_FUTURE_BIDS_FOLDER&gt;/tmp_dcm2bids/log\nRun the bids-validator to check your directory. Don't forget to create a .bidsignore file at the root of your BIDS directory with tmp_dcm2bids/* inside.\nnano .bidsignore\nfill with:\ntmp_dcm2bids",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#automate",
+    "href": "tutorials/BIDS.html#automate",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Automate",
+    "text": "Automate\nHere is a tutorial on how to create a bash shell script to automate this process\nhttps://reproducibility.stanford.edu/bids-tutorial-series-part-1b/",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#jo",
+    "href": "tutorials/BIDS.html#jo",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "jo",
+    "text": "jo\njo is a simple program that makes writing json files easier (I think)\nhttps://github.com/jpmens/jo\nExample:\njo -p descriptions=$(jo -a $(jo datatype=anat suffix=T1w criteria=$(jo SeriesDescription=SAG_FSPGR_3D_.9X_.9X.9*)) $(jo datatype=func suffix=bold custom_entities=task-rest-AP criteria=$(jo SeriesDescription=fMRI_Resting_State_AP*)))\nResults in:\n{\n   \"descriptions\": [\n      {\n         \"datatype\": \"anat\",\n         \"suffix\": \"T1w\",\n         \"criteria\": {\n            \"SeriesDescription\": \"SAG_FSPGR_3D_.9X_.9X.9*\"\n         }\n      },\n      {\n         \"datatype\": \"func\",\n         \"suffix\": \"bold\",\n         \"custom_entities\": \"task-rest-AP\",\n         \"criteria\": {\n            \"SeriesDescription\": \"fMRI_Resting_State_AP*\"\n         }\n      }\n   ]\n}",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#install-1",
+    "href": "tutorials/BIDS.html#install-1",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Install",
+    "text": "Install\nsudo apt-get install nodejs\nsudo apt-get install npm\nsudo npm install -g bids-validator",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#run",
+    "href": "tutorials/BIDS.html#run",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Run",
+    "text": "Run\nbids-validator .\nOr, if you're using docker:\ndocker run -ti --rm -v /your/projects/folder/for/example:/data:ro bids/validator /data\nbut change /your/projects/folder/for/example to where your BIDS files are.\nIf you are in the directory already, then '.' is your current directory.\n\n\n\n\n\n\nImportant\n\n\n\nDon't forget to create a .bidsignore file at the root of your BIDS directory with tmp_dcm2bids/* inside.",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#documentation",
+    "href": "tutorials/BIDS.html#documentation",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Documentation",
+    "text": "Documentation\nPlease take a look at the documentation to:\n\nInstall dcm2bids\nFollow the tutorial\nSeek for more advanced usage",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html",
+    "href": "mrisoftware/fmriprep.html",
+    "title": "fmriprep",
+    "section": "",
+    "text": "TODO\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#info-and-tutorials",
+    "href": "tutorials/BIDS.html#info-and-tutorials",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Info and Tutorials",
+    "text": "Info and Tutorials\nPlease take a look at the documentation to:\n\nInstall dcm2bids\nFollow the tutorial\nSeek for more advanced usage\n\n\nAnother tutorial",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "tutorials/BIDS.html#example-walkthrough",
+    "href": "tutorials/BIDS.html#example-walkthrough",
+    "title": "BIDS (Brain Imaging Data Structure)",
+    "section": "Example Walkthrough",
+    "text": "Example Walkthrough\n\n1. Create a root BIDS directory\nCreate and enter your root BIDS directory where everything will live:\ncd /your/projects/folder/for/example/ && mkdir 2020-09-17_BCCHR_test_AlexW/\ncd 2020-09-17_BCCHR_test_AlexW/\n\n\n2. Create the basic architecture of your directory\ndcm2bids_scaffold\nThis gives us several generics folders and files.\nOne of the created folders is named 'sourcedata/'\ndata from Xnat is downloaded as a zip into 'sourcedata/'\n\nthen:\ncd sourcedata\nunzip aweber-20200918_110552.zip\nwhich extracts the dicoms into a folder: aweber-20200918_110552/\n\ninside of which are numbered subfolders for each acquisition scan\ngoing back to /your/projects/folder/for/example/2020-09-17_BCCHR_test_AlexW/\ncd ..\n\n\n3. Use the helper function to get a sense of what NIfTI files and json sidecar files you are working with\ndcm2bids_helper -d sourcedata/aweber-20200918_110552/\nThis command will convert the DICOMs files to NIfTI files and save them inside 'tmp_dcm2bids/helper/'\n[note: with GE data, I find this gives bad naming conventions. Alternatively you could run something like this:\ndcm2niix -o tmp_dcm2bids/helper -b y -ba y -z y -f ‘%3s %f %d %r’ sourcedata/AMW01/\nwhich translates to:\n-o = output folder [note: this folder should already exist]\n-b y = BIDS sidecar yes\n-ba y = anonymize BIDS yes\n-z y = gz compress images yes\n-f '%3s %f %d %r' = filename with series number, folder name,\ndescription and instance number]\nWe should see a list of compressed NIfTI files (nii.gz) with their respective sidecar files (.json).\nFor this example, we will imagine we only have three acquisitions:\n003_LONGMBfMRI_SAG_FSPGR_3D\\_.9X.9X.9_20200917132212.json\\\n003_LONGMBfMRI_SAG_FSPGR_3D\\_.9X.9X.9_20200917132212.nii.gz\\\n005_LONGMBfMRI_fMRI_Resting_State_AP_20200917132212.json\\\n005_LONGMBfMRI_fMRI_Resting_State_AP_20200917132212.nii.gz\\\n006_LONGMBfMRI_fMRI_Resting_State_PA_20200917132212.json\\\n006_LONGMBfMRI_fMRI_Resting_State_PA_20200917132212.nii.gz\n\n\n4. Build your configuration file with the help of the content of\n`tmp_dcm2bids/helper`:\nNow we will create a configuration file called dcm2bids_config.json (this is just an example, it could be whatever we want) in the code/ folder.\nUse any text editor to create the file with the contents:\n{\n    \"descriptions\": [\n        {\n        \"datatype\": \"anat\",\n        \"suffix\": \"T1w\",\n        \"criteria\": {\n            \"SeriesDescription\": \"SAG_FSPGR_3D_.9X.9X.9*\"\n            }\n        },\n        {\n        \"datatype\": \"func\",\n        \"suffix\": \"bold\",\n        \"custom_entities\": \"task-rest-AP\",\n        \"criteria\": {\n            \"SeriesDescription\": \"fMRI_Resting_State_AP*\"\n            }\n        },\n        {\n        \"datatype\": \"func\",\n        \"suffix\": \"bold\",\n        \"custom_entities\": \"task-rest-PA\",\n        \"criteria\": {\n            \"SeriesDescription\": \"fMRI_Resting_State_PA*\"\n            }\n        }\n    ]\n}\n\n\n5. Run dcm2bids\nNow we are ready to run dcm2bids with our config file:\ndcm2bids -d sourcedata/aweber-20200918_110552/LONGMBfMRI \\\n  -p 01 -c code/dcm2bids_config.json\nwhere: -d is the sourcedirectory; -p is the subject ID; and -c is the config file.\nA bunch of information is printed to the terminal and we can verify that the data are now in BIDS.\nls sub-01/*\nsub-01/anat:\\\nsub-01_T1w.json sub-01_T1w.nii.gz\n\nsub-01/func:\\\nsub-01_task-rest_bold.json sub-01_task-rest_bold.nii.gz\ndcm2bids creates log files inside /your/projects/folder/for/example/tmp_dcm2bids/log\n\n\n7. Validate\nRun the bids-validator to check your directory.\nThis needs to be installed separately; or you can use the web interface and upload your data.\nSee Section 9\n\n\n\n\n\n\nTip\n\n\n\nDon't forget to create a .bidsignore file at the root of your BIDS directory with tmp_dcm2bids/* inside.\necho tmp_dcm2bids &gt;&gt; .bidsignore",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "BIDS (Brain Imaging Data Structure)"
     ]
   }
 ]
