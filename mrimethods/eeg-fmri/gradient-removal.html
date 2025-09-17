@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,14 +71,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../..//img/magnet.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-4a990d8dcb58f517c7c86712b8f2ac7c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b663645d1a1882532027323d30525be4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-f63ec51dc5bab09e4c818420f29e0b88.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -136,7 +137,8 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../img/magnet.png" alt="" class="navbar-logo">
+    <img src="../../img/magnet.png" alt="" class="navbar-logo light-content">
+    <img src="../../img/magnet.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">BC Children’s Research MRI Wiki</span>
@@ -149,11 +151,11 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../about.html" aria-current="page"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -204,6 +206,10 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -263,6 +269,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../tutorials/BIDS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BIDS (Brain Imaging Data Structure)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../tutorials/docker.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Docker</span></a>
   </div>
@@ -294,6 +306,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
   <div class="sidebar-item-container"> 
   <a href="../../mrisoftware/3D-Slicer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3D Slicer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mrisoftware/fmriprep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">fmriprep</span></a>
   </div>
 </li>
       </ul>
@@ -872,7 +890,7 @@ conda deactivate</code></pre>
 <section id="create-scalp-and-skin-surfaces-from-freesurfer-output" class="level3">
 <h3 class="anchored" data-anchor-id="create-scalp-and-skin-surfaces-from-freesurfer-output">Create scalp and skin surfaces from freesurfer output</h3>
 <p>The first thing to be created is the&nbsp;<code>bem</code>&nbsp;folder in the&nbsp;<code>derivatives/freesurfer/sub-BHBMEG&lt;subject_id&gt;</code>&nbsp;folder. The <code>make_bem</code> flag in <code>convert_mff_to_bids.py</code> needs to be set to True.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>make_bem <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>make_bem <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The&nbsp;<code>freesurfer&nbsp;recon-all</code> run above needs to have completed before doing this. This will create the head and scalp surfaces from your&nbsp;<code>freesurfer</code>&nbsp;output.</p>
 </section>
 <section id="create-translation-i.e.-.trans-file" class="level3">
@@ -900,7 +918,7 @@ conda deactivate</code></pre>
 <h3 class="anchored" data-anchor-id="open-.set-files-in-eeglab-and-matlab">Open .set file(s) in EEGLAB and Matlab</h3>
 <p>Download&nbsp;<strong>EEGLAB</strong>&nbsp;from&nbsp;<a href="https://sccn.ucsd.edu/eeglab/download.php"><u>https://sccn.ucsd.edu/eeglab/download.php</u></a>. Follow the install instructions. Add the&nbsp;<strong>EEGLAB</strong>&nbsp;path to your&nbsp;<strong>Matlab</strong>&nbsp;path.</p>
 <p>In the <strong>Matlab</strong> command window, type</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="va">eeglab</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="va">eeglab</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This will open the following dialogue box:</p>
 <p><img src="./images/Picture1.png" class="img-fluid"></p>
 <p>If you haven't already done so, add the <code>fMRIb MRI Tools</code>. In the main <code>EEGLAB</code> window, go to&nbsp;<code>File &gt; Manage EEGLAB</code> extensions. This will open another dialogue box:</p>
@@ -916,11 +934,11 @@ conda deactivate</code></pre>
 <section id="remove-mr-gradient-artifact-using-fimrib-eeglab-plugin" class="level2">
 <h2 class="anchored" data-anchor-id="remove-mr-gradient-artifact-using-fimrib-eeglab-plugin">Remove MR Gradient Artifact using FIMRIB EEGLAB Plugin</h2>
 <p>Change the&nbsp;<code>Matlab</code>&nbsp;directory to the root of your BIDS folder structure for your subject. In <code>Matlab 2022a</code>, this is:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="va">cd</span> <span class="op">&lt;</span><span class="va">path</span> <span class="va">to</span> <span class="va">BIDS</span> <span class="va">root</span><span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="va">cd</span> <span class="op">&lt;</span><span class="va">path</span> <span class="va">to</span> <span class="va">BIDS</span> <span class="va">root</span><span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Note that you must use <code>Matlab 2018b</code> or above with the signal processing and the stats toolboxes. If you don’t have the toolboxes, contact BCCHR IT.</p>
 <p>You want to open the <strong>.set</strong> file for the EEG-MRI run stored in your&nbsp;<code>derivatives/mne/sub-&lt;subject_id&gt;</code>&nbsp;folder.</p>
 <p>Open the main&nbsp;<code>EEGLAB</code> window.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="va">eeglab</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="va">eeglab</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Click&nbsp;<code>File &gt; Load existing dataset</code>. Navigate to the&nbsp;<code>derivatives/mne/sub-&lt;subject_id&gt;</code>&nbsp;folder. Select the <code>.set</code> file for the EEG-fMRI run you want to process.</p>
 <p><img src="./images/Picture5.png" class="img-fluid"></p>
 <p>Now we need to get the TRs. They have been saved as an extra channel. They should be stored in channel 258, but we want to check first. Go to&nbsp;<code>Plot &gt; Channel data (scroll)</code>.</p>
@@ -954,7 +972,7 @@ conda deactivate</code></pre>
 <section id="remove-ballistocardiogram-using-fimrib-eeglab-plugin" class="level3">
 <h3 class="anchored" data-anchor-id="remove-ballistocardiogram-using-fimrib-eeglab-plugin">Remove Ballistocardiogram using FIMRIB EEGLAB Plugin</h3>
 <p>Now that you have the files with the SP Peaks, you are ready to remove the ballistocardiogram from your EEG signal. In&nbsp;<code>Matlab</code>, open&nbsp;<code>EEGLAB</code>:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="va">eeglab</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="va">eeglab</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In the <code>EEGLAB</code> main window, open the first of your gradient cleaned EEG <code>.set</code> files (i.e.,&nbsp;<code>sub-BHBMEG&lt;subject_id&gt;_ses-eegfmri_task-rest_run-&lt;run number&gt;_desc-gr_eeg.set</code>) using&nbsp;<code>File \&gt; Load existing dataset</code>. Once opened, we need to import the <strong>.txt</strong> file with the events corresponding to the SP Peaks in that particular run. To do that, we go to <code>File &gt; Import event info &gt; From MATLAB array or ASCII file</code>. This will open the following dialogue box:</p>
 <p><img src="./images/Picture15.png" class="img-fluid"></p>
 <p>Select Browse and select the&nbsp;<code>BHBMEG&lt;subject_id&gt;_ses-eegfmri_task-rest_run-&lt;run number&gt;_desc-gr-sppeak_eeg.txt</code>&nbsp;file corresponding to the EEG run you loaded previously. Add the words <code>latency type</code> to the <code>Input field (column) names</code> box, change the <code>Number of file header lines</code> to <code>1</code>, the <code>Time unit (sec)</code> to <code>NaN</code> and uncheck the <code>**Auto adjust new events sampling rate</code>. Your dialogue box should look like the following:</p>
@@ -1044,13 +1062,14 @@ conda deactivate</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

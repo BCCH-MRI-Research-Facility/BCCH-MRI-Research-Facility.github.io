@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,14 +71,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="..//img/magnet.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a990d8dcb58f517c7c86712b8f2ac7c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b663645d1a1882532027323d30525be4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f63ec51dc5bab09e4c818420f29e0b88.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -136,7 +137,8 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/magnet.png" alt="" class="navbar-logo">
+    <img src="../img/magnet.png" alt="" class="navbar-logo light-content">
+    <img src="../img/magnet.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">BC Children’s Research MRI Wiki</span>
@@ -149,11 +151,11 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../about.html" aria-current="page"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -204,6 +206,10 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -263,6 +269,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tutorials/BIDS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BIDS (Brain Imaging Data Structure)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tutorials/docker.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Docker</span></a>
   </div>
@@ -294,6 +306,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
   <div class="sidebar-item-container"> 
   <a href="../mrisoftware/3D-Slicer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3D Slicer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrisoftware/fmriprep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">fmriprep</span></a>
   </div>
 </li>
       </ul>
@@ -513,7 +531,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <section id="neck-removal" class="level1">
 <h1>Neck removal</h1>
 <p>FSL Robust FOV will remove lower head and neck, which might help with later stages in brain extraction</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">robustfov</span> <span class="at">-i</span> <span class="op">&lt;</span>input<span class="op">&gt;</span> -r <span class="op">&lt;</span>output<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">robustfov</span> <span class="at">-i</span> <span class="op">&lt;</span>input<span class="op">&gt;</span> -r <span class="op">&lt;</span>output<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="brain-segmentation-skull-stripping" class="level1">
 <h1>Brain Segmentation / Skull Stripping</h1>
@@ -553,24 +571,24 @@ The Dice coefficient metric represents a compromise between sensitivity (includi
 <blockquote class="blockquote">
 <p>"The removal of the neck slices, either externally or within BET, has a marked positive effect on the brain extraction quality. BET option "B" with f=0.1 after removal of the neck slices seems to work best for all acquisition protocols. "</p>
 </blockquote>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">robustfov</span> <span class="at">-i</span> T1w.nii.gz <span class="at">-r</span> T1w_noneck</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bet</span> T1w_noneck.nii.gz brain <span class="at">-m</span> <span class="at">-R</span> <span class="at">-B</span> <span class="at">-f</span> 0.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">robustfov</span> <span class="at">-i</span> T1w.nii.gz <span class="at">-r</span> T1w_noneck</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bet</span> T1w_noneck.nii.gz brain <span class="at">-m</span> <span class="at">-R</span> <span class="at">-B</span> <span class="at">-f</span> 0.1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dskullstrip-afni" class="level2">
 <h2 class="anchored" data-anchor-id="dskullstrip-afni">3dSkullStrip (AFNI)</h2>
 <p>To run, type <code>3dSkullStrip</code> to get a list of inputs/parameters</p>
 <p>Basic run:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">3dSkullStrip</span> <span class="at">-input</span> input_image.nii.gz <span class="at">-prefix</span> output_image.nii.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">3dSkullStrip</span> <span class="at">-input</span> input_image.nii.gz <span class="at">-prefix</span> output_image.nii.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[note: final product may be deobliqued and no longer align with original image…]</p>
 <p>OR you can run @SSwarper [note: takes about 1hr]:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">@SSwarper</span> <span class="at">-input</span> ../T1w.nii.gz <span class="at">-base</span> MNI152_2009_template_SSW.nii.gz <span class="at">-subid</span> sub-001 <span class="at">-odir</span> group/o.aw_sub-001</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">@SSwarper</span> <span class="at">-input</span> ../T1w.nii.gz <span class="at">-base</span> MNI152_2009_template_SSW.nii.gz <span class="at">-subid</span> sub-001 <span class="at">-odir</span> group/o.aw_sub-001</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[note: final product may be deobliqued and no longer align with original image…]</p>
 </section>
 <section id="ants" class="level2">
 <h2 class="anchored" data-anchor-id="ants">ANTs</h2>
 <p><a href="https://andysbrainbook.readthedocs.io/en/latest/ANTs/ANTs_Overview.html">https://andysbrainbook.readthedocs.io/en/latest/ANTs/ANTs_Overview.html</a></p>
 <p><a href="https://dpaniukov.github.io/2016/06/06/brain-extraction-with-ants.html">https://dpaniukov.github.io/2016/06/06/brain-extraction-with-ants.html</a></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">antsBrainExtraction.sh</span> <span class="at">-d</span> 3 <span class="at">-a</span> sub-001_T1w_202.nii.gz <span class="at">-e</span> brainWithSkullTemplate.nii.gz <span class="at">-m</span> brainPrior.nii.gz <span class="at">-o</span> anat_Stripped.nii</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">antsBrainExtraction.sh</span> <span class="at">-d</span> 3 <span class="at">-a</span> sub-001_T1w_202.nii.gz <span class="at">-e</span> brainWithSkullTemplate.nii.gz <span class="at">-m</span> brainPrior.nii.gz <span class="at">-o</span> anat_Stripped.nii</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The option “-d 3” means that it is a three-dimensional image; “-a” indicates the anatomical image to be stripped; and “-e” is used to supply a template for skull-stripping. (which ones?) “-m” will generate a brain mask, and “-o” is the label for the output.</p>
 <p>Templates can be downloaded here: <a href="https://figshare.com/articles/dataset/ANTs_ANTsR_Brain_Templates/915436">https://figshare.com/articles/dataset/ANTs_ANTsR_Brain_Templates/915436</a></p>
 <p>[note: final product may be aligned to the template you use and no longer aligned with original image]</p>
@@ -580,20 +598,20 @@ The Dice coefficient metric represents a compromise between sensitivity (includi
 <p>I actually prefer this version of ANTs Brain Extraction to the above.</p>
 <p><a href="https://github.com/ANTsX/ANTsPy">https://github.com/ANTsX/ANTsPy</a><br>
 and <a href="https://github.com/ANTsX/ANTsPyNet">https://github.com/ANTsX/ANTsPyNet</a></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install antspyx</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install antspynet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install antspyx</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install antspynet</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In Python:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> antspynet <span class="im">import</span> brain_extraction</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> antspynet <span class="im">import</span> brain_extraction</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ants <span class="im">import</span> atropos, get_ants_data, image_read, resample_image, get_mask</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>example_filename <span class="op">=</span> os.path.join(<span class="st">'../..'</span>, <span class="st">'T1w.nii.gz'</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>images <span class="op">=</span> image_read(example_filename)</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>probability_brain_mask <span class="op">=</span> brain_extraction(images, modality<span class="op">=</span><span class="st">"t1"</span>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>probability_brain_mask.to_file(<span class="st">'antsbrainmask.nii.gz'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>probability_brain_mask.to_file(<span class="st">'antsbrainmask.nii.gz'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Bash:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> antsbrainmask.nii.gz <span class="at">-ref</span> ../../T1w.nii.gz <span class="at">-out</span> antsbrainmask_orig.nii.gz <span class="at">-applyxfm</span> <span class="at">-usesqform</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> antsbrainmask.nii.gz <span class="at">-ref</span> ../../T1w.nii.gz <span class="at">-out</span> antsbrainmask_orig.nii.gz <span class="at">-applyxfm</span> <span class="at">-usesqform</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> antsbrainmask_orig.nii.gz <span class="at">-thr</span> 0.5 <span class="at">-bin</span> antsbrainmask_orig.nii.gz</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> antsbrainmask_orig.nii.gz <span class="at">-mul</span> ../../T1w.nii.gz antsbrain.nii.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> antsbrainmask_orig.nii.gz <span class="at">-mul</span> ../../T1w.nii.gz antsbrain.nii.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Or just use this one simple script: <a href="https://github.com/WeberLab/SkullStrip_ANTsPyNet/tree/main">https://github.com/WeberLab/SkullStrip_ANTsPyNet/tree/main</a></p>
 </section>
 <section id="beast" class="level2">
@@ -608,38 +626,38 @@ and <a href="https://github.com/ANTsX/ANTsPyNet">https://github.com/ANTsX/ANTsPy
 <ol start="0" type="1">
 <li>You might need these installed:</li>
 </ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install cmake-curses-gui</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install cmake-curses-gui</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="1">
 <li>First install MINC</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://packages.bic.mni.mcgill.ca/minc-toolkit/Debian/minc-toolkit-1.9.18-20200813-Ubuntu_20.04-x86_64.deb</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> minc-toolkit-1.9.18-20200813-Ubuntu_20.04-x86_64.deb</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /opt/minc/1.9.18/minc-toolkit-config.sh</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBMINC_DIR</span><span class="op">=</span>/opt/minc/1.9.18/lib/cmake/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LIBMINC_DIR</span><span class="op">=</span>/opt/minc/1.9.18/lib/cmake/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[note: please add source /opt/minc/1.9.18/minc-toolkit-config.sh into your bashrc file so you don't have to do it every time before running the toolkit:]</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"source /opt/minc/minc-toolkit-config.sh"</span> <span class="op">&gt;&gt;</span> ~/.bashrc<span class="kw">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"source /opt/minc/minc-toolkit-config.sh"</span> <span class="op">&gt;&gt;</span> ~/.bashrc<span class="kw">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[NOTE: if the above doesn't work, try: <a href="https://github.com/BIC-MNI/minc-toolkit-v2">https://github.com/BIC-MNI/minc-toolkit-v2</a> ]</p>
 <ol start="2" type="1">
 <li>Install NIfTI libraries</li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install libnifti-dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install libnifti-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li>Install library for Hierarchical Data Format 5 support</li>
 </ol>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install libhdf5-dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install libhdf5-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>BEaST Proper</strong></p>
 <ol start="4" type="1">
 <li>Download source code:</li>
 </ol>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo clone BIC-MNI/BEaST <span class="co">#note: this uses the git hub cli client; see [[[git]]]</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> BEaST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> BEaST</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="5" type="1">
 <li>Compile and Install BEaST</li>
 </ol>
 <p>Run the code below to configure the installation.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ccmake</span> CMakeLists.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ccmake</span> CMakeLists.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>At the step, you need to make sure all the path is correct in the CMakeList.txt. Type “c” to configure the installation and type “g” to generate configuration. If everything is correct, runt the code below to install BEaST to your system.</p>
 <p>For me, I needed to edit and include: /opt/minc/1.9.18/lib/cmake/</p>
 <p>More Troubleshooting:</p>
@@ -663,19 +681,19 @@ the directory is most likely /opt/minc/lib</p>
 <li>make sure fsl's path isn't before your major ones: put this at the very end of your ~/.bashrc file:</li>
 </ul>
 <p>export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="6" type="1">
 <li>Install BEaST Libraries</li>
 </ol>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://packages.bic.mni.mcgill.ca/tgz/beast-library-1.1.tar.gz</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> xzf beast-library-1.1.tar.gz</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv beast-library-1.1 /opt/minc/1.9.18share/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mv beast-library-1.1 /opt/minc/1.9.18share/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="script-to-run-beast" class="level3">
 <h3 class="anchored" data-anchor-id="script-to-run-beast">Script to run BEaST:</h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env bash</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># BEaSTSkullStrip.sh</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using BEaST to do SkullStriping</span></span>
@@ -804,7 +822,7 @@ the directory is most likely /opt/minc/lib</p>
 <span id="cb18-127"><a href="#cb18-127" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> <span class="va">$tmpdir</span></span>
 <span id="cb18-128"><a href="#cb18-128" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-129"><a href="#cb18-129" aria-hidden="true" tabindex="-1"></a><span class="va">duration</span><span class="op">=</span><span class="va">$SECONDS</span></span>
-<span id="cb18-130"><a href="#cb18-130" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$(($duration</span> <span class="op">/</span> <span class="dv">60</span><span class="va">))</span><span class="st"> minutes and </span><span class="va">$(($duration</span> <span class="op">%</span> <span class="dv">60</span><span class="va">))</span><span class="st"> seconds elapsed."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-130"><a href="#cb18-130" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$(($duration</span> <span class="op">/</span> <span class="dv">60</span><span class="va">))</span><span class="st"> minutes and </span><span class="va">$(($duration</span> <span class="op">%</span> <span class="dv">60</span><span class="va">))</span><span class="st"> seconds elapsed."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="git-script" class="level3">
 <h3 class="anchored" data-anchor-id="git-script">Git Script</h3>
@@ -826,33 +844,33 @@ CI = (T1w-sT2w)/(T1w+sT2w)</p>
 <ol type="1">
 <li>Register T2 to T1</li>
 </ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> T2w_N4.nii.gz <span class="at">-ref</span> T1w_N4.nii.gz <span class="at">-out</span> T2-to-T1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> T2w_N4.nii.gz <span class="at">-ref</span> T1w_N4.nii.gz <span class="at">-out</span> T2-to-T1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
 <li>Find the scaling factor (median T1 of gm / median T2 of gm)</li>
 </ol>
 <p>I just guessed this by clicking around: 3.45</p>
 <p>Then multiply the T2 image by this factor:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T2-to-T1.nii.gz <span class="at">-mul</span> 3.45 sT2w.nii.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T2-to-T1.nii.gz <span class="at">-mul</span> 3.45 sT2w.nii.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li>Now calculate the CI image:</li>
 </ol>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T1w_N4.nii.gz <span class="at">-sub</span> sT2w.nii.gz T1w-sT2w</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T1w_N4.nii.gz <span class="at">-sub</span> sT2w.nii.gz T1w-sT2w</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T1w_N4.nii.gz <span class="at">-add</span> sT2w.nii.gz T1w+sT2w</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T1w-sT2w.nii.gz <span class="at">-div</span> T1w+sT2w.nii.gz CI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> T1w-sT2w.nii.gz <span class="at">-div</span> T1w+sT2w.nii.gz CI</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
 <li>Next find the median value of all the T1w file</li>
 </ol>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslstats</span> T1w_N4.nii.gz <span class="at">-P</span> 50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslstats</span> T1w_N4.nii.gz <span class="at">-P</span> 50</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In my case it turned out to be: 388</p>
 <ol start="5" type="1">
 <li>Then set the CI to be between 0 and 1, then multiply by that median number:</li>
 </ol>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> CI.nii.gz <span class="at">-add</span> 1 <span class="at">-div</span> 2 <span class="at">-mul</span> 388 sCI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> CI.nii.gz <span class="at">-add</span> 1 <span class="at">-div</span> 2 <span class="at">-mul</span> 388 sCI</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="6" type="1">
 <li>Now apply bet?</li>
 </ol>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">robustfov</span> <span class="at">-i</span> sCI.nii.gz <span class="at">-r</span> sCI_robust</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bet</span> sCI_robust.nii.gz sCI_robust_brain <span class="at">-o</span> <span class="at">-m</span> <span class="at">-f</span> 0.1 <span class="at">-B</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">robustfov</span> <span class="at">-i</span> sCI.nii.gz <span class="at">-r</span> sCI_robust</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bet</span> sCI_robust.nii.gz sCI_robust_brain <span class="at">-o</span> <span class="at">-m</span> <span class="at">-f</span> 0.1 <span class="at">-B</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>::::</p>
 <p>This failed pretty remarkably…</p>
 </section>
@@ -874,13 +892,13 @@ Optional: Corresponding binary mask. However, the volume has to be in the same o
 <h3 class="anchored" data-anchor-id="setup">Setup</h3>
 <p>Currently installed on AdaL:</p>
 <p>Add this to your ~/bashrc file:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LABELDIR</span><span class="op">=</span>/usr/local/skullStrippingToolkit</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">${PATH}</span>:<span class="va">${LABELDIR}</span>/bin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LABELDIR</span><span class="op">=</span>/usr/local/skullStrippingToolkit</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">${PATH}</span>:<span class="va">${LABELDIR}</span>/bin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>then add this to your ~/matlab/startup.m file:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">%-----------</span> add fLABEL for brain extraction <span class="at">---------------%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">%-----------</span> add fLABEL for brain extraction <span class="at">---------------%</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">LABELDIR</span> = <span class="st">'/usr/local/skullStrippingToolkit'</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">addpath</span><span class="er">(</span><span class="ex">genpath</span><span class="er">(</span><span class="ex">LABELDIR</span><span class="kw">));</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">%-----------------------------------------------------%</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="ex">%-----------------------------------------------------%</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>after your <code>source ~/.bashrc</code> you should be good to go:</p>
 </section>
 <section id="to-run" class="level3">
@@ -901,10 +919,10 @@ Optional: Corresponding binary mask. However, the volume has to be in the same o
 <p>First step is make sure docker is installed and that your user is added to the docker usergroup</p>
 <p>Installation and Troubleshooting for docker should be found here: <a href="http://weberlab.wikidot.com/fmri-prep#toc14">fmri-prep</a></p>
 <p>Next step:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> pull biomedia/dhcp-structural-pipeline:latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> pull biomedia/dhcp-structural-pipeline:latest</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This will take a while to download and install</p>
 <p><strong>Example Script</strong></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">######################################################˚</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Uses dHCP anatomical docker image to segment brains</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># from images in Raw5 folder</span></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1) N4 correction</span></span>
@@ -1010,7 +1028,7 @@ Optional: Corresponding binary mask. However, the volume has to be in the same o
 <span id="cb28-104"><a href="#cb28-104" aria-hidden="true" tabindex="-1"></a>    <span class="at">-u</span> <span class="va">$(</span><span class="fu">id</span> <span class="at">-u</span><span class="va">)</span>:<span class="va">$(</span><span class="fu">id</span> <span class="at">-g</span><span class="va">)</span> <span class="dt">\</span></span>
 <span id="cb28-105"><a href="#cb28-105" aria-hidden="true" tabindex="-1"></a>    <span class="at">-v</span> <span class="va">${dataDir}</span>:<span class="va">${dataDir}</span> <span class="dt">\</span></span>
 <span id="cb28-106"><a href="#cb28-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">-w</span> <span class="va">${dataDir}</span> <span class="dt">\</span></span>
-<span id="cb28-107"><a href="#cb28-107" aria-hidden="true" tabindex="-1"></a>    biomedia/dhcp-structural-pipeline:latest <span class="va">${subjectid}</span> session1 <span class="va">${agescan}</span> <span class="at">-T1</span> N4_Warped<span class="va">${baset1}</span> <span class="at">-T2</span> N4_<span class="va">${baset2}</span> <span class="at">-t</span> 16</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-107"><a href="#cb28-107" aria-hidden="true" tabindex="-1"></a>    biomedia/dhcp-structural-pipeline:latest <span class="va">${subjectid}</span> session1 <span class="va">${agescan}</span> <span class="at">-T1</span> N4_Warped<span class="va">${baset1}</span> <span class="at">-T2</span> N4_<span class="va">${baset2}</span> <span class="at">-t</span> 16</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><p>I have commented the lines that need edited. 5 lines are necessary, 3 lines don't need to be changed but probably better if you do.</p></li>
 <li><p>You'll notice I also commented the Affine and SyN parts of antsRegistration, I found the Rigid transform was pretty decent. The Affine and SyN took very long, maybe this is an option if you are playing with the single subject for the moment or the rigid registration is not good enough.</p></li>
@@ -1020,7 +1038,7 @@ Optional: Corresponding binary mask. However, the volume has to be in the same o
 <p><strong>dHCP anat output</strong></p>
 <p>When you run the script, sometimes it will fail out before completely finishing. If you are only looking for the segmentations, this is ok as they are almost always completed.<br>
 This is generally how your output folder will look when running on multiple subjects.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">output</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">output</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> logs</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">-</span> derivatives</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>            <span class="ex">-</span> sub-<span class="va">${subid}</span></span>
@@ -1041,7 +1059,7 @@ This is generally how your output folder will look when running on multiple subj
 <span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> segmentations-data</span>
 <span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> surfaces</span>
 <span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> T1</span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> T2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>                    <span class="ex">-</span> T2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The two most important folder are derivatives (subjects that have fully run) and workdir (subjects that failed in pipeline)</p>
 <p>Here is a rough guide as to what image is what (workdir 1st derivatives equivalent 2nd)</p>
 <ul>
@@ -1051,9 +1069,9 @@ This is generally how your output folder will look when running on multiple subj
 </ul>
 <p>More detail into how the <a href="https://github.com/amakropoulos/structural-pipeline-measures/tree/master/label_names">segmentations are indexed</a><br>
 When writing a pipeline for picking these images a nice bash way (no if statement needed) to do it is.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="va">workingt2</span><span class="op">=</span><span class="va">${dhcpanat}</span>workdir/<span class="va">${subid}</span>-<span class="va">${sesid}</span>/restore/T2/<span class="va">${subid}</span>-<span class="va">${sesid}</span>_restore</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="va">workingt2</span><span class="op">=</span><span class="va">${dhcpanat}</span>workdir/<span class="va">${subid}</span>-<span class="va">${sesid}</span>/restore/T2/<span class="va">${subid}</span>-<span class="va">${sesid}</span>_restore</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="va">derivt2</span><span class="op">=</span><span class="va">${dhcpanat}</span>derivatives/sub-<span class="va">${subid}</span>/ses-<span class="va">${sesid}</span>/anat/sub-<span class="va">${subid}</span>_ses-<span class="va">${sesid}</span>_T2w_restore</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span> <span class="ot">-f</span> <span class="va">${workingt2}</span>.nii.gz <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="va">t2</span><span class="op">=</span><span class="va">${workingt2}</span> <span class="kw">||</span> <span class="va">t2</span><span class="op">=</span><span class="va">${derivt2}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span> <span class="ot">-f</span> <span class="va">${workingt2}</span>.nii.gz <span class="kw">]]</span> <span class="kw">&amp;&amp;</span> <span class="va">t2</span><span class="op">=</span><span class="va">${workingt2}</span> <span class="kw">||</span> <span class="va">t2</span><span class="op">=</span><span class="va">${derivt2}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><p>The first two lines are paths to the image in the derivatives and workdir folder as we don't know.</p></li>
 <li><p>The third line asks if the image exists in the workdir folder, if it does then the variable t2 equals the path to the workdir folder</p></li>
@@ -1071,7 +1089,7 @@ When writing a pipeline for picking these images a nice bash way (no if statemen
 <h1>Tissue Segmentation</h1>
 <section id="fsl_anat" class="level2">
 <h2 class="anchored" data-anchor-id="fsl_anat">FSL_ANAT</h2>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fsl_anat</span> <span class="at">-i</span> T1.nii.gz <span class="at">-o</span> output/location</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fsl_anat</span> <span class="at">-i</span> T1.nii.gz <span class="at">-o</span> output/location</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Example outputs:</p>
 <p>lesionmaskinv.nii.gz T1_biascorr.nii.gz T1_fast_totbias.nii.gz T1_nonroi2roi.mat T1_to_MNI_lin.mat<br>
 lesionmask.nii.gz T1_fast_bias_idxmask.nii.gz T1_fullfov.nii.gz T1_orig2roi.mat T1_to_MNI_lin.nii.gz<br>
@@ -1093,13 +1111,13 @@ T1_biascorr_maskedbrain.nii.gz T1_fast_seg.nii.gz T1.nii.gz T1_std2orig.mat</p>
 <section id="freesurfer" class="level2">
 <h2 class="anchored" data-anchor-id="freesurfer">Freesurfer</h2>
 <p>To run freesurfer yourself and get cortical segmentation (note: takes HOURS):</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">recon-all</span> <span class="at">-i</span> T1w_robust.nii.gz <span class="at">-s</span> <span class="op">&lt;</span>subid<span class="op">&gt;</span> -sd <span class="va">${PWD}</span> <span class="at">-all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">recon-all</span> <span class="at">-i</span> T1w_robust.nii.gz <span class="at">-s</span> <span class="op">&lt;</span>subid<span class="op">&gt;</span> -sd <span class="va">${PWD}</span> <span class="at">-all</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To run freesurfer and just get a simple segmentation:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">recon-all</span> <span class="at">-i</span> T1w_robust.nii.gz <span class="at">-s</span> <span class="op">&lt;</span>subid<span class="op">&gt;</span> -sd <span class="va">${PWD}</span> <span class="at">-autorecon1</span> <span class="at">-autorecon2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">recon-all</span> <span class="at">-i</span> T1w_robust.nii.gz <span class="at">-s</span> <span class="op">&lt;</span>subid<span class="op">&gt;</span> -sd <span class="va">${PWD}</span> <span class="at">-autorecon1</span> <span class="at">-autorecon2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>After this, you will need to convert to nifti, and reorient:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mri_convert</span> aseg.auto_noCCseg.mgz aseg.auto_noCCseg.nii.gz</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mri_convert</span> aseg.auto_noCCseg.mgz aseg.auto_noCCseg.nii.gz</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fslreorient2std</span> aseg.auto_noCCseg.nii.gz aseg.auto_noCCseg_r2std</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> aseg.auto_noCCseg_r2std.nii.gz <span class="at">-ref</span> T1w_robust.nii.gz <span class="at">-out</span> segment <span class="at">-applyxfm</span> <span class="at">-usesqform</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="ex">flirt</span> <span class="at">-in</span> aseg.auto_noCCseg_r2std.nii.gz <span class="at">-ref</span> T1w_robust.nii.gz <span class="at">-out</span> segment <span class="at">-applyxfm</span> <span class="at">-usesqform</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Here are the tissue labels:<br>
 2 Left_Cerebral_White_Matter<br>
 3 Left_Cerebral_Cortex<br>
@@ -1150,13 +1168,13 @@ T1_biascorr_maskedbrain.nii.gz T1_fast_seg.nii.gz T1.nii.gz T1_std2orig.mat</p>
 <p>Output a binarized 3D image file (nifti) of a region-of-interest in a parcellation scheme that is indexed by number of parcels (such as what you might get from segmentation)</p>
 <p>Requires AFNI</p>
 <p>Example using the Harvard Oxford Atlas:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="va">ATLAS_FILENAME</span><span class="op">=</span><span class="st">'Harvard_Oxford_Atlas.nii.gz'</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="va">ATLAS_FILENAME</span><span class="op">=</span><span class="st">'Harvard_Oxford_Atlas.nii.gz'</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="va">MASK_NAME</span><span class="op">=</span><span class="st">'r_amygdala'</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="va">ROI_INDEX</span><span class="op">=</span>102 <span class="co"># index assigned to parcel/region of interest in atlas parcellation scheme (the index for right amygdala in Harvard Oxford atlas is 102)</span></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="ex">3dcalc</span> <span class="at">-a</span> <span class="va">${ATLAS_FILENAME}</span> <span class="at">-prefix</span> <span class="va">${MASK_NAME}</span>.nii.gz <span class="at">-expr</span> <span class="st">"amongst(a,</span><span class="va">${ROI_INDEX}</span><span class="st">)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="ex">3dcalc</span> <span class="at">-a</span> <span class="va">${ATLAS_FILENAME}</span> <span class="at">-prefix</span> <span class="va">${MASK_NAME}</span>.nii.gz <span class="at">-expr</span> <span class="st">"amongst(a,</span><span class="va">${ROI_INDEX}</span><span class="st">)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can also extract all parcels using a .txt file containing a parcel name on each row:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="va">ATLAS_FILENAME</span><span class="op">=</span><span class="st">'Harvard_Oxford_Atlas.nii.gz'</span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="va">MASKLIST_FILENAME</span><span class="op">=</span><span class="st">'Harvard_Oxford_Atlas_ROIs.txt'</span></span>
@@ -1165,7 +1183,7 @@ T1_biascorr_maskedbrain.nii.gz T1_fast_seg.nii.gz T1.nii.gz T1_std2orig.mat</p>
 <span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> MASK_NAME <span class="kw">in</span> <span class="va">$(</span><span class="fu">cat</span> <span class="st">"</span><span class="va">${MASKLIST_FILENAME}</span><span class="st">); do</span></span>
 <span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="st">    ROI_INDEX=</span><span class="va">$((COUNTER</span><span class="op">+</span><span class="dv">1</span><span class="va">))</span></span>
 <span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="st">    3dcalc -a </span><span class="va">${ATLAS_FILENAME}</span><span class="st"> -prefix </span><span class="va">${MASK_NAME}</span><span class="st">.nii.gz -expr "</span>amongst<span class="er">(</span><span class="ex">a,</span><span class="va">${ROI_INDEX}</span><span class="kw">)</span><span class="st">"</span></span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="st">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="st">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="newborn-brain-atlas-templates" class="level1">
 <h1>Newborn Brain Atlas / Templates</h1>
@@ -1182,12 +1200,12 @@ T1_biascorr_maskedbrain.nii.gz T1_fast_seg.nii.gz T1.nii.gz T1_std2orig.mat</p>
 <ol start="0" type="1">
 <li>Get a binary brain you want to print. For example, if you have run freesurfer but want to print the whole brain (including cerebellum and brain stem (aseg volume file in FreesSurfer)), you could do the following:</li>
 </ol>
-<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mri_convert</span> mri/aseg.mgz ./aseg.nii.gz</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> aseg.nii.gz <span class="at">-bin</span> aseg.nii.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mri_convert</span> mri/aseg.mgz ./aseg.nii.gz</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> aseg.nii.gz <span class="at">-bin</span> aseg.nii.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol type="1">
 <li>If you have AFNI installed, run:</li>
 </ol>
-<div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">IsoSurface</span> <span class="at">-isoval</span> 1 <span class="at">-input</span> aseg.nii.gz <span class="at">-Tsmooth</span> 0.1 100  <span class="at">-remesh</span> 0.5 <span class="at">-overwrite</span> <span class="at">-autocrop</span> <span class="at">-o</span> aseg.stl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">IsoSurface</span> <span class="at">-isoval</span> 1 <span class="at">-input</span> aseg.nii.gz <span class="at">-Tsmooth</span> 0.1 100  <span class="at">-remesh</span> 0.5 <span class="at">-overwrite</span> <span class="at">-autocrop</span> <span class="at">-o</span> aseg.stl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The output of this command is not necessarily a 2-manifold. Thus, the 3D-printer cannot print it. It can be corrected, however, with netfabb.</p>
 <p>Install netfabb basic: <a href="https://github.com/3DprintFIT/netfabb-basic-download">https://github.com/3DprintFIT/netfabb-basic-download</a></p>
 <p>(you will need to register with an e-mail which will provide you with a key)</p>
@@ -1269,13 +1287,14 @@ T1_biascorr_maskedbrain.nii.gz T1_fast_seg.nii.gz T1.nii.gz T1_std2orig.mat</p>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

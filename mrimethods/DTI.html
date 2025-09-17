@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,14 +71,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="..//img/magnet.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-4a990d8dcb58f517c7c86712b8f2ac7c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b663645d1a1882532027323d30525be4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f63ec51dc5bab09e4c818420f29e0b88.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -134,7 +135,8 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../img/magnet.png" alt="" class="navbar-logo">
+    <img src="../img/magnet.png" alt="" class="navbar-logo light-content">
+    <img src="../img/magnet.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">BC Children’s Research MRI Wiki</span>
@@ -147,11 +149,11 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../about.html" aria-current="page"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -202,6 +204,10 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -261,6 +267,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tutorials/BIDS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BIDS (Brain Imaging Data Structure)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tutorials/docker.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Docker</span></a>
   </div>
@@ -292,6 +304,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
   <div class="sidebar-item-container"> 
   <a href="../mrisoftware/3D-Slicer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3D Slicer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrisoftware/fmriprep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">fmriprep</span></a>
   </div>
 </li>
       </ul>
@@ -483,7 +501,7 @@ DTI builds upon DWI by measuring the direction and magnitude of water diffusion,
 <p>Files need to be converted from source files (DICOM or PAR/REC for example) into NIFTI and BVEC/BVAL. This can be done using <a href="https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage">dcm2niix</a></p>
 <p>The pipeline requires two inputs: main DTI file <em>basename</em> in one phase direction; a DTI nifti file acquired in the opposite phase direction</p>
 <p>usage:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fsldti_pipeline</span> <span class="op">&lt;</span>main_data_name<span class="op">&gt;</span> <span class="op">&lt;</span>b0oppositephase_name<span class="op">&gt;</span>.nii.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fsldti_pipeline</span> <span class="op">&lt;</span>main_data_name<span class="op">&gt;</span> <span class="op">&lt;</span>b0oppositephase_name<span class="op">&gt;</span>.nii.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>[note: <code>main_data_name</code> doesn't have a suffix. Just the basename]</p>
 <p>This pipeline also assumes you have <code>matlab</code>, <code>fsl</code>, and a version of <code>eddy_cuda</code> working.</p>
 </section>
@@ -504,11 +522,11 @@ NODDI stands for Neurite Orientation Dispersion and Density Imaging. It’s a di
 <section id="amico" class="level2">
 <h2 class="anchored" data-anchor-id="amico">AMICO</h2>
 <p><a href="https://github.com/daducci/AMICO/wiki/Installation">https://github.com/daducci/AMICO/wiki/Installation</a></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install dmri-amico</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install dmri-amico</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="example" class="level3">
 <h3 class="anchored" data-anchor-id="example">Example:</h3>
 <p>In Python:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> amico</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> amico</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>amico.setup()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>amico.util.fsl2scheme(<span class="st">"derivatives/qsirecon/sub-Pilot01/dwi/sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.bval"</span>, <span class="st">"derivatives/qsirecon/sub-Pilot01/dwi/sub-Pilot01_space-T1w_desc-preproc_fslstd_dwi.bvec"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -520,9 +538,9 @@ NODDI stands for Neurite Orientation Dispersion and Density Imaging. It’s a di
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ae.load_kernels()</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>ae.fit()</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>ae.save_results()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>ae.save_results()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>As a Python Script you can run:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> amico</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> amico</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys, getopt</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -563,7 +581,7 @@ NODDI stands for Neurite Orientation Dispersion and Density Imaging. It’s a di
 <span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>   ae.save_results()</span>
 <span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>   main(sys.argv[<span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>   main(sys.argv[<span class="dv">1</span>:])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="matlab-toolbox" class="level2">
@@ -576,16 +594,16 @@ NODDI stands for Neurite Orientation Dispersion and Density Imaging. It’s a di
 </ul>
 <p>First run the simple DTI script from before (<a href="https://github.com/WeberLab/Misc/blob/main/dtipipeline.sh">https://github.com/WeberLab/Misc/blob/main/dtipipeline.sh</a>) script to get a 'topped-up' DTI and brain mask to use.</p>
 <p>Then convert to Analyze (AFNI):</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">3dcalc</span> <span class="at">-a</span> eddy_corrected_data.nii <span class="at">-expr</span> <span class="st">'a'</span> <span class="at">-prefix</span> eddy_corrected_data.hdr</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">3dcalc</span> <span class="at">-a</span> DTI_topupapplied_brain_mask.nii <span class="at">-expr</span> <span class="st">'a'</span> <span class="at">-prefix</span> DTI_topupapplied_brain_mask.hdr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">3dcalc</span> <span class="at">-a</span> eddy_corrected_data.nii <span class="at">-expr</span> <span class="st">'a'</span> <span class="at">-prefix</span> eddy_corrected_data.hdr</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">3dcalc</span> <span class="at">-a</span> DTI_topupapplied_brain_mask.nii <span class="at">-expr</span> <span class="st">'a'</span> <span class="at">-prefix</span> DTI_topupapplied_brain_mask.hdr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In Matlab:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">addpath</span>(<span class="va">genpath</span>(<span class="ss">'/home/weberam2/matlab/NODDI_tool'</span>)) <span class="co">% or whever the NODDI from Github is</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">addpath</span>(<span class="va">genpath</span>(<span class="ss">'/home/weberam2/matlab/NODDI_tool'</span>)) <span class="co">% or whever the NODDI from Github is</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">addpath</span>(<span class="va">genpath</span>(<span class="ss">'/home/weberam2/matlab/nifti_matlab'</span>)) <span class="co">% or whever your nifti_matlab is</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="va">CreateROI</span>(<span class="ss">'eddy_corrected_data.hdr'</span><span class="op">,</span> <span class="ss">'DTI_topupapplied_brain_mask.hdr'</span><span class="op">,</span> <span class="ss">'NODDI_roi.mat'</span>)<span class="op">;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="va">protocol</span> <span class="op">=</span> <span class="va">FSL2Protocol</span>(<span class="ss">'DTI.bval'</span><span class="op">,</span> <span class="ss">'DTI.bvec'</span>)<span class="op">;</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="va">noddi</span> <span class="op">=</span> <span class="va">MakeModel</span>(<span class="ss">'WatsonSHStickTortIsoV_B0'</span>)<span class="op">;</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="va">batch_fitting</span>(<span class="ss">'NODDI_roi.mat'</span><span class="op">,</span> <span class="va">protocol</span><span class="op">,</span> <span class="va">noddi</span><span class="op">,</span> <span class="ss">'FittedParams.mat'</span><span class="op">,</span> <span class="fl">8</span>)<span class="op">;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="va">SaveParamsAsNIfTI</span>(<span class="ss">'FittedParams.mat'</span><span class="op">,</span> <span class="ss">'NODDI_roi.mat'</span><span class="op">,</span> <span class="ss">'DTI_topupapplied_brain_mask.hdr'</span><span class="op">,</span> <span class="ss">'outputname'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="va">SaveParamsAsNIfTI</span>(<span class="ss">'FittedParams.mat'</span><span class="op">,</span> <span class="ss">'NODDI_roi.mat'</span><span class="op">,</span> <span class="ss">'DTI_topupapplied_brain_mask.hdr'</span><span class="op">,</span> <span class="ss">'outputname'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="python-version" class="level2">
 <h2 class="anchored" data-anchor-id="python-version">Python Version</h2>
@@ -614,8 +632,8 @@ NODDI stands for Neurite Orientation Dispersion and Density Imaging. It’s a di
 <section id="radial-diffusivity" class="level2">
 <h2 class="anchored" data-anchor-id="radial-diffusivity">Radial Diffusivity</h2>
 <p>RD = (L2 + L3) / 2</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">$FSLDIR</span><span class="ex">/bin/fslmaths</span> <span class="va">${dtifit_folder}</span>/<span class="va">${subj}</span><span class="pp">*</span>_L2.nii.gz –add <span class="va">${dtifit_folder}</span>/<span class="va">${subj}</span><span class="pp">*</span>_L3.nii.gz <span class="dt">\\</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="ex">-div</span> 2 <span class="va">${parentDirectory}</span>/RD/<span class="va">${subj}</span>_RD.nii.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">$FSLDIR</span><span class="ex">/bin/fslmaths</span> <span class="va">${dtifit_folder}</span>/<span class="va">${subj}</span><span class="pp">*</span>_L2.nii.gz –add <span class="va">${dtifit_folder}</span>/<span class="va">${subj}</span><span class="pp">*</span>_L3.nii.gz <span class="dt">\\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="ex">-div</span> 2 <span class="va">${parentDirectory}</span>/RD/<span class="va">${subj}</span>_RD.nii.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
@@ -673,13 +691,14 @@ NODDI stands for Neurite Orientation Dispersion and Density Imaging. It’s a di
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
