@@ -84,7 +84,11 @@ recon-all \
 where the input (-i) file is a single file representing a T1-weighted
 data set
 
-## Stats 
+# Results
+
+An overview of the output files can be found [here](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/OutputData_freeview). I highly recommend going through that tutorial.
+
+# Stats 
 
 Example (might have to change the variable `$SUBJECTS_DIR`):
 
