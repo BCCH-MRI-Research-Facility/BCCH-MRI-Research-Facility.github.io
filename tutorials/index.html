@@ -83,9 +83,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -329,6 +329,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../mrisoftware/ants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ANTs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../mrisoftware/fmriprep.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">fmriprep</span></a>
   </div>
@@ -337,6 +343,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../mrisoftware/freesurfer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Freesurfer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrisoftware/tedana.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tedana</span></a>
   </div>
 </li>
       </ul>
@@ -380,9 +392,15 @@ window.Quarto = {
  <span class="menu-text">fMRI</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrimethods/multi-echo-fmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi-Echo fMRI</span></a>
+  </div>
+</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a href="../mrimethods/eeg-fmri/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EEG-fMRI</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -424,7 +442,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="ZGF0YSUyMGFuYWx5c2lz">data analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YSUyMG9yZ2FuaXphdGlvbg==">data organization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvZ3JhbW1pbmc=">programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVwcm9kdWNpYmlsaXR5">reproducibility <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVwcm9kdWNpYmxl">reproducible <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c29mdHdhcmU=">software <span class="quarto-category-count">(4)</span></div><div class="category" data-category="dmVyc2lvbiUyMGNvbnRyb2w=">version control <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -453,7 +471,138 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="cmVwcm9kdWNpYmlsaXR5JTJDc29mdHdhcmUlMkNkYXRhJTIwb3JnYW5pemF0aW9u" data-listing-date-sort="1758067200000" data-listing-file-modified-sort="1758236060643" data-listing-date-modified-sort="1758067200000" data-listing-reading-time-sort="16" data-listing-word-count-sort="3110">
+<div class="thumbnail"><a href="../tutorials/BIDS.html" class="no-external">
 
+<p class="card-img-top"><img src="img/2025-09-17-16-47-52.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../tutorials/BIDS.html" class="no-external">BIDS (Brain Imaging Data Structure)</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cmVwcm9kdWNpYmlsaXR5'); return false;">reproducibility</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMG9yZ2FuaXphdGlvbg=='); return false;">data organization</div>
+
+</div>
+<div class="delink listing-description"><a href="../tutorials/BIDS.html" class="no-external">
+<p>Standardized organization and formatting of imaging data</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../tutorials/BIDS.html" class="no-external">
+<div class="listing-date">
+Sep 17, 2025
+</div>
+<div class="listing-author">
+Alexander Weber
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="c29mdHdhcmUlMkNyZXByb2R1Y2libGU=" data-listing-date-sort="1739404800000" data-listing-file-modified-sort="1758236060643" data-listing-date-modified-sort="1739404800000" data-listing-reading-time-sort="5" data-listing-word-count-sort="897">
+<div class="thumbnail"><a href="../tutorials/docker.html" class="no-external">
+
+<p class="card-img-top"><img src="../img/dockerlogo.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../tutorials/docker.html" class="no-external">Docker</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cmVwcm9kdWNpYmxl'); return false;">reproducible</div>
+
+</div>
+<div class="delink listing-description"><a href="../tutorials/docker.html" class="no-external">
+<p>Automates the Deployment of Software Applications Inside Containers</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../tutorials/docker.html" class="no-external">
+<div class="listing-date">
+Feb 13, 2025
+</div>
+<div class="listing-author">
+Alexander Weber
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="c29mdHdhcmUlMkN2ZXJzaW9uJTIwY29udHJvbA==" data-listing-date-sort="1739404800000" data-listing-file-modified-sort="1758236060643" data-listing-date-modified-sort="1739404800000" data-listing-reading-time-sort="3" data-listing-word-count-sort="508">
+<div class="thumbnail"><a href="../tutorials/git.html" class="no-external">
+
+<p class="card-img-top"><img src="../img/gitlogo.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../tutorials/git.html" class="no-external">Git</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dmVyc2lvbiUyMGNvbnRyb2w='); return false;">version control</div>
+
+</div>
+<div class="delink listing-description"><a href="../tutorials/git.html" class="no-external">
+<p>Allows you to keep track of changes to documents, and also to collaborate and work together</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../tutorials/git.html" class="no-external">
+<div class="listing-date">
+Feb 13, 2025
+</div>
+<div class="listing-author">
+Alexander Weber
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="c29mdHdhcmUlMkNwcm9ncmFtbWluZyUyQ2RhdGElMjBhbmFseXNpcw==" data-listing-date-sort="1741651200000" data-listing-file-modified-sort="1758236060643" data-listing-date-modified-sort="1741651200000" data-listing-reading-time-sort="14" data-listing-word-count-sort="2785">
+<div class="thumbnail"><a href="../tutorials/Python.html" class="no-external">
+
+<p class="card-img-top"><img src="img/pythonlogo.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../tutorials/Python.html" class="no-external">Python</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">software</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHJvZ3JhbW1pbmc='); return false;">programming</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMGFuYWx5c2lz'); return false;">data analysis</div>
+
+</div>
+<div class="delink listing-description"><a href="../tutorials/Python.html" class="no-external">
+<p>Interpreted, high-level and general-purpose programming language</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../tutorials/Python.html" class="no-external">
+<div class="listing-date">
+Mar 11, 2025
+</div>
+<div class="listing-author">
+Alexander Weber
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

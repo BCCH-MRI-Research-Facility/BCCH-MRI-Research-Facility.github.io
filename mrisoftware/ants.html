@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Weber">
-<meta name="dcterms.date" content="2025-02-13">
-<meta name="description" content="Allows you to keep track of changes to documents, and also to collaborate and work together">
+<meta name="dcterms.date" content="2025-09-17">
+<meta name="description" content="Advanced Normalization Tools">
 
-<title>Git – BC Children’s Research MRI Wiki</title>
+<title>ANTs – BC Children’s Research MRI Wiki</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -121,12 +121,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Git – BC Children’s Research MRI Wiki">
-<meta property="og:description" content="Allows you to keep track of changes to documents, and also to collaborate and work together">
-<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/img/gitlogo.png">
+<meta property="og:title" content="ANTs – BC Children’s Research MRI Wiki">
+<meta property="og:description" content="Advanced Normalization Tools">
+<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/mrisoftware/img/antspicture.png">
 <meta property="og:site_name" content="BC Children's Research MRI Wiki">
-<meta property="og:image:height" content="145">
-<meta property="og:image:width" content="347">
+<meta property="og:image:height" content="1916">
+<meta property="og:image:width" content="2470">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -190,7 +190,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/index.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/git.html">Git</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../mrisoftware/index.html">MRI Software</a></li><li class="breadcrumb-item"><a href="../mrisoftware/ants.html">ANTs</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,7 +281,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/git.html" class="sidebar-item-text sidebar-link active">
+  <a href="../tutorials/git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
@@ -310,7 +310,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../mrisoftware/ants.html" class="sidebar-item-text sidebar-link">
+  <a href="../mrisoftware/ants.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">ANTs</span></a>
   </div>
 </li>
@@ -426,43 +426,36 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#GitforVersionControl-Intro" id="toc-GitforVersionControl-Intro" class="nav-link active" data-scroll-target="#GitforVersionControl-Intro">Intro</a>
-  <ul class="collapse">
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
-  </ul></li>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
   <li><a href="#install" id="toc-install" class="nav-link" data-scroll-target="#install">Install</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">Github</a>
+  <li><a href="#quick-syn" id="toc-quick-syn" class="nav-link" data-scroll-target="#quick-syn">Quick SyN</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#forums-for-help" id="toc-forums-for-help" class="nav-link" data-scroll-target="#forums-for-help">Forums for Help</a></li>
+  <li><a href="#main-functions" id="toc-main-functions" class="nav-link" data-scroll-target="#main-functions">Main Functions</a>
   <ul class="collapse">
-  <li><a href="#connecting-to-github-with-ssh" id="toc-connecting-to-github-with-ssh" class="nav-link" data-scroll-target="#connecting-to-github-with-ssh">Connecting to Github with SSH</a></li>
+  <li><a href="#n4biasfieldcorrection" id="toc-n4biasfieldcorrection" class="nav-link" data-scroll-target="#n4biasfieldcorrection">N4BiasFieldCorrection</a></li>
+  <li><a href="#antsregistration" id="toc-antsregistration" class="nav-link" data-scroll-target="#antsregistration">antsRegistration</a></li>
+  <li><a href="#antsmultivariatetemplateconstruction2.sh" id="toc-antsmultivariatetemplateconstruction2.sh" class="nav-link" data-scroll-target="#antsmultivariatetemplateconstruction2.sh">antsMultivariateTemplateConstruction2.sh</a></li>
+  <li><a href="#antsapplytransforms" id="toc-antsapplytransforms" class="nav-link" data-scroll-target="#antsapplytransforms">antsApplyTransforms</a></li>
   </ul></li>
-  <li><a href="#useful-git-commands" id="toc-useful-git-commands" class="nav-link" data-scroll-target="#useful-git-commands">Useful Git Commands</a>
-  <ul class="collapse">
-  <li><a href="#start-a-repository" id="toc-start-a-repository" class="nav-link" data-scroll-target="#start-a-repository">Start a repository</a></li>
-  <li><a href="#update-a-repository" id="toc-update-a-repository" class="nav-link" data-scroll-target="#update-a-repository">Update a repository</a></li>
-  <li><a href="#clone-a-repository" id="toc-clone-a-repository" class="nav-link" data-scroll-target="#clone-a-repository">Clone a repository</a></li>
-  <li><a href="#push-to-the-repository" id="toc-push-to-the-repository" class="nav-link" data-scroll-target="#push-to-the-repository">Push to the repository</a></li>
-  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
-  </ul></li>
-  <li><a href="#making-a-github-website-with-rstudio-and-github-pages" id="toc-making-a-github-website-with-rstudio-and-github-pages" class="nav-link" data-scroll-target="#making-a-github-website-with-rstudio-and-github-pages">Making a GitHub Website with RStudio and GitHub Pages</a></li>
-  <li><a href="#git-large-file-storage" id="toc-git-large-file-storage" class="nav-link" data-scroll-target="#git-large-file-storage">Git Large File Storage</a></li>
+  <li><a href="#using-h5" id="toc-using-h5" class="nav-link" data-scroll-target="#using-h5">Using H5</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/tutorials/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/tutorials/git.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrisoftware/ants.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrisoftware/ants.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/index.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/git.html">Git</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../mrisoftware/index.html">MRI Software</a></li><li class="breadcrumb-item"><a href="../mrisoftware/ants.html">ANTs</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Git</h1>
+<h1 class="title">ANTs</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">software</div>
-    <div class="quarto-category">version control</div>
+    <div class="quarto-category">-software -registration</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Allows you to keep track of changes to documents, and also to collaborate and work together
+    Advanced Normalization Tools
   </div>
 </div>
 
@@ -479,14 +472,14 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 13, 2025</p>
+      <p class="date">September 17, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 13, 2025</p>
+      <p class="date-modified">September 17, 2025</p>
     </div>
   </div>
     
@@ -497,104 +490,254 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </header>
 
 
-<p><img src="../img/gitlogo.png" class="img-fluid"></p>
-<section id="GitforVersionControl-Intro" class="level1">
+<p><img src="img/antspicture.png" class="img-fluid"></p>
+<section id="intro" class="level1">
 <h1>Intro</h1>
-<p>A beginner’s guide: <a href="https://developers.redhat.com/articles/2023/08/02/beginners-guide-git-version-control#publishing_changes__git_push">link</a></p>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
-<p>Git version control is an excellent application that allows you to keep track of changes to documents, and also to collaborate and work together. We use it a lot in the lab to save our code, share our code publicly with the science community, and to collaborate on projects.</p>
-<p>Software Carpentry has a good tutorial: <a href="http://swcarpentry.github.io/git-novice">Version Control with Git</a></p>
-</section>
+<p>ANTs stands for Advanced Normalization Tools</p>
+<p>I <em>think</em> the main website is here: <a href="http://stnava.github.io/ANTs/">http://stnava.github.io/ANTs/</a></p>
+<p>Documentation: <a href="http://stnava.github.io/ANTsDoc/">http://stnava.github.io/ANTsDoc/</a></p>
+<p>"Originally, the ANTs framework provided open-source functionality for deformable image registration with small or large deformations,"</p>
+<p>"ANTs has since grown to include N4 bias correction, additional evaluation of multiple modalities and organ systems, univariate or multivariate image segmentation, tighter integration with the Insight ToolKit, a well-evaluated cortical thickness pipeline and, more recently, visualization tools and integration with R"</p>
+<p>"The most important core C++-based ANTs programs are: antsRegistration, antsApplyTransforms, Atropos for segmentation, N4BiasFieldCorrection for inhomogeneity correction, KellyKapowski for estimating thickness, ImageMath image processing utilities and, finally, sccan for sparse dimensionality reduction."</p>
 </section>
 <section id="install" class="level1">
 <h1>Install</h1>
-<p><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install guide</a></p>
-</section>
-<section id="github" class="level1">
-<h1>Github</h1>
-<p><img src="../img/githublogo.png" class="img-fluid"></p>
-<p>Git and Github are two different things that sometimes get confused for each other. Basically, Git is a version control system that lets you manage and keep track of your source code history. GitHub is a cloud-based hosting service (owned by Microsoft) that lets you manage Git repositories. Alternatives to Github include: <a href="https://about.gitlab.com/">GitLab</a>, <a href="hhttps://bitbucket.org/product/ttps://">Bitbucket</a>, Codebase, and more.</p>
-<p>BCCHR’s github is located at <a href="https://github.com/BCCH-MRI-Research-Facility/">https://github.com/BCCH-MRI-Research-Facility/</a></p>
-<p><strong>If you don’t yet have a</strong> <a href="http://github.com"><strong>github.com</strong></a> <strong>account, you should go there and create one.</strong></p>
-<p>Github often uses Markdown in order to facility writing well organized files. A cheatsheet for Markdown syntax can be found <a href="https://www.markdownguide.org/cheat-sheet/">here</a></p>
-<section id="connecting-to-github-with-ssh" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-to-github-with-ssh">Connecting to Github with SSH</h2>
-<p>If you don't want to have to put your username and password in every time:</p>
-<p><a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">No Password Guide</a></p>
-<p>Basically, you will create a SSH key (or use an existing one):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then you will run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> ssh-key add ~/.ssh/id_ed25519.pub</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Note, you will need to install <code>gh</code>, and run <code>gh auth login</code></p>
-<p>For <code>gh auth login</code>, pick:</p>
+<p>Build ANTs from source code [Linux / Mac OS]:<br>
+<a href="https://github.com/stnava/ANTs/wiki/Compiling-ANTs-on-Linux-and-Mac-OS">https://github.com/stnava/ANTs/wiki/Compiling-ANTs-on-Linux-and-Mac-OS</a></p>
+<p>[Windows]:<br>
+<a href="https://github.com/stnava/ANTs/wiki/Compiling-ANTs-on-Windows-10">https://github.com/stnava/ANTs/wiki/Compiling-ANTs-on-Windows-10</a></p>
+<p><strong>Mac install detail</strong><br>
+The following worked on Version 10.15</p>
 <ul>
-<li>GitHub.com</li>
-<li>SSH</li>
-<li>your key you want to upload</li>
-<li>Login with a web browser</li>
+<li>Install XCode simply by going to app store</li>
+<li>Check if you have git (should come with Xcode command line tools), 'git —version' Install otherwise.</li>
+<li>Check if you have cmake 'cmake —version'. Install otherwise.</li>
+</ul>
+<p>Follow 'SuperBuild quick reference' line by line.</p>
+<p>Once completed it is time to add the paths.<br>
+After the SuperBuild quick reference has installed I had 3 new files ~/ANTs, ~/build and ~/install</p>
+<ul>
+<li>Copy the ~/install file into ~/ANTs</li>
+<li>Add all the files in ~/ANTs/Scripts into ~/ANTs/install/bin 'skip' or 'replace' duplicates, it does not matter</li>
+<li>cd into your home directory 'cd'</li>
+<li>check for hidden files 'ls -la'</li>
+<li>I edited .bash_profile but you may have to edit .profile</li>
+<li>'sudo nano .bash_profile' put your password in</li>
+<li>Add the following lines underneath everything already in the file (changing 'johanndrayne' to your username)</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span>/Users/johanndrayne/ANTs/install/bin/:<span class="va">$PATH</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span>/Users/johanndrayne/ANTs/Scripts/:<span class="va">$PATH</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">ANTSPATH</span><span class="op">=</span>/Users/johanndrayne/ANTs/install/bin/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Save and quit, then close all terminal windows and open a new one.</li>
+<li>Check 'which antsRegistration' should output something similar /Users/johanndrayne/ANTs/install/bin//antsRegistration</li>
+<li>Check 'antsRegistrationSyN.sh' should provide information about the function</li>
+</ul>
+<p>If this did not work, consider consulting the following links<br>
+</p>
+<p><a href="https://www.greydongilmore.com/blog/operating_systems/wsl_docs/ants/">Greydon Gilmore Installation walkthrough</a><br>
+</p>
+<p><a href="https://www.programmersought.com/article/11644629081/">Programmer Sought Installation walktrhough</a><br>
+</p>
+<p><a href="https://sourceforge.net/p/advants/discussion/840261/thread/653e2caf/?limit=25">Source Forge ANTs Forum</a><br>
+</p>
+<p><a href="https://github.com/ANTsX/ANTs/issues/530">Git Issues Forum</a></p>
+</section>
+<section id="quick-syn" class="level1">
+<h1>Quick SyN</h1>
+<p>If you want a decent, fast registration you might run something like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">antsRegistrationSyNQuick.sh</span> <span class="at">-d</span> 3 <span class="at">-f</span> fixedimage.nii.gz <span class="at">-m</span> movingimage.nii.gz <span class="at">-o</span> prefix</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>where -o represents the output prefix for the filename<br>
+The -d option denotes image dimensionality,<br>
+-f option denotes the “fixed” image<br>
+and the -m option denotes the “moving” image. The moving image will be deformed to match the fixed image.</p>
+<p>Output is determined by -o where the output will be named with prefix=outputEx1.sh (the word output concatenated with the name of the Example 1 script) and include a prefix0GenericAffine.mat (the low-dimensional affine transform which may be inverted numerically), the prefix1Warp.nii.gz (the diffeomorphic transformation pulling the affine transformed moving image toward the fixed image), and the prefix1InverseWarp.nii.gz (the inverse diffeomorphic transformation pulling the fixed image toward the affine transformed moving image).</p>
+</section>
+<section id="examples" class="level1">
+<h1>Examples</h1>
+<p><a href="http://stnava.github.io/fMRIANTs/">http://stnava.github.io/fMRIANTs/</a></p>
+</section>
+<section id="forums-for-help" class="level1">
+<h1>Forums for Help</h1>
+<p><a href="https://sourceforge.net/p/advants/discussion/">https://sourceforge.net/p/advants/discussion/</a></p>
+</section>
+<section id="main-functions" class="level1">
+<h1>Main Functions</h1>
+<ul>
+<li>N4BiasFieldCorrection</li>
+<li>antsRegistration</li>
+<li>antsMultivariateTemplateConstruction2.sh</li>
+<li>antsApplyTransforms</li>
+<li>antsBrainExtraction.sh</li>
+<li>ImageMath</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When specifying files in ANTs functions, unlike FSL, ANTs wants the extension e.g.ANTs = subject-001.nii.gz || FSL = subject-001</p>
+</div>
+</div>
+<section id="n4biasfieldcorrection" class="level2">
+<h2 class="anchored" data-anchor-id="n4biasfieldcorrection">N4BiasFieldCorrection</h2>
+<p>N4 is a variant of the popular N3 (nonparameteric nonuniform normalization) retrospective bias correction algorithm. Widely seen as an <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3071855/">improvement to N3</a>. It is almost always advisable to run N4 correction before registration.</p>
+<p>A simple run using default options, which is normally good enough.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">N4BiasFieldCorrection</span> <span class="at">-d</span> 3 <span class="at">-i</span> <span class="va">${input}</span> <span class="at">-o</span> <span class="va">${output}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="antsregistration" class="level2">
+<h2 class="anchored" data-anchor-id="antsregistration">antsRegistration</h2>
+<p>I will provide a rough call, but look <a href="https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call">here</a> for an anatomy of an antsRegistration call.</p>
+<p>Tips for registration:</p>
+<ul>
+<li>Run a bias correction before antsRegistration (i.e.&nbsp;N4).</li>
+<li>Remove the skull before antsRegistration.</li>
+<li>Never register a lesioned brain with a healthy brain without a proper mask.</li>
+<li>Register a low resolution image onto a high resolution image, look at antsApplyTransforms if you need to register a high to low resolution image</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">antsRegistration</span> <span class="at">--dimensionality</span> 3 <span class="at">--float</span> 0 <span class="dt">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">--output</span> <span class="pp">[</span><span class="ss">./input_to_ref_,./input_to_ref_Warped.nii.gz</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">--interpolation</span> Linear <span class="dt">\</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">--winsorize-image-intensities</span> <span class="pp">[</span><span class="ss">0.005,0.995</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">--use-histogram-matching</span> 0 <span class="dt">\</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">--initial-moving-transform</span> <span class="pp">[</span><span class="ss">$fixed,$moving,1</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="ex">--transform</span> Rigid<span class="pp">[</span><span class="ss">0.1</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">--metric</span> MI<span class="pp">[</span><span class="ss">$fixed,$moving,1,32,Regular,0.25</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">--convergence</span> <span class="pp">[</span><span class="ss">1000x500x250x100,1e</span><span class="pp">-</span><span class="ss">6,10</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">--shrink-factors</span> 8x4x2x1 <span class="dt">\</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">--smoothing-sigmas</span> 3x2x1x0vox <span class="dt">\</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="ex">--transform</span> Affine<span class="pp">[</span><span class="ss">0.1</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">--metric</span> MI<span class="pp">[</span><span class="ss">$fixed,$moving,1,32,Regular,0.25</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">--convergence</span> <span class="pp">[</span><span class="ss">1000x500x250x100,1e</span><span class="pp">-</span><span class="ss">6,10</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">--shrink-factors</span> 8x4x2x1 <span class="dt">\</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">--smoothing-sigmas</span> 3x2x1x0vox <span class="dt">\</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="ex">--transform</span> SyN<span class="pp">[</span><span class="ss">0.1,3,0</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">--metric</span> CC<span class="pp">[</span><span class="ss">$fixed,$moving,1,4</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">--convergence</span> <span class="pp">[</span><span class="ss">100x70x50x20,1e</span><span class="pp">-</span><span class="ss">6,10</span><span class="pp">]</span> <span class="dt">\</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">--shrink-factors</span> 8x4x2x1 <span class="dt">\</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">--smoothing-sigmas</span> 3x2x1x0vox</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remove the spaces if using the above code. I used them to highlight the 3 registration differences.</p>
+</div>
+</div>
+<ul>
+<li>Rigid = Translation + Rotation</li>
+<li>Affine = Translation + Rotation + Shearing + Scaling</li>
+<li>SyN = Diffeomorphism (non-linear)</li>
+</ul>
+</section>
+<section id="antsmultivariatetemplateconstruction2.sh" class="level2">
+<h2 class="anchored" data-anchor-id="antsmultivariatetemplateconstruction2.sh">antsMultivariateTemplateConstruction2.sh</h2>
+<p>You need to create a folder with all the scans you want to create a template out of</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">${ANTSPATH}</span><span class="ex">/antsMultivariateTemplateConstruction2.sh</span> <span class="dt">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> 3 <span class="dt">\</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-a</span> 1 <span class="dt">\</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> <span class="va">${outputPath}</span> <span class="dt">\</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">-i</span> 5 <span class="dt">\</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">-g</span> 0.25 <span class="dt">\</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">-j</span> 16 <span class="dt">\</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">-c</span> 0 <span class="dt">\</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">-k</span> 1 <span class="dt">\</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> 1 <span class="dt">\</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">-n</span> 1 <span class="dt">\</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">-r</span> 1 <span class="dt">\</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">-l</span> 1 <span class="dt">\</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">-m</span> CC <span class="dt">\</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">-t</span> SyN <span class="dt">\</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> 0 <span class="dt">\</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">-z</span> <span class="va">${referenceT1}</span> <span class="dt">\</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="va">${tempDirectory}</span><span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>my ${tempDirectory} directory ended in a /</p>
+</div>
+</div>
+<p>The below is an illustration of how the template construction works.</p>
+<ol type="1">
+<li>The images are averaged or an initial reference is specified.</li>
+<li>Each image is registered to this reference.</li>
+<li>A new reference is created by averaging these registered images</li>
+<li>Using the registered images and new reference repeat steps 3-4 for a total of <strong>i</strong> iterations</li>
+</ol>
+<p><img src="img/antsiterations.png" class="img-fluid"></p>
+<p>Useful flags</p>
+<ul>
+<li>o: You don't need to end the path with '/'</li>
+<li>i: From above, number of images to reference iterations</li>
+<li>j: number of CPU cores</li>
+<li>c: control for parallel computation</li>
+<li>k: number of modalities (i.e.&nbsp;just T2 image or T2 WM and GM)</li>
+<li>n: N4BiasField Correction of moving image</li>
+<li>r: rigid body registration before creating initial template</li>
+<li>y: rigid (translation &amp; rotation) not used when y=0 with affine transform</li>
+<li>z: useful if input images are at different FOV</li>
+</ul>
+</section>
+<section id="antsapplytransforms" class="level2">
+<h2 class="anchored" data-anchor-id="antsapplytransforms">antsApplyTransforms</h2>
+<p>I will provide a rough idea of this function, but look <a href="https://github.com/ANTsX/ANTs/wiki/Forward-and-inverse-warps-for-warping-images,-pointsets-and-Jacobians">here</a> for a much more detailed overview.</p>
+<p>As mentioned in antsRegistration it is advised to register a low resolution image onto a high resolution image. But if you need a high resolution image in the low resolution images space.</p>
+<ol type="1">
+<li>Register the low resolution image to the high resolution image</li>
+<li>Apply the inverse warp to the high resolution image</li>
+</ol>
+<p>e.g Applying the inverse warp to register the fixed image to the moving images original space.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">${ANTSPATH}</span><span class="ex">antsApplyTransforms</span> <span class="dt">\</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> 3 <span class="dt">\</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-i</span> fixedImage.nii.gz <span class="dt">\</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-r</span> movingImage.nii.gz <span class="dt">\ </span>  </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-t</span> [movingToFixed_0GenericAffine.mat, 1] <span class="dt">\ </span>  </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-t</span> movingToFixed_1InverseWarp.nii.gz <span class="dt">\</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> fixedToMovingDeformed.nii.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>i: input</li>
+<li>r: reference image</li>
+<li>t: transform file, note differences in order in above link</li>
+<li>o: output</li>
 </ul>
 </section>
 </section>
-<section id="useful-git-commands" class="level1">
-<h1>Useful Git Commands</h1>
-<section id="start-a-repository" class="level2">
-<h2 class="anchored" data-anchor-id="start-a-repository">Start a repository</h2>
-<p>Create a folder, enter the folder, then type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Now, head to your Github account and <a href="https://github.com/organizations/WeberLab/repositories/new">create a new repo</a></p>
-<p>Name your new repo and click <code>Create New Repository</code></p>
-<p>Now, in the command line type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"# Title"</span> <span class="op">&gt;&gt;</span> README.md</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add README.md</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"first commit"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin git@github.com:WeberLab/Title.git</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>Title</code> is the name of your new repo</p>
-</section>
-<section id="update-a-repository" class="level2">
-<h2 class="anchored" data-anchor-id="update-a-repository">Update a repository</h2>
-<p>Check status of remote origin (if any changes have been made on the Github):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote update</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="clone-a-repository" class="level2">
-<h2 class="anchored" data-anchor-id="clone-a-repository">Clone a repository</h2>
-<p>You can clone a remote repository to create a local repository on your computer</p>
-<p>For example,</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>YourGithubAccountName<span class="op">&gt;</span>/<span class="op">&lt;</span>YourRepoName<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="push-to-the-repository" class="level2">
-<h2 class="anchored" data-anchor-id="push-to-the-repository">Push to the repository</h2>
-<p>You can push any changes you make on your local repository to the remote repository. Make sure your current working directory is your local repository, then use the following commands:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="op">&lt;</span>filename<span class="op">&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Comment about what you added"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branchname<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="branches" class="level2">
-<h2 class="anchored" data-anchor-id="branches">Branches</h2>
-<p>You can create branches to add or modify features of the master code.<br>
-To create a new branch, use command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> <span class="op">&lt;</span>branchname<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then you can add, commit and push to that branch as specified above. Note: use &lt;branchname&gt; main if you want to commit to main.</p>
-<p>You can switch between branches using the command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>branchname<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You can check what branch you are in using the command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Since branches are such an important topic, check out this website which is an excellent resource to understand them more intuitively: <a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></p>
-</section>
-</section>
-<section id="making-a-github-website-with-rstudio-and-github-pages" class="level1">
-<h1>Making a GitHub Website with RStudio and GitHub Pages</h1>
-<p><a href="https://resources.github.com/whitepapers/github-and-rstudio/">https://resources.github.com/whitepapers/github-and-rstudio/</a></p>
-</section>
-<section id="git-large-file-storage" class="level1">
-<h1>Git Large File Storage</h1>
-<p>[Git Large File Storage <a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a> ] can be used to store and retrieve large files.<br>
-If you've pulled a repo and the files seem incredibly small for what they should be, try:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> lfs pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="using-h5" class="level1">
+<h1>Using H5</h1>
+<p>In fmriprep or qsiprep, you may notice that the transforms are saved as h5 files</p>
+<p>These h5 files are actually composite transforms comprising of an affine and a displacement field transform (non-affine)</p>
+<p>Here is an example of using ANTs with h5 to perform a transform:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">antsApplyTransforms</span> <span class="at">-d</span> 3 <span class="at">--verbose</span> 1 <span class="at">-i</span> sub-AMW01_desc-preproc_T1w.nii.gz <span class="at">-o</span> T1-to-MNI.nii.gz <span class="at">-r</span> sub-AMW01_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz <span class="at">-t</span> sub-AMW01_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>to apply using a 4d to a 3d, use the -e flag:</p>
+<p>-e, —input-image-type 0/1/2/3/4/5<br>
+scalar/vector/tensor/time-series/multichannel/five-dimensional<br>
+Option specifying the input image type of scalar (default), vector, tensor, time<br>
+series, or multi-channel. A time series image is a scalar image defined by an<br>
+additional dimension for the time component whereas a multi-channel image is a<br>
+vector image with only spatial dimensions. Five-dimensionalimages are e.g., AFNI<br>
+stats image.<br>
+&lt;VALUES&gt;: 0</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">antsApplyTransforms</span> <span class="at">-d</span> 3 <span class="at">-e</span> 3 <span class="at">--verbose</span> 1 <span class="at">-i</span> sub-AMW01_dir-AP_space-T1w_desc-preproc_dwi.nii.gz <span class="at">-o</span> DTI-to-MNI.nii.gz <span class="at">-r</span> ../anat/sub-AMW01_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz <span class="at">-t</span> ../anat/sub-AMW01_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
@@ -1005,4 +1148,4 @@ If you've pulled a repo and the files seem incredibly small for what they should
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/tutorials/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/tutorials/git.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrisoftware/ants.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrisoftware/ants.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Weber">
-<meta name="dcterms.date" content="2025-02-13">
-<meta name="description" content="Allows you to keep track of changes to documents, and also to collaborate and work together">
+<meta name="dcterms.date" content="2025-09-17">
+<meta name="description" content="Processing multi-echo fMRI data after it has been preprocessed by fmriprep">
 
-<title>Git – BC Children’s Research MRI Wiki</title>
+<title>Tedana – BC Children’s Research MRI Wiki</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -121,12 +121,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Git – BC Children’s Research MRI Wiki">
-<meta property="og:description" content="Allows you to keep track of changes to documents, and also to collaborate and work together">
-<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/img/gitlogo.png">
+<meta property="og:title" content="Tedana – BC Children’s Research MRI Wiki">
+<meta property="og:description" content="Processing multi-echo fMRI data after it has been preprocessed by fmriprep">
+<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/mrisoftware/img/tedana.png">
 <meta property="og:site_name" content="BC Children's Research MRI Wiki">
-<meta property="og:image:height" content="145">
-<meta property="og:image:width" content="347">
+<meta property="og:image:height" content="292">
+<meta property="og:image:width" content="684">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -190,7 +190,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/index.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/git.html">Git</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../mrisoftware/index.html">MRI Software</a></li><li class="breadcrumb-item"><a href="../mrisoftware/tedana.html">Tedana</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -281,7 +281,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/git.html" class="sidebar-item-text sidebar-link active">
+  <a href="../tutorials/git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
@@ -328,7 +328,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../mrisoftware/tedana.html" class="sidebar-item-text sidebar-link">
+  <a href="../mrisoftware/tedana.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Tedana</span></a>
   </div>
 </li>
@@ -426,43 +426,39 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#GitforVersionControl-Intro" id="toc-GitforVersionControl-Intro" class="nav-link active" data-scroll-target="#GitforVersionControl-Intro">Intro</a>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#install" id="toc-install" class="nav-link" data-scroll-target="#install">Install</a>
   <ul class="collapse">
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link" data-scroll-target="#what-is-version-control">What is Version Control?</a></li>
+  <li><a href="#dependencies" id="toc-dependencies" class="nav-link" data-scroll-target="#dependencies">Dependencies</a></li>
   </ul></li>
-  <li><a href="#install" id="toc-install" class="nav-link" data-scroll-target="#install">Install</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">Github</a>
+  <li><a href="#overview-of-steps" id="toc-overview-of-steps" class="nav-link" data-scroll-target="#overview-of-steps">Overview of steps:</a></li>
+  <li><a href="#run" id="toc-run" class="nav-link" data-scroll-target="#run">Run</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
   <ul class="collapse">
-  <li><a href="#connecting-to-github-with-ssh" id="toc-connecting-to-github-with-ssh" class="nav-link" data-scroll-target="#connecting-to-github-with-ssh">Connecting to Github with SSH</a></li>
+  <li><a href="#fastsurfer" id="toc-fastsurfer" class="nav-link" data-scroll-target="#fastsurfer">FastSurfer</a></li>
+  <li><a href="#fmriprep" id="toc-fmriprep" class="nav-link" data-scroll-target="#fmriprep">fmriprep</a></li>
+  <li><a href="#tedana" id="toc-tedana" class="nav-link" data-scroll-target="#tedana">Tedana</a></li>
   </ul></li>
-  <li><a href="#useful-git-commands" id="toc-useful-git-commands" class="nav-link" data-scroll-target="#useful-git-commands">Useful Git Commands</a>
-  <ul class="collapse">
-  <li><a href="#start-a-repository" id="toc-start-a-repository" class="nav-link" data-scroll-target="#start-a-repository">Start a repository</a></li>
-  <li><a href="#update-a-repository" id="toc-update-a-repository" class="nav-link" data-scroll-target="#update-a-repository">Update a repository</a></li>
-  <li><a href="#clone-a-repository" id="toc-clone-a-repository" class="nav-link" data-scroll-target="#clone-a-repository">Clone a repository</a></li>
-  <li><a href="#push-to-the-repository" id="toc-push-to-the-repository" class="nav-link" data-scroll-target="#push-to-the-repository">Push to the repository</a></li>
-  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
-  </ul></li>
-  <li><a href="#making-a-github-website-with-rstudio-and-github-pages" id="toc-making-a-github-website-with-rstudio-and-github-pages" class="nav-link" data-scroll-target="#making-a-github-website-with-rstudio-and-github-pages">Making a GitHub Website with RStudio and GitHub Pages</a></li>
-  <li><a href="#git-large-file-storage" id="toc-git-large-file-storage" class="nav-link" data-scroll-target="#git-large-file-storage">Git Large File Storage</a></li>
+  <li><a href="#further-analysis" id="toc-further-analysis" class="nav-link" data-scroll-target="#further-analysis">Further Analysis</a></li>
+  <li><a href="#denoising-data-with-components" id="toc-denoising-data-with-components" class="nav-link" data-scroll-target="#denoising-data-with-components">Denoising Data with Components</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/tutorials/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/tutorials/git.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrisoftware/tedana.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrisoftware/tedana.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/index.html">Tutorials</a></li><li class="breadcrumb-item"><a href="../tutorials/git.html">Git</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../mrisoftware/index.html">MRI Software</a></li><li class="breadcrumb-item"><a href="../mrisoftware/tedana.html">Tedana</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Git</h1>
+<h1 class="title">Tedana</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">software</div>
-    <div class="quarto-category">version control</div>
+    <div class="quarto-category">-software -multi-echo -fmri -processing</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Allows you to keep track of changes to documents, and also to collaborate and work together
+    Processing multi-echo fMRI data after it has been preprocessed by fmriprep
   </div>
 </div>
 
@@ -479,14 +475,14 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 13, 2025</p>
+      <p class="date">September 17, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 13, 2025</p>
+      <p class="date-modified">September 17, 2025</p>
     </div>
   </div>
     
@@ -497,104 +493,388 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </header>
 
 
-<p><img src="../img/gitlogo.png" class="img-fluid"></p>
-<section id="GitforVersionControl-Intro" class="level1">
+<p><img src="img/tedana.png" class="img-fluid"></p>
+<section id="intro" class="level1">
 <h1>Intro</h1>
-<p>A beginner’s guide: <a href="https://developers.redhat.com/articles/2023/08/02/beginners-guide-git-version-control#publishing_changes__git_push">link</a></p>
-<section id="what-is-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-version-control">What is Version Control?</h2>
-<p>Git version control is an excellent application that allows you to keep track of changes to documents, and also to collaborate and work together. We use it a lot in the lab to save our code, share our code publicly with the science community, and to collaborate on projects.</p>
-<p>Software Carpentry has a good tutorial: <a href="http://swcarpentry.github.io/git-novice">Version Control with Git</a></p>
+<p>TE-dependent analysis (tedana) is a Python library for denoising multi-echo functional magnetic resonance imaging (fMRI) data. tedana originally came about as a part of the ME-ICA pipeline, although it has since diverged. An important distinction is that while the <a href="https://github.com/me-ica/me-ica">ME-ICA</a> pipeline originally performed both pre-processing and TE-dependent analysis of multi-echo fMRI data, tedana now assumes that you’re working with data which has been previously preprocessed.</p>
+<p><a href="https://github.com/ME-ICA/tedana-reliability-analysis/blob/0f745dfb8d53aa6d2d73d326821c4f08232a0b36/collect_fmriprep.py">https://github.com/ME-ICA/tedana-reliability-analysis/blob/0f745dfb8d53aa6d2d73d326821c4f08232a0b36/collect_fmriprep.py</a><br>
+</p>
 </section>
+<section id="documentation" class="level1">
+<h1>Documentation</h1>
+<p><a href="https://tedana.readthedocs.io/en/stable/">https://tedana.readthedocs.io/en/stable/</a></p>
 </section>
 <section id="install" class="level1">
 <h1>Install</h1>
-<p><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install guide</a></p>
-</section>
-<section id="github" class="level1">
-<h1>Github</h1>
-<p><img src="../img/githublogo.png" class="img-fluid"></p>
-<p>Git and Github are two different things that sometimes get confused for each other. Basically, Git is a version control system that lets you manage and keep track of your source code history. GitHub is a cloud-based hosting service (owned by Microsoft) that lets you manage Git repositories. Alternatives to Github include: <a href="https://about.gitlab.com/">GitLab</a>, <a href="hhttps://bitbucket.org/product/ttps://">Bitbucket</a>, Codebase, and more.</p>
-<p>BCCHR’s github is located at <a href="https://github.com/BCCH-MRI-Research-Facility/">https://github.com/BCCH-MRI-Research-Facility/</a></p>
-<p><strong>If you don’t yet have a</strong> <a href="http://github.com"><strong>github.com</strong></a> <strong>account, you should go there and create one.</strong></p>
-<p>Github often uses Markdown in order to facility writing well organized files. A cheatsheet for Markdown syntax can be found <a href="https://www.markdownguide.org/cheat-sheet/">here</a></p>
-<section id="connecting-to-github-with-ssh" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-to-github-with-ssh">Connecting to Github with SSH</h2>
-<p>If you don't want to have to put your username and password in every time:</p>
-<p><a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">No Password Guide</a></p>
-<p>Basically, you will create a SSH key (or use an existing one):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then you will run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> ssh-key add ~/.ssh/id_ed25519.pub</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Note, you will need to install <code>gh</code>, and run <code>gh auth login</code></p>
-<p>For <code>gh auth login</code>, pick:</p>
+<section id="dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="dependencies">Dependencies</h2>
+<p>there is a lot you’ll want installed before starting</p>
 <ul>
-<li>GitHub.com</li>
-<li>SSH</li>
-<li>your key you want to upload</li>
-<li>Login with a web browser</li>
+<li>docker</li>
+<li>miniconda</li>
+<li>git</li>
+<li>jq</li>
+<li>dcm2niix</li>
+<li>freesurfer (with license)</li>
+<li>FastSurfer (if you want to speed things up)</li>
+<li>a bunch of python scripts installed in a virtual environment (see below)</li>
+<li>bids-validator</li>
+<li>ANTs</li>
 </ul>
+<p>With miniconda3 installed, you should consider using a virtual environment. Here is an example of how to create, start/activate, then install some python libraries</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> tedana python=3 pip mdp numpy scikit-learn scipy</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate tedana</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install nilearn nibabel</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install tedana</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install dcm2bids <span class="co"># if not already installed</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install fmriprep-docker <span class="co"># if not already installed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="useful-git-commands" class="level1">
-<h1>Useful Git Commands</h1>
-<section id="start-a-repository" class="level2">
-<h2 class="anchored" data-anchor-id="start-a-repository">Start a repository</h2>
-<p>Create a folder, enter the folder, then type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Now, head to your Github account and <a href="https://github.com/organizations/WeberLab/repositories/new">create a new repo</a></p>
-<p>Name your new repo and click <code>Create New Repository</code></p>
-<p>Now, in the command line type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"# Title"</span> <span class="op">&gt;&gt;</span> README.md</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add README.md</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"first commit"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin git@github.com:WeberLab/Title.git</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Where <code>Title</code> is the name of your new repo</p>
+<section id="overview-of-steps" class="level1">
+<h1>Overview of steps:</h1>
+<p><img src="img/overview of steps.png" class="img-fluid"></p>
+<p>For preprocessing with <code>fmriprep</code> see our example analysis in <a href="../mrimethods/multi-echo-fmri.html">multi-echo fMRI</a></p>
 </section>
-<section id="update-a-repository" class="level2">
-<h2 class="anchored" data-anchor-id="update-a-repository">Update a repository</h2>
-<p>Check status of remote origin (if any changes have been made on the Github):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote update</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="run" class="level1">
+<h1>Run</h1>
+<p>After running the preprocessing:</p>
+<p>get echo times:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">subid</span><span class="op">=</span>Pilot02</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">echo1</span><span class="op">=</span><span class="va">$(</span><span class="fu">cat</span> sub-<span class="va">${subid}</span>/func/sub-<span class="va">${subid}</span>_task-rest_echo-1_bold.json <span class="kw">|</span> <span class="ex">jq</span> <span class="at">-r</span> <span class="st">'.EchoTime'</span><span class="va">)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">echo2</span><span class="op">=</span><span class="va">$(</span><span class="fu">cat</span> sub-<span class="va">${subid}</span>/func/sub-<span class="va">${subid}</span>_task-rest_echo-2_bold.json <span class="kw">|</span> <span class="ex">jq</span> <span class="at">-r</span> <span class="st">'.EchoTime'</span><span class="va">)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">echo3</span><span class="op">=</span><span class="va">$(</span><span class="fu">cat</span> sub-<span class="va">${subid}</span>/func/sub-<span class="va">${subid}</span>_task-rest_echo-3_bold.json <span class="kw">|</span> <span class="ex">jq</span> <span class="at">-r</span> <span class="st">'.EchoTime'</span><span class="va">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>then:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tedana</span> <span class="at">-d</span> derivatives/fmriprep/sub-<span class="va">${subid}</span>/func/sub-<span class="va">${subid}</span>_task-rest_echo-1_desc-preproc_bold.nii.gz derivatives/fmriprep/sub-<span class="va">${subid}</span>/func/sub-<span class="va">${subid}</span>_task-rest_echo-2_desc-preproc_bold.nii.gz derivatives/fmriprep/sub-<span class="va">${subid}</span>/func/sub-<span class="va">${subid}</span>_task-rest_echo-3_desc-preproc_bold.nii.gz <span class="at">-e</span> <span class="va">$echo1</span> <span class="va">$echo2</span> <span class="va">$echo3</span> <span class="at">--out-dir</span> derivatives/tedana/sub-<span class="va">${subid}</span> <span class="at">--debug</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Takes 2 mins</p>
 </section>
-<section id="clone-a-repository" class="level2">
-<h2 class="anchored" data-anchor-id="clone-a-repository">Clone a repository</h2>
-<p>You can clone a remote repository to create a local repository on your computer</p>
-<p>For example,</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>YourGithubAccountName<span class="op">&gt;</span>/<span class="op">&lt;</span>YourRepoName<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>Your derivatives folder should now contain the following directories:</p>
+<pre><code>.
+├── FastSurfer
+│   ├── fsaverage
+│   │   ├── label
+│   │   ├── mri
+│   │   │   ├── orig
+│   │   │   └── transforms
+│   │   │       └── bak
+│   │   ├── mri.2mm
+│   │   ├── scripts
+│   │   ├── surf
+│   │   └── xhemi
+│   │       ├── bem
+│   │       ├── label
+│   │       ├── mri
+│   │       │   ├── orig
+│   │       │   └── transforms
+│   │       │       └── bak
+│   │       ├── scripts
+│   │       ├── src
+│   │       ├── stats
+│   │       ├── surf
+│   │       ├── tmp
+│   │       ├── touch
+│   │       └── trash
+│   └── sub-Pilot02
+│       ├── label
+│       ├── mri
+│       │   ├── orig
+│       │   ├── tmp
+│       │   └── transforms
+│       │       └── bak
+│       ├── scripts
+│       ├── stats
+│       ├── surf
+│       ├── tmp
+│       ├── touch
+│       └── trash
+├── fmriprep
+│   ├── logs
+│   └── sub-Pilot02
+│       ├── anat
+│       ├── figures
+│       ├── fmap
+│       ├── func
+│       └── log
+└── tedana
+    └── sub-Pilot02
+        └── figures</code></pre>
+<section id="fastsurfer" class="level2">
+<h2 class="anchored" data-anchor-id="fastsurfer">FastSurfer</h2>
+<p>Inside FastSurfer the files your probably interested in are in the mri folder</p>
+<pre><code>.
+├── antsdn.brain.mgz
+├── aparc.a2009s+aseg.mgz
+├── aparc+aseg.mgz -&gt; aparc.DKTatlas+aseg.mapped.mgz
+├── aparc.DKTatlas+aseg.deep.mgz
+├── aparc.DKTatlas+aseg.deep.withCC.mgz
+├── aparc.DKTatlas+aseg.mapped.mgz
+├── aparc.DKTatlas+aseg.mgz -&gt; aparc.DKTatlas+aseg.mapped.mgz
+├── aparc.DKTatlas+aseg.orig.mgz
+├── aseg.auto.mgz
+├── aseg.auto_noCCseg.mgz
+├── aseg.mgz
+├── aseg.presurf.hypos.mgz
+├── aseg.presurf.mgz
+├── brain.finalsurfs.mgz
+├── brainmask.auto.mgz
+├── brainmask.mgz
+├── brain.mgz
+├── filled.auto.mgz
+├── filled.mgz
+├── filled-pretess127.mgz
+├── filled-pretess255.mgz
+├── lh.ribbon.mgz
+├── lh.surface.defects.mgz
+├── mask.mgz
+├── norm.mgz
+├── nu.mgz
+├── orig
+│   └── 001.mgz
+├── orig.mgz
+├── orig_nu.mgz
+├── rawavg.mgz -&gt; orig.mgz
+├── rh.ribbon.mgz
+├── rh.surface.defects.mgz
+├── ribbon.mgz
+├── segment.dat
+├── T1.mgz
+├── talairach.label_intensities.txt
+├── tmp
+├── transforms
+│   ├── bak
+│   ├── cc_up.lta
+│   ├── talairach.auto.xfm
+│   ├── talairach.auto.xfm.lta
+│   ├── talairach_avi.log
+│   ├── talairach.lta -&gt; talairach.xfm.lta
+│   ├── talairach.m3z
+│   ├── talairach_with_skull.lta -&gt; talairach.xfm.lta
+│   ├── talairach.xfm
+│   ├── talairach.xfm.lta
+│   └── talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt
+├── wm.asegedit.mgz
+├── wm.mgz
+├── wmparc.DKTatlas.mapped.mgz
+├── wmparc.mgz -&gt; wmparc.DKTatlas.mapped.mgz
+└── wm.seg.mgz</code></pre>
+<p>An overview of the output files can be found <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/OutputData_freeview">here</a>. I highly recommend going through that tutorial.</p>
 </section>
-<section id="push-to-the-repository" class="level2">
-<h2 class="anchored" data-anchor-id="push-to-the-repository">Push to the repository</h2>
-<p>You can push any changes you make on your local repository to the remote repository. Make sure your current working directory is your local repository, then use the following commands:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="op">&lt;</span>filename<span class="op">&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Comment about what you added"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branchname<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="fmriprep" class="level2">
+<h2 class="anchored" data-anchor-id="fmriprep">fmriprep</h2>
+<p>fmriprep ouput:</p>
+<pre><code>.
+├── dataset_description.json
+├── desc-aparcaseg_dseg.tsv
+├── desc-aseg_dseg.tsv
+├── logs
+│   ├── CITATION.bib
+│   ├── CITATION.html
+│   ├── CITATION.md
+│   └── CITATION.tex
+├── sub-Pilot02
+│   ├── anat
+│   │   ├── sub-Pilot02_desc-aparcaseg_dseg.nii.gz
+│   │   ├── sub-Pilot02_desc-aseg_dseg.nii.gz
+│   │   ├── sub-Pilot02_desc-brain_mask.json
+│   │   ├── sub-Pilot02_desc-brain_mask.nii.gz
+│   │   ├── sub-Pilot02_desc-preproc_T1w.json
+│   │   ├── sub-Pilot02_desc-preproc_T1w.nii.gz
+│   │   ├── sub-Pilot02_dseg.nii.gz
+│   │   ├── sub-Pilot02_from-fsnative_to-T1w_mode-image_xfm.txt
+│   │   ├── sub-Pilot02_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5
+│   │   ├── sub-Pilot02_from-MNI152NLin6Asym_to-T1w_mode-image_xfm.h5
+│   │   ├── sub-Pilot02_from-T1w_to-fsnative_mode-image_xfm.txt
+│   │   ├── sub-Pilot02_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+│   │   ├── sub-Pilot02_from-T1w_to-MNI152NLin6Asym_mode-image_xfm.h5
+│   │   ├── sub-Pilot02_hemi-L_inflated.surf.gii
+│   │   ├── sub-Pilot02_hemi-L_midthickness.surf.gii
+│   │   ├── sub-Pilot02_hemi-L_pial.surf.gii
+│   │   ├── sub-Pilot02_hemi-L_smoothwm.surf.gii
+│   │   ├── sub-Pilot02_hemi-R_inflated.surf.gii
+│   │   ├── sub-Pilot02_hemi-R_midthickness.surf.gii
+│   │   ├── sub-Pilot02_hemi-R_pial.surf.gii
+│   │   ├── sub-Pilot02_hemi-R_smoothwm.surf.gii
+│   │   ├── sub-Pilot02_label-CSF_probseg.nii.gz
+│   │   ├── sub-Pilot02_label-GM_probseg.nii.gz
+│   │   ├── sub-Pilot02_label-WM_probseg.nii.gz
+│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-brain_mask.json
+│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz
+│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-preproc_T1w.json
+│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz
+│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_dseg.nii.gz
+│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_label-CSF_probseg.nii.gz
+│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_label-GM_probseg.nii.gz
+│   │   └── sub-Pilot02_space-MNI152NLin2009cAsym_label-WM_probseg.nii.gz
+│   ├── figures
+│   │   ├── sub-Pilot02_desc-about_T1w.html
+│   │   ├── sub-Pilot02_desc-conform_T1w.html
+│   │   ├── sub-Pilot02_desc-reconall_T1w.svg
+│   │   ├── sub-Pilot02_desc-summary_T1w.html
+│   │   ├── sub-Pilot02_dseg.svg
+│   │   ├── sub-Pilot02_fmapid-auto00000_desc-pepolar_fieldmap.svg
+│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_T1w.svg
+│   │   ├── sub-Pilot02_space-MNI152NLin6Asym_T1w.svg
+│   │   ├── sub-Pilot02_task-rest_desc-aroma_bold.svg
+│   │   ├── sub-Pilot02_task-rest_desc-bbregister_bold.svg
+│   │   ├── sub-Pilot02_task-rest_desc-carpetplot_bold.svg
+│   │   ├── sub-Pilot02_task-rest_desc-compcorvar_bold.svg
+│   │   ├── sub-Pilot02_task-rest_desc-confoundcorr_bold.svg
+│   │   ├── sub-Pilot02_task-rest_desc-rois_bold.svg
+│   │   ├── sub-Pilot02_task-rest_desc-sdc_bold.svg
+│   │   ├── sub-Pilot02_task-rest_desc-summary_bold.html
+│   │   ├── sub-Pilot02_task-rest_desc-t2scomp_bold.svg
+│   │   ├── sub-Pilot02_task-rest_desc-t2starhist_bold.svg
+│   │   └── sub-Pilot02_task-rest_desc-validation_bold.html
+│   ├── fmap
+│   │   ├── sub-Pilot02_fmapid-auto00000_desc-coeff_fieldmap.nii.gz
+│   │   ├── sub-Pilot02_fmapid-auto00000_desc-epi_fieldmap.nii.gz
+│   │   ├── sub-Pilot02_fmapid-auto00000_desc-preproc_fieldmap.json
+│   │   └── sub-Pilot02_fmapid-auto00000_desc-preproc_fieldmap.nii.gz
+│   ├── func
+│   │   ├── sub-Pilot02_task-rest_AROMAnoiseICs.csv
+│   │   ├── sub-Pilot02_task-rest_desc-confounds_timeseries.json
+│   │   ├── sub-Pilot02_task-rest_desc-confounds_timeseries.tsv
+│   │   ├── sub-Pilot02_task-rest_desc-MELODIC_mixing.tsv
+│   │   ├── sub-Pilot02_task-rest_echo-1_desc-preproc_bold.json
+│   │   ├── sub-Pilot02_task-rest_echo-1_desc-preproc_bold.nii.gz
+│   │   ├── sub-Pilot02_task-rest_echo-2_desc-preproc_bold.json
+│   │   ├── sub-Pilot02_task-rest_echo-2_desc-preproc_bold.nii.gz
+│   │   ├── sub-Pilot02_task-rest_echo-3_desc-preproc_bold.json
+│   │   ├── sub-Pilot02_task-rest_echo-3_desc-preproc_bold.nii.gz
+│   │   ├── sub-Pilot02_task-rest_from-scanner_to-T1w_mode-image_xfm.txt
+│   │   ├── sub-Pilot02_task-rest_from-T1w_to-scanner_mode-image_xfm.txt
+│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_boldref.nii.gz
+│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-aparcaseg_dseg.nii.gz
+│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-aseg_dseg.nii.gz
+│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-brain_mask.json
+│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz
+│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.json
+│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_T2starmap.json
+│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_T2starmap.nii.gz
+│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.json
+│   │   └── sub-Pilot02_task-rest_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz
+│   └── log
+│       └── 20221118-015253_b74f70bf-bc7f-455b-959a-43d1c3268b1c
+│           └── fmriprep.toml
+└── sub-Pilot02.html</code></pre>
+<p>a rundown of these outputs can be found in more depth <a href="https://fmriprep.org/en/stable/outputs.html">here</a></p>
+<p>You can view the very nice boilerplate of results by opening up the sub-Pilot02.html file</p>
 </section>
-<section id="branches" class="level2">
-<h2 class="anchored" data-anchor-id="branches">Branches</h2>
-<p>You can create branches to add or modify features of the master code.<br>
-To create a new branch, use command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> <span class="op">&lt;</span>branchname<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then you can add, commit and push to that branch as specified above. Note: use &lt;branchname&gt; main if you want to commit to main.</p>
-<p>You can switch between branches using the command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>branchname<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You can check what branch you are in using the command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Since branches are such an important topic, check out this website which is an excellent resource to understand them more intuitively: <a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></p>
+<section id="tedana" class="level2">
+<h2 class="anchored" data-anchor-id="tedana">Tedana</h2>
+<pre><code>.
+└── sub-Pilot02
+    ├── dataset_description.json
+    ├── desc-adaptiveGoodSignal_mask.nii.gz
+    ├── desc-ICAAccepted_components.nii.gz
+    ├── desc-ICAAccepted_stat-z_components.nii.gz
+    ├── desc-ICA_components.nii.gz
+    ├── desc-ICA_decomposition.json
+    ├── desc-ICA_mixing.tsv
+    ├── desc-ICA_stat-z_components.nii.gz
+    ├── desc-optcomAccepted_bold.nii.gz
+    ├── desc-optcom_bold.nii.gz
+    ├── desc-optcomDenoised_bold.nii.gz
+    ├── desc-optcomRejected_bold.nii.gz
+    ├── desc-PCA_decomposition.json
+    ├── desc-PCA_metrics.json
+    ├── desc-PCA_metrics.tsv
+    ├── desc-PCA_mixing.tsv
+    ├── desc-PCA_stat-z_components.nii.gz
+    ├── desc-tedana_metrics.json
+    ├── desc-tedana_metrics.tsv
+    ├── figures
+    │   ├── carpet_accepted.svg
+    │   ├── carpet_denoised.svg
+    │   ├── carpet_optcom.svg
+    │   ├── carpet_rejected.svg
+    │   ├── comp_000.png
+    │   ├── comp_001.png
+    │   ├── comp_002.png
+    │   ├── comp_003.png
+    │   ├── comp_004.png
+    │   ├── comp_005.png
+    │   ├── comp_006.png
+    │   ├── comp_007.png
+    │   ├── comp_008.png
+    │   ├── comp_009.png
+    │   ├── comp_010.png
+    │   ├── comp_011.png
+    │   ├── comp_012.png
+    │   ├── comp_013.png
+    │   ├── comp_014.png
+    │   ├── comp_015.png
+    │   ├── comp_016.png
+    │   ├── comp_017.png
+    │   ├── comp_018.png
+    │   ├── comp_019.png
+    │   ├── comp_020.png
+    │   ├── comp_021.png
+    │   ├── comp_022.png
+    │   ├── comp_023.png
+    │   ├── comp_024.png
+    │   ├── comp_025.png
+    │   ├── comp_026.png
+    │   ├── comp_027.png
+    │   ├── comp_028.png
+    │   ├── comp_029.png
+    │   ├── comp_030.png
+    │   ├── comp_031.png
+    │   ├── comp_032.png
+    │   ├── comp_033.png
+    │   ├── comp_034.png
+    │   ├── comp_035.png
+    │   ├── comp_036.png
+    │   ├── comp_037.png
+    │   ├── comp_038.png
+    │   ├── comp_039.png
+    │   ├── comp_040.png
+    │   ├── comp_041.png
+    │   ├── comp_042.png
+    │   ├── comp_043.png
+    │   ├── comp_044.png
+    │   ├── comp_045.png
+    │   ├── comp_046.png
+    │   ├── comp_047.png
+    │   ├── comp_048.png
+    │   ├── comp_049.png
+    │   ├── comp_050.png
+    │   ├── comp_051.png
+    │   ├── comp_052.png
+    │   └── comp_053.png
+    ├── report.txt
+    ├── S0map.nii.gz
+    ├── T2starmap.nii.gz
+    ├── tedana_2022-11-18T111133.tsv
+    └── tedana_report.html</code></pre>
+<p>A rundown of these outputs can be explored in more depth <a href="https://tedana.readthedocs.io/en/stable/outputs.html">here</a></p>
+<p>You can view the very nice boilerplate of results by opening up the sub-tedana_report.html file</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">firefox</span> tedana_report.html <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Example of rejected component:</p>
+<p><img src="img/rejectedtedana.png" class="img-fluid"></p>
+<p>Example of accepted component:</p>
+<p><img src="img/acceptedtedana.png" class="img-fluid"></p>
+<p>I believe the file we would want to use for further analysis would be: <code>desc-optcomDenoised_bold.nii.gz</code></p>
 </section>
 </section>
-<section id="making-a-github-website-with-rstudio-and-github-pages" class="level1">
-<h1>Making a GitHub Website with RStudio and GitHub Pages</h1>
-<p><a href="https://resources.github.com/whitepapers/github-and-rstudio/">https://resources.github.com/whitepapers/github-and-rstudio/</a></p>
+<section id="further-analysis" class="level1">
+<h1>Further Analysis</h1>
+<p>You might notice that Tedana is not in MNI space</p>
+<p>We can fix that with <a href="../mrisoftware/ants.html"><code>ANTs</code></a>. But first let’s downsample the T1 to make things faster:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fslmaths</span> <span class="va">${bidsdir}</span>/derivatives/fmriprep/sub-<span class="va">${subid}</span>/anat/sub-Pilot02_desc-preproc_T1w.nii.gz <span class="at">-subsamp2</span> <span class="va">${bidsdir}</span>/derivatives/fmriprep/sub-<span class="va">${subid}</span>/anat/sub-Pilot02_desc-preproc_T1w_subsamp2.nii.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now we can register to the downsample, and then to MNIspace:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">antsApplyTransforms</span> <span class="at">-d</span> 3 <span class="at">-e</span> 3 <span class="at">--float</span> 1 <span class="at">--verbose</span> 1 <span class="at">-i</span> <span class="va">${bidsdir}</span>/derivatives/tedana/sub-<span class="va">${subid}</span>/desc-optcomDenoised_bold.nii.gz <span class="at">-o</span> <span class="va">${bidsdir}</span>/derivatives/tedana/sub-<span class="va">${subid}</span>/desc-optcomDenoised_bold-to-T1.nii.gz <span class="at">-r</span> <span class="va">${bidsdir}</span>/derivatives/fmriprep/sub-<span class="va">${subid}</span>/anat/sub-Pilot02_desc-preproc_T1w_subsamp2.nii.gz <span class="at">-t</span> <span class="va">${bidsdir}</span>/derivatives/fmriprep/sub-<span class="va">${subid}</span>/func/sub-<span class="va">${subid}</span>_task-rest_from-scanner_to-T1w_mode-image_xfm.txt</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">antsApplyTransforms</span> <span class="at">-d</span> 3 <span class="at">-e</span> 3 <span class="at">--float</span> 1 <span class="at">--verbose</span> 1 <span class="at">-i</span> <span class="va">${bidsdir}</span>/derivatives/tedana/sub-<span class="va">${subid}</span>/desc-optcomDenoised_bold-to-T1.nii.gz <span class="at">-o</span> <span class="va">${bidsdir}</span>/derivatives/tedana/sub-<span class="va">${subid}</span>/desc-optcomDenoised_bold-to-MNI.nii.gz <span class="at">-r</span> <span class="va">${bidsdir}</span>/derivatives/fmriprep/sub-<span class="va">${subid}</span>/func/sub-<span class="va">${subid}</span>_task-rest_space-MNI152NLin2009cAsym_T2starmap.nii.gz <span class="at">-t</span> <span class="va">${bidsdir}</span>/derivatives/fmriprep/sub-<span class="va">${subid}</span>/anat/sub-Pilot02_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">imrm</span> <span class="va">${bidsdir}</span>/derivatives/fmriprep/sub-<span class="va">${subid}</span>/anat/sub-Pilot02_desc-preproc_T1w_subsamp2.nii.gz</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">imrm</span> <span class="va">${bidsdir}</span>/derivatives/tedana/sub-<span class="va">${subid}</span>/desc-optcomDenoised_bold-to-T1.nii.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Tada</p>
+<p>Full example here: <a href="https://hackmd.io/@weberam2/HypP3Pr8j">https://hackmd.io/<span class="citation" data-cites="weberam2/HypP3Pr8j">@weberam2/HypP3Pr8j</span></a></p>
 </section>
-<section id="git-large-file-storage" class="level1">
-<h1>Git Large File Storage</h1>
-<p>[Git Large File Storage <a href="https://git-lfs.github.com/">https://git-lfs.github.com/</a> ] can be used to store and retrieve large files.<br>
-If you've pulled a repo and the files seem incredibly small for what they should be, try:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> lfs pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="denoising-data-with-components" class="level1">
+<h1>Denoising Data with Components</h1>
+<p><a href="https://tedana.readthedocs.io/en/latest/denoising.html">https://tedana.readthedocs.io/en/latest/denoising.html</a></p>
 
 
 </section>
@@ -1005,4 +1285,4 @@ If you've pulled a repo and the files seem incredibly small for what they should
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/tutorials/git.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/tutorials/git.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrisoftware/tedana.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrisoftware/tedana.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

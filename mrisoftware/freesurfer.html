@@ -337,6 +337,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../mrisoftware/ants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ANTs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../mrisoftware/fmriprep.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">fmriprep</span></a>
   </div>
@@ -345,6 +351,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../mrisoftware/freesurfer.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Freesurfer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrisoftware/tedana.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tedana</span></a>
   </div>
 </li>
       </ul>
@@ -388,9 +400,15 @@ window.Quarto = {
  <span class="menu-text">fMRI</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrimethods/multi-echo-fmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi-Echo fMRI</span></a>
+  </div>
+</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a href="../mrimethods/eeg-fmri/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EEG-fMRI</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -440,10 +458,9 @@ window.Quarto = {
   <li><a href="#beginner-guide" id="toc-beginner-guide" class="nav-link" data-scroll-target="#beginner-guide">Beginner Guide</a></li>
   </ul></li>
   <li><a href="#install" id="toc-install" class="nav-link" data-scroll-target="#install">Install</a></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
-  <ul class="collapse">
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#stats" id="toc-stats" class="nav-link" data-scroll-target="#stats">Stats</a></li>
-  </ul></li>
   <li><a href="#fastsurfer" id="toc-fastsurfer" class="nav-link" data-scroll-target="#fastsurfer">FastSurfer</a>
   <ul class="collapse">
   <li><a href="#install-1" id="toc-install-1" class="nav-link" data-scroll-target="#install-1">Install</a></li>
@@ -566,11 +583,15 @@ Note
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-sd</span> <span class="op">&lt;</span>directory to put the subject folder in<span class="op">&gt;</span> <span class="dt">\</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">-all</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>where the input (-i) file is a single file representing a T1-weighted data set</p>
-<section id="stats" class="level2">
-<h2 class="anchored" data-anchor-id="stats">Stats</h2>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>An overview of the output files can be found <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/OutputData_freeview">here</a>. I highly recommend going through that tutorial.</p>
+</section>
+<section id="stats" class="level1">
+<h1>Stats</h1>
 <p>Example (might have to change the variable <code>$SUBJECTS_DIR</code>):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">aparcstats2table</span> <span class="at">--subjects</span> Alex32 Alex35 Alex36 <span class="at">--hemi</span> rh <span class="at">--meas</span> thickness <span class="at">--tablefile</span> aparc_stats_AlexThick.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
 </section>
 <section id="fastsurfer" class="level1">
 <h1>FastSurfer</h1>

@@ -1,14 +1,33 @@
 [
   {
-    "listing": "/investigatorresources/index.html",
+    "listing": "/mrimethods/index.html",
+    "items": [
+      "/mrimethods/acpc-align.html",
+      "/mrimethods/Anatomical.html",
+      "/mrimethods/ASL.html",
+      "/mrimethods/DTI.html",
+      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html",
+      "/mrimethods/eeg-fmri/gradient-removal.html",
+      "/mrimethods/multi-echo-fmri.html",
+      "/mrimethods/fMRI.html"
+    ]
+  },
+  {
+    "listing": "/scienceresources/index.html",
     "items": []
   },
   {
-    "listing": "/tutorials/index.html",
-    "items": []
+    "listing": "/mrisoftware/index.html",
+    "items": [
+      "/mrisoftware/3D-Slicer.html",
+      "/mrisoftware/ants.html",
+      "/mrisoftware/freesurfer.html",
+      "/mrisoftware/tedana.html",
+      "/mrisoftware/fmriprep.html"
+    ]
   },
   {
-    "listing": "/mriscanners/index.html",
+    "listing": "/studentresources/index.html",
     "items": []
   },
   {
@@ -19,26 +38,27 @@
     ]
   },
   {
-    "listing": "/studentresources/index.html",
+    "listing": "/mriscanners/index.html",
     "items": []
   },
   {
-    "listing": "/mrisoftware/index.html",
+    "listing": "/tutorials/index.html",
     "items": [
-      "/mrisoftware/3D-Slicer.html",
-      "/mrisoftware/freesurfer.html",
-      "/mrisoftware/fmriprep.html"
+      "/tutorials/BIDS.html",
+      "/tutorials/docker.html",
+      "/tutorials/git.html",
+      "/tutorials/Python.html"
     ]
   },
   {
-    "listing": "/scienceresources/index.html",
+    "listing": "/investigatorresources/index.html",
     "items": []
   },
   {
-    "listing": "/mrimethods/index.html",
+    "listing": "/mrimethods/eeg-fmri/index.html",
     "items": [
-      "/mrimethods/eeg-fmri/gradient-removal.html",
-      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html"
+      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html",
+      "/mrimethods/eeg-fmri/gradient-removal.html"
     ]
   }
 ]

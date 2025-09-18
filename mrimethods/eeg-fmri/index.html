@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../..//img/magnet.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-B9X9W6319W"></script>
 
 <script type="text/javascript">
@@ -81,6 +112,35 @@ gtag('js', new Date());
 gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="EEG-fMRI – BC Children’s Research MRI Wiki">
@@ -149,7 +209,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">EEG-fMRI</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../mrimethods/index.html">MRI Methods</a></li><li class="breadcrumb-item"><a href="../../mrimethods/eeg-fmri/index.html">EEG-fMRI</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -269,6 +329,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../mrisoftware/ants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ANTs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../mrisoftware/fmriprep.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">fmriprep</span></a>
   </div>
@@ -277,6 +343,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
   <div class="sidebar-item-container"> 
   <a href="../../mrisoftware/freesurfer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Freesurfer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mrisoftware/tedana.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tedana</span></a>
   </div>
 </li>
       </ul>
@@ -320,15 +392,21 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
  <span class="menu-text">fMRI</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../mrimethods/multi-echo-fmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi-Echo fMRI</span></a>
+  </div>
+</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a href="../../mrimethods/eeg-fmri/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">EEG-fMRI</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../mrimethods/eeg-fmri/ballistocardiogram-removal.html" class="sidebar-item-text sidebar-link">
@@ -362,13 +440,13 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZWVn">eeg <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZWVnLWZtcmk=">eeg-fmri <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZWVnbGFi">eeglab <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZnJlZXN1cmZlcg==">freesurfer <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWF0bGFi">matlab <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bW5l">mne <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJlcHJvY2Vzc2luZw==">preprocessing <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../mrimethods/index.html">MRI Methods</a></li><li class="breadcrumb-item"><a href="../../mrimethods/eeg-fmri/index.html">EEG-fMRI</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">EEG-fMRI</h1>
 </div>
@@ -390,7 +468,94 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="ZWVnLWZtcmklMkNjb2RlJTJDbWF0bGFiJTJDcHJlcHJvY2Vzc2luZyUyQ2VlZw==" data-listing-date-sort="1531267200000" data-listing-file-modified-sort="1758236060516" data-listing-date-modified-sort="1733270400000" data-listing-reading-time-sort="10" data-listing-word-count-sort="1859">
+<div class="thumbnail"><a href="../../mrimethods/eeg-fmri/ballistocardiogram-removal.html" class="no-external">
+
+<p class="card-img-top"><img src="images/channels4cardiacsignal.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../mrimethods/eeg-fmri/ballistocardiogram-removal.html" class="no-external">EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWVnLWZtcmk='); return false;">eeg-fmri</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWF0bGFi'); return false;">matlab</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHJlcHJvY2Vzc2luZw=='); return false;">preprocessing</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWVn'); return false;">eeg</div>
+
+</div>
+<div class="delink listing-description"><a href="../../mrimethods/eeg-fmri/ballistocardiogram-removal.html" class="no-external">
+<p>Reverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../../mrimethods/eeg-fmri/ballistocardiogram-removal.html" class="no-external">
+<div class="listing-date">
+Jul 11, 2018
+</div>
+<div class="listing-author">
+Lynne Williams
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="ZWVnLWZtcmklMkNjb2RlJTJDbWF0bGFiJTJDZWVnbGFiJTJDbW5lJTJDZnJlZXN1cmZlciUyQ3ByZXByb2Nlc3NpbmclMkNlZWc=" data-listing-date-sort="1707782400000" data-listing-file-modified-sort="1758236060516" data-listing-date-modified-sort="1733443200000" data-listing-reading-time-sort="19" data-listing-word-count-sort="3736">
+<div class="thumbnail"><a href="../../mrimethods/eeg-fmri/gradient-removal.html" class="no-external">
+
+<p class="card-img-top"><img src="images/Pasted image 20240213121504.png"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../mrimethods/eeg-fmri/gradient-removal.html" class="no-external">EEG-fMRI Data Cleaning &amp; Forward Solution</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWVnLWZtcmk='); return false;">eeg-fmri</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWF0bGFi'); return false;">matlab</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWVnbGFi'); return false;">eeglab</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bW5l'); return false;">mne</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZnJlZXN1cmZlcg=='); return false;">freesurfer</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHJlcHJvY2Vzc2luZw=='); return false;">preprocessing</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWVn'); return false;">eeg</div>
+
+</div>
+<div class="delink listing-description"><a href="../../mrimethods/eeg-fmri/gradient-removal.html" class="no-external">
+<p>Reverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../../mrimethods/eeg-fmri/gradient-removal.html" class="no-external">
+<div class="listing-date">
+Feb 13, 2024
+</div>
+<div class="listing-author">
+Lynne Williams
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
