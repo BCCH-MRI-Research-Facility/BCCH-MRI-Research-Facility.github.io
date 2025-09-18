@@ -1,0 +1,247 @@
+---
+title: "Multi-Echo fMRI"
+description: "fMRI with multiple echoes"
+author: "Alexander Weber"
+date: "2025-09-17"
+date-modified: "2025-09-17"
+highlight-style: github
+categories:
+  -fmri
+  -methods
+---
+
+# Intro
+
+What is multi-echo fMRI?
+[https://tedana.readthedocs.io/en/stable/multi-echo.html](https://tedana.readthedocs.io/en/stable/multi-echo.html)\
+
+Advantages: can tell motion and non-motion: if slope is non-normal, you can remove it.
+
+## Literature
+
+- lynch,
+charles j., jonathan d. power, matthew a. scult, marc dubin, faith m.
+gunning, and conor liston. "rapid precision functional mapping of
+individuals using multi-echo fmri." cell reports 33, no. 12 (2020): 108540.
+[https://doi.org/10.1016/j.celrep.2020.108540](https://doi.org/10.1016/j.celrep.2020.108540) .
+
+- lynch, charles j., immanuel elbau, and conor liston. "improving
+precision functional mapping routines with multi-echo fmri." current
+opinion in behavioral sciences 40 (august 1, 2021): 113--19.
+[https://doi.org/10.1016/j.cobeha.2021.03.017](https://doi.org/10.1016/j.cobeha.2021.03.017) .
+
+# Misc Notes 
+
+- first echo time as early as possible\
+- second echo as close to normal fmri echo as possible
+
+Example: te1=12ms (this is the earliest the scanner can do); te2=30ms; te3= 48ms.
+
+
+# GE sequence example
+
+adult -\> other
+
+minimum 3 echos
+
+tr = 2,000
+
+multiband aspect isn\'t super important
+
+nova coil
+
+**hypermepi01**
+
+  ------------ ----------------- ----------------------- ---------- --------------------------------------------------------------------------------------------------------
+  **series**   **type**          **name**                **time**   **notes**
+  3            3dt1              sag fspgr 3d .9x.9x.9   4:57       fov 24, matrix 256x256
+  4            3dt2                                      4:21       fov 24, matrix 256x256
+  5            fmri hyper mepi                           12:20      3echo, tr=2000; te=30; fov 28.8; matrix 96; 45 slices, 370 volumes; cvs: image_size=96; **pepolar=0**
+  6            fmri hyper mepi                           40s        3echo, tr=2000; te=30; fov 28.8; matrix 96; 45 slices, 370 volumes; cvs: image_size=96; **pepolar=1**
+  100/7?       fmri se                                   18s        **pepolar=0**
+  8            fmri se                                   18s        **pepolar=1**
+  9            fmri hyper mepi                           7mins      4echo, tr=2000; te=30; fov 28.8; matrix 96; 45 slices, 200? volumes; cvs: image_size=96; **pepolar=0**
+  ------------ ----------------- ----------------------- ---------- --------------------------------------------------------------------------------------------------------
+
+total time = 44 mins
+
+## BIDS 
+
+Config file creation
+
+```bash
+t1w=3
+fmri1=5
+fmap1=6
+fmap2=7
+
+innert1=$(jq -n --arg dt anat \
+                --arg md T1w \
+                --arg fn "$(printf "%03g" $t1w)*" \
+                '{datatype:$dt, suffix:$md, criteria:{SidecarFilename:$fn}}'
+)
+innerfmrie1=$(jq -n --arg dt func \
+                   --arg md bold \
+                   --arg cl task-rest_echo-1 \
+                   --arg fn "$(printf "%03g" $fmri1)*" \
+                   '{datatype:$dt, suffix:$md, custom_entities:$cl, criteria:{SidecarFilename:$fn, EchoNumber:1}, sidecarChanges:{TaskName:"rest"}}'
+)
+innerfmrie2=$(jq -n --arg dt func \
+                   --arg md bold \
+                   --arg cl task-rest_echo-2 \
+                   --arg fn "$(printf "%03g" $fmri1)*" \
+                   '{datatype:$dt, suffix:$md, custom_entities:$cl, criteria:{SidecarFilename:$fn, EchoNumber:2}, sidecarChanges:{TaskName:"rest"}}'
+)
+innerfmrie3=$(jq -n --arg dt func \
+                   --arg md bold \
+                   --arg cl task-rest_echo-3 \
+                   --arg fn "$(printf "%03g" $fmri1)*" \
+                   '{datatype:$dt, suffix:$md, custom_entities:$cl, criteria:{SidecarFilename:$fn, EchoNumber:3}, sidecarChanges:{TaskName:"rest"}}'
+)
+innerfmap1=$(jq -n --arg dt fmap \
+                   --arg md epi \
+                   --arg cl dir-PA \
+                   --arg fn "$(printf "%03g" $fmap1)*" \
+                   '{datatype:$dt, suffix:$md, custom_entities:$cl, criteria:{SidecarFilename:$fn}, sidecarChanges:{IntendedFor:["rest-echo1","rest-echo2","rest-echo3"], B0FieldIdentifier:"pepolar_fmap0"}}'
+)
+innerfmap2=$(jq -n --arg dt fmap \
+                   --arg md epi \
+                   --arg cl dir-AP \
+                   --arg fn "$(printf "%03g" $fmap2)*" \
+                   '{datatype:$dt, suffix:$md, custom_entities:$cl, criteria:{SidecarFilename:$fn}, sidecarChanges:{IntendedFor:["rest-echo1","rest-echo2","rest-echo3"], B0FieldIdentifier:"pepolar_fmap0"}}'
+jq -n --arg dcm2niixOptions "-b y -ba y -z y -f '%3s_%f_%d_%r'" \
+   --argjson descriptions "[$innert1, $innerfmrie1, $innerfmrie2, $innerfmrie3, $innerfmap1, $innerfmap2]" \
+   '$ARGS.named' > BIDS_config.json
+```
+
+Creates:
+
+```json
+{                                                                                                                                                                                                             
+  "dcm2niixOptions": "-b y -ba y -z y -f '%3s_%f_%d_%r'",                                                                                                                                                     
+  "descriptions": [                                                                                                                                                                                           
+    {                                                                                                                                                                                                         
+      "datatype": "anat",                                                                                                                                                                                     
+      "suffix": "T1w",                                                                                                                                                                                 
+      "criteria": {                                                                                                                                                                                           
+        "SidecarFilename": "003*"                                                                                                                                                                             
+      }                                                                                                                                                                                                       
+    },                                                                                                                                                                                                        
+    {                                                                                                                                                                                                         
+      "id": "rest-echo1"
+      "datatype": "func",                                                                                                                                                                                     
+      "suffix": "bold",                                                                                                                                                                                
+      "custom_entities": "task-rest_echo-1",                                                                                                                                                                     
+      "criteria": {                                                                                                                                                                                           
+        "SidecarFilename": "005*",                                                                                                                                                                            
+        "EchoNumber": 1                                                                                                                                                                                       
+      },                                                                                                                                                                                                      
+      "sidecarChanges": {                                                                                                                                                                                     
+        "TaskName": "rest"                                                                                                                                                                                    
+      }                                                                                                                                                                                                       
+    },                                                                                                                                                                                                        
+    {                                                                                                                                                                                                         
+      "id": "rest-echo2"
+      "datatype": "func",                                                                                                                                                                                     
+      "suffix": "bold",                                                                                                                                                                                
+      "custom_entities": "task-rest_echo-2",                                                                                                                                                                     
+      "criteria": {                                                                                                                                                                                           
+        "SidecarFilename": "005*",                                                                                                                                                                            
+        "EchoNumber": 2
+      },
+      "sidecarChanges": {
+        "TaskName": "rest"
+      }
+    },
+    {
+      "id": "rest-echo3"
+      "datatype": "func",
+      "suffix": "bold",
+      "custom_entities": "task-rest_echo-3",
+      "criteria": {
+        "SidecarFilename": "005*",
+        "EchoNumber": 3
+      },
+      "sidecarChanges": {
+        "TaskName": "rest"
+      }
+    },
+    {
+      "datatype": "fmap",
+      "suffix": "epi",
+      "custom_entities": "dir-PA",
+      "criteria": {
+        "SidecarFilename": "006*"
+      },
+      "sidecar_changes": {
+        "IntendedFor": [
+          "rest-echo1",
+          "rest-echo2",
+          "rest-echo3"
+        ],
+        "B0FieldIdentifier": "pepolar_fmap0"
+      }
+    },
+    {
+      "datatype": "fmap",
+      "suffix": "epi",
+      "custom_entities": "dir-AP",
+      "criteria": {
+        "SidecarFilename": "007*"
+      "sidecar_changes": {
+        "IntendedFor": [
+          "rest-echo1",
+          "rest-echo2",
+          "rest-echo3"
+        ],
+        "B0FieldIdentifier": "pepolar_fmap0"
+      }
+    }
+  ]
+}
+```
+
+note EchoNumber and CustomLabels for func
+
+```bash
+dcm2bids -d sourcedata/${subid}/bids/ -p ${subid} -c sourcedata/${subid}/bids/BIDS_config.json -o . --forceDcm2niix
+```
+
+You then have to delete the `bval` and `bvec` files (not sure why they are
+made) from the resulting func folders:
+
+```
+rm sub-${subid}/func/*.bv*
+```
+
+`bids-validator` should then run without any major errors
+
+## Fastsurfer 
+
+see [fastsurfer](../mrisoftware/freesurfer.qmd) for information about Fastsurfer
+
+::: {.callout-note}
+requires ~4Gb of GPU
+:::
+Example:
+
+```bash
+docker run --gpus all -v /mnt/WeberLab/Projects/HYPER-MEPI/sub-${subid}/anat:/data -v /mnt/WeberLab/Projects/HYPER-MEPI/derivatives/FastSurfer:/output -v /home/aweber:/fs_license --rm fastsurfer:gpu --fs
+_license /fs_license/license.txt --t1 /data/sub-${subid}_T1w.nii.gz --sid sub-${subid} --sd /output --parallel
+```
+
+Takes \~43 mins
+
+## fMRIprep 
+
+see [fmriprep](../mrisoftware/fmriprep.qmd) for information about fmriprep
+
+Example:
+
+```bash
+fmriprep-docker $PWD $PWD/derivatives/fmriprep participant --participant-label ${subid} --fs-license-file /home/aweber/license.txt --dummy-scans 10 --use-aroma --me-output-echos -w /home/aweber/fmriprep_work --fs-subjects-dir $PWD/derivatives/FastSurfer
+```
+
+Took about 1.5 hours
+
+Then run [`tedana`](../mrisoftware/tedana.qmd)
