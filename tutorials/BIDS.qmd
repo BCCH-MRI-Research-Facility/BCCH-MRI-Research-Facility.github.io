@@ -195,7 +195,9 @@ dcm2bids_helper -d sourcedata/aweber-20200918_110552/
 This command will convert the DICOMs files to NIfTI files and save them
 inside \'tmp_dcm2bids/helper/\'
 
-\[note: with GE data, I find this gives bad naming conventions.
+
+::: {.callout-note}
+with GE data, I find this gives bad naming conventions.
 Alternatively you could run something like this:
 
 ``` 
@@ -209,6 +211,7 @@ which translates to:\
 `-z y` = gz compress images yes\
 `-f '%3s %f %d %r'` = filename with series number, folder name,\
 description and instance number\]
+:::
 
 We should see a list of compressed NIfTI files (`nii.gz`) with their
 respective sidecar files (`.json`).\
