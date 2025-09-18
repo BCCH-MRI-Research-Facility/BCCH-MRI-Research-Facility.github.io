@@ -4,7 +4,7 @@
     "href": "tutorials/index.html",
     "title": "Tutorials",
     "section": "",
-    "text": "Docker\n\n\n\n\n\n\nsoftware\n\n\nreproducible\n\n\n\nAutomates the Deployment of Software Applications Inside Containers\n\n\n\n\n\nFeb 13, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "BIDS (Brain Imaging Data Structure)\n\n\n\nreproducibility\n\nsoftware\n\ndata organization\n\n\n\nStandardized organization and formatting of imaging data\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nDocker\n\n\n\nsoftware\n\nreproducible\n\n\n\nAutomates the Deployment of Software Applications Inside Containers\n\n\n\n\n\nFeb 13, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nGit\n\n\n\nsoftware\n\nversion control\n\n\n\nAllows you to keep track of changes to documents, and also to collaborate and work together\n\n\n\n\n\nFeb 13, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nPython\n\n\n\nsoftware\n\nprogramming\n\ndata analysis\n\n\n\nInterpreted, high-level and general-purpose programming language\n\n\n\n\n\nMar 11, 2025\n\n\nAlexander Weber\n\n\n\n\n\nNo matching items\n Back to top",
     "crumbs": [
       "Home",
       "Tutorials"
@@ -15,7 +15,7 @@
     "href": "scienceresources/index.html",
     "title": "Science Resources",
     "section": "",
-    "text": "No matching items\n\n Back to top",
+    "text": "No matching items\n Back to top",
     "crumbs": [
       "Home",
       "Science Resources"
@@ -86,7 +86,7 @@
     "href": "mrisoftware/index.html",
     "title": "MRI Software",
     "section": "",
-    "text": "3D Slicer\n\n\n\nsoftware\n\nvisualization\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nFreesurfer\n\n\n\n-software -anatomical -visualization -segmentation -surface\n\n\n\nAn open source neuroimaging toolkit for processing, analyzing, and visualizing human brain MR images\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nfmriprep\n\n\n\n-software -fmri -reproducibility -standardization -preprocessing\n\n\n\nAn automated and standardized way of preprocessing fmri data\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\nNo matching items\n Back to top",
+    "text": "3D Slicer\n\n\n\nsoftware\n\nvisualization\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nANTs\n\n\n\n-software -registration\n\n\n\nAdvanced Normalization Tools\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nFreesurfer\n\n\n\n-software -anatomical -visualization -segmentation -surface\n\n\n\nAn open source neuroimaging toolkit for processing, analyzing, and visualizing human brain MR images\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nTedana\n\n\n\n-software -multi-echo -fmri -processing\n\n\n\nProcessing multi-echo fMRI data after it has been preprocessed by fmriprep\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nfmriprep\n\n\n\n-software -fmri -reproducibility -standardization -preprocessing\n\n\n\nAn automated and standardized way of preprocessing fmri data\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\nNo matching items\n Back to top",
     "crumbs": [
       "Home",
       "MRI Software"
@@ -97,7 +97,7 @@
     "href": "mrimethods/index.html",
     "title": "MRI Methods",
     "section": "",
-    "text": "EEG-fMRI Data Cleaning & Forward Solution\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\neeglab\n\n\nmne\n\n\nfreesurfer\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nFeb 13, 2024\n\n\nLynne Williams\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Align AC PC to horizontal\n\n\n\nanat\n\nshell\n\ncode\n\nvisualization\n\nalignment\n\n\n\nTranslate your structural scans to AC-PC alignment for visualization and display.\n\n\n\n\n\nDec 4, 2024\n\n\nDanny Kim\n\n\n\n\n\n\n\n\n\n\n\n\nAnatomical\n\n\n\nanat\n\nvisualization\n\nalignment\n\nregistration\n\nbrain extraction\n\nsegmentation\n\n\n\nAll things anatomical MRI\n\n\n\n\n\nMar 11, 2025\n\n\nAlex Weber\n\n\n\n\n\n\n\n\n\n\n\n\nArterial Spin Labelling\n\n\n\narterial spin labelling\n\nblood flow\n\n\n\nMeasuring cerebral blood flow\n\n\n\n\n\nMar 11, 2025\n\n\nAlex Weber\n\n\n\n\n\n\n\n\n\n\n\n\nDTI\n\n\n\ndiffusion\n\neddy currents\n\nvisualization\n\ntensor\n\nNODDI\n\nTractography\n\n\n\nAll things diffusion MRI\n\n\n\n\n\nApr 24, 2025\n\n\nAlex Weber\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\neeg-fmri\n\ncode\n\nmatlab\n\npreprocessing\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Data Cleaning & Forward Solution\n\n\n\neeg-fmri\n\ncode\n\nmatlab\n\neeglab\n\nmne\n\nfreesurfer\n\npreprocessing\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nFeb 13, 2024\n\n\nLynne Williams\n\n\n\n\n\n\n\n\n\n\n\n\nMulti-Echo fMRI\n\n\n\n-fmri -methods\n\n\n\nfMRI with multiple echoes\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nfMRI\n\n\n\nfunctional\n\nt2*\n\nvisualization\n\nresting state\n\ntask\n\n\n\nAll things functional MRI\n\n\n\n\n\nJun 2, 2025\n\n\nAlex Weber\n\n\n\n\n\nNo matching items\n Back to top",
     "crumbs": [
       "Home",
       "MRI Methods"
@@ -254,14 +254,19 @@
     "href": "mrimethods/eeg-fmri/index.html",
     "title": "EEG-fMRI",
     "section": "",
-    "text": "Back to top"
+    "text": "EEG-fMRI Ballistocardiogram Cleaning (Rodriguez method)\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nJul 11, 2018\n\n\nLynne Williams\n\n\n\n\n\n\n\n\n\n\n\n\nEEG-fMRI Data Cleaning & Forward Solution\n\n\n\n\n\n\neeg-fmri\n\n\ncode\n\n\nmatlab\n\n\neeglab\n\n\nmne\n\n\nfreesurfer\n\n\npreprocessing\n\n\neeg\n\n\n\nReverse engineered code from Rodriguez (2016) for removal of the ballistocardiogram artifacts from EEG-fMRI data when the ECG fails to give a good signal. This code requires Matlab and the Signal Processing Toolbox.\n\n\n\n\n\nFeb 13, 2024\n\n\nLynne Williams\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "EEG-fMRI"
+    ]
   },
   {
     "objectID": "mriscanners/index.html",
     "href": "mriscanners/index.html",
     "title": "MRI Scanners",
     "section": "",
-    "text": "No matching items\n\n Back to top",
+    "text": "No matching items\n Back to top",
     "crumbs": [
       "Home",
       "MRI Scanners"
@@ -272,7 +277,7 @@
     "href": "orientation/index.html",
     "title": "Orientation",
     "section": "",
-    "text": "MRI Safety FAQ\n\n\n\n\n\n\nsafety\n\n\nmri\n\n\n\nYour frequently asked MRI safety questions answered\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMattermost: Instant Messaging / Stay in Touch\n\n\n\n\n\n\ncollaboration\n\n\nsoftware\n\n\ninstant messaging\n\n\n\nInstant messaging app for users of the research MRI facility\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "MRI Safety FAQ\n\n\n\nsafety\n\nmri\n\n\n\nYour frequently asked MRI safety questions answered\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMattermost: Instant Messaging / Stay in Touch\n\n\n\ncollaboration\n\nsoftware\n\ninstant messaging\n\n\n\nInstant messaging app for users of the research MRI facility\n\n\n\n\n\n\n\n\nNo matching items\n Back to top",
     "crumbs": [
       "Home",
       "Orientation"
@@ -2203,6 +2208,270 @@
       "Home",
       "MRI Software",
       "Freesurfer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/tedana.html",
+    "href": "mrisoftware/tedana.html",
+    "title": "Tedana",
+    "section": "",
+    "text": "Intro\nTE-dependent analysis (tedana) is a Python library for denoising multi-echo functional magnetic resonance imaging (fMRI) data. tedana originally came about as a part of the ME-ICA pipeline, although it has since diverged. An important distinction is that while the ME-ICA pipeline originally performed both pre-processing and TE-dependent analysis of multi-echo fMRI data, tedana now assumes that you’re working with data which has been previously preprocessed.\nhttps://github.com/ME-ICA/tedana-reliability-analysis/blob/0f745dfb8d53aa6d2d73d326821c4f08232a0b36/collect_fmriprep.py\n\n\n\nDocumentation\nhttps://tedana.readthedocs.io/en/stable/\n\n\nInstall\nconda create -n tedana python=3 pip mdp numpy scikit-learn scipy\nconda activate tedana\npip install nilearn nibabel\npip install tedana\n\n\nRun\nget echo times:\nsubid=Pilot02\necho1=$(cat sub-${subid}/func/sub-${subid}_task-rest_echo-1_bold.json | jq -r '.EchoTime')\necho2=$(cat sub-${subid}/func/sub-${subid}_task-rest_echo-2_bold.json | jq -r '.EchoTime')\necho3=$(cat sub-${subid}/func/sub-${subid}_task-rest_echo-3_bold.json | jq -r '.EchoTime')\ntedana -d derivatives/fmriprep/sub-${subid}/func/sub-${subid}_task-rest_echo-1_desc-preproc_bold.nii.gz derivatives/fmriprep/sub-${subid}/func/sub-${subid}_task-rest_echo-2_desc-preproc_bold.nii.gz derivatives/fmriprep/sub-${subid}/func/sub-${subid}_task-rest_echo-3_desc-preproc_bold.nii.gz -e $echo1 $echo2 $echo3 --out-dir derivatives/tedana/sub-${subid} --debug\nTakes 2 mins\n\n\nMore Analysis Notes\nhttps://hackmd.io/@weberam2/HypP3Pr8j\n\n\nDenoising Data with Components\nhttps://tedana.readthedocs.io/en/latest/denoising.html\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/tedana.html#MultiechofMRI-MoreAnalysis",
+    "href": "mrisoftware/tedana.html#MultiechofMRI-MoreAnalysis",
+    "title": "Tedana",
+    "section": "More Analysis",
+    "text": "More Analysis\nhttps://hackmd.io/@weberam2/HypP3Pr8j",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/tedana.html#MultiechofMRI-DenoisingDatawithComponents",
+    "href": "mrisoftware/tedana.html#MultiechofMRI-DenoisingDatawithComponents",
+    "title": "Tedana",
+    "section": "Denoising Data with Components",
+    "text": "Denoising Data with Components\nhttps://tedana.readthedocs.io/en/latest/denoising.html",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "mrimethods/multi-echo-fmri.html",
+    "href": "mrimethods/multi-echo-fmri.html",
+    "title": "Multi-Echo fMRI",
+    "section": "",
+    "text": "What is multi-echo fMRI? https://tedana.readthedocs.io/en/stable/multi-echo.html\n\nAdvantages: can tell motion and non-motion: if slope is non-normal, you can remove it.\n\n\n\nlynch, charles j., jonathan d. power, matthew a. scult, marc dubin, faith m. gunning, and conor liston. “rapid precision functional mapping of individuals using multi-echo fmri.” cell reports 33, no. 12 (2020): 108540. https://doi.org/10.1016/j.celrep.2020.108540 .\nlynch, charles j., immanuel elbau, and conor liston. “improving precision functional mapping routines with multi-echo fmri.” current opinion in behavioral sciences 40 (august 1, 2021): 113–19. https://doi.org/10.1016/j.cobeha.2021.03.017 .",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Multi-Echo fMRI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/multi-echo-fmri.html#literature",
+    "href": "mrimethods/multi-echo-fmri.html#literature",
+    "title": "Multi-Echo fMRI",
+    "section": "",
+    "text": "lynch, charles j., jonathan d. power, matthew a. scult, marc dubin, faith m. gunning, and conor liston. “rapid precision functional mapping of individuals using multi-echo fmri.” cell reports 33, no. 12 (2020): 108540. https://doi.org/10.1016/j.celrep.2020.108540 .\nlynch, charles j., immanuel elbau, and conor liston. “improving precision functional mapping routines with multi-echo fmri.” current opinion in behavioral sciences 40 (august 1, 2021): 113–19. https://doi.org/10.1016/j.cobeha.2021.03.017 .",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Multi-Echo fMRI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/multi-echo-fmri.html#bids",
+    "href": "mrimethods/multi-echo-fmri.html#bids",
+    "title": "Multi-Echo fMRI",
+    "section": "BIDS",
+    "text": "BIDS\nConfig file creation\nt1w=3\nfmri1=5\nfmap1=6\nfmap2=7\n\ninnert1=$(jq -n --arg dt anat \\\n                --arg md T1w \\\n                --arg fn \"$(printf \"%03g\" $t1w)*\" \\\n                '{datatype:$dt, suffix:$md, criteria:{SidecarFilename:$fn}}'\n)\ninnerfmrie1=$(jq -n --arg dt func \\\n                   --arg md bold \\\n                   --arg cl task-rest_echo-1 \\\n                   --arg fn \"$(printf \"%03g\" $fmri1)*\" \\\n                   '{datatype:$dt, suffix:$md, custom_entities:$cl, criteria:{SidecarFilename:$fn, EchoNumber:1}, sidecarChanges:{TaskName:\"rest\"}}'\n)\ninnerfmrie2=$(jq -n --arg dt func \\\n                   --arg md bold \\\n                   --arg cl task-rest_echo-2 \\\n                   --arg fn \"$(printf \"%03g\" $fmri1)*\" \\\n                   '{datatype:$dt, suffix:$md, custom_entities:$cl, criteria:{SidecarFilename:$fn, EchoNumber:2}, sidecarChanges:{TaskName:\"rest\"}}'\n)\ninnerfmrie3=$(jq -n --arg dt func \\\n                   --arg md bold \\\n                   --arg cl task-rest_echo-3 \\\n                   --arg fn \"$(printf \"%03g\" $fmri1)*\" \\\n                   '{datatype:$dt, suffix:$md, custom_entities:$cl, criteria:{SidecarFilename:$fn, EchoNumber:3}, sidecarChanges:{TaskName:\"rest\"}}'\n)\ninnerfmap1=$(jq -n --arg dt fmap \\\n                   --arg md epi \\\n                   --arg cl dir-PA \\\n                   --arg fn \"$(printf \"%03g\" $fmap1)*\" \\\n                   '{datatype:$dt, suffix:$md, custom_entities:$cl, criteria:{SidecarFilename:$fn}, sidecarChanges:{IntendedFor:[\"rest-echo1\",\"rest-echo2\",\"rest-echo3\"], B0FieldIdentifier:\"pepolar_fmap0\"}}'\n)\ninnerfmap2=$(jq -n --arg dt fmap \\\n                   --arg md epi \\\n                   --arg cl dir-AP \\\n                   --arg fn \"$(printf \"%03g\" $fmap2)*\" \\\n                   '{datatype:$dt, suffix:$md, custom_entities:$cl, criteria:{SidecarFilename:$fn}, sidecarChanges:{IntendedFor:[\"rest-echo1\",\"rest-echo2\",\"rest-echo3\"], B0FieldIdentifier:\"pepolar_fmap0\"}}'\njq -n --arg dcm2niixOptions \"-b y -ba y -z y -f '%3s_%f_%d_%r'\" \\\n   --argjson descriptions \"[$innert1, $innerfmrie1, $innerfmrie2, $innerfmrie3, $innerfmap1, $innerfmap2]\" \\\n   '$ARGS.named' &gt; BIDS_config.json\nCreates:\n{                                                                                                                                                                                                             \n  \"dcm2niixOptions\": \"-b y -ba y -z y -f '%3s_%f_%d_%r'\",                                                                                                                                                     \n  \"descriptions\": [                                                                                                                                                                                           \n    {                                                                                                                                                                                                         \n      \"datatype\": \"anat\",                                                                                                                                                                                     \n      \"suffix\": \"T1w\",                                                                                                                                                                                 \n      \"criteria\": {                                                                                                                                                                                           \n        \"SidecarFilename\": \"003*\"                                                                                                                                                                             \n      }                                                                                                                                                                                                       \n    },                                                                                                                                                                                                        \n    {                                                                                                                                                                                                         \n      \"id\": \"rest-echo1\"\n      \"datatype\": \"func\",                                                                                                                                                                                     \n      \"suffix\": \"bold\",                                                                                                                                                                                \n      \"custom_entities\": \"task-rest_echo-1\",                                                                                                                                                                     \n      \"criteria\": {                                                                                                                                                                                           \n        \"SidecarFilename\": \"005*\",                                                                                                                                                                            \n        \"EchoNumber\": 1                                                                                                                                                                                       \n      },                                                                                                                                                                                                      \n      \"sidecarChanges\": {                                                                                                                                                                                     \n        \"TaskName\": \"rest\"                                                                                                                                                                                    \n      }                                                                                                                                                                                                       \n    },                                                                                                                                                                                                        \n    {                                                                                                                                                                                                         \n      \"id\": \"rest-echo2\"\n      \"datatype\": \"func\",                                                                                                                                                                                     \n      \"suffix\": \"bold\",                                                                                                                                                                                \n      \"custom_entities\": \"task-rest_echo-2\",                                                                                                                                                                     \n      \"criteria\": {                                                                                                                                                                                           \n        \"SidecarFilename\": \"005*\",                                                                                                                                                                            \n        \"EchoNumber\": 2\n      },\n      \"sidecarChanges\": {\n        \"TaskName\": \"rest\"\n      }\n    },\n    {\n      \"id\": \"rest-echo3\"\n      \"datatype\": \"func\",\n      \"suffix\": \"bold\",\n      \"custom_entities\": \"task-rest_echo-3\",\n      \"criteria\": {\n        \"SidecarFilename\": \"005*\",\n        \"EchoNumber\": 3\n      },\n      \"sidecarChanges\": {\n        \"TaskName\": \"rest\"\n      }\n    },\n    {\n      \"datatype\": \"fmap\",\n      \"suffix\": \"epi\",\n      \"custom_entities\": \"dir-PA\",\n      \"criteria\": {\n        \"SidecarFilename\": \"006*\"\n      },\n      \"sidecar_changes\": {\n        \"IntendedFor\": [\n          \"rest-echo1\",\n          \"rest-echo2\",\n          \"rest-echo3\"\n        ],\n        \"B0FieldIdentifier\": \"pepolar_fmap0\"\n      }\n    },\n    {\n      \"datatype\": \"fmap\",\n      \"suffix\": \"epi\",\n      \"custom_entities\": \"dir-AP\",\n      \"criteria\": {\n        \"SidecarFilename\": \"007*\"\n      \"sidecar_changes\": {\n        \"IntendedFor\": [\n          \"rest-echo1\",\n          \"rest-echo2\",\n          \"rest-echo3\"\n        ],\n        \"B0FieldIdentifier\": \"pepolar_fmap0\"\n      }\n    }\n  ]\n}\nnote EchoNumber and CustomLabels for func\ndcm2bids -d sourcedata/${subid}/bids/ -p ${subid} -c sourcedata/${subid}/bids/BIDS_config.json -o . --forceDcm2niix\nYou then have to delete the bval and bvec files (not sure why they are made) from the resulting func folders:\nrm sub-${subid}/func/*.bv*\nbids-validator should then run without any major errors",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Multi-Echo fMRI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/multi-echo-fmri.html#fastsurfer",
+    "href": "mrimethods/multi-echo-fmri.html#fastsurfer",
+    "title": "Multi-Echo fMRI",
+    "section": "Fastsurfer",
+    "text": "Fastsurfer\nsee fastsurfer for information about Fastsurfer\n\n\n\n\n\n\nNote\n\n\n\nrequires ~4Gb of GPU\n\n\nExample:\ndocker run --gpus all -v /mnt/WeberLab/Projects/HYPER-MEPI/sub-${subid}/anat:/data -v /mnt/WeberLab/Projects/HYPER-MEPI/derivatives/FastSurfer:/output -v /home/aweber:/fs_license --rm fastsurfer:gpu --fs\n_license /fs_license/license.txt --t1 /data/sub-${subid}_T1w.nii.gz --sid sub-${subid} --sd /output --parallel\nTakes ~43 mins",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Multi-Echo fMRI"
+    ]
+  },
+  {
+    "objectID": "mrimethods/multi-echo-fmri.html#MultiechofMRI-fMRIprep",
+    "href": "mrimethods/multi-echo-fmri.html#MultiechofMRI-fMRIprep",
+    "title": "Multi-Echo fMRI",
+    "section": "fMRIprep",
+    "text": "fMRIprep\nExample:\nfmriprep-docker $PWD $PWD/derivatives/fmriprep participant --participant-label ${subid} --fs-license-file /home/aweber/license.txt --dummy-scans 10 --use-aroma --me-output-echos -w /home/aweber/fmriprep_work --fs-subjects-dir $PWD/derivatives/FastSurfer\nTook about 1.5 hours\nThen run tedana",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Multi-Echo fMRI"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/tedana.html#dependencies",
+    "href": "mrisoftware/tedana.html#dependencies",
+    "title": "Tedana",
+    "section": "Dependencies",
+    "text": "Dependencies\nthere is a lot you’ll want installed before starting\n\ndocker\nminiconda\ngit\njq\ndcm2niix\nfreesurfer (with license)\nFastSurfer (if you want to speed things up)\na bunch of python scripts installed in a virtual environment (see below)\nbids-validator\nANTs\n\nWith miniconda3 installed, you should consider using a virtual environment. Here is an example of how to create, start/activate, then install some python libraries\nconda create -n tedana python=3 pip mdp numpy scikit-learn scipy\nconda activate tedana\npip install nilearn nibabel\npip install tedana\npip install dcm2bids # if not already installed\npip install fmriprep-docker # if not already installed",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "mrimethods/multi-echo-fmri.html#fmriprep",
+    "href": "mrimethods/multi-echo-fmri.html#fmriprep",
+    "title": "Multi-Echo fMRI",
+    "section": "fMRIprep",
+    "text": "fMRIprep\nsee fmriprep for information about fmriprep\nExample:\nfmriprep-docker $PWD $PWD/derivatives/fmriprep participant --participant-label ${subid} --fs-license-file /home/aweber/license.txt --dummy-scans 10 --use-aroma --me-output-echos -w /home/aweber/fmriprep_work --fs-subjects-dir $PWD/derivatives/FastSurfer\nTook about 1.5 hours\nThen run tedana",
+    "crumbs": [
+      "Home",
+      "MRI Methods",
+      "Multi-Echo fMRI"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/tedana.html#fastsurfer",
+    "href": "mrisoftware/tedana.html#fastsurfer",
+    "title": "Tedana",
+    "section": "FastSurfer",
+    "text": "FastSurfer\nInside FastSurfer the files your probably interested in are in the mri folder\n.\n├── antsdn.brain.mgz\n├── aparc.a2009s+aseg.mgz\n├── aparc+aseg.mgz -&gt; aparc.DKTatlas+aseg.mapped.mgz\n├── aparc.DKTatlas+aseg.deep.mgz\n├── aparc.DKTatlas+aseg.deep.withCC.mgz\n├── aparc.DKTatlas+aseg.mapped.mgz\n├── aparc.DKTatlas+aseg.mgz -&gt; aparc.DKTatlas+aseg.mapped.mgz\n├── aparc.DKTatlas+aseg.orig.mgz\n├── aseg.auto.mgz\n├── aseg.auto_noCCseg.mgz\n├── aseg.mgz\n├── aseg.presurf.hypos.mgz\n├── aseg.presurf.mgz\n├── brain.finalsurfs.mgz\n├── brainmask.auto.mgz\n├── brainmask.mgz\n├── brain.mgz\n├── filled.auto.mgz\n├── filled.mgz\n├── filled-pretess127.mgz\n├── filled-pretess255.mgz\n├── lh.ribbon.mgz\n├── lh.surface.defects.mgz\n├── mask.mgz\n├── norm.mgz\n├── nu.mgz\n├── orig\n│   └── 001.mgz\n├── orig.mgz\n├── orig_nu.mgz\n├── rawavg.mgz -&gt; orig.mgz\n├── rh.ribbon.mgz\n├── rh.surface.defects.mgz\n├── ribbon.mgz\n├── segment.dat\n├── T1.mgz\n├── talairach.label_intensities.txt\n├── tmp\n├── transforms\n│   ├── bak\n│   ├── cc_up.lta\n│   ├── talairach.auto.xfm\n│   ├── talairach.auto.xfm.lta\n│   ├── talairach_avi.log\n│   ├── talairach.lta -&gt; talairach.xfm.lta\n│   ├── talairach.m3z\n│   ├── talairach_with_skull.lta -&gt; talairach.xfm.lta\n│   ├── talairach.xfm\n│   ├── talairach.xfm.lta\n│   └── talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt\n├── wm.asegedit.mgz\n├── wm.mgz\n├── wmparc.DKTatlas.mapped.mgz\n├── wmparc.mgz -&gt; wmparc.DKTatlas.mapped.mgz\n└── wm.seg.mgz\nAn overview of the output files can be found here. I highly recommend going through that tutorial.",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/tedana.html#fmriprep",
+    "href": "mrisoftware/tedana.html#fmriprep",
+    "title": "Tedana",
+    "section": "fmriprep",
+    "text": "fmriprep\nfmriprep ouput:\n.\n├── dataset_description.json\n├── desc-aparcaseg_dseg.tsv\n├── desc-aseg_dseg.tsv\n├── logs\n│   ├── CITATION.bib\n│   ├── CITATION.html\n│   ├── CITATION.md\n│   └── CITATION.tex\n├── sub-Pilot02\n│   ├── anat\n│   │   ├── sub-Pilot02_desc-aparcaseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_desc-aseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_desc-brain_mask.json\n│   │   ├── sub-Pilot02_desc-brain_mask.nii.gz\n│   │   ├── sub-Pilot02_desc-preproc_T1w.json\n│   │   ├── sub-Pilot02_desc-preproc_T1w.nii.gz\n│   │   ├── sub-Pilot02_dseg.nii.gz\n│   │   ├── sub-Pilot02_from-fsnative_to-T1w_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_from-MNI152NLin6Asym_to-T1w_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_from-T1w_to-fsnative_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_from-T1w_to-MNI152NLin6Asym_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_hemi-L_inflated.surf.gii\n│   │   ├── sub-Pilot02_hemi-L_midthickness.surf.gii\n│   │   ├── sub-Pilot02_hemi-L_pial.surf.gii\n│   │   ├── sub-Pilot02_hemi-L_smoothwm.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_inflated.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_midthickness.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_pial.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_smoothwm.surf.gii\n│   │   ├── sub-Pilot02_label-CSF_probseg.nii.gz\n│   │   ├── sub-Pilot02_label-GM_probseg.nii.gz\n│   │   ├── sub-Pilot02_label-WM_probseg.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-brain_mask.json\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-preproc_T1w.json\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_dseg.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_label-CSF_probseg.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_label-GM_probseg.nii.gz\n│   │   └── sub-Pilot02_space-MNI152NLin2009cAsym_label-WM_probseg.nii.gz\n│   ├── figures\n│   │   ├── sub-Pilot02_desc-about_T1w.html\n│   │   ├── sub-Pilot02_desc-conform_T1w.html\n│   │   ├── sub-Pilot02_desc-reconall_T1w.svg\n│   │   ├── sub-Pilot02_desc-summary_T1w.html\n│   │   ├── sub-Pilot02_dseg.svg\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-pepolar_fieldmap.svg\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_T1w.svg\n│   │   ├── sub-Pilot02_space-MNI152NLin6Asym_T1w.svg\n│   │   ├── sub-Pilot02_task-rest_desc-aroma_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-bbregister_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-carpetplot_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-compcorvar_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-confoundcorr_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-rois_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-sdc_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-summary_bold.html\n│   │   ├── sub-Pilot02_task-rest_desc-t2scomp_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-t2starhist_bold.svg\n│   │   └── sub-Pilot02_task-rest_desc-validation_bold.html\n│   ├── fmap\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-coeff_fieldmap.nii.gz\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-epi_fieldmap.nii.gz\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-preproc_fieldmap.json\n│   │   └── sub-Pilot02_fmapid-auto00000_desc-preproc_fieldmap.nii.gz\n│   ├── func\n│   │   ├── sub-Pilot02_task-rest_AROMAnoiseICs.csv\n│   │   ├── sub-Pilot02_task-rest_desc-confounds_timeseries.json\n│   │   ├── sub-Pilot02_task-rest_desc-confounds_timeseries.tsv\n│   │   ├── sub-Pilot02_task-rest_desc-MELODIC_mixing.tsv\n│   │   ├── sub-Pilot02_task-rest_echo-1_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_echo-1_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_echo-2_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_echo-2_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_echo-3_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_echo-3_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_from-scanner_to-T1w_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_task-rest_from-T1w_to-scanner_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_boldref.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-aparcaseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-aseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-brain_mask.json\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_T2starmap.json\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_T2starmap.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.json\n│   │   └── sub-Pilot02_task-rest_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz\n│   └── log\n│       └── 20221118-015253_b74f70bf-bc7f-455b-959a-43d1c3268b1c\n│           └── fmriprep.toml\n└── sub-Pilot02.html\na rundown of these outputs can be found in more depth here\nYou can view the very nice boilerplate of results by opening up the sub-Pilot02.html file",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/tedana.html#tedana",
+    "href": "mrisoftware/tedana.html#tedana",
+    "title": "Tedana",
+    "section": "Tedana",
+    "text": "Tedana\n.\n└── sub-Pilot02\n    ├── dataset_description.json\n    ├── desc-adaptiveGoodSignal_mask.nii.gz\n    ├── desc-ICAAccepted_components.nii.gz\n    ├── desc-ICAAccepted_stat-z_components.nii.gz\n    ├── desc-ICA_components.nii.gz\n    ├── desc-ICA_decomposition.json\n    ├── desc-ICA_mixing.tsv\n    ├── desc-ICA_stat-z_components.nii.gz\n    ├── desc-optcomAccepted_bold.nii.gz\n    ├── desc-optcom_bold.nii.gz\n    ├── desc-optcomDenoised_bold.nii.gz\n    ├── desc-optcomRejected_bold.nii.gz\n    ├── desc-PCA_decomposition.json\n    ├── desc-PCA_metrics.json\n    ├── desc-PCA_metrics.tsv\n    ├── desc-PCA_mixing.tsv\n    ├── desc-PCA_stat-z_components.nii.gz\n    ├── desc-tedana_metrics.json\n    ├── desc-tedana_metrics.tsv\n    ├── figures\n    │   ├── carpet_accepted.svg\n    │   ├── carpet_denoised.svg\n    │   ├── carpet_optcom.svg\n    │   ├── carpet_rejected.svg\n    │   ├── comp_000.png\n    │   ├── comp_001.png\n    │   ├── comp_002.png\n    │   ├── comp_003.png\n    │   ├── comp_004.png\n    │   ├── comp_005.png\n    │   ├── comp_006.png\n    │   ├── comp_007.png\n    │   ├── comp_008.png\n    │   ├── comp_009.png\n    │   ├── comp_010.png\n    │   ├── comp_011.png\n    │   ├── comp_012.png\n    │   ├── comp_013.png\n    │   ├── comp_014.png\n    │   ├── comp_015.png\n    │   ├── comp_016.png\n    │   ├── comp_017.png\n    │   ├── comp_018.png\n    │   ├── comp_019.png\n    │   ├── comp_020.png\n    │   ├── comp_021.png\n    │   ├── comp_022.png\n    │   ├── comp_023.png\n    │   ├── comp_024.png\n    │   ├── comp_025.png\n    │   ├── comp_026.png\n    │   ├── comp_027.png\n    │   ├── comp_028.png\n    │   ├── comp_029.png\n    │   ├── comp_030.png\n    │   ├── comp_031.png\n    │   ├── comp_032.png\n    │   ├── comp_033.png\n    │   ├── comp_034.png\n    │   ├── comp_035.png\n    │   ├── comp_036.png\n    │   ├── comp_037.png\n    │   ├── comp_038.png\n    │   ├── comp_039.png\n    │   ├── comp_040.png\n    │   ├── comp_041.png\n    │   ├── comp_042.png\n    │   ├── comp_043.png\n    │   ├── comp_044.png\n    │   ├── comp_045.png\n    │   ├── comp_046.png\n    │   ├── comp_047.png\n    │   ├── comp_048.png\n    │   ├── comp_049.png\n    │   ├── comp_050.png\n    │   ├── comp_051.png\n    │   ├── comp_052.png\n    │   └── comp_053.png\n    ├── report.txt\n    ├── S0map.nii.gz\n    ├── T2starmap.nii.gz\n    ├── tedana_2022-11-18T111133.tsv\n    └── tedana_report.html\nA rundown of these outputs can be explored in more depth here\nYou can view the very nice boilerplate of results by opening up the sub-tedana_report.html file\nfirefox tedana_report.html &\nExample of rejected component:\n\nExample of accepted component:\n\nI believe the file we would want to use for further analysis would be: desc-optcomDenoised_bold.nii.gz",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#n4biasfieldcorrection",
+    "href": "mrisoftware/ants.html#n4biasfieldcorrection",
+    "title": "ANTs",
+    "section": "N4BiasFieldCorrection",
+    "text": "N4BiasFieldCorrection\nN4 is a variant of the popular N3 (nonparameteric nonuniform normalization) retrospective bias correction algorithm. Widely seen as an improvement to N3. It is almost always advisable to run N4 correction before registration.\nA simple run using default options, which is normally good enough.\nN4BiasFieldCorrection -d 3 -i ${input} -o ${output}",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#antsregistration",
+    "href": "mrisoftware/ants.html#antsregistration",
+    "title": "ANTs",
+    "section": "antsRegistration",
+    "text": "antsRegistration\nI will provide a rough call, but look here for an anatomy of an antsRegistration call.\nTips for registration:\n\nRun a bias correction before antsRegistration (i.e. N4).\nRemove the skull before antsRegistration.\nNever register a lesioned brain with a healthy brain without a proper mask.\nRegister a low resolution image onto a high resolution image, look at antsApplyTransforms if you need to register a high to low resolution image\n\nantsRegistration --dimensionality 3 --float 0 \\\n        --output [./input_to_ref_,./input_to_ref_Warped.nii.gz] \\\n        --interpolation Linear \\\n        --winsorize-image-intensities [0.005,0.995] \\\n        --use-histogram-matching 0 \\\n        --initial-moving-transform [$fixed,$moving,1] \\\n\n        --transform Rigid[0.1] \\\n        --metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n        --convergence [1000x500x250x100,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox \\\n\n        --transform Affine[0.1] \\\n        --metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n        --convergence [1000x500x250x100,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox \\\n\n        --transform SyN[0.1,3,0] \\\n        --metric CC[$fixed,$moving,1,4] \\\n        --convergence [100x70x50x20,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox\n\n\n\n\n\n\nNote\n\n\n\nRemove the spaces if using the above code. I used them to highlight the 3 registration differences.\n\n\n\nRigid = Translation + Rotation\nAffine = Translation + Rotation + Shearing + Scaling\nSyN = Diffeomorphism (non-linear)",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#antsmultivariatetemplateconstruction2.sh",
+    "href": "mrisoftware/ants.html#antsmultivariatetemplateconstruction2.sh",
+    "title": "ANTs",
+    "section": "antsMultivariateTemplateConstruction2.sh",
+    "text": "antsMultivariateTemplateConstruction2.sh\nYou need to create a folder with all the scans you want to create a template out of\n${ANTSPATH}/antsMultivariateTemplateConstruction2.sh \\\n  -d 3 \\\n  -a 1 \\\n  -o ${outputPath} \\\n  -i 5 \\\n  -g 0.25 \\\n  -j 16 \\\n  -c 0 \\\n  -k 1 \\\n  -w 1 \\\n  -n 1 \\\n  -r 1 \\\n  -l 1 \\\n  -m CC \\\n  -t SyN \\\n  -y 0 \\\n  -z ${referenceT1} \\\n  ${tempDirectory}*\n\n\n\n\n\n\nNote\n\n\n\nmy ${tempDirectory} directory ended in a /\n\n\nThe below is an illustration of how the template construction works.\n\nThe images are averaged or an initial reference is specified.\nEach image is registered to this reference.\nA new reference is created by averaging these registered images\nUsing the registered images and new reference repeat steps 3-4 for a total of i iterations\n\n\nUseful flags\n\no: You don't need to end the path with '/'\ni: From above, number of images to reference iterations\nj: number of CPU cores\nc: control for parallel computation\nk: number of modalities (i.e. just T2 image or T2 WM and GM)\nn: N4BiasField Correction of moving image\nr: rigid body registration before creating initial template\ny: rigid (translation & rotation) not used when y=0 with affine transform\nz: useful if input images are at different FOV",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#antsapplytransforms",
+    "href": "mrisoftware/ants.html#antsapplytransforms",
+    "title": "ANTs",
+    "section": "antsApplyTransforms",
+    "text": "antsApplyTransforms\nI will provide a rough idea of this function, but look here for a much more detailed overview.\nAs mentioned in antsRegistration it is advised to register a low resolution image onto a high resolution image. But if you need a high resolution image in the low resolution images space.\n\nRegister the low resolution image to the high resolution image\nApply the inverse warp to the high resolution image\n\ne.g Applying the inverse warp to register the fixed image to the moving images original space.\n${ANTSPATH}antsApplyTransforms \\\n  -d 3 \\\n  -i fixedImage.nii.gz \\\n  -r movingImage.nii.gz \\   \n  -t [movingToFixed_0GenericAffine.mat, 1] \\   \n  -t movingToFixed_1InverseWarp.nii.gz \\\n  -o fixedToMovingDeformed.nii.gz\n\ni: input\nr: reference image\nt: transform file, note differences in order in above link\no: output",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html",
+    "href": "mrisoftware/ants.html",
+    "title": "ANTs Overview",
+    "section": "",
+    "text": "Weber Research Team\nWelcome to the Weber Lab Wiki\nMRI Software\n\n\n\n\n\n\n\n\nCreated by Alexander Weber, last modified on Jul 28, 2023\n\n\n\n\nANTs stands for Advanced Normalization Tools\nI think the main website is here: http://stnava.github.io/ANTs/\nDocumentation: http://stnava.github.io/ANTsDoc/\n\"Originally, the ANTs framework provided open-source functionality for deformable image registration with small or large deformations,\"\n\"ANTs has since grown to include N4 bias correction, additional evaluation of multiple modalities and organ systems, univariate or multivariate image segmentation, tighter integration with the Insight ToolKit, a well-evaluated cortical thickness pipeline and, more recently, visualization tools and integration with R\"\n\"The most important core C++-based ANTs programs are: antsRegistration, antsApplyTransforms, Atropos for segmentation, N4BiasFieldCorrection for inhomogeneity correction, KellyKapowski for estimating thickness, ImageMath image processing utilities and, finally, sccan for sparse dimensionality reduction.\"\n\n\n\nBuild ANTs from source code [Linux / Mac OS]:\nhttps://github.com/stnava/ANTs/wiki/Compiling-ANTs-on-Linux-and-Mac-OS\n[Windows]:\nhttps://github.com/stnava/ANTs/wiki/Compiling-ANTs-on-Windows-10\nMac install detail\nThe following worked on Version 10.15\n\nInstall XCode simply by going to app store\nCheck if you have git (should come with Xcode command line tools), 'git —version' Install otherwise.\nCheck if you have cmake 'cmake —version'. Install otherwise.\n\nFollow 'SuperBuild quick reference' line by line.\nOnce completed it is time to add the paths.\nAfter the SuperBuild quick reference has installed I had 3 new files ~/ANTs, ~/build and ~/install\n\nCopy the ~/install file into ~/ANTs\nAdd all the files in ~/ANTs/Scripts into ~/ANTs/install/bin 'skip' or 'replace' duplicates, it does not matter\ncd into your home directory 'cd'\ncheck for hidden files 'ls -la'\nI edited .bash_profile but you may have to edit .profile\n'sudo nano .bash_profile' put your password in\nAdd the following lines underneath everything already in the file (changing 'johanndrayne' to your username)\n\n\n\nexport PATH=/Users/johanndrayne/ANTs/install/bin/:$PATH\nexport PATH=/Users/johanndrayne/ANTs/Scripts/:$PATH\nexport ANTSPATH=/Users/johanndrayne/ANTs/install/bin/\n\n\n\nSave and quit, then close all terminal windows and open a new one.\nCheck 'which antsRegistration' should output something similar /Users/johanndrayne/ANTs/install/bin//antsRegistration\nCheck 'antsRegistrationSyN.sh' should provide information about the function\n\nIf this did not work, consider consulting the following links\nGreydon Gilmore Installation walkthrough\nProgrammer Sought Installation walktrhough\nSource Forge ANTs Forum\nGit Issues Forum\n\n\n\nIf you want a decent, fast registration you might run something like this:\n\n\nantsRegistrationSyNQuick.sh -d 3 -f fixedimage.nii.gz -m movingimage.nii.gz -o prefix\n\n\nwhere -o represents the output prefix for the filename\nThe -d option denotes image dimensionality,\n-f option denotes the “fixed” image\nand the -m option denotes the “moving” image. The moving image will be deformed to match the fixed image.\nOutput is determined by -o where the output will be named with prefix=outputEx1.sh (the word output concatenated with the name of the Example 1 script) and include a prefix0GenericAffine.mat (the low-dimensional affine transform which may be inverted numerically), the prefix1Warp.nii.gz (the diffeomorphic transformation pulling the affine transformed moving image toward the fixed image), and the prefix1InverseWarp.nii.gz (the inverse diffeomorphic transformation pulling the fixed image toward the affine transformed moving image).\n\n\n\nhttp://stnava.github.io/fMRIANTs/\n\n\n\nhttps://sourceforge.net/p/advants/discussion/\n\n\n\n\nN4BiasFieldCorrection\nantsRegistration\nantsMultivariateTemplateConstruction2.sh\nantsApplyTransforms\nantsBrainExtraction.sh\nImageMath\n\nNOTE: When specifying files in ANTs functions, unlike FSL, ANTs wants the extension e.g.ANTs = subject-001.nii.gz || FSL = subject-001\n\n\nN4 is a variant of the popular N3 (nonparameteric nonuniform normalization) retrospective bias correction algorithm. Widely seen as an improvement to N3. It is almost always advisable to run N4 correction before registration.\nA simple run using default options, which is normally good enough.\n\n\nN4BiasFieldCorrection -d 3 -i ${input} -o ${output}\n\n\n\n\n\nI will provide a rough call, but look here for an anatomy of an antsRegistration call.\nTips for registration:\n\nRun a bias correction before antsRegistration (i.e. N4).\nRemove the skull before antsRegistration.\nNever register a lesioned brain with a healthy brain without a proper mask.\nRegister a low resolution image onto a high resolution image, look at antsApplyTransforms if you need to register a high to low resolution image\n\n\n\nantsRegistration --dimensionality 3 --float 0 \\\n        --output [./input_to_ref_,./input_to_ref_Warped.nii.gz] \\\n        --interpolation Linear \\\n        --winsorize-image-intensities [0.005,0.995] \\\n        --use-histogram-matching 0 \\\n        --initial-moving-transform [$fixed,$moving,1] \\\n\n        --transform Rigid[0.1] \\\n        --metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n        --convergence [1000x500x250x100,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox \\\n\n        --transform Affine[0.1] \\\n        --metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n        --convergence [1000x500x250x100,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox \\\n\n        --transform SyN[0.1,3,0] \\\n        --metric CC[$fixed,$moving,1,4] \\\n        --convergence [100x70x50x20,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox\n\n\nNOTE: Remove the spaces if using the above code. I used them to highlight the 3 registration differences.\n\nRigid = Translation + Rotation\nAffine = Translation + Rotation + Shearing + Scaling\nSyN = Diffeomorphism (non-linear)\n\n\n\n\nYou need to create a folder with all the scans you want to create a template out of\n\n\n${ANTSPATH}/antsMultivariateTemplateConstruction2.sh \\\n  -d 3 \\\n  -a 1 \\\n  -o ${outputPath} \\\n  -i 5 \\\n  -g 0.25 \\\n  -j 16 \\\n  -c 0 \\\n  -k 1 \\\n  -w 1 \\\n  -n 1 \\\n  -r 1 \\\n  -l 1 \\\n  -m CC \\\n  -t SyN \\\n  -y 0 \\\n  -z ${referenceT1} \\\n  ${tempDirectory}*\n\n\nNOTE: my ${tempDirectory} directory ended in a /\nThe below is an illustration of how the template construction works.\n\nThe images are averaged or an initial reference is specified.\nEach image is registered to this reference.\nA new reference is created by averaging these registered images\nUsing the registered images and new reference repeat steps 3-4 for a total of\n\ni iterations\n\nUseful flags\n\no: You don't need to end the path with '/'\ni: From above, number of images to reference iterations\nj: number of CPU cores\nc: control for parallel computation\nk: number of modalities (i.e. just T2 image or T2 WM and GM)\nn: N4BiasField Correction of moving image\nr: rigid body registration before creating initial template\ny: rigid (translation & rotation) not used when y=0 with affine transform\nz: useful if input images are at different FOV\n\n\n\n\nI will provide a rough idea of this function, but look here for a much more detailed overview.\nAs mentioned in antsRegistration it is advised to register a low resolution image onto a high resolution image. But if you need a high resolution image in the low resolution images space.\n\nRegister the low resolution image to the high resolution image\nApply the inverse warp to the high resolution image\n\ne.g Applying the inverse warp to register the fixed image to the moving images original space.\n\n\n${ANTSPATH}antsApplyTransforms \\\n  -d 3 \\\n  -i fixedImage.nii.gz \\\n  -r movingImage.nii.gz \\   \n  -t [movingToFixed_0GenericAffine.mat, 1] \\   \n  -t movingToFixed_1InverseWarp.nii.gz \\\n  -o fixedToMovingDeformed.nii.gz\n\n\n\ni: input\nr: reference image\nt: transform file, note differences in order in above link\no: output\n\n\n\n\n\nIn fmriprep or qsiprep, you may notice that the transforms are saved as h5 files\nThese h5 files are actually composite transforms comprising of an affine and a displacement field transform (non-affine)\nHere is an example of using ANTs with h5 to perform a transform:\n\n\nantsApplyTransforms -d 3 --verbose 1 -i sub-AMW01_desc-preproc_T1w.nii.gz -o T1-to-MNI.nii.gz -r sub-AMW01_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz -t sub-AMW01_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5\n\n\nto apply using a 4d to a 3d, use the -e flag:\n-e, —input-image-type 0/1/2/3/4/5\nscalar/vector/tensor/time-series/multichannel/five-dimensional\nOption specifying the input image type of scalar (default), vector, tensor, time\nseries, or multi-channel. A time series image is a scalar image defined by an\nadditional dimension for the time component whereas a multi-channel image is a\nvector image with only spatial dimensions. Five-dimensionalimages are e.g., AFNI\nstats image.\n&lt;VALUES&gt;: 0\n\n\nantsApplyTransforms -d 3 -e 3 --verbose 1 -i sub-AMW01_dir-AP_space-T1w_desc-preproc_dwi.nii.gz -o DTI-to-MNI.nii.gz -r ../anat/sub-AMW01_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz -t ../anat/sub-AMW01_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5\n\n\n\n\n\n\n\n\n\n image-20230720-205120.png (image/png)\n\n\n\n\n\n\n\nDocument generated by Confluence on Feb 13, 2025 22:21\n\nAtlassian",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#ANTs-N4BiasFieldCorrection",
+    "href": "mrisoftware/ants.html#ANTs-N4BiasFieldCorrection",
+    "title": "ANTs Overview",
+    "section": "",
+    "text": "N4 is a variant of the popular N3 (nonparameteric nonuniform normalization) retrospective bias correction algorithm. Widely seen as an improvement to N3. It is almost always advisable to run N4 correction before registration.\nA simple run using default options, which is normally good enough.\n\n\nN4BiasFieldCorrection -d 3 -i ${input} -o ${output}",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#ANTs-antsRegistration",
+    "href": "mrisoftware/ants.html#ANTs-antsRegistration",
+    "title": "ANTs Overview",
+    "section": "",
+    "text": "I will provide a rough call, but look here for an anatomy of an antsRegistration call.\nTips for registration:\n\nRun a bias correction before antsRegistration (i.e. N4).\nRemove the skull before antsRegistration.\nNever register a lesioned brain with a healthy brain without a proper mask.\nRegister a low resolution image onto a high resolution image, look at antsApplyTransforms if you need to register a high to low resolution image\n\n\n\nantsRegistration --dimensionality 3 --float 0 \\\n        --output [./input_to_ref_,./input_to_ref_Warped.nii.gz] \\\n        --interpolation Linear \\\n        --winsorize-image-intensities [0.005,0.995] \\\n        --use-histogram-matching 0 \\\n        --initial-moving-transform [$fixed,$moving,1] \\\n\n        --transform Rigid[0.1] \\\n        --metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n        --convergence [1000x500x250x100,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox \\\n\n        --transform Affine[0.1] \\\n        --metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n        --convergence [1000x500x250x100,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox \\\n\n        --transform SyN[0.1,3,0] \\\n        --metric CC[$fixed,$moving,1,4] \\\n        --convergence [100x70x50x20,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox\n\n\nNOTE: Remove the spaces if using the above code. I used them to highlight the 3 registration differences.\n\nRigid = Translation + Rotation\nAffine = Translation + Rotation + Shearing + Scaling\nSyN = Diffeomorphism (non-linear)",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#ANTs-antsMultivariateTemplateConstruction2.sh",
+    "href": "mrisoftware/ants.html#ANTs-antsMultivariateTemplateConstruction2.sh",
+    "title": "ANTs Overview",
+    "section": "",
+    "text": "You need to create a folder with all the scans you want to create a template out of\n\n\n${ANTSPATH}/antsMultivariateTemplateConstruction2.sh \\\n  -d 3 \\\n  -a 1 \\\n  -o ${outputPath} \\\n  -i 5 \\\n  -g 0.25 \\\n  -j 16 \\\n  -c 0 \\\n  -k 1 \\\n  -w 1 \\\n  -n 1 \\\n  -r 1 \\\n  -l 1 \\\n  -m CC \\\n  -t SyN \\\n  -y 0 \\\n  -z ${referenceT1} \\\n  ${tempDirectory}*\n\n\nNOTE: my ${tempDirectory} directory ended in a /\nThe below is an illustration of how the template construction works.\n\nThe images are averaged or an initial reference is specified.\nEach image is registered to this reference.\nA new reference is created by averaging these registered images\nUsing the registered images and new reference repeat steps 3-4 for a total of\n\ni iterations\n\nUseful flags\n\no: You don't need to end the path with '/'\ni: From above, number of images to reference iterations\nj: number of CPU cores\nc: control for parallel computation\nk: number of modalities (i.e. just T2 image or T2 WM and GM)\nn: N4BiasField Correction of moving image\nr: rigid body registration before creating initial template\ny: rigid (translation & rotation) not used when y=0 with affine transform\nz: useful if input images are at different FOV",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#ANTs-antsApplyTransforms",
+    "href": "mrisoftware/ants.html#ANTs-antsApplyTransforms",
+    "title": "ANTs Overview",
+    "section": "",
+    "text": "I will provide a rough idea of this function, but look here for a much more detailed overview.\nAs mentioned in antsRegistration it is advised to register a low resolution image onto a high resolution image. But if you need a high resolution image in the low resolution images space.\n\nRegister the low resolution image to the high resolution image\nApply the inverse warp to the high resolution image\n\ne.g Applying the inverse warp to register the fixed image to the moving images original space.\n\n\n${ANTSPATH}antsApplyTransforms \\\n  -d 3 \\\n  -i fixedImage.nii.gz \\\n  -r movingImage.nii.gz \\   \n  -t [movingToFixed_0GenericAffine.mat, 1] \\   \n  -t movingToFixed_1InverseWarp.nii.gz \\\n  -o fixedToMovingDeformed.nii.gz\n\n\n\ni: input\nr: reference image\nt: transform file, note differences in order in above link\no: output",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
     ]
   }
 ]

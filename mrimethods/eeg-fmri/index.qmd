@@ -1,3 +1,11 @@
 ---
 title: EEG-fMRI
+listing:
+    contents: 
+        - "/*.qmd"
+    sort: "title"
+    type: default
+    categories: true
+    sort-ui: false
+    filter-ui: false
 ---
