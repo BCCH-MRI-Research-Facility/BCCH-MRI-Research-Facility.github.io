@@ -86,7 +86,7 @@
     "href": "mrisoftware/index.html",
     "title": "MRI Software",
     "section": "",
-    "text": "3D Slicer\n\n\n\n\n\n\nsoftware\n\n\nvisualization\n\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nfmriprep\n\n\n\n\n\n\n-software -fmri -reproducibility -standardization -preprocessing\n\n\n\nAn automated and standardized way of preprocessing fmri data\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "3D Slicer\n\n\n\nsoftware\n\nvisualization\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nfmriprep\n\n\n\n-software -fmri -reproducibility -standardization -preprocessing\n\n\n\nAn automated and standardized way of preprocessing fmri data\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\nNo matching items\n Back to top",
     "crumbs": [
       "Home",
       "MRI Software"
@@ -1874,7 +1874,7 @@
     "href": "mrisoftware/fmriprep.html",
     "title": "fmriprep",
     "section": "",
-    "text": "TODO\n\n\n\n\n Back to top",
+    "text": "fMRI Prep is an automated fMRI preprocessing tool\nYou can visit their website here",
     "crumbs": [
       "Home",
       "MRI Software",
@@ -1903,6 +1903,198 @@
       "Home",
       "Tutorials",
       "BIDS (Brain Imaging Data Structure)"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#options",
+    "href": "mrisoftware/fmriprep.html#options",
+    "title": "fmriprep",
+    "section": "Options",
+    "text": "Options\n--dummy-scans NUMBER_DUMMY_SCANS\nRemove first several scans if they have not reached steady state (you can see this in a timeseries of the fmri, where there is a huge drop off from the beginning. Delete these time-points)\n--use-aroma\nadd ICA_AROMA to your preprocessing stream (default: False)\n--fd-spike-threshold REGRESSORS_FD_TH\nThreshold for flagging a frame as an outlier on the basis of framewise displacement (default: 0.5)",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#confounds",
+    "href": "mrisoftware/fmriprep.html#confounds",
+    "title": "fmriprep",
+    "section": "Confounds",
+    "text": "Confounds\nAfter it is done running, you should have confounds that are in a .tsv file in the func/ folder\nYou might have a lot of columns of data:\n\n|global_signal | global_signal_derivative1 | global_signal_derivative1_power2 | global_signal_power2 | csf | csf_derivative1 | csf_power2 | csf_derivative1_power2 | white_matter | white_matter_derivative1 | white_matter_derivative1_power2 | white_matter_power2 | csf_wm | tcompcor | std_dvars | dvars | framewise_displacement | rmsd | t_comp_cor_00 | t_comp_cor_01 | t_comp_cor_02 | t_comp_cor_03 | t_comp_cor_04 | t_comp_cor_05 | a_comp_cor_00 | a_comp_cor_01 | a_comp_cor_02 | a_comp_cor_03 | a_comp_cor_04 | a_comp_cor_05 | a_comp_cor_06 | a_comp_cor_07 | a_comp_cor_08 | a_comp_cor_09 | a_comp_cor_10 | a_comp_cor_11 | a_comp_cor_12 | a_comp_cor_13 | a_comp_cor_14 | a_comp_cor_15 | a_comp_cor_16 | a_comp_cor_17 | a_comp_cor_18 | a_comp_cor_19 | a_comp_cor_20 | a_comp_cor_21 | a_comp_cor_22 | a_comp_cor_23 | a_comp_cor_24 | a_comp_cor_25 | a_comp_cor_26 | a_comp_cor_27 | a_comp_cor_28 | a_comp_cor_29 | a_comp_cor_30 | a_comp_cor_31 | a_comp_cor_32 | a_comp_cor_33 | a_comp_cor_34 | a_comp_cor_35 | a_comp_cor_36 | a_comp_cor_37 | a_comp_cor_38 | a_comp_cor_39 | a_comp_cor_40 | a_comp_cor_41 | a_comp_cor_42 | a_comp_cor_43 | a_comp_cor_44 | a_comp_cor_45 | a_comp_cor_46 | a_comp_cor_47 | a_comp_cor_48 | a_comp_cor_49 | a_comp_cor_50 | a_comp_cor_51 | a_comp_cor_52 | a_comp_cor_53 | a_comp_cor_54 | cosine00 | cosine01 | cosine02 | cosine03 | cosine04 | cosine05 | trans_x | trans_x_derivative1 | trans_x_power2 | trans_x_derivative1_power2 | trans_y | trans_y_derivative1 | trans_y_derivative1_power2 | trans_y_power2 | trans_z | trans_z_derivative1 | trans_z_derivative1_power2 | trans_z_power2 | rot_x | rot_x_derivative1 | rot_x_derivative1_power2 | rot_x_power2 | rot_y | rot_y_derivative1 | rot_y_power2 | rot_y_derivative1_power2 | rot_z | rot_z_derivative1 | rot_z_power2 | rot_z_derivative1_power2 | motion_outlier00 | motion_outlier01 | motion_outlier02 | motion_outlier03 | motion_outlier04 | motion_outlier05 | motion_outlier06 | motion_outlier07 | motion_outlier08 | motion_outlier09 | motion_outlier10 | motion_outlier11 | motion_outlier12 | motion_outlier13 | motion_outlier14 | motion_outlier15 | motion_outlier16 | motion_outlier17 | motion_outlier18 | motion_outlier19 | motion_outlier20 | motion_outlier21 | motion_outlier22 | motion_outlier23 | motion_outlier24 | motion_outlier25 | motion_outlier26 | motion_outlier27 | motion_outlier28 | motion_outlier29 | motion_outlier30 | motion_outlier31 | motion_outlier32 | motion_outlier33 | motion_outlier34 | motion_outlier35 | motion_outlier36 | motion_outlier37 | motion_outlier38 | motion_outlier39 | motion_outlier40 | motion_outlier41 | motion_outlier42 | motion_outlier43 | motion_outlier44 | motion_outlier45 | motion_outlier46 | motion_outlier47 | motion_outlier48 | motion_outlier49 | motion_outlier50 | motion_outlier51 | motion_outlier52 | motion_outlier53 | motion_outlier54 | motion_outlier55 | motion_outlier56 | motion_outlier57 | motion_outlier58 | motion_outlier59 | motion_outlier60 | motion_outlier61 | motion_outlier62|\n\nThe most commonly used confounding time series:\n\nEstimated head-motion parameters: trans_x, trans_y, trans_z, rot_x, rot_y, rot_z - the 6 rigid-body motion parameters (3 translations and 3 rotation), estimated relative to a reference image;\nGlobal signals:\n\ncsf - the average signal within anatomically-derived eroded CSF mask;\nwhite_matter - the average signal within the anatomically-derived eroded WM masks;\nglobal_signal - the average signal within the brain mask.\n\n\nJeff says:\n\nI regress the 6 motion correction parameters, framewise_displacement, a_comp_cor_00-a_comp_cor_05, and any nonsteady_state\n\n\nDenoiser\nclone this somewhere in your $PATH (or add the path to your $PATH): https://github.com/arielletambini/denoiser\nExample\nrun_denoise.py --col_names 'a_comp_cor_00' 'a_comp_cor_01' 'a_comp_cor_02' 'a_comp_cor_03' 'a_comp_cor_04' 'a_comp_cor_05' 'framewise_displacement' 'trans_x' 'trans_y' 'trans_z' 'rot_x' 'rot_y' 'rot_z' --hp_filter .009 --lp_filter .1 sub-01_ses-01_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz sub-01_ses-01_task-rest_desc-confounds_timeseries.tsv denoise\nwhere 'denoise' is a folder I made\n\n\nFSL regfilt\nAlternatively you can use fsl_regfilt with numbers corresponding to columns. This this example, I am removing the components that AROMA identified (column numbers are in AROMAnoiseICs.csv):\nfsl_regfilt -i sub-03_ses-02_task-rest_run-1_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz -d sub-03_ses-02_task-rest_run-1_desc-MELODIC_mixing.tsv -o filtered_func_data_clean.nii.gz -f $(cat sub-03_ses-02_task-rest_run-1_AROMAnoiseICs.csv)",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#smoothing",
+    "href": "mrisoftware/fmriprep.html#smoothing",
+    "title": "fmriprep",
+    "section": "Smoothing",
+    "text": "Smoothing\nYou will need AFNI installed for this:\n3dmerge -1blur_fwhm 5.0 -doall -prefix _blur.nii boldfile.nii.gz\nfor a 5mm smoothing",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#scaling",
+    "href": "mrisoftware/fmriprep.html#scaling",
+    "title": "fmriprep",
+    "section": "Scaling",
+    "text": "Scaling\nWe will also have to scale the data to ensure that the mean BOLD signal across the run is 100, so that any deflections can be expressed in percent signal change. We will also use each run’s corresponding mask that was generated by fMRIPrep:\n3dTstat -prefix rm.mean_r${run}.nii r${run}_blur.nii\n3dcalc -a r${run}_blur.nii -b rm.mean_r${run}.nii \\\n       -c sub-08_task-flanker_run-${run}_space-MNI152NLin2009cAsym_res-2_desc-brain_mask.nii.gz                            \\\n       -expr 'c * min(200, a/b*100)*step(a)*step(b)'       \\\n       -prefix r${run}_scale.nii",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#resuming-after-a-crash",
+    "href": "mrisoftware/fmriprep.html#resuming-after-a-crash",
+    "title": "fmriprep",
+    "section": "Resuming After a Crash:",
+    "text": "Resuming After a Crash:\nThis might be useful:\nhttps://github.com/nipreps/fmriprep/issues/1731\nOr these options:\nhttps://fmriprep.org/en/stable/usage.html#reusing-precomputed-derivatives\n\nReusing a previous, partial execution of fMRIPrep\nfMRIPrep will pick up where it left off a previous execution, so long as the work directory points to the same location, and this directory has not been changed/manipulated.\n\n\nUsing a previous run of FreeSurfer\nfMRIPrep will automatically reuse previous runs of FreeSurfer if a subject directory named freesurfer/ is found in the output directory (&lt;output_dir&gt;/freesurfer). Reconstructions for each participant will be checked for completeness, and any missing components will be recomputed. You can use the —fs-subjects-dir flag to specify a different location to save FreeSurfer outputs. If precomputed results are found, they will be reused.\n\n\nThe anatomical fast-track\nStarting with version 20.1.0, fMRIPrep has a command-line argument (—anat-derivatives &lt;PATH&gt;) to indicate a path from which the preprocessed information derived from the T1w, T2w (if present) and FLAIR (if present) images. This feature was envisioned to help process very large multi-session datasets where the anatomical images can be averaged (i.e., anatomy is not expected to vary substantially across sessions). An example where this kind of processing would be useful is My Connectome, a dataset that contains 107 sessions for a single-subject. Most of these sessions contain anatomical information which, given the design of the dataset, can be averaged across sessions as no substantial changes should happen. In other words, the anatomical information of the dataset can be considered as cross-sectional. Before version 20.1.0, preprocessing this dataset would be hard for two limitations:\n\nif the dataset were to be processed in just one enormous job (be it in a commercial Cloud or HPC resources), the amount of data to be processed surely would exceed the time limitations per job (and/or related issues, such as restarting from where it left before); or\nif the processing were split in sessions, then fMRIPrep would attempt to re-process the anatomical information for every session.\n\nBecause processing this emerging type of datasets (densely sampled neuroimaging) was impractical with fMRIPrep, the option —anat-derivatives will shortcut the whole anatomical processing.",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#ubuntu",
+    "href": "mrisoftware/fmriprep.html#ubuntu",
+    "title": "fmriprep",
+    "section": "Ubuntu",
+    "text": "Ubuntu\nHere are the steps I took to install on Ubuntu:\n\nInstall Docker\nsudo apt-get update\nsudo aptitude install apt-transport-https ca-certificates curl gnupg-agent software-properties-common\ncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -\nsudo apt-key fingerprint 0EBFCD88\nwhich printed out:\n&gt; \"pub rsa4096 2017-02-22 [SCEA]\n9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88\nuid [ unknown] Docker Release (CE deb) &lt;docker@docker.com&gt;\nsub rsa4096 2017-02-22 [S]\"\nsudo add-apt-repository \\\n    \"deb [arch=amd64] https://download.docker.com/linux/ubuntu \\\n    $(lsb_release -cs) \\\n    stable\"\n\nsudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io\n\ndocker run hello-world\nWhich should print:\n\nUnable to find image 'hello-world:latest' locally\nlatest: Pulling from library/hello-world\n0e03bdcc26d7: Pull complete\nDigest: sha256:4cf9c47f86df71d48364001ede3a4fcd85ae80ce02ebad74156906caff5378bc\nStatus: Downloaded newer image for hello-world:latest\nHello from Docker!\nThis message shows that your installation appears to be working correctly.\nTo generate this message, Docker took the following steps:\n1. The Docker client contacted the Docker daemon.\n2. The Docker daemon pulled the \"hello-world\" image from the Docker Hub.\n(amd64)\n3. The Docker daemon created a new container from that image which runs the\nexecutable that produces the output you are currently reading.\n4. The Docker daemon streamed that output to the Docker client, which sent it\nto your terminal.\nTo try something more ambitious, you can run an Ubuntu container with:\ndocker run -it ubuntu bash\nShare images, automate workflows, and more with a free Docker ID:\nhttps://hub.docker.com/\nFor more examples and ideas, visit:\nhttps://docs.docker.com/get-started/\n\n\n\nInstall fmri-prep docker\npython -m pip install --user --upgrade fmriprep-docker\nWhich should print:\n\"Collecting fmriprep-docker\nDownloading fmriprep_docker-20.1.3-py2.py3-none-any.whl (20.1 MB)\n|████████████████████████████████| 20.1 MB 434 kB/s\nInstalling collected packages: fmriprep-docker\nSuccessfully installed fmriprep-docker-20.1.3\"\nBefore you can run frmi-prep, you also need to install FreeSurfer (I know, what a pain) and register for the license (it's free)\nAfter downloading the freesurfer tar.gz file:\ncd $HOME\ntar -zxvpf freesurfer-linux-centos7_x86_64-7.1.1.tar.gz\nexport FREESURFER_HOME=$HOME/freesurfer\nexport SUBJECTS_DIR=$FREESURFER_HOME/subjects\nsource $FREESURFER_HOME/SetUpFreeSurfer.sh\nAnd to test if it worked:\nwhich freeview\nThen type:\nfmriprep-docker\nWhich should print:\n\"Downloading. This may take a while…\" and then a bunch of other stuff\nIf it doesn't: try restarting your computer",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#if-you-are-getting-a-permission-denied-issue-after-installation",
+    "href": "mrisoftware/fmriprep.html#if-you-are-getting-a-permission-denied-issue-after-installation",
+    "title": "fmriprep",
+    "section": "If you are getting a Permission Denied issue after installation:",
+    "text": "If you are getting a Permission Denied issue after installation:\nhttps://docs.docker.com/engine/install/linux-postinstall/",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#running-out-of-space",
+    "href": "mrisoftware/fmriprep.html#running-out-of-space",
+    "title": "fmriprep",
+    "section": "Running Out of Space:",
+    "text": "Running Out of Space:\nhttps://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169\nhttps://briancaffey.github.io/2017/11/28/remove-root-partition-bloat-from-docker.html/\n\nExample\nExample of an error message you might get:\n\n-bash: echo: write error: No space left on device\n\nor\n\nError: writing output failed: No space left on device\n\nHow to check out much space is used:\nFirst thing I will do is run df -H to check the state of the drives and how much space they have:\n[]\nFrom the above screenshot, we see that /dev/nvme0n1p5 is mounted on / , and we see that is has 0 space available\nOk, next we want to see which directories are taking up the most space: [note: this took a painful amount of time]\ncd / && sudo du -h --max-depth=1 | sort -n\nWhich gives us:\n[]\n240G in /home looks big\n131G in /var too\n78G in /usr\nrepeating this process (sudo du -h --max-depth=1 | sort -n) eventually reveals that /var/lib/docker has 121G",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#fmriprep-Options",
+    "href": "mrisoftware/fmriprep.html#fmriprep-Options",
+    "title": "Weber Research Team : fmriprep",
+    "section": "",
+    "text": "--dummy-scans NUMBER_DUMMY_SCANS\n\n\nRemove first several scans if they have not reached steady state (you can see this in a timeseries of the fmri, where there is a huge drop off from the beginning. Delete these time-points)\n\n\n--use-aroma\n\n\nadd ICA_AROMA to your preprocessing stream (default: False)\n\n\n--fd-spike-threshold REGRESSORS_FD_TH\n\n\nThreshold for flagging a frame as an outlier on the basis of framewise displacement (default: 0.5)",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#fmriprep-Confounds",
+    "href": "mrisoftware/fmriprep.html#fmriprep-Confounds",
+    "title": "Weber Research Team : fmriprep",
+    "section": "",
+    "text": "After it is done running, you should have confounds that are in a .tsv file in the func/ folder\nYou might have a lot of columns of data:\n\n|global_signal | global_signal_derivative1 | global_signal_derivative1_power2 | global_signal_power2 | csf | csf_derivative1 | csf_power2 | csf_derivative1_power2 | white_matter | white_matter_derivative1 | white_matter_derivative1_power2 | white_matter_power2 | csf_wm | tcompcor | std_dvars | dvars | framewise_displacement | rmsd | t_comp_cor_00 | t_comp_cor_01 | t_comp_cor_02 | t_comp_cor_03 | t_comp_cor_04 | t_comp_cor_05 | a_comp_cor_00 | a_comp_cor_01 | a_comp_cor_02 | a_comp_cor_03 | a_comp_cor_04 | a_comp_cor_05 | a_comp_cor_06 | a_comp_cor_07 | a_comp_cor_08 | a_comp_cor_09 | a_comp_cor_10 | a_comp_cor_11 | a_comp_cor_12 | a_comp_cor_13 | a_comp_cor_14 | a_comp_cor_15 | a_comp_cor_16 | a_comp_cor_17 | a_comp_cor_18 | a_comp_cor_19 | a_comp_cor_20 | a_comp_cor_21 | a_comp_cor_22 | a_comp_cor_23 | a_comp_cor_24 | a_comp_cor_25 | a_comp_cor_26 | a_comp_cor_27 | a_comp_cor_28 | a_comp_cor_29 | a_comp_cor_30 | a_comp_cor_31 | a_comp_cor_32 | a_comp_cor_33 | a_comp_cor_34 | a_comp_cor_35 | a_comp_cor_36 | a_comp_cor_37 | a_comp_cor_38 | a_comp_cor_39 | a_comp_cor_40 | a_comp_cor_41 | a_comp_cor_42 | a_comp_cor_43 | a_comp_cor_44 | a_comp_cor_45 | a_comp_cor_46 | a_comp_cor_47 | a_comp_cor_48 | a_comp_cor_49 | a_comp_cor_50 | a_comp_cor_51 | a_comp_cor_52 | a_comp_cor_53 | a_comp_cor_54 | cosine00 | cosine01 | cosine02 | cosine03 | cosine04 | cosine05 | trans_x | trans_x_derivative1 | trans_x_power2 | trans_x_derivative1_power2 | trans_y | trans_y_derivative1 | trans_y_derivative1_power2 | trans_y_power2 | trans_z | trans_z_derivative1 | trans_z_derivative1_power2 | trans_z_power2 | rot_x | rot_x_derivative1 | rot_x_derivative1_power2 | rot_x_power2 | rot_y | rot_y_derivative1 | rot_y_power2 | rot_y_derivative1_power2 | rot_z | rot_z_derivative1 | rot_z_power2 | rot_z_derivative1_power2 | motion_outlier00 | motion_outlier01 | motion_outlier02 | motion_outlier03 | motion_outlier04 | motion_outlier05 | motion_outlier06 | motion_outlier07 | motion_outlier08 | motion_outlier09 | motion_outlier10 | motion_outlier11 | motion_outlier12 | motion_outlier13 | motion_outlier14 | motion_outlier15 | motion_outlier16 | motion_outlier17 | motion_outlier18 | motion_outlier19 | motion_outlier20 | motion_outlier21 | motion_outlier22 | motion_outlier23 | motion_outlier24 | motion_outlier25 | motion_outlier26 | motion_outlier27 | motion_outlier28 | motion_outlier29 | motion_outlier30 | motion_outlier31 | motion_outlier32 | motion_outlier33 | motion_outlier34 | motion_outlier35 | motion_outlier36 | motion_outlier37 | motion_outlier38 | motion_outlier39 | motion_outlier40 | motion_outlier41 | motion_outlier42 | motion_outlier43 | motion_outlier44 | motion_outlier45 | motion_outlier46 | motion_outlier47 | motion_outlier48 | motion_outlier49 | motion_outlier50 | motion_outlier51 | motion_outlier52 | motion_outlier53 | motion_outlier54 | motion_outlier55 | motion_outlier56 | motion_outlier57 | motion_outlier58 | motion_outlier59 | motion_outlier60 | motion_outlier61 | motion_outlier62|\n\nThe most commonly used confounding time series:\n\nEstimated head-motion parameters: trans_x, trans_y, trans_z, rot_x, rot_y, rot_z - the 6 rigid-body motion parameters (3 translations and 3 rotation), estimated relative to a reference image;\nGlobal signals:\n\ncsf - the average signal within anatomically-derived eroded CSF mask;\nwhite_matter - the average signal within the anatomically-derived eroded WM masks;\nglobal_signal - the average signal within the brain mask.\n\n\nJeff says:\n\nI regress the 6 motion correction parameters, framewise_displacement, a_comp_cor_00-a_comp_cor_05, and any nonsteady_state\n\n\n\nclone this somewhere in your $PATH (or add the path to your $PATH): https://github.com/arielletambini/denoiser\nExample\n\n\nrun_denoise.py --col_names 'a_comp_cor_00' 'a_comp_cor_01' 'a_comp_cor_02' 'a_comp_cor_03' 'a_comp_cor_04' 'a_comp_cor_05' 'framewise_displacement' 'trans_x' 'trans_y' 'trans_z' 'rot_x' 'rot_y' 'rot_z' --hp_filter .009 --lp_filter .1 sub-01_ses-01_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz sub-01_ses-01_task-rest_desc-confounds_timeseries.tsv denoise\n\n\nwhere 'denoise' is a folder I made\n\n\n\nAlternatively you can use fsl_regfilt with numbers corresponding to columns. This this example, I am removing the components that AROMA identified (column numbers are in AROMAnoiseICs.csv):\n\n\nfsl_regfilt -i sub-03_ses-02_task-rest_run-1_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz -d sub-03_ses-02_task-rest_run-1_desc-MELODIC_mixing.tsv -o filtered_func_data_clean.nii.gz -f $(cat sub-03_ses-02_task-rest_run-1_AROMAnoiseICs.csv)",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#fmriprep-Smoothing",
+    "href": "mrisoftware/fmriprep.html#fmriprep-Smoothing",
+    "title": "Weber Research Team : fmriprep",
+    "section": "",
+    "text": "You will need AFNI installed for this:\n\n\n3dmerge -1blur_fwhm 5.0 -doall -prefix _blur.nii boldfile.nii.gz\n\n\nfor a 5mm smoothing",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#fmriprep-Scaling",
+    "href": "mrisoftware/fmriprep.html#fmriprep-Scaling",
+    "title": "Weber Research Team : fmriprep",
+    "section": "",
+    "text": "We will also have to scale the data to ensure that the mean BOLD signal across the run is 100, so that any deflections can be expressed in percent signal change. We will also use each run’s corresponding mask that was generated by fMRIPrep:\n\n\n3dTstat -prefix rm.mean_r${run}.nii r${run}_blur.nii\n3dcalc -a r${run}_blur.nii -b rm.mean_r${run}.nii \\\n       -c sub-08_task-flanker_run-${run}_space-MNI152NLin2009cAsym_res-2_desc-brain_mask.nii.gz                            \\\n       -expr 'c * min(200, a/b*100)*step(a)*step(b)'       \\\n       -prefix r${run}_scale.nii",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#fmriprep-ResumingAfteraCrash:",
+    "href": "mrisoftware/fmriprep.html#fmriprep-ResumingAfteraCrash:",
+    "title": "Weber Research Team : fmriprep",
+    "section": "",
+    "text": "This might be useful:\nhttps://github.com/nipreps/fmriprep/issues/1731\nOr these options:\nhttps://fmriprep.org/en/stable/usage.html#reusing-precomputed-derivatives\n\n\nfMRIPrep will pick up where it left off a previous execution, so long as the work directory points to the same location, and this directory has not been changed/manipulated.\n\n\n\nfMRIPrep will automatically reuse previous runs of FreeSurfer if a subject directory named freesurfer/ is found in the output directory (&lt;output_dir&gt;/freesurfer). Reconstructions for each participant will be checked for completeness, and any missing components will be recomputed. You can use the —fs-subjects-dir flag to specify a different location to save FreeSurfer outputs. If precomputed results are found, they will be reused.\n\n\n\nStarting with version 20.1.0, fMRIPrep has a command-line argument (—anat-derivatives &lt;PATH&gt;) to indicate a path from which the preprocessed information derived from the T1w, T2w (if present) and FLAIR (if present) images. This feature was envisioned to help process very large multi-session datasets where the anatomical images can be averaged (i.e., anatomy is not expected to vary substantially across sessions). An example where this kind of processing would be useful is My Connectome, a dataset that contains 107 sessions for a single-subject. Most of these sessions contain anatomical information which, given the design of the dataset, can be averaged across sessions as no substantial changes should happen. In other words, the anatomical information of the dataset can be considered as cross-sectional. Before version 20.1.0, preprocessing this dataset would be hard for two limitations:\n\nif the dataset were to be processed in just one enormous job (be it in a commercial Cloud or HPC resources), the amount of data to be processed surely would exceed the time limitations per job (and/or related issues, such as restarting from where it left before); or\nif the processing were split in sessions, then fMRIPrep would attempt to re-process the anatomical information for every session.\n\nBecause processing this emerging type of datasets (densely sampled neuroimaging) was impractical with fMRIPrep, the option —anat-derivatives will shortcut the whole anatomical processing.",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#fmriprep-Ubuntu",
+    "href": "mrisoftware/fmriprep.html#fmriprep-Ubuntu",
+    "title": "Weber Research Team : fmriprep",
+    "section": "",
+    "text": "Here are the steps I took to install on Ubuntu:\n\n\n\n\nsudo apt-get update\nsudo aptitude install apt-transport-https ca-certificates curl gnupg-agent software-properties-common\ncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -\nsudo apt-key fingerprint 0EBFCD88\n\n\nwhich printed out:\n\"pub rsa4096 2017-02-22 [SCEA]\n9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88\nuid [ unknown] Docker Release (CE deb) &lt;docker@docker.com&gt;\nsub rsa4096 2017-02-22 [S]\"\n\n\nsudo add-apt-repository \\\n    \"deb [arch=amd64] https://download.docker.com/linux/ubuntu \\\n    $(lsb_release -cs) \\\n    stable\"\n\nsudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io\n\ndocker run hello-world\n\n\nWhich should print:\n\nUnable to find image 'hello-world:latest' locally\nlatest: Pulling from library/hello-world\n0e03bdcc26d7: Pull complete\nDigest: sha256:4cf9c47f86df71d48364001ede3a4fcd85ae80ce02ebad74156906caff5378bc\nStatus: Downloaded newer image for hello-world:latest\nHello from Docker!\nThis message shows that your installation appears to be working correctly.\nTo generate this message, Docker took the following steps:\n1. The Docker client contacted the Docker daemon.\n2. The Docker daemon pulled the \"hello-world\" image from the Docker Hub.\n(amd64)\n3. The Docker daemon created a new container from that image which runs the\nexecutable that produces the output you are currently reading.\n4. The Docker daemon streamed that output to the Docker client, which sent it\nto your terminal.\nTo try something more ambitious, you can run an Ubuntu container with:\ndocker run -it ubuntu bash\nShare images, automate workflows, and more with a free Docker ID:\nhttps://hub.docker.com/\nFor more examples and ideas, visit:\nhttps://docs.docker.com/get-started/\n\n\n\n\n\n\npython -m pip install --user --upgrade fmriprep-docker\n\n\nWhich should print:\n\"Collecting fmriprep-docker\nDownloading fmriprep_docker-20.1.3-py2.py3-none-any.whl (20.1 MB)\n|████████████████████████████████| 20.1 MB 434 kB/s\nInstalling collected packages: fmriprep-docker\nSuccessfully installed fmriprep-docker-20.1.3\"\nBefore you can run frmi-prep, you also need to install FreeSurfer (I know, what a pain) and register for the license (it's free)\nAfter downloading the freesurfer tar.gz file:\n\n\ncd $HOME\ntar -zxvpf freesurfer-linux-centos7_x86_64-7.1.1.tar.gz\nexport FREESURFER_HOME=$HOME/freesurfer\nexport SUBJECTS_DIR=$FREESURFER_HOME/subjects\nsource $FREESURFER_HOME/SetUpFreeSurfer.sh\n\n\nAnd to test if it worked:\n\n\nwhich freeview\n\n\nThen type:\n\n\nfmriprep-docker\n\n\nWhich should print:\n\"Downloading. This may take a while…\" and then a bunch of other stuff\nIf it doesn't: try restarting your computer",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#fmriprep-IfyouaregettingaPermissionDeniedissueafterinstallation:",
+    "href": "mrisoftware/fmriprep.html#fmriprep-IfyouaregettingaPermissionDeniedissueafterinstallation:",
+    "title": "Weber Research Team : fmriprep",
+    "section": "",
+    "text": "https://docs.docker.com/engine/install/linux-postinstall/",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/fmriprep.html#fmriprep-RunningOutofSpace:",
+    "href": "mrisoftware/fmriprep.html#fmriprep-RunningOutofSpace:",
+    "title": "Weber Research Team : fmriprep",
+    "section": "",
+    "text": "https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169\nhttps://briancaffey.github.io/2017/11/28/remove-root-partition-bloat-from-docker.html/\n\n\nExample of an error message you might get:\n\n-bash: echo: write error: No space left on device\n\nor\n\nError: writing output failed: No space left on device\n\nHow to check out much space is used:\nFirst thing I will do is run df -H to check the state of the drives and how much space they have:\n\nFrom the above screenshot, we see that /dev/nvme0n1p5 is mounted on / , and we see that is has 0 space available\nOk, next we want to see which directories are taking up the most space: [note: this took a painful amount of time]\ncd / && sudo du -h --max-depth=1 | sort -n\nWhich gives us:\n\n240G in /home looks big\n131G in /var too\n78G in /usr\nrepeating this process (sudo du -h --max-depth=1 | sort -n) eventually reveals that /var/lib/docker has 121G",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "fmriprep"
     ]
   }
 ]
