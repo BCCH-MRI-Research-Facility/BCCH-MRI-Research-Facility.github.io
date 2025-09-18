@@ -31,6 +31,129 @@ fmriprep will not understand. Please see the example config file and the
 note accompanying it
 [https://bcchr.atlassian.net/wiki/spaces/WRT/pages/224133153/BIDS+Brain+Imaging+Data+Structure#Config-Examples%3A](https://bcchr.atlassian.net/wiki/spaces/WRT/pages/224133153/BIDS+Brain+Imaging+Data+Structure#Config-Examples%3A)
 
+# Installation 
+
+The [website](https://fmriprep.org/) recommends installing and running through Docker.
+
+## Linux/Ubuntu 
+
+Here are the steps I took to install on Ubuntu:
+
+### Install Docker 
+
+```bash
+sudo apt-get update
+sudo aptitude install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+```
+
+which printed out:\
+
+> \"pub rsa4096 2017-02-22 \[SCEA\]\
+9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88\
+uid \[ unknown\] Docker Release (CE deb)
+\<[docker@docker.com](mailto:docker@docker.com)\>\
+sub rsa4096 2017-02-22 \[S\]\"
+
+```bash
+sudo add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
+
+sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+docker run hello-world
+```
+
+Which should print:
+
+> Unable to find image \'hello-world:latest\' locally\
+> latest: Pulling from library/hello-world\
+> 0e03bdcc26d7: Pull complete\
+> Digest:
+> sha256:4cf9c47f86df71d48364001ede3a4fcd85ae80ce02ebad74156906caff5378bc\
+> Status: Downloaded newer image for hello-world:latest
+>
+> Hello from Docker!\
+> This message shows that your installation appears to be working
+> correctly.
+>
+> To generate this message, Docker took the following steps:
+>
+> 1\. The Docker client contacted the Docker daemon.
+>
+> 2\. The Docker daemon pulled the \"hello-world\" image from the Docker
+> Hub.
+>
+> (amd64)
+>
+> 3\. The Docker daemon created a new container from that image which
+> runs the
+>
+> executable that produces the output you are currently reading.
+>
+> 4\. The Docker daemon streamed that output to the Docker client, which
+> sent it
+>
+> to your terminal.
+>
+> To try something more ambitious, you can run an Ubuntu container
+> with:\
+> `docker run -it ubuntu bash`
+>
+> Share images, automate workflows, and more with a free Docker ID:\
+> [https://hub.docker.com/](https://hub.docker.com/)
+>
+> For more examples and ideas, visit:\
+> [https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)
+
+### Install fmri-prep docker 
+
+``` 
+python -m pip install --user --upgrade fmriprep-docker
+```
+
+Which should print:\
+
+> \"Collecting fmriprep-docker\
+Downloading fmriprep_docker-20.1.3-py2.py3-none-any.whl (20.1 MB)\
+\|████████████████████████████████\| 20.1 MB 434 kB/s\
+Installing collected packages: fmriprep-docker\
+Successfully installed fmriprep-docker-20.1.3\"
+
+Before you can run `frmi-prep`, you also need to install [Freesurfer](freesurfer.qmd) and register for the license (it\'s free)
+
+After downloading the `freesurfer` `tar.gz` file:
+
+```bash
+cd $HOME
+tar -zxvpf freesurfer-linux-centos7_x86_64-7.1.1.tar.gz
+export FREESURFER_HOME=$HOME/freesurfer
+export SUBJECTS_DIR=$FREESURFER_HOME/subjects
+source $FREESURFER_HOME/SetUpFreeSurfer.sh
+```
+
+And to test if it worked:
+
+```bash
+which freeview
+```
+
+Then type:
+
+```bash
+fmriprep-docker
+```
+
+Which should print:\
+
+> \"Downloading. This may take a while...\" and then a bunch of other
+stuff
+
+If it doesn\'t: try restarting your computer
+
 # Usage Options: 
 
 [https://fmriprep.org/en/stable/usage.html](https://fmriprep.org/en/stable/usage.html)
@@ -442,139 +565,24 @@ Because processing this emerging type of datasets (densely sampled
 neuroimaging) was impractical with fMRIPrep, the option
 ---anat-derivatives will shortcut the whole anatomical processing.
 
-# Installation 
-
-The website recommends installing and running through a Docker.
-
-## Ubuntu 
-
-Here are the steps I took to install on Ubuntu:
-
-### Install Docker 
-
-```bash
-sudo apt-get update
-sudo aptitude install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
-```
-
-which printed out:\
-> \"pub rsa4096 2017-02-22 \[SCEA\]\
-9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88\
-uid \[ unknown\] Docker Release (CE deb)
-\<[docker@docker.com](mailto:docker@docker.com)\>\
-sub rsa4096 2017-02-22 \[S\]\"
-
-```bash
-sudo add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) \
-    stable"
-
-sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io
-
-docker run hello-world
-```
-
-Which should print:
-
-> Unable to find image \'hello-world:latest\' locally\
-> latest: Pulling from library/hello-world\
-> 0e03bdcc26d7: Pull complete\
-> Digest:
-> sha256:4cf9c47f86df71d48364001ede3a4fcd85ae80ce02ebad74156906caff5378bc\
-> Status: Downloaded newer image for hello-world:latest
->
-> Hello from Docker!\
-> This message shows that your installation appears to be working
-> correctly.
->
-> To generate this message, Docker took the following steps:
->
-> 1\. The Docker client contacted the Docker daemon.
->
-> 2\. The Docker daemon pulled the \"hello-world\" image from the Docker
-> Hub.
->
-> (amd64)
->
-> 3\. The Docker daemon created a new container from that image which
-> runs the
->
-> executable that produces the output you are currently reading.
->
-> 4\. The Docker daemon streamed that output to the Docker client, which
-> sent it
->
-> to your terminal.
->
-> To try something more ambitious, you can run an Ubuntu container
-> with:\
-> `docker run -it ubuntu bash`
->
-> Share images, automate workflows, and more with a free Docker ID:\
-> [https://hub.docker.com/](https://hub.docker.com/)
->
-> For more examples and ideas, visit:\
-> [https://docs.docker.com/get-started/](https://docs.docker.com/get-started/)
-
-### Install fmri-prep docker 
-
-``` 
-python -m pip install --user --upgrade fmriprep-docker
-```
-
-Which should print:\
-\"Collecting fmriprep-docker\
-Downloading fmriprep_docker-20.1.3-py2.py3-none-any.whl (20.1 MB)\
-\|████████████████████████████████\| 20.1 MB 434 kB/s\
-Installing collected packages: fmriprep-docker\
-Successfully installed fmriprep-docker-20.1.3\"
-
-Before you can run frmi-prep, you also need to install FreeSurfer (I
-know, what a pain) and register for the license (it\'s free)
-
-After downloading the freesurfer `tar.gz` file:
-
-```bash
-cd $HOME
-tar -zxvpf freesurfer-linux-centos7_x86_64-7.1.1.tar.gz
-export FREESURFER_HOME=$HOME/freesurfer
-export SUBJECTS_DIR=$FREESURFER_HOME/subjects
-source $FREESURFER_HOME/SetUpFreeSurfer.sh
-```
-
-And to test if it worked:
-
-```bash
-which freeview
-```
-
-Then type:
-
-```bash
-fmriprep-docker
-```
-
-Which should print:\
-\"Downloading. This may take a while...\" and then a bunch of other
-stuff
-
-If it doesn\'t: try restarting your computer
 
 # Multi-Echo 
 
-[https://tedana.readthedocs.io/en/stable/multi-echo.html](https://tedana.readthedocs.io/en/stable/multi-echo.html)
+If you have multi-echo fMRI data, you will want to run fmri-prep a little different.
 
-[https://neurostars.org/t/combining-fmriprep-with-me-ica-from-tedana/3710/2](https://neurostars.org/t/combining-fmriprep-with-me-ica-from-tedana/3710/2)\
-[https://neurostars.org/t/fmriprep-multi-echo/4760](https://neurostars.org/t/fmriprep-multi-echo/4760)
-
-Options:
+**Options:**
 
 ``` 
 --me-output-echos
 ```
+
+**Resources**
+
+Then you will want to use [`tedana`](tedana.qmd)
+
+- [https://tedana.readthedocs.io/en/stable/multi-echo.html](https://tedana.readthedocs.io/en/stable/multi-echo.html)
+- [https://neurostars.org/t/combining-fmriprep-with-me-ica-from-tedana/3710/2](https://neurostars.org/t/combining-fmriprep-with-me-ica-from-tedana/3710/2)\
+- [https://neurostars.org/t/fmriprep-multi-echo/4760](https://neurostars.org/t/fmriprep-multi-echo/4760)
 
 # Troubleshooting: 
 
@@ -603,7 +611,7 @@ or
 First thing I will do is run `df -H` to check the state of the drives
 and how much space they have:
 
-[![](attachments/224067676/302383105.png?width=652)]
+![](img/df.png)
 
 From the above screenshot, we see that `/dev/nvme0n1p5` is mounted on
 `/` , and we see that is has 0 space available
@@ -615,7 +623,8 @@ Ok, next we want to see which directories are taking up the most space:
 
 Which gives us:
 
-[![](attachments/224067676/302383130.png?width=215)]
+
+![](img/df2.png)
 
 240G in /home looks big\
 131G in /var too\
