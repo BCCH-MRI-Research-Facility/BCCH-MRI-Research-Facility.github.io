@@ -314,6 +314,12 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
  <span class="menu-text">fmriprep</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mrisoftware/freesurfer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Freesurfer</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -637,7 +643,17 @@ One of the created folders is named 'sourcedata/'</p>
 <h3 class="anchored" data-anchor-id="use-the-helper-function-to-get-a-sense-of-what-nifti-files-and-json-sidecar-files-you-are-working-with">3. Use the helper function to get a sense of what NIfTI files and <code>json</code> sidecar files you are working with</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dcm2bids_helper</span> <span class="at">-d</span> sourcedata/aweber-20200918_110552/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This command will convert the DICOMs files to NIfTI files and save them inside 'tmp_dcm2bids/helper/'</p>
-<p>[note: with GE data, I find this gives bad naming conventions. Alternatively you could run something like this:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>with GE data, I find this gives bad naming conventions. Alternatively you could run something like this:</p>
 <pre><code>dcm2niix -o tmp_dcm2bids/helper -b y -ba y -z y -f ‘%3s %f %d %r’ sourcedata/AMW01/</code></pre>
 <p>which translates to:<br>
 <code>-o</code> = output folder [note: this folder should already exist]<br>
@@ -646,6 +662,8 @@ One of the created folders is named 'sourcedata/'</p>
 <code>-z y</code> = gz compress images yes<br>
 <code>-f '%3s %f %d %r'</code> = filename with series number, folder name,<br>
 description and instance number]</p>
+</div>
+</div>
 <p>We should see a list of compressed NIfTI files (<code>nii.gz</code>) with their respective sidecar files (<code>.json</code>).<br>
 For this example, we will imagine we only have three acquisitions:</p>
 <pre><code>003_LONGMBfMRI_SAG_FSPGR_3D\_.9X.9X.9_20200917132212.json\

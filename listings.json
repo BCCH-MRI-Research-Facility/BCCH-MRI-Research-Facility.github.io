@@ -4,7 +4,11 @@
     "items": []
   },
   {
-    "listing": "/studentresources/index.html",
+    "listing": "/tutorials/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mriscanners/index.html",
     "items": []
   },
   {
@@ -15,17 +19,14 @@
     ]
   },
   {
-    "listing": "/mriscanners/index.html",
-    "items": []
-  },
-  {
-    "listing": "/tutorials/index.html",
+    "listing": "/studentresources/index.html",
     "items": []
   },
   {
     "listing": "/mrisoftware/index.html",
     "items": [
       "/mrisoftware/3D-Slicer.html",
+      "/mrisoftware/freesurfer.html",
       "/mrisoftware/fmriprep.html"
     ]
   },
