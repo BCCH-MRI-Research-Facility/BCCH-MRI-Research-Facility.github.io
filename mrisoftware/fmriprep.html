@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -88,7 +123,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="fmriprep – BC Children’s Research MRI Wiki">
 <meta property="og:description" content="An automated and standardized way of preprocessing fmri data">
-<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io//img/banner.png">
+<meta property="og:image" content="https://BCCH-MRI-Research-Facility.github.io/mrisoftware/attachments/224067676/302383105.png?width=652">
 <meta property="og:site_name" content="BC Children's Research MRI Wiki">
 </head>
 
@@ -365,7 +400,43 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#todo" id="toc-todo" class="nav-link active" data-scroll-target="#todo">TODO</a></li>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#bids" id="toc-bids" class="nav-link" data-scroll-target="#bids">BIDS</a></li>
+  <li><a href="#usage-options" id="toc-usage-options" class="nav-link" data-scroll-target="#usage-options">Usage Options:</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example:</a>
+  <ul class="collapse">
+  <li><a href="#options" id="toc-options" class="nav-link" data-scroll-target="#options">Options</a></li>
+  <li><a href="#confounds" id="toc-confounds" class="nav-link" data-scroll-target="#confounds">Confounds</a>
+  <ul class="collapse">
+  <li><a href="#denoiser" id="toc-denoiser" class="nav-link" data-scroll-target="#denoiser">Denoiser</a></li>
+  <li><a href="#fsl-regfilt" id="toc-fsl-regfilt" class="nav-link" data-scroll-target="#fsl-regfilt">FSL regfilt</a></li>
+  </ul></li>
+  <li><a href="#smoothing" id="toc-smoothing" class="nav-link" data-scroll-target="#smoothing">Smoothing</a></li>
+  <li><a href="#scaling" id="toc-scaling" class="nav-link" data-scroll-target="#scaling">Scaling</a></li>
+  <li><a href="#resuming-after-a-crash" id="toc-resuming-after-a-crash" class="nav-link" data-scroll-target="#resuming-after-a-crash">Resuming After a Crash:</a>
+  <ul class="collapse">
+  <li><a href="#reusing-a-previous-partial-execution-of-fmriprep" id="toc-reusing-a-previous-partial-execution-of-fmriprep" class="nav-link" data-scroll-target="#reusing-a-previous-partial-execution-of-fmriprep">Reusing a previous, partial execution of fMRIPrep</a></li>
+  <li><a href="#using-a-previous-run-of-freesurfer" id="toc-using-a-previous-run-of-freesurfer" class="nav-link" data-scroll-target="#using-a-previous-run-of-freesurfer">Using a previous run of FreeSurfer</a></li>
+  <li><a href="#the-anatomical-fast-track" id="toc-the-anatomical-fast-track" class="nav-link" data-scroll-target="#the-anatomical-fast-track">The anatomical fast-track</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
+  <ul class="collapse">
+  <li><a href="#ubuntu" id="toc-ubuntu" class="nav-link" data-scroll-target="#ubuntu">Ubuntu</a>
+  <ul class="collapse">
+  <li><a href="#install-docker" id="toc-install-docker" class="nav-link" data-scroll-target="#install-docker">Install Docker</a></li>
+  <li><a href="#install-fmri-prep-docker" id="toc-install-fmri-prep-docker" class="nav-link" data-scroll-target="#install-fmri-prep-docker">Install fmri-prep docker</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#multi-echo" id="toc-multi-echo" class="nav-link" data-scroll-target="#multi-echo">Multi-Echo</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting:</a>
+  <ul class="collapse">
+  <li><a href="#if-you-are-getting-a-permission-denied-issue-after-installation" id="toc-if-you-are-getting-a-permission-denied-issue-after-installation" class="nav-link" data-scroll-target="#if-you-are-getting-a-permission-denied-issue-after-installation">If you are getting a Permission Denied issue after installation:</a></li>
+  <li><a href="#running-out-of-space" id="toc-running-out-of-space" class="nav-link" data-scroll-target="#running-out-of-space">Running Out of Space:</a>
+  <ul class="collapse">
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/edit/main/mrisoftware/fmriprep.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/blob/main/mrisoftware/fmriprep.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/BCCH-MRI-Research-Facility/BCCH-MRI-Research-Facility.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -417,10 +488,312 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </header>
 
 
-<section id="todo" class="level1">
-<h1>TODO</h1>
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<p>fMRI Prep is an automated <a href="../mrimethods/fMRI.html">fMRI</a> preprocessing tool</p>
+<p>You can visit their website <a href="https://fmriprep.org/">here</a></p>
+</section>
+<section id="bids" class="level1">
+<h1>BIDS</h1>
+<p>Your data will need to be in <a href="../tutorials/BIDS.html">BIDS (Brain Imaging Data Structure)</a> format to work properly.</p>
+<p>If you are using blip-up/blip-down to correct for distortion, please note that currently [as of 2024] dcm2bids will create an <code>IntendedFor</code> JSON line that fmriprep will not understand. Please see the example config file and the note accompanying it <a href="https://bcchr.atlassian.net/wiki/spaces/WRT/pages/224133153/BIDS+Brain+Imaging+Data+Structure#Config-Examples%3A">https://bcchr.atlassian.net/wiki/spaces/WRT/pages/224133153/BIDS+Brain+Imaging+Data+Structure#Config-Examples%3A</a></p>
+</section>
+<section id="usage-options" class="level1">
+<h1>Usage Options:</h1>
+<p><a href="https://fmriprep.org/en/stable/usage.html">https://fmriprep.org/en/stable/usage.html</a></p>
+<p><strong>Basic</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fmriprep</span> data/bids_root/ out/ participant <span class="at">-w</span> work/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>All Options</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">usage:</span> fmriprep <span class="pp">[-</span><span class="ss">h</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">version</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">skip_bids_validation</span><span class="pp">]</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--participant-label</span> PARTICIPANT_LABEL [PARTICIPANT_LABEL ...]]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[-t</span> TASK_ID] [--echo-idx ECHO_IDX] [--bids-filter-file FILE]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--anat-derivatives</span> PATH] [--bids-database-dir PATH]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--nprocs</span> NPROCS] [--omp-nthreads OMP_NTHREADS]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--mem</span> MEMORY_GB] <span class="pp">[--</span><span class="ss">low</span><span class="pp">-</span><span class="ss">mem</span><span class="pp">]</span> [--use-plugin FILE]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--anat-only]</span> <span class="pp">[--</span><span class="ss">boilerplate_only</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">md</span><span class="pp">-</span><span class="ss">only</span><span class="pp">-</span><span class="ss">boilerplate</span><span class="pp">]</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--error-on-aroma-warnings]</span> <span class="pp">[-</span><span class="ss">v</span><span class="pp">]</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--ignore</span> <span class="dt">{fieldmaps</span><span class="op">,</span><span class="dt">slicetiming</span><span class="op">,</span><span class="dt">sbref</span><span class="op">,</span><span class="dt">t2w</span><span class="op">,</span><span class="dt">flair}</span> [<span class="dt">{fieldmaps</span><span class="op">,</span><span class="dt">slicetiming</span><span class="op">,</span><span class="dt">sbref</span><span class="op">,</span><span class="dt">t2w</span><span class="op">,</span><span class="dt">flair}</span> ...]]</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--longitudinal]</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--output-spaces</span> [OUTPUT_SPACES [OUTPUT_SPACES ...]]]</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--bold2t1w-init</span> <span class="dt">{register</span><span class="op">,</span><span class="dt">header}</span>] [--bold2t1w-dof <span class="dt">{6</span><span class="op">,</span><span class="dt">9</span><span class="op">,</span><span class="dt">12}</span>]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--force-bbr]</span> <span class="pp">[--</span><span class="ss">force</span><span class="pp">-</span><span class="ss">no</span><span class="pp">-</span><span class="ss">bbr</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">medial</span><span class="pp">-</span><span class="ss">surface</span><span class="pp">-</span><span class="ss">nan</span><span class="pp">]</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--dummy-scans</span> DUMMY_SCANS] [--random-seed _RANDOM_SEED]</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--use-aroma]</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--aroma-melodic-dimensionality</span> AROMA_MELODIC_DIM]</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--return-all-components]</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--fd-spike-threshold</span> REGRESSORS_FD_TH]</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--dvars-spike-threshold</span> REGRESSORS_DVARS_TH]</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--skull-strip-template</span> SKULL_STRIP_TEMPLATE]</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--skull-strip-fixed-seed]</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--skull-strip-t1w</span> <span class="dt">{auto</span><span class="op">,</span><span class="dt">skip</span><span class="op">,</span><span class="dt">force}</span>] <span class="pp">[--</span><span class="ss">fmap</span><span class="pp">-</span><span class="ss">bspline</span><span class="pp">]</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--fmap-no-demean]</span> <span class="pp">[--</span><span class="ss">use</span><span class="pp">-</span><span class="ss">syn</span><span class="pp">-</span><span class="ss">sdc</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">force</span><span class="pp">-</span><span class="ss">syn</span><span class="pp">]</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--fs-license-file</span> FILE] [--fs-subjects-dir PATH]</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--no-submm-recon]</span> [--cifti-output <span class="pp">[</span><span class="ss">{91k,170k}</span><span class="pp">]</span> <span class="kw">|</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>                <span class="ex">--fs-no-reconall]</span> [--output-layout <span class="dt">{bids</span><span class="op">,</span><span class="dt">legacy}</span>]</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[-w</span> WORK_DIR] <span class="pp">[--</span><span class="ss">clean</span><span class="pp">-</span><span class="ss">workdir</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">resource</span><span class="pp">-</span><span class="ss">monitor</span><span class="pp">]</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--reports-only]</span> [--config-file FILE] <span class="pp">[--</span><span class="ss">write</span><span class="pp">-</span><span class="ss">graph</span><span class="pp">]</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--stop-on-first-crash]</span> <span class="pp">[--</span><span class="ss">notrack</span><span class="pp">]</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>                <span class="ex">[--debug</span> <span class="dt">{compcor</span><span class="op">,</span><span class="dt">all}</span> [<span class="dt">{compcor</span><span class="op">,</span><span class="dt">all}</span> ...]] <span class="pp">[--</span><span class="ss">sloppy</span><span class="pp">]</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>                <span class="ex">bids_dir</span> output_dir {participant}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Possibly Useful Options to Think About</strong></p>
+<pre><code>--skip_bids_validation, --skip-bids-validation</code></pre>
+<p>assume the input dataset is BIDS compliant and skip the validation</p>
+<pre><code>--anat-derivatives</code></pre>
+<p>Reuse the anatomical derivatives from another fMRIPrep run or calculated with an alternative processing tool (NOT RECOMMENDED).</p>
+<pre><code>--bids-database-dir</code></pre>
+<p>Path to an existing PyBIDS database folder, for faster indexing (especially useful for large datasets).</p>
+<pre><code>--nprocs, --nthreads, --n_cpus, --n-cpus</code></pre>
+<p>maximum number of threads across all processes</p>
+<pre><code>--omp-nthreads</code></pre>
+<p>maximum number of threads per-process</p>
+<pre><code>--mem, --mem_mb, --mem-mb</code></pre>
+<p>upper bound memory limit for fMRIPrep processes</p>
+<pre><code>--ignore</code></pre>
+<p>Possible choices: fieldmaps, slicetiming, sbref, t2w, flair<br>
+ignore selected aspects of the input dataset to disable corresponding parts of the workflow (a space delimited list)</p>
+<pre><code>--output-spaces</code></pre>
+<p>Standard and non-standard spaces to resample anatomical and functional images to. Standard spaces may be specified by the form &lt;SPACE&gt;[:cohort-&lt;label&gt;][:res-&lt;resolution&gt;][…], where &lt;SPACE&gt; is a keyword designating a spatial reference, and may be followed by optional, colon-separated parameters. Non-standard spaces imply specific orientations and sampling grids. Important to note, the res-* modifier does not define the resolution used for the spatial normalization. To generate no BOLD outputs, use this option without specifying any spatial references. For further details, please check out <a href="https://fmriprep.readthedocs.io/en/20.2.1/spaces.html">https://fmriprep.readthedocs.io/en/20.2.1/spaces.html</a></p>
+<pre><code>--dummy-scans</code></pre>
+<p>Number of non steady state volumes.</p>
+<pre><code>--use-aroma</code></pre>
+<p>add ICA_AROMA to your preprocessing stream</p>
+<pre><code>--aroma-melodic-dimensionality</code></pre>
+<p>Exact or maximum number of MELODIC components to estimate (positive = exact, negative = maximum)</p>
+<pre><code>--fd-spike-threshold</code></pre>
+<p>Threshold for flagging a frame as an outlier on the basis of framewise displacement</p>
+<pre><code>--use-syn-sdc</code></pre>
+<p>EXPERIMENTAL: Use fieldmap-free distortion correction</p>
+<pre><code>--fs-license-file</code></pre>
+<p>Path to FreeSurfer license key file. Get it (for free) by registering at <a href="https://surfer.nmr.mgh.harvard.edu/registration.html">https://surfer.nmr.mgh.harvard.edu/registration.html</a></p>
+<pre><code>--fs-subjects-dir</code></pre>
+<p>Path to existing FreeSurfer subjects directory to reuse. (default: OUTPUT_DIR/freesurfer)</p>
+<pre><code>--fs-no-reconall</code></pre>
+<p>disable FreeSurfer surface preprocessing.</p>
+<pre><code>-w, --work-dir</code></pre>
+<p>path where intermediate results should be stored</p>
+<pre><code>--resource-monitor</code></pre>
+<p>enable Nipype’s resource monitoring to keep track of memory and CPU usage</p>
+</section>
+<section id="example" class="level1">
+<h1>Example:</h1>
+<p>The files have to be in <a href="../tutorials/BIDS.html">BIDS (Brain Imaging Data Structure)</a></p>
+<p>For my example, I have:</p>
+<pre><code>derivatives/
+sub-01/
+  anat/
+    sub-01_ses-1_T1w.json
+    sub-01_ses-1_T1w.nii.gz
+  func/
+    sub-01_ses-1_task-rest_run-1_boldAP.nii.gz
+    sub-01_ses-1_task-rest_run-1_AP.json</code></pre>
+<p>go to the parent folder that contains the sub-01 folder in it</p>
+<p>then type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fmriprep-docker</span> . ./derivatives/ participant <span class="at">--fs-license-file</span> <span class="va">$HOME</span>/freesurfer/license.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This should take a while…</p>
+<p>When it is done, you will have a ./derivatives/ folder, and in that you will have a fmriprep/ folder, which has a sub# folder, and then anat/ and func/ folders</p>
+<section id="options" class="level2">
+<h2 class="anchored" data-anchor-id="options">Options</h2>
+<pre><code>--dummy-scans NUMBER_DUMMY_SCANS</code></pre>
+<p>Remove first several scans if they have not reached steady state (you can see this in a timeseries of the fmri, where there is a huge drop off from the beginning. Delete these time-points)</p>
+<pre><code>--use-aroma</code></pre>
+<p>add ICA_AROMA to your preprocessing stream (default: False)</p>
+<pre><code>--fd-spike-threshold REGRESSORS_FD_TH</code></pre>
+<p>Threshold for flagging a frame as an outlier on the basis of framewise displacement (default: 0.5)</p>
+</section>
+<section id="confounds" class="level2">
+<h2 class="anchored" data-anchor-id="confounds">Confounds</h2>
+<p>After it is done running, you should have confounds that are in a .tsv file in the func/ folder</p>
+<p>You might have a lot of columns of data:</p>
+<blockquote class="blockquote">
+<p>|global_signal | global_signal_derivative1 | global_signal_derivative1_power2 | global_signal_power2 | csf | csf_derivative1 | csf_power2 | csf_derivative1_power2 | white_matter | white_matter_derivative1 | white_matter_derivative1_power2 | white_matter_power2 | csf_wm | tcompcor | std_dvars | dvars | framewise_displacement | rmsd | t_comp_cor_00 | t_comp_cor_01 | t_comp_cor_02 | t_comp_cor_03 | t_comp_cor_04 | t_comp_cor_05 | a_comp_cor_00 | a_comp_cor_01 | a_comp_cor_02 | a_comp_cor_03 | a_comp_cor_04 | a_comp_cor_05 | a_comp_cor_06 | a_comp_cor_07 | a_comp_cor_08 | a_comp_cor_09 | a_comp_cor_10 | a_comp_cor_11 | a_comp_cor_12 | a_comp_cor_13 | a_comp_cor_14 | a_comp_cor_15 | a_comp_cor_16 | a_comp_cor_17 | a_comp_cor_18 | a_comp_cor_19 | a_comp_cor_20 | a_comp_cor_21 | a_comp_cor_22 | a_comp_cor_23 | a_comp_cor_24 | a_comp_cor_25 | a_comp_cor_26 | a_comp_cor_27 | a_comp_cor_28 | a_comp_cor_29 | a_comp_cor_30 | a_comp_cor_31 | a_comp_cor_32 | a_comp_cor_33 | a_comp_cor_34 | a_comp_cor_35 | a_comp_cor_36 | a_comp_cor_37 | a_comp_cor_38 | a_comp_cor_39 | a_comp_cor_40 | a_comp_cor_41 | a_comp_cor_42 | a_comp_cor_43 | a_comp_cor_44 | a_comp_cor_45 | a_comp_cor_46 | a_comp_cor_47 | a_comp_cor_48 | a_comp_cor_49 | a_comp_cor_50 | a_comp_cor_51 | a_comp_cor_52 | a_comp_cor_53 | a_comp_cor_54 | cosine00 | cosine01 | cosine02 | cosine03 | cosine04 | cosine05 | trans_x | trans_x_derivative1 | trans_x_power2 | trans_x_derivative1_power2 | trans_y | trans_y_derivative1 | trans_y_derivative1_power2 | trans_y_power2 | trans_z | trans_z_derivative1 | trans_z_derivative1_power2 | trans_z_power2 | rot_x | rot_x_derivative1 | rot_x_derivative1_power2 | rot_x_power2 | rot_y | rot_y_derivative1 | rot_y_power2 | rot_y_derivative1_power2 | rot_z | rot_z_derivative1 | rot_z_power2 | rot_z_derivative1_power2 | motion_outlier00 | motion_outlier01 | motion_outlier02 | motion_outlier03 | motion_outlier04 | motion_outlier05 | motion_outlier06 | motion_outlier07 | motion_outlier08 | motion_outlier09 | motion_outlier10 | motion_outlier11 | motion_outlier12 | motion_outlier13 | motion_outlier14 | motion_outlier15 | motion_outlier16 | motion_outlier17 | motion_outlier18 | motion_outlier19 | motion_outlier20 | motion_outlier21 | motion_outlier22 | motion_outlier23 | motion_outlier24 | motion_outlier25 | motion_outlier26 | motion_outlier27 | motion_outlier28 | motion_outlier29 | motion_outlier30 | motion_outlier31 | motion_outlier32 | motion_outlier33 | motion_outlier34 | motion_outlier35 | motion_outlier36 | motion_outlier37 | motion_outlier38 | motion_outlier39 | motion_outlier40 | motion_outlier41 | motion_outlier42 | motion_outlier43 | motion_outlier44 | motion_outlier45 | motion_outlier46 | motion_outlier47 | motion_outlier48 | motion_outlier49 | motion_outlier50 | motion_outlier51 | motion_outlier52 | motion_outlier53 | motion_outlier54 | motion_outlier55 | motion_outlier56 | motion_outlier57 | motion_outlier58 | motion_outlier59 | motion_outlier60 | motion_outlier61 | motion_outlier62|</p>
+</blockquote>
+<p>The most commonly used confounding time series:</p>
+<ul>
+<li><p>Estimated head-motion parameters: trans_x, trans_y, trans_z, rot_x, rot_y, rot_z - the 6 rigid-body motion parameters (3 translations and 3 rotation), estimated relative to a reference image;</p></li>
+<li><p>Global signals:</p>
+<ul>
+<li><p>csf - the average signal within anatomically-derived eroded CSF mask;</p></li>
+<li><p>white_matter - the average signal within the anatomically-derived eroded WM masks;</p></li>
+<li><p>global_signal - the average signal within the brain mask.</p></li>
+</ul></li>
+</ul>
+<p>Jeff says:</p>
+<blockquote class="blockquote">
+<p>I regress the 6 motion correction parameters, framewise_displacement, a_comp_cor_00-a_comp_cor_05, and any nonsteady_state</p>
+</blockquote>
+<section id="denoiser" class="level3">
+<h3 class="anchored" data-anchor-id="denoiser">Denoiser</h3>
+<p>clone this somewhere in your $PATH (or add the path to your $PATH): <a href="https://github.com/arielletambini/denoiser">https://github.com/arielletambini/denoiser</a></p>
+<p><strong>Example</strong></p>
+<pre><code>run_denoise.py --col_names 'a_comp_cor_00' 'a_comp_cor_01' 'a_comp_cor_02' 'a_comp_cor_03' 'a_comp_cor_04' 'a_comp_cor_05' 'framewise_displacement' 'trans_x' 'trans_y' 'trans_z' 'rot_x' 'rot_y' 'rot_z' --hp_filter .009 --lp_filter .1 sub-01_ses-01_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz sub-01_ses-01_task-rest_desc-confounds_timeseries.tsv denoise</code></pre>
+<p>where 'denoise' is a folder I made</p>
+</section>
+<section id="fsl-regfilt" class="level3">
+<h3 class="anchored" data-anchor-id="fsl-regfilt">FSL regfilt</h3>
+<p>Alternatively you can use <code>fsl_regfilt</code> with numbers corresponding to columns. This this example, I am removing the components that AROMA identified (column numbers are in AROMAnoiseICs.csv):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fsl_regfilt</span> <span class="at">-i</span> sub-03_ses-02_task-rest_run-1_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz <span class="at">-d</span> sub-03_ses-02_task-rest_run-1_desc-MELODIC_mixing.tsv <span class="at">-o</span> filtered_func_data_clean.nii.gz <span class="at">-f</span> <span class="va">$(</span><span class="fu">cat</span> sub-03_ses-02_task-rest_run-1_AROMAnoiseICs.csv<span class="va">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="smoothing" class="level2">
+<h2 class="anchored" data-anchor-id="smoothing">Smoothing</h2>
+<p>You will need AFNI installed for this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">3dmerge</span> <span class="at">-1blur_fwhm</span> 5.0 <span class="at">-doall</span> <span class="at">-prefix</span> _blur.nii boldfile.nii.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>for a 5mm smoothing</p>
+</section>
+<section id="scaling" class="level2">
+<h2 class="anchored" data-anchor-id="scaling">Scaling</h2>
+<p>We will also have to scale the data to ensure that the mean BOLD signal across the run is 100, so that any deflections can be expressed in percent signal change. We will also use each run’s corresponding mask that was generated by fMRIPrep:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">3dTstat</span> <span class="at">-prefix</span> rm.mean_r<span class="va">${run}</span>.nii r<span class="va">${run}</span>_blur.nii</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ex">3dcalc</span> <span class="at">-a</span> r<span class="va">${run}</span>_blur.nii <span class="at">-b</span> rm.mean_r<span class="va">${run}</span>.nii <span class="dt">\</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">-c</span> sub-08_task-flanker_run-<span class="va">${run}</span>_space-MNI152NLin2009cAsym_res-2_desc-brain_mask.nii.gz                            <span class="dt">\</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">-expr</span> <span class="st">'c * min(200, a/b*100)*step(a)*step(b)'</span>       <span class="dt">\</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">-prefix</span> r<span class="va">${run}</span>_scale.nii</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="resuming-after-a-crash" class="level2">
+<h2 class="anchored" data-anchor-id="resuming-after-a-crash">Resuming After a Crash:</h2>
+<p>This might be useful:<br>
+<a href="https://github.com/nipreps/fmriprep/issues/1731">https://github.com/nipreps/fmriprep/issues/1731</a></p>
+<p>Or these options:</p>
+<p><a href="https://fmriprep.org/en/stable/usage.html#reusing-precomputed-derivatives">https://fmriprep.org/en/stable/usage.html#reusing-precomputed-derivatives</a></p>
+<section id="reusing-a-previous-partial-execution-of-fmriprep" class="level3">
+<h3 class="anchored" data-anchor-id="reusing-a-previous-partial-execution-of-fmriprep">Reusing a previous, partial execution of fMRIPrep</h3>
+<p>fMRIPrep will pick up where it left off a previous execution, so long as the work directory points to the same location, and this directory has not been changed/manipulated.</p>
+</section>
+<section id="using-a-previous-run-of-freesurfer" class="level3">
+<h3 class="anchored" data-anchor-id="using-a-previous-run-of-freesurfer">Using a previous run of FreeSurfer</h3>
+<p>fMRIPrep will automatically reuse previous runs of FreeSurfer if a subject directory named freesurfer/ is found in the output directory (&lt;output_dir&gt;/freesurfer). Reconstructions for each participant will be checked for completeness, and any missing components will be recomputed. You can use the —fs-subjects-dir flag to specify a different location to save FreeSurfer outputs. If precomputed results are found, they will be reused.</p>
+</section>
+<section id="the-anatomical-fast-track" class="level3">
+<h3 class="anchored" data-anchor-id="the-anatomical-fast-track">The anatomical fast-track</h3>
+<p>Starting with version 20.1.0, fMRIPrep has a command-line argument (—anat-derivatives &lt;PATH&gt;) to indicate a path from which the preprocessed information derived from the T1w, T2w (if present) and FLAIR (if present) images. This feature was envisioned to help process very large multi-session datasets where the anatomical images can be averaged (i.e., anatomy is not expected to vary substantially across sessions). An example where this kind of processing would be useful is My Connectome, a dataset that contains 107 sessions for a single-subject. Most of these sessions contain anatomical information which, given the design of the dataset, can be averaged across sessions as no substantial changes should happen. In other words, the anatomical information of the dataset can be considered as cross-sectional. Before version 20.1.0, preprocessing this dataset would be hard for two limitations:</p>
+<ul>
+<li><p>if the dataset were to be processed in just one enormous job (be it in a commercial Cloud or HPC resources), the amount of data to be processed surely would exceed the time limitations per job (and/or related issues, such as restarting from where it left before); or</p></li>
+<li><p>if the processing were split in sessions, then fMRIPrep would attempt to re-process the anatomical information for every session.</p></li>
+</ul>
+<p>Because processing this emerging type of datasets (densely sampled neuroimaging) was impractical with fMRIPrep, the option —anat-derivatives will shortcut the whole anatomical processing.</p>
+</section>
+</section>
+</section>
+<section id="installation" class="level1">
+<h1>Installation</h1>
+<p>The website recommends installing and running through a Docker.</p>
+<section id="ubuntu" class="level2">
+<h2 class="anchored" data-anchor-id="ubuntu">Ubuntu</h2>
+<p>Here are the steps I took to install on Ubuntu:</p>
+<section id="install-docker" class="level3">
+<h3 class="anchored" data-anchor-id="install-docker">Install Docker</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> aptitude install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg <span class="kw">|</span> <span class="fu">sudo</span> apt-key add <span class="at">-</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-key fingerprint 0EBFCD88</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>which printed out:<br>
+&gt; "pub rsa4096&nbsp;2017-02-22 [SCEA]<br>
+9DC8&nbsp;5822&nbsp;9FC7 DD38&nbsp;854A E2D8&nbsp;8D81&nbsp;803C 0EBF CD88<br>
+uid [ unknown] Docker Release (CE deb) &lt;<a href="mailto:docker@docker.com">docker@docker.com</a>&gt;<br>
+sub rsa4096&nbsp;2017-02-22 [S]"</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="dt">\</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="dt">\</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="va">$(</span><span class="ex">lsb_release</span> <span class="at">-cs</span><span class="va">)</span><span class="st"> </span><span class="dt">\</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="st">    stable"</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt-get install docker-ce docker-ce-cli containerd.io</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Which should print:</p>
+<blockquote class="blockquote">
+<p>Unable to find image 'hello-world:latest' locally<br>
+latest: Pulling from library/hello-world<br>
+0e03bdcc26d7: Pull complete<br>
+Digest: sha256:4cf9c47f86df71d48364001ede3a4fcd85ae80ce02ebad74156906caff5378bc<br>
+Status: Downloaded newer image for hello-world:latest</p>
+<p>Hello from Docker!<br>
+This message shows that your installation appears to be working correctly.</p>
+<p>To generate this message, Docker took the following steps:</p>
+<p>1. The Docker client contacted the Docker daemon.</p>
+<p>2. The Docker daemon pulled the "hello-world" image from the Docker Hub.</p>
+<p>(amd64)</p>
+<p>3. The Docker daemon created a new container from that image which runs the</p>
+<p>executable that produces the output you are currently reading.</p>
+<p>4. The Docker daemon streamed that output to the Docker client, which sent it</p>
+<p>to your terminal.</p>
+<p>To try something more ambitious, you can run an Ubuntu container with:<br>
+<code>docker run -it ubuntu bash</code></p>
+<p>Share images, automate workflows, and more with a free Docker ID:<br>
+<a href="https://hub.docker.com/">https://hub.docker.com/</a></p>
+<p>For more examples and ideas, visit:<br>
+<a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a></p>
+</blockquote>
+</section>
+<section id="install-fmri-prep-docker" class="level3">
+<h3 class="anchored" data-anchor-id="install-fmri-prep-docker">Install fmri-prep docker</h3>
+<pre><code>python -m pip install --user --upgrade fmriprep-docker</code></pre>
+<p>Which should print:<br>
+"Collecting fmriprep-docker<br>
+Downloading fmriprep_docker-20.1.3-py2.py3-none-any.whl (20.1&nbsp;MB)<br>
+|████████████████████████████████| 20.1&nbsp;MB 434&nbsp;kB/s<br>
+Installing collected packages: fmriprep-docker<br>
+Successfully installed fmriprep-docker-20.1.3"</p>
+<p>Before you can run frmi-prep, you also need to install FreeSurfer (I know, what a pain) and register for the license (it's free)</p>
+<p>After downloading the freesurfer <code>tar.gz</code> file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$HOME</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-zxvpf</span> freesurfer-linux-centos7_x86_64-7.1.1.tar.gz</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">FREESURFER_HOME</span><span class="op">=</span><span class="va">$HOME</span>/freesurfer</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">SUBJECTS_DIR</span><span class="op">=</span><span class="va">$FREESURFER_HOME</span>/subjects</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> <span class="va">$FREESURFER_HOME</span>/SetUpFreeSurfer.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>And to test if it worked:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> freeview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fmriprep-docker</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Which should print:<br>
+"Downloading. This may take a while…" and then a bunch of other stuff</p>
+<p>If it doesn't: try restarting your computer</p>
+</section>
+</section>
+</section>
+<section id="multi-echo" class="level1">
+<h1>Multi-Echo</h1>
+<p><a href="https://tedana.readthedocs.io/en/stable/multi-echo.html">https://tedana.readthedocs.io/en/stable/multi-echo.html</a></p>
+<p><a href="https://neurostars.org/t/combining-fmriprep-with-me-ica-from-tedana/3710/2">https://neurostars.org/t/combining-fmriprep-with-me-ica-from-tedana/3710/2</a><br>
+<a href="https://neurostars.org/t/fmriprep-multi-echo/4760">https://neurostars.org/t/fmriprep-multi-echo/4760</a></p>
+<p>Options:</p>
+<pre><code>--me-output-echos</code></pre>
+</section>
+<section id="troubleshooting" class="level1">
+<h1>Troubleshooting:</h1>
+<section id="if-you-are-getting-a-permission-denied-issue-after-installation" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-are-getting-a-permission-denied-issue-after-installation">If you are getting a Permission Denied issue after installation:</h2>
+<p><a href="https://docs.docker.com/engine/install/linux-postinstall/">https://docs.docker.com/engine/install/linux-postinstall/</a></p>
+</section>
+<section id="running-out-of-space" class="level2">
+<h2 class="anchored" data-anchor-id="running-out-of-space">Running Out of Space:</h2>
+<p><a href="https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169">https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169</a></p>
+<p><a href="https://briancaffey.github.io/2017/11/28/remove-root-partition-bloat-from-docker.html/">https://briancaffey.github.io/2017/11/28/remove-root-partition-bloat-from-docker.html/</a></p>
+<section id="example-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-1">Example</h3>
+<p>Example of an error message you might get:</p>
+<blockquote class="blockquote">
+<p>-bash: echo: write error: No space left on device</p>
+</blockquote>
+<p>or</p>
+<blockquote class="blockquote">
+<p>Error: writing output failed: No space left on device</p>
+</blockquote>
+<p><strong>How to check out much space is used:</strong></p>
+<p>First thing I will do is run <code>df -H</code> to check the state of the drives and how much space they have:</p>
+<p>[<img src="attachments/224067676/302383105.png?width=652" class="img-fluid">]</p>
+<p>From the above screenshot, we see that <code>/dev/nvme0n1p5</code> is mounted on <code>/</code> , and we see that is has 0 space available</p>
+<p>Ok, next we want to see which directories are taking up the most space: [note: this took a painful amount of time]</p>
+<p><code>cd / &amp;&amp; sudo du -h --max-depth=1 | sort -n</code></p>
+<p>Which gives us:</p>
+<p>[<img src="attachments/224067676/302383130.png?width=215" class="img-fluid">]</p>
+<p>240G in /home looks big<br>
+131G in /var too<br>
+78G in /usr</p>
+<p>repeating this process (<code>sudo du -h --max-depth=1 | sort -n</code>) eventually reveals that <code>/var/lib/docker</code> has 121G</p>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
