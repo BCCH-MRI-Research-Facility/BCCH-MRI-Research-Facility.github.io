@@ -1,0 +1,17 @@
+---
+title: "My contribution"
+author: "A Weber"
+date: 2024-12-04
+date-modified: "2024/12/04"
+description: "This is going to change everything"
+highlight-style: github
+categories:
+    - collaboration
+---
+
+# Header 1
+
+Some text
+
+[A link](www.somewebsite)
+
