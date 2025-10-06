@@ -3,6 +3,8 @@ title: "BCCH MRI Research Facility Wiki Page"
 # title-block-banner: /img/banner.png
 ---
 
+My awesome changes
+
 ![](/img/banner.jpg){width=100%}
 
 # Overview
