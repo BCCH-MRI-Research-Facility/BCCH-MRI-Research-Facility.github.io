@@ -1,8 +1,8 @@
 ---
 title: "Mattermost: Instant Messaging / Stay in Touch"
-# author: "A Weber"
-# date: 2024-12-04
-# date-modified: "2024/12/04"
+author: "A Weber"
+date: 2024-12-04
+date-modified: "2024/12/04"
 description: "Instant messaging app for users of the research MRI facility"
 highlight-style: github
 categories:
