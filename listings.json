@@ -15,14 +15,7 @@
     ]
   },
   {
-    "listing": "/orientation/index.html",
-    "items": [
-      "/orientation/mrisafetyfaq.html",
-      "/orientation/instantmessaging.html"
-    ]
-  },
-  {
-    "listing": "/scienceresources/index.html",
+    "listing": "/bcchrimriresources/index.html",
     "items": []
   },
   {
@@ -37,8 +30,16 @@
     ]
   },
   {
-    "listing": "/bcchrimriresources/index.html",
+    "listing": "/scienceresources/index.html",
     "items": []
+  },
+  {
+    "listing": "/orientation/index.html",
+    "items": [
+      "/orientation/contribute.html",
+      "/orientation/mrisafetyfaq.html",
+      "/orientation/instantmessaging.html"
+    ]
   },
   {
     "listing": "/mrimethods/index.html",
