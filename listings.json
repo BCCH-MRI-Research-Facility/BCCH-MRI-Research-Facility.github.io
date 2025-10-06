@@ -1,5 +1,42 @@
 [
   {
+    "listing": "/mriscanners/index.html",
+    "items": []
+  },
+  {
+    "listing": "/studentresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mrimethods/eeg-fmri/index.html",
+    "items": [
+      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html",
+      "/mrimethods/eeg-fmri/gradient-removal.html"
+    ]
+  },
+  {
+    "listing": "/orientation/index.html",
+    "items": [
+      "/orientation/mrisafetyfaq.html",
+      "/orientation/instantmessaging.html"
+    ]
+  },
+  {
+    "listing": "/scienceresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mrisoftware/index.html",
+    "items": [
+      "/mrisoftware/3D-Slicer.html",
+      "/mrisoftware/ants.html",
+      "/mrisoftware/freesurfer.html",
+      "/mrisoftware/MRIQC.html",
+      "/mrisoftware/tedana.html",
+      "/mrisoftware/fmriprep.html"
+    ]
+  },
+  {
     "listing": "/mrimethods/index.html",
     "items": [
       "/mrimethods/acpc-align.html",
@@ -13,32 +50,7 @@
     ]
   },
   {
-    "listing": "/scienceresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/mrisoftware/index.html",
-    "items": [
-      "/mrisoftware/3D-Slicer.html",
-      "/mrisoftware/ants.html",
-      "/mrisoftware/freesurfer.html",
-      "/mrisoftware/tedana.html",
-      "/mrisoftware/fmriprep.html"
-    ]
-  },
-  {
-    "listing": "/studentresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/orientation/index.html",
-    "items": [
-      "/orientation/mrisafetyfaq.html",
-      "/orientation/instantmessaging.html"
-    ]
-  },
-  {
-    "listing": "/mriscanners/index.html",
+    "listing": "/investigatorresources/index.html",
     "items": []
   },
   {
@@ -48,17 +60,6 @@
       "/tutorials/docker.html",
       "/tutorials/git.html",
       "/tutorials/Python.html"
-    ]
-  },
-  {
-    "listing": "/investigatorresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/mrimethods/eeg-fmri/index.html",
-    "items": [
-      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html",
-      "/mrimethods/eeg-fmri/gradient-removal.html"
     ]
   }
 ]
