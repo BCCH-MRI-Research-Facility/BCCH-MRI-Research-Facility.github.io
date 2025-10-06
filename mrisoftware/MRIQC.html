@@ -508,10 +508,10 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <p>Can be run as a docker (see below), or on its own (local install).</p>
 <section id="local-install" class="level2">
 <h2 class="anchored" data-anchor-id="local-install">Local install</h2>
-<pre><code>pip install mriqc</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install mriqc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="upgrade" class="level3">
 <h3 class="anchored" data-anchor-id="upgrade">Upgrade</h3>
-<pre><code>pip install --user --upgrade mriqc</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--user</span> <span class="at">--upgrade</span> mriqc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="docker-install-or-upgrade" class="level2">
@@ -522,15 +522,15 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <section id="user-guide" class="level1">
 <h1>User Guide</h1>
 <p><a href="https://mriqc.readthedocs.io/en/latest/docker.html">mriqc.readthedocs.io/en/latest/docker.html</a></p>
-<p>Example with docker for participant level</p>
-<pre><code>docker run -it --rm -v $PWD:/data:ro \
--v $PWD/derivatives/mriqc:/out \
-nipreps/mriqc:latest /data /out \
-participant --participant_label &lt;subject-id&gt;</code></pre>
+<p>Example with docker for participant level (for help with docker, see <a href="../tutorials/docker.html">our docker page</a>)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">--rm</span> <span class="at">-v</span> <span class="va">$PWD</span>:/data:ro <span class="dt">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>-v <span class="va">$PWD</span>/derivatives/mriqc:/out <span class="dt">\</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>nipreps/mriqc:latest /data /out <span class="dt">\</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>participant <span class="at">--participant_label</span> <span class="op">&lt;</span>subject-id<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Group level (after you have run MRIQC on all participants):</p>
-<pre><code>docker run -it --rm -v $PWD:/data:ro \
--v $PWD/derivatives/mriqc:/out \
-nipreps/mriqc:latest /data /out group</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">--rm</span> <span class="at">-v</span> <span class="va">$PWD</span>:/data:ro <span class="dt">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>-v <span class="va">$PWD</span>/derivatives/mriqc:/out <span class="dt">\</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>nipreps/mriqc:latest /data /out group</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="reports" class="level1">
 <h1>Reports</h1>
