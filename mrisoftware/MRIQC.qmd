@@ -26,13 +26,13 @@ The best way to learn about MRIQC is to read their [documentation](https://mriqc
 Can be run as a docker (see below), or on its own (local install).
 
 ## Local install
-``` 
+```bash
 pip install mriqc
 ```
 
 ### Upgrade 
 
-``` 
+```bash
 pip install --user --upgrade mriqc
 ```
 
@@ -46,9 +46,9 @@ docker pull nipreps/mriqc:latest
 
 [mriqc.readthedocs.io/en/latest/docker.html](https://mriqc.readthedocs.io/en/latest/docker.html)
 
-Example with docker for participant level
+Example with docker for participant level (for help with docker, see [our docker page](../tutorials/docker.qmd))
 
-``` 
+```bash
 docker run -it --rm -v $PWD:/data:ro \
 -v $PWD/derivatives/mriqc:/out \
 nipreps/mriqc:latest /data /out \
@@ -57,7 +57,7 @@ participant --participant_label <subject-id>
 
 Group level (after you have run MRIQC on all participants):
 
-``` 
+```bash
 docker run -it --rm -v $PWD:/data:ro \
 -v $PWD/derivatives/mriqc:/out \
 nipreps/mriqc:latest /data /out group
