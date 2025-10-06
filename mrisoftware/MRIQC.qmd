@@ -1,0 +1,70 @@
+---
+title: "MRIQC"
+description: "MRIQC extracts no-reference IQMs (image quality metrics) from structural (T1w and T2w), functional and diffusion MRI (magnetic resonance imaging) data."
+author: "Alexander Weber"
+date: "2025-10-06"
+date-modified: "2025-10-06"
+highlight-style: github
+categories:
+    - quality control
+    - software
+    - visualization
+---
+
+![](img/mriqc.png)
+
+# What is it?
+
+MRIQC extracts no-reference IQMs (image quality metrics) from structural (T1w and T2w), functional and diffusion MRI (magnetic resonance imaging) data.
+
+Basically it can help you determine the quality of some MRI images (which can be helpful for very large datasets).
+
+The best way to learn about MRIQC is to read their [documentation](https://mriqc.readthedocs.io/en/latest/) 
+
+# Installation 
+
+Can be run as a docker (see below), or on its own (local install).
+
+## Local install
+``` 
+pip install mriqc
+```
+
+### Upgrade 
+
+``` 
+pip install --user --upgrade mriqc
+```
+
+## Docker install or upgrade
+
+```bash
+docker pull nipreps/mriqc:latest
+```
+
+# User Guide 
+
+[mriqc.readthedocs.io/en/latest/docker.html](https://mriqc.readthedocs.io/en/latest/docker.html)
+
+Example with docker for participant level
+
+``` 
+docker run -it --rm -v $PWD:/data:ro \
+-v $PWD/derivatives/mriqc:/out \
+nipreps/mriqc:latest /data /out \
+participant --participant_label <subject-id>
+```
+
+Group level (after you have run MRIQC on all participants):
+
+``` 
+docker run -it --rm -v $PWD:/data:ro \
+-v $PWD/derivatives/mriqc:/out \
+nipreps/mriqc:latest /data /out group
+```
+
+# Reports 
+
+Walkthrough of reports:\
+[mriqc.readthedocs.io/en/stable/reports.html](https://mriqc.readthedocs.io/en/stable/reports.html)
+
