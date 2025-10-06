@@ -679,51 +679,225 @@
     ]
   },
   {
-    "objectID": "mrisoftware/tedana.html#dependencies",
-    "href": "mrisoftware/tedana.html#dependencies",
-    "title": "Tedana",
-    "section": "Dependencies",
-    "text": "Dependencies\nthere is a lot you’ll want installed before starting\n\ndocker\nminiconda\ngit\njq\ndcm2niix\nfreesurfer (with license)\nFastSurfer (if you want to speed things up)\na bunch of python scripts installed in a virtual environment (see below)\nbids-validator\nANTs\n\nWith miniconda3 installed, you should consider using a virtual environment. Here is an example of how to create, start/activate, then install some python libraries\nconda create -n tedana python=3 pip mdp numpy scikit-learn scipy\nconda activate tedana\npip install nilearn nibabel\npip install tedana\npip install dcm2bids # if not already installed\npip install fmriprep-docker # if not already installed",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BCCH MRI Research Facility Wiki Page",
+    "section": "",
+    "text": "Overview\nThis page serves as a Wiki and collection of resources for users of BC Children’s MRI Research Facility\nYou can search this page using the magnifying glass in the top right 🔍\nOr you can navigate using the sidebar on the left 👈\nIf you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us (similar to Slack or Microsoft Teams).\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "mrisoftware/freesurfer.html#beginner-guide",
+    "href": "mrisoftware/freesurfer.html#beginner-guide",
+    "title": "Freesurfer",
+    "section": "Beginner Guide",
+    "text": "Beginner Guide\nhttp://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferBeginnersGuide",
     "crumbs": [
       "Home",
       "MRI Software",
-      "Tedana"
+      "Freesurfer"
     ]
   },
   {
-    "objectID": "mrisoftware/tedana.html#fastsurfer",
-    "href": "mrisoftware/tedana.html#fastsurfer",
-    "title": "Tedana",
-    "section": "FastSurfer",
-    "text": "FastSurfer\nInside FastSurfer the files your probably interested in are in the mri folder\n.\n├── antsdn.brain.mgz\n├── aparc.a2009s+aseg.mgz\n├── aparc+aseg.mgz -&gt; aparc.DKTatlas+aseg.mapped.mgz\n├── aparc.DKTatlas+aseg.deep.mgz\n├── aparc.DKTatlas+aseg.deep.withCC.mgz\n├── aparc.DKTatlas+aseg.mapped.mgz\n├── aparc.DKTatlas+aseg.mgz -&gt; aparc.DKTatlas+aseg.mapped.mgz\n├── aparc.DKTatlas+aseg.orig.mgz\n├── aseg.auto.mgz\n├── aseg.auto_noCCseg.mgz\n├── aseg.mgz\n├── aseg.presurf.hypos.mgz\n├── aseg.presurf.mgz\n├── brain.finalsurfs.mgz\n├── brainmask.auto.mgz\n├── brainmask.mgz\n├── brain.mgz\n├── filled.auto.mgz\n├── filled.mgz\n├── filled-pretess127.mgz\n├── filled-pretess255.mgz\n├── lh.ribbon.mgz\n├── lh.surface.defects.mgz\n├── mask.mgz\n├── norm.mgz\n├── nu.mgz\n├── orig\n│   └── 001.mgz\n├── orig.mgz\n├── orig_nu.mgz\n├── rawavg.mgz -&gt; orig.mgz\n├── rh.ribbon.mgz\n├── rh.surface.defects.mgz\n├── ribbon.mgz\n├── segment.dat\n├── T1.mgz\n├── talairach.label_intensities.txt\n├── tmp\n├── transforms\n│   ├── bak\n│   ├── cc_up.lta\n│   ├── talairach.auto.xfm\n│   ├── talairach.auto.xfm.lta\n│   ├── talairach_avi.log\n│   ├── talairach.lta -&gt; talairach.xfm.lta\n│   ├── talairach.m3z\n│   ├── talairach_with_skull.lta -&gt; talairach.xfm.lta\n│   ├── talairach.xfm\n│   ├── talairach.xfm.lta\n│   └── talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt\n├── wm.asegedit.mgz\n├── wm.mgz\n├── wmparc.DKTatlas.mapped.mgz\n├── wmparc.mgz -&gt; wmparc.DKTatlas.mapped.mgz\n└── wm.seg.mgz\nAn overview of the output files can be found here. I highly recommend going through that tutorial.",
+    "objectID": "mrisoftware/freesurfer.html#install-1",
+    "href": "mrisoftware/freesurfer.html#install-1",
+    "title": "Freesurfer",
+    "section": "Install",
+    "text": "Install\nClone the git:\ngit clone git@github.com:Deep-MI/FastSurfer.git\nGrab the latest docker:\ndocker pull deepmi/fastsurfer:latest\nGo into the git folder and type:\ndocker build --rm=true -t fastsurfer:gpu -f ./Docker/Dockerfile .",
     "crumbs": [
       "Home",
       "MRI Software",
-      "Tedana"
+      "Freesurfer"
     ]
   },
   {
-    "objectID": "mrisoftware/tedana.html#fmriprep",
-    "href": "mrisoftware/tedana.html#fmriprep",
-    "title": "Tedana",
-    "section": "fmriprep",
-    "text": "fmriprep\nfmriprep ouput:\n.\n├── dataset_description.json\n├── desc-aparcaseg_dseg.tsv\n├── desc-aseg_dseg.tsv\n├── logs\n│   ├── CITATION.bib\n│   ├── CITATION.html\n│   ├── CITATION.md\n│   └── CITATION.tex\n├── sub-Pilot02\n│   ├── anat\n│   │   ├── sub-Pilot02_desc-aparcaseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_desc-aseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_desc-brain_mask.json\n│   │   ├── sub-Pilot02_desc-brain_mask.nii.gz\n│   │   ├── sub-Pilot02_desc-preproc_T1w.json\n│   │   ├── sub-Pilot02_desc-preproc_T1w.nii.gz\n│   │   ├── sub-Pilot02_dseg.nii.gz\n│   │   ├── sub-Pilot02_from-fsnative_to-T1w_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_from-MNI152NLin6Asym_to-T1w_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_from-T1w_to-fsnative_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_from-T1w_to-MNI152NLin6Asym_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_hemi-L_inflated.surf.gii\n│   │   ├── sub-Pilot02_hemi-L_midthickness.surf.gii\n│   │   ├── sub-Pilot02_hemi-L_pial.surf.gii\n│   │   ├── sub-Pilot02_hemi-L_smoothwm.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_inflated.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_midthickness.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_pial.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_smoothwm.surf.gii\n│   │   ├── sub-Pilot02_label-CSF_probseg.nii.gz\n│   │   ├── sub-Pilot02_label-GM_probseg.nii.gz\n│   │   ├── sub-Pilot02_label-WM_probseg.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-brain_mask.json\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-preproc_T1w.json\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_dseg.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_label-CSF_probseg.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_label-GM_probseg.nii.gz\n│   │   └── sub-Pilot02_space-MNI152NLin2009cAsym_label-WM_probseg.nii.gz\n│   ├── figures\n│   │   ├── sub-Pilot02_desc-about_T1w.html\n│   │   ├── sub-Pilot02_desc-conform_T1w.html\n│   │   ├── sub-Pilot02_desc-reconall_T1w.svg\n│   │   ├── sub-Pilot02_desc-summary_T1w.html\n│   │   ├── sub-Pilot02_dseg.svg\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-pepolar_fieldmap.svg\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_T1w.svg\n│   │   ├── sub-Pilot02_space-MNI152NLin6Asym_T1w.svg\n│   │   ├── sub-Pilot02_task-rest_desc-aroma_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-bbregister_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-carpetplot_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-compcorvar_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-confoundcorr_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-rois_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-sdc_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-summary_bold.html\n│   │   ├── sub-Pilot02_task-rest_desc-t2scomp_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-t2starhist_bold.svg\n│   │   └── sub-Pilot02_task-rest_desc-validation_bold.html\n│   ├── fmap\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-coeff_fieldmap.nii.gz\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-epi_fieldmap.nii.gz\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-preproc_fieldmap.json\n│   │   └── sub-Pilot02_fmapid-auto00000_desc-preproc_fieldmap.nii.gz\n│   ├── func\n│   │   ├── sub-Pilot02_task-rest_AROMAnoiseICs.csv\n│   │   ├── sub-Pilot02_task-rest_desc-confounds_timeseries.json\n│   │   ├── sub-Pilot02_task-rest_desc-confounds_timeseries.tsv\n│   │   ├── sub-Pilot02_task-rest_desc-MELODIC_mixing.tsv\n│   │   ├── sub-Pilot02_task-rest_echo-1_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_echo-1_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_echo-2_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_echo-2_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_echo-3_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_echo-3_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_from-scanner_to-T1w_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_task-rest_from-T1w_to-scanner_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_boldref.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-aparcaseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-aseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-brain_mask.json\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_T2starmap.json\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_T2starmap.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.json\n│   │   └── sub-Pilot02_task-rest_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz\n│   └── log\n│       └── 20221118-015253_b74f70bf-bc7f-455b-959a-43d1c3268b1c\n│           └── fmriprep.toml\n└── sub-Pilot02.html\na rundown of these outputs can be found in more depth here\nYou can view the very nice boilerplate of results by opening up the sub-Pilot02.html file",
+    "objectID": "mrisoftware/freesurfer.html#example-run",
+    "href": "mrisoftware/freesurfer.html#example-run",
+    "title": "Freesurfer",
+    "section": "Example run",
+    "text": "Example run\ndocker run --gpus all -v /mnt/WeberLab/Data/BCCHR/ForDanny_Aug2022/derivatives/anat:/data \\\n-v /mnt/WeberLab/Data/BCCHR/ForDanny_Aug2022/derivatives/FastSurfer:/output \\\n-v /home/aweber:/fs_license \\\n--rm fastsurfer:gpu --fs_license /fs_license/license.txt \\\n--t1 /data/T1w_robust.nii.gz --sid 01 --sd /output --parallel\n\nTroubleshooting:\nIf you get an error like:\n\ndocker: Error response from daemon: could not select device driver \"\" with capabilities: [[gpu]].\n\nTry this: https://collabnix.com/introducing-new-docker-cli-api-support-for-nvidia-gpus-under-docker-engine-19-03-0-beta-release/\nYou may need to run these two lines after following the instructions in the above link:\nsudo systemctl daemon-reload\nsudo systemctl restart docker\nIf you get an error like \"RuntimeError: CUDA error: out of memory\"\nThe best way is to find the process engaging gpu memory and kill it:\nfind the PID of python process from:\nnvidia-smi\ncopy the PID and kill it by:\nsudo kill -9 pid",
     "crumbs": [
       "Home",
       "MRI Software",
-      "Tedana"
+      "Freesurfer"
     ]
   },
   {
-    "objectID": "mrisoftware/tedana.html#tedana",
-    "href": "mrisoftware/tedana.html#tedana",
-    "title": "Tedana",
-    "section": "Tedana",
-    "text": "Tedana\n.\n└── sub-Pilot02\n    ├── dataset_description.json\n    ├── desc-adaptiveGoodSignal_mask.nii.gz\n    ├── desc-ICAAccepted_components.nii.gz\n    ├── desc-ICAAccepted_stat-z_components.nii.gz\n    ├── desc-ICA_components.nii.gz\n    ├── desc-ICA_decomposition.json\n    ├── desc-ICA_mixing.tsv\n    ├── desc-ICA_stat-z_components.nii.gz\n    ├── desc-optcomAccepted_bold.nii.gz\n    ├── desc-optcom_bold.nii.gz\n    ├── desc-optcomDenoised_bold.nii.gz\n    ├── desc-optcomRejected_bold.nii.gz\n    ├── desc-PCA_decomposition.json\n    ├── desc-PCA_metrics.json\n    ├── desc-PCA_metrics.tsv\n    ├── desc-PCA_mixing.tsv\n    ├── desc-PCA_stat-z_components.nii.gz\n    ├── desc-tedana_metrics.json\n    ├── desc-tedana_metrics.tsv\n    ├── figures\n    │   ├── carpet_accepted.svg\n    │   ├── carpet_denoised.svg\n    │   ├── carpet_optcom.svg\n    │   ├── carpet_rejected.svg\n    │   ├── comp_000.png\n    │   ├── comp_001.png\n    │   ├── comp_002.png\n    │   ├── comp_003.png\n    │   ├── comp_004.png\n    │   ├── comp_005.png\n    │   ├── comp_006.png\n    │   ├── comp_007.png\n    │   ├── comp_008.png\n    │   ├── comp_009.png\n    │   ├── comp_010.png\n    │   ├── comp_011.png\n    │   ├── comp_012.png\n    │   ├── comp_013.png\n    │   ├── comp_014.png\n    │   ├── comp_015.png\n    │   ├── comp_016.png\n    │   ├── comp_017.png\n    │   ├── comp_018.png\n    │   ├── comp_019.png\n    │   ├── comp_020.png\n    │   ├── comp_021.png\n    │   ├── comp_022.png\n    │   ├── comp_023.png\n    │   ├── comp_024.png\n    │   ├── comp_025.png\n    │   ├── comp_026.png\n    │   ├── comp_027.png\n    │   ├── comp_028.png\n    │   ├── comp_029.png\n    │   ├── comp_030.png\n    │   ├── comp_031.png\n    │   ├── comp_032.png\n    │   ├── comp_033.png\n    │   ├── comp_034.png\n    │   ├── comp_035.png\n    │   ├── comp_036.png\n    │   ├── comp_037.png\n    │   ├── comp_038.png\n    │   ├── comp_039.png\n    │   ├── comp_040.png\n    │   ├── comp_041.png\n    │   ├── comp_042.png\n    │   ├── comp_043.png\n    │   ├── comp_044.png\n    │   ├── comp_045.png\n    │   ├── comp_046.png\n    │   ├── comp_047.png\n    │   ├── comp_048.png\n    │   ├── comp_049.png\n    │   ├── comp_050.png\n    │   ├── comp_051.png\n    │   ├── comp_052.png\n    │   └── comp_053.png\n    ├── report.txt\n    ├── S0map.nii.gz\n    ├── T2starmap.nii.gz\n    ├── tedana_2022-11-18T111133.tsv\n    └── tedana_report.html\nA rundown of these outputs can be explored in more depth here\nYou can view the very nice boilerplate of results by opening up the sub-tedana_report.html file\nfirefox tedana_report.html &\nExample of rejected component:\n\nExample of accepted component:\n\nI believe the file we would want to use for further analysis would be: desc-optcomDenoised_bold.nii.gz",
+    "objectID": "mrisoftware/freesurfer.html#example",
+    "href": "mrisoftware/freesurfer.html#example",
+    "title": "Freesurfer",
+    "section": "Example:",
+    "text": "Example:\nfreeview -v \\\nmri/T1.mgz \\\nmri/wm.mgz \\\nmri/brainmask.mgz \\\nmri/aseg.mgz:colormap=lut:opacity=0.2 \\\n-f surf/lh.white:edgecolor=blue \\\nsurf/lh.pial:edgecolor=red \\\nsurf/rh.white:edgecolor=blue \\\nsurf/rh.pial:edgecolor=red",
     "crumbs": [
       "Home",
       "MRI Software",
-      "Tedana"
+      "Freesurfer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/freesurfer.html#if-you-want-the-cortical-thickness-in-mni-space",
+    "href": "mrisoftware/freesurfer.html#if-you-want-the-cortical-thickness-in-mni-space",
+    "title": "Freesurfer",
+    "section": "If you want the cortical thickness in MNI space:",
+    "text": "If you want the cortical thickness in MNI space:\nmkdir derivatives/test_Justin\n\nmri_convert derivatives/FastSurfer/sub-Pilot01/mri/brain.mgz derivatives/test_Justin/brain.nii.gz\n\ncd derivatives/test_Justin/\n\nfslreorient2std brain.nii.gz brain_reorient.nii.gz\n\nmoving=/usr/local/fsl/data/standard/MNI152_T1_2mm_brain.nii.gz\nfixed=brain_reorient.nii.gz\n\nantsRegistration --dimensionality 3 --float 0 \\\n--output [MNI-to-T1_,MNI-to-T1_Warped.nii.gz] \\\n--interpolation Linear \\\n--winsorize-image-intensities [0.005,0.995] \\\n--use-histogram-matching 0 \\\n--initial-moving-transform [$fixed,$moving,1] \\\n--transform Rigid[0.1] \\\n--metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n--convergence [1000x500x250x100,1e-6,10] \\\n--shrink-factors 8x4x2x1 \\\n--smoothing-sigmas 3x2x1x0vox \\\n--transform Affine[0.1] \\\n--metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n--convergence [1000x500x250x100,1e-6,10] \\\n--shrink-factors 8x4x2x1 \\\n--smoothing-sigmas 3x2x1x0vox \\\n--transform SyN[0.1,3,0] \\\n--metric CC[$fixed,$moving,1,4] \\\n--convergence [100x70x50x20,1e-6,10] \\\n--shrink-factors 8x4x2x1 \\\n--smoothing-sigmas 3x2x1x0vox\n\nantsApplyTransforms \\\n  -d 3 \\\n  -i thickness_test_reorient.nii.gz \\\n  -r $moving \\\n  -t [MNI-to-T1_0GenericAffine.mat, 1] \\\n  -t MNI-to-T1_1InverseWarp.nii.gz \\\n  -o thickness-to-MNI.nii.gz",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Freesurfer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/freesurfer.html#process-and-convert-to-stl-format",
+    "href": "mrisoftware/freesurfer.html#process-and-convert-to-stl-format",
+    "title": "Freesurfer",
+    "section": "Process and Convert to STL Format",
+    "text": "Process and Convert to STL Format\nhttps://layerfmri.com/2018/07/25/3d-printing-nii-data/\n\nAssuming you have run recon-all with freesurfer or FastSurfer:\n\nmris_convert surf/rh.pial rh.stl\nmris_convert surf/lh.pial lh.stl\n\nDownload and install Meshlab: https://www.meshlab.net/\nMeshlab\n\n\nFile &gt; Import Mesh &gt; surf/rh.stl\nFile &gt; Import Mesh &gt; lh.stl\nFilters &gt; Mesh Layer &gt; Flatten Visible Layers; Click Apply\nFilters &gt; Remeshing Simplification and Reconstruction &gt; Simplification: Quadric Edge Collapse Decimation; Enter desired Target Number of Faces (suggested: 200,000) and Apply\nFilters &gt; Smoothing, Fairing and Deformation &gt; HC Laplacian Smooth; Click Apply\nFile &gt; Export Mesh As: Save as a .STL file (e.g. 3DPrint.stl)\n\n\nOpen netfabb-basic and load in the STL file that you just made\n\n\nProject &gt; Open &gt; aseg.stl\nClick on the repair symbol (red cross; top right)\nClick on Automatic repair and Apply repair.\n\n[note: I got a lot of 'netfab_free' is not responding. Ignore these]\n\nClick Apply Repair again, and discard old parts\nSave: Part &gt; Export Part &gt; As STL",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Freesurfer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/freesurfer.html#where-to-print",
+    "href": "mrisoftware/freesurfer.html#where-to-print",
+    "title": "Freesurfer",
+    "section": "Where to Print",
+    "text": "Where to Print\nUBC: https://ubc-rapid.com/?/printing-service/#/\nBCCHR: https://www.bcchdigital.ca/\nPhysics and Astronomy UBC: https://www.phas.ubc.ca/3d-printing-services",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Freesurfer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/MRIQC.html#local-install",
+    "href": "mrisoftware/MRIQC.html#local-install",
+    "title": "MRIQC",
+    "section": "Local install",
+    "text": "Local install\npip install mriqc\n\nUpgrade\npip install --user --upgrade mriqc",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "MRIQC"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/MRIQC.html#docker-install-or-upgrade",
+    "href": "mrisoftware/MRIQC.html#docker-install-or-upgrade",
+    "title": "MRIQC",
+    "section": "Docker install or upgrade",
+    "text": "Docker install or upgrade\ndocker pull nipreps/mriqc:latest",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "MRIQC"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#n4biasfieldcorrection",
+    "href": "mrisoftware/ants.html#n4biasfieldcorrection",
+    "title": "ANTs",
+    "section": "N4BiasFieldCorrection",
+    "text": "N4BiasFieldCorrection\nN4 is a variant of the popular N3 (nonparameteric nonuniform normalization) retrospective bias correction algorithm. Widely seen as an improvement to N3. It is almost always advisable to run N4 correction before registration.\nA simple run using default options, which is normally good enough.\nN4BiasFieldCorrection -d 3 -i ${input} -o ${output}",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#antsregistration",
+    "href": "mrisoftware/ants.html#antsregistration",
+    "title": "ANTs",
+    "section": "antsRegistration",
+    "text": "antsRegistration\nI will provide a rough call, but look here for an anatomy of an antsRegistration call.\nTips for registration:\n\nRun a bias correction before antsRegistration (i.e. N4).\nRemove the skull before antsRegistration.\nNever register a lesioned brain with a healthy brain without a proper mask.\nRegister a low resolution image onto a high resolution image, look at antsApplyTransforms if you need to register a high to low resolution image\n\nantsRegistration --dimensionality 3 --float 0 \\\n        --output [./input_to_ref_,./input_to_ref_Warped.nii.gz] \\\n        --interpolation Linear \\\n        --winsorize-image-intensities [0.005,0.995] \\\n        --use-histogram-matching 0 \\\n        --initial-moving-transform [$fixed,$moving,1] \\\n\n        --transform Rigid[0.1] \\\n        --metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n        --convergence [1000x500x250x100,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox \\\n\n        --transform Affine[0.1] \\\n        --metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n        --convergence [1000x500x250x100,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox \\\n\n        --transform SyN[0.1,3,0] \\\n        --metric CC[$fixed,$moving,1,4] \\\n        --convergence [100x70x50x20,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox\n\n\n\n\n\n\nNote\n\n\n\nRemove the spaces if using the above code. I used them to highlight the 3 registration differences.\n\n\n\nRigid = Translation + Rotation\nAffine = Translation + Rotation + Shearing + Scaling\nSyN = Diffeomorphism (non-linear)",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#antsmultivariatetemplateconstruction2.sh",
+    "href": "mrisoftware/ants.html#antsmultivariatetemplateconstruction2.sh",
+    "title": "ANTs",
+    "section": "antsMultivariateTemplateConstruction2.sh",
+    "text": "antsMultivariateTemplateConstruction2.sh\nYou need to create a folder with all the scans you want to create a template out of\n${ANTSPATH}/antsMultivariateTemplateConstruction2.sh \\\n  -d 3 \\\n  -a 1 \\\n  -o ${outputPath} \\\n  -i 5 \\\n  -g 0.25 \\\n  -j 16 \\\n  -c 0 \\\n  -k 1 \\\n  -w 1 \\\n  -n 1 \\\n  -r 1 \\\n  -l 1 \\\n  -m CC \\\n  -t SyN \\\n  -y 0 \\\n  -z ${referenceT1} \\\n  ${tempDirectory}*\n\n\n\n\n\n\nNote\n\n\n\nmy ${tempDirectory} directory ended in a /\n\n\nThe below is an illustration of how the template construction works.\n\nThe images are averaged or an initial reference is specified.\nEach image is registered to this reference.\nA new reference is created by averaging these registered images\nUsing the registered images and new reference repeat steps 3-4 for a total of i iterations\n\n\nUseful flags\n\no: You don't need to end the path with '/'\ni: From above, number of images to reference iterations\nj: number of CPU cores\nc: control for parallel computation\nk: number of modalities (i.e. just T2 image or T2 WM and GM)\nn: N4BiasField Correction of moving image\nr: rigid body registration before creating initial template\ny: rigid (translation & rotation) not used when y=0 with affine transform\nz: useful if input images are at different FOV",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/ants.html#antsapplytransforms",
+    "href": "mrisoftware/ants.html#antsapplytransforms",
+    "title": "ANTs",
+    "section": "antsApplyTransforms",
+    "text": "antsApplyTransforms\nI will provide a rough idea of this function, but look here for a much more detailed overview.\nAs mentioned in antsRegistration it is advised to register a low resolution image onto a high resolution image. But if you need a high resolution image in the low resolution images space.\n\nRegister the low resolution image to the high resolution image\nApply the inverse warp to the high resolution image\n\ne.g Applying the inverse warp to register the fixed image to the moving images original space.\n${ANTSPATH}antsApplyTransforms \\\n  -d 3 \\\n  -i fixedImage.nii.gz \\\n  -r movingImage.nii.gz \\   \n  -t [movingToFixed_0GenericAffine.mat, 1] \\   \n  -t movingToFixed_1InverseWarp.nii.gz \\\n  -o fixedToMovingDeformed.nii.gz\n\ni: input\nr: reference image\nt: transform file, note differences in order in above link\no: output",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "ANTs"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/3D-Slicer.html#loading-nifti-files",
+    "href": "mrisoftware/3D-Slicer.html#loading-nifti-files",
+    "title": "3D Slicer",
+    "section": "Loading Nifti Files",
+    "text": "Loading Nifti Files\nMany medical imaging files come in what’s called the ‘NIfTI’ format (stands for Neuroimaging Informatics Technology Initiative). These files will end in either .nii or a compressed version .nii.gz\nTo load a .nii or .nii.gz file:\nFile &gt; Add Data &gt; Choose File(s) to Add\n\nNow you should be able to view three different ‘slices’ of your brain: \nUsing your mouse, hover over the view you want to interact with, and use your scroll wheel to navigate through slices. Or hold down CTRL while using the scroll wheel to zoom in.\nTo move the image around (in case you want to zoom into a particular area), hold down your scroll-wheel and move your cursor.",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "3D Slicer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/3D-Slicer.html#d-rendering",
+    "href": "mrisoftware/3D-Slicer.html#d-rendering",
+    "title": "3D Slicer",
+    "section": "3D Rendering",
+    "text": "3D Rendering\nWould you like to see your brain in 3D and perform a ‘virtual dissection’?\n\nClick on the \"Welcome to Slicer\" drop down menu (Top left)\nClick on \"Volume Rendering\"\nClick on the 'closed eye' in the top left (beside the name of the image)\nYou can then do a digital dissection by clicking on Crop: Enable; Display ROI, then click on the green, red, blue whatever circles to move the planes to dissect\n\nHere is a gif that shows these steps in detail [Note: if the image is too small, right-click, and press ‘Open Image in New Tab’]\n\nMore info: slicer.readthedocs.io/en/latest/user_guide/modules/volumerendering.html",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "3D Slicer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/3D-Slicer.html#manual",
+    "href": "mrisoftware/3D-Slicer.html#manual",
+    "title": "3D Slicer",
+    "section": "Manual",
+    "text": "Manual\nslicer.readthedocs.io/en/latest/",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "3D Slicer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/3D-Slicer.html#faq",
+    "href": "mrisoftware/3D-Slicer.html#faq",
+    "title": "3D Slicer",
+    "section": "FAQ",
+    "text": "FAQ\nslicer.org/wiki/Documentation/4.5/FAQ/General",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "3D Slicer"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/index.html",
+    "href": "mrisoftware/index.html",
+    "title": "MRI Software",
+    "section": "",
+    "text": "3D Slicer\n\n\n\nsoftware\n\nvisualization\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nANTs\n\n\n\n-software -registration\n\n\n\nAdvanced Normalization Tools\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nFreesurfer\n\n\n\n-software -anatomical -visualization -segmentation -surface\n\n\n\nAn open source neuroimaging toolkit for processing, analyzing, and visualizing human brain MR images\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nMRIQC\n\n\n\nquality control\n\nsoftware\n\nvisualization\n\n\n\nMRIQC extracts no-reference IQMs (image quality metrics) from structural (T1w and T2w), functional and diffusion MRI (magnetic resonance imaging) data.\n\n\n\n\n\nOct 6, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nTedana\n\n\n\n-software -multi-echo -fmri -processing\n\n\n\nProcessing multi-echo fMRI data after it has been preprocessed by fmriprep\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nfmriprep\n\n\n\n-software -fmri -reproducibility -standardization -preprocessing\n\n\n\nAn automated and standardized way of preprocessing fmri data\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\nNo matching items\n Back to top",
+    "crumbs": [
+      "Home",
+      "MRI Software"
     ]
   },
   {
@@ -835,226 +1009,63 @@
     ]
   },
   {
-    "objectID": "mrisoftware/index.html",
-    "href": "mrisoftware/index.html",
-    "title": "MRI Software",
+    "objectID": "mrisoftware/tedana.html#dependencies",
+    "href": "mrisoftware/tedana.html#dependencies",
+    "title": "Tedana",
+    "section": "Dependencies",
+    "text": "Dependencies\nthere is a lot you’ll want installed before starting\n\ndocker\nminiconda\ngit\njq\ndcm2niix\nfreesurfer (with license)\nFastSurfer (if you want to speed things up)\na bunch of python scripts installed in a virtual environment (see below)\nbids-validator\nANTs\n\nWith miniconda3 installed, you should consider using a virtual environment. Here is an example of how to create, start/activate, then install some python libraries\nconda create -n tedana python=3 pip mdp numpy scikit-learn scipy\nconda activate tedana\npip install nilearn nibabel\npip install tedana\npip install dcm2bids # if not already installed\npip install fmriprep-docker # if not already installed",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/tedana.html#fastsurfer",
+    "href": "mrisoftware/tedana.html#fastsurfer",
+    "title": "Tedana",
+    "section": "FastSurfer",
+    "text": "FastSurfer\nInside FastSurfer the files your probably interested in are in the mri folder\n.\n├── antsdn.brain.mgz\n├── aparc.a2009s+aseg.mgz\n├── aparc+aseg.mgz -&gt; aparc.DKTatlas+aseg.mapped.mgz\n├── aparc.DKTatlas+aseg.deep.mgz\n├── aparc.DKTatlas+aseg.deep.withCC.mgz\n├── aparc.DKTatlas+aseg.mapped.mgz\n├── aparc.DKTatlas+aseg.mgz -&gt; aparc.DKTatlas+aseg.mapped.mgz\n├── aparc.DKTatlas+aseg.orig.mgz\n├── aseg.auto.mgz\n├── aseg.auto_noCCseg.mgz\n├── aseg.mgz\n├── aseg.presurf.hypos.mgz\n├── aseg.presurf.mgz\n├── brain.finalsurfs.mgz\n├── brainmask.auto.mgz\n├── brainmask.mgz\n├── brain.mgz\n├── filled.auto.mgz\n├── filled.mgz\n├── filled-pretess127.mgz\n├── filled-pretess255.mgz\n├── lh.ribbon.mgz\n├── lh.surface.defects.mgz\n├── mask.mgz\n├── norm.mgz\n├── nu.mgz\n├── orig\n│   └── 001.mgz\n├── orig.mgz\n├── orig_nu.mgz\n├── rawavg.mgz -&gt; orig.mgz\n├── rh.ribbon.mgz\n├── rh.surface.defects.mgz\n├── ribbon.mgz\n├── segment.dat\n├── T1.mgz\n├── talairach.label_intensities.txt\n├── tmp\n├── transforms\n│   ├── bak\n│   ├── cc_up.lta\n│   ├── talairach.auto.xfm\n│   ├── talairach.auto.xfm.lta\n│   ├── talairach_avi.log\n│   ├── talairach.lta -&gt; talairach.xfm.lta\n│   ├── talairach.m3z\n│   ├── talairach_with_skull.lta -&gt; talairach.xfm.lta\n│   ├── talairach.xfm\n│   ├── talairach.xfm.lta\n│   └── talsrcimg_to_711-2C_as_mni_average_305_t4_vox2vox.txt\n├── wm.asegedit.mgz\n├── wm.mgz\n├── wmparc.DKTatlas.mapped.mgz\n├── wmparc.mgz -&gt; wmparc.DKTatlas.mapped.mgz\n└── wm.seg.mgz\nAn overview of the output files can be found here. I highly recommend going through that tutorial.",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/tedana.html#fmriprep",
+    "href": "mrisoftware/tedana.html#fmriprep",
+    "title": "Tedana",
+    "section": "fmriprep",
+    "text": "fmriprep\nfmriprep ouput:\n.\n├── dataset_description.json\n├── desc-aparcaseg_dseg.tsv\n├── desc-aseg_dseg.tsv\n├── logs\n│   ├── CITATION.bib\n│   ├── CITATION.html\n│   ├── CITATION.md\n│   └── CITATION.tex\n├── sub-Pilot02\n│   ├── anat\n│   │   ├── sub-Pilot02_desc-aparcaseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_desc-aseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_desc-brain_mask.json\n│   │   ├── sub-Pilot02_desc-brain_mask.nii.gz\n│   │   ├── sub-Pilot02_desc-preproc_T1w.json\n│   │   ├── sub-Pilot02_desc-preproc_T1w.nii.gz\n│   │   ├── sub-Pilot02_dseg.nii.gz\n│   │   ├── sub-Pilot02_from-fsnative_to-T1w_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_from-MNI152NLin6Asym_to-T1w_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_from-T1w_to-fsnative_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_from-T1w_to-MNI152NLin6Asym_mode-image_xfm.h5\n│   │   ├── sub-Pilot02_hemi-L_inflated.surf.gii\n│   │   ├── sub-Pilot02_hemi-L_midthickness.surf.gii\n│   │   ├── sub-Pilot02_hemi-L_pial.surf.gii\n│   │   ├── sub-Pilot02_hemi-L_smoothwm.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_inflated.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_midthickness.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_pial.surf.gii\n│   │   ├── sub-Pilot02_hemi-R_smoothwm.surf.gii\n│   │   ├── sub-Pilot02_label-CSF_probseg.nii.gz\n│   │   ├── sub-Pilot02_label-GM_probseg.nii.gz\n│   │   ├── sub-Pilot02_label-WM_probseg.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-brain_mask.json\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-preproc_T1w.json\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_desc-preproc_T1w.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_dseg.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_label-CSF_probseg.nii.gz\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_label-GM_probseg.nii.gz\n│   │   └── sub-Pilot02_space-MNI152NLin2009cAsym_label-WM_probseg.nii.gz\n│   ├── figures\n│   │   ├── sub-Pilot02_desc-about_T1w.html\n│   │   ├── sub-Pilot02_desc-conform_T1w.html\n│   │   ├── sub-Pilot02_desc-reconall_T1w.svg\n│   │   ├── sub-Pilot02_desc-summary_T1w.html\n│   │   ├── sub-Pilot02_dseg.svg\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-pepolar_fieldmap.svg\n│   │   ├── sub-Pilot02_space-MNI152NLin2009cAsym_T1w.svg\n│   │   ├── sub-Pilot02_space-MNI152NLin6Asym_T1w.svg\n│   │   ├── sub-Pilot02_task-rest_desc-aroma_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-bbregister_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-carpetplot_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-compcorvar_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-confoundcorr_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-rois_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-sdc_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-summary_bold.html\n│   │   ├── sub-Pilot02_task-rest_desc-t2scomp_bold.svg\n│   │   ├── sub-Pilot02_task-rest_desc-t2starhist_bold.svg\n│   │   └── sub-Pilot02_task-rest_desc-validation_bold.html\n│   ├── fmap\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-coeff_fieldmap.nii.gz\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-epi_fieldmap.nii.gz\n│   │   ├── sub-Pilot02_fmapid-auto00000_desc-preproc_fieldmap.json\n│   │   └── sub-Pilot02_fmapid-auto00000_desc-preproc_fieldmap.nii.gz\n│   ├── func\n│   │   ├── sub-Pilot02_task-rest_AROMAnoiseICs.csv\n│   │   ├── sub-Pilot02_task-rest_desc-confounds_timeseries.json\n│   │   ├── sub-Pilot02_task-rest_desc-confounds_timeseries.tsv\n│   │   ├── sub-Pilot02_task-rest_desc-MELODIC_mixing.tsv\n│   │   ├── sub-Pilot02_task-rest_echo-1_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_echo-1_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_echo-2_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_echo-2_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_echo-3_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_echo-3_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_from-scanner_to-T1w_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_task-rest_from-T1w_to-scanner_mode-image_xfm.txt\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_boldref.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-aparcaseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-aseg_dseg.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-brain_mask.json\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.json\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_T2starmap.json\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin2009cAsym_T2starmap.nii.gz\n│   │   ├── sub-Pilot02_task-rest_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.json\n│   │   └── sub-Pilot02_task-rest_space-MNI152NLin6Asym_desc-smoothAROMAnonaggr_bold.nii.gz\n│   └── log\n│       └── 20221118-015253_b74f70bf-bc7f-455b-959a-43d1c3268b1c\n│           └── fmriprep.toml\n└── sub-Pilot02.html\na rundown of these outputs can be found in more depth here\nYou can view the very nice boilerplate of results by opening up the sub-Pilot02.html file",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/tedana.html#tedana",
+    "href": "mrisoftware/tedana.html#tedana",
+    "title": "Tedana",
+    "section": "Tedana",
+    "text": "Tedana\n.\n└── sub-Pilot02\n    ├── dataset_description.json\n    ├── desc-adaptiveGoodSignal_mask.nii.gz\n    ├── desc-ICAAccepted_components.nii.gz\n    ├── desc-ICAAccepted_stat-z_components.nii.gz\n    ├── desc-ICA_components.nii.gz\n    ├── desc-ICA_decomposition.json\n    ├── desc-ICA_mixing.tsv\n    ├── desc-ICA_stat-z_components.nii.gz\n    ├── desc-optcomAccepted_bold.nii.gz\n    ├── desc-optcom_bold.nii.gz\n    ├── desc-optcomDenoised_bold.nii.gz\n    ├── desc-optcomRejected_bold.nii.gz\n    ├── desc-PCA_decomposition.json\n    ├── desc-PCA_metrics.json\n    ├── desc-PCA_metrics.tsv\n    ├── desc-PCA_mixing.tsv\n    ├── desc-PCA_stat-z_components.nii.gz\n    ├── desc-tedana_metrics.json\n    ├── desc-tedana_metrics.tsv\n    ├── figures\n    │   ├── carpet_accepted.svg\n    │   ├── carpet_denoised.svg\n    │   ├── carpet_optcom.svg\n    │   ├── carpet_rejected.svg\n    │   ├── comp_000.png\n    │   ├── comp_001.png\n    │   ├── comp_002.png\n    │   ├── comp_003.png\n    │   ├── comp_004.png\n    │   ├── comp_005.png\n    │   ├── comp_006.png\n    │   ├── comp_007.png\n    │   ├── comp_008.png\n    │   ├── comp_009.png\n    │   ├── comp_010.png\n    │   ├── comp_011.png\n    │   ├── comp_012.png\n    │   ├── comp_013.png\n    │   ├── comp_014.png\n    │   ├── comp_015.png\n    │   ├── comp_016.png\n    │   ├── comp_017.png\n    │   ├── comp_018.png\n    │   ├── comp_019.png\n    │   ├── comp_020.png\n    │   ├── comp_021.png\n    │   ├── comp_022.png\n    │   ├── comp_023.png\n    │   ├── comp_024.png\n    │   ├── comp_025.png\n    │   ├── comp_026.png\n    │   ├── comp_027.png\n    │   ├── comp_028.png\n    │   ├── comp_029.png\n    │   ├── comp_030.png\n    │   ├── comp_031.png\n    │   ├── comp_032.png\n    │   ├── comp_033.png\n    │   ├── comp_034.png\n    │   ├── comp_035.png\n    │   ├── comp_036.png\n    │   ├── comp_037.png\n    │   ├── comp_038.png\n    │   ├── comp_039.png\n    │   ├── comp_040.png\n    │   ├── comp_041.png\n    │   ├── comp_042.png\n    │   ├── comp_043.png\n    │   ├── comp_044.png\n    │   ├── comp_045.png\n    │   ├── comp_046.png\n    │   ├── comp_047.png\n    │   ├── comp_048.png\n    │   ├── comp_049.png\n    │   ├── comp_050.png\n    │   ├── comp_051.png\n    │   ├── comp_052.png\n    │   └── comp_053.png\n    ├── report.txt\n    ├── S0map.nii.gz\n    ├── T2starmap.nii.gz\n    ├── tedana_2022-11-18T111133.tsv\n    └── tedana_report.html\nA rundown of these outputs can be explored in more depth here\nYou can view the very nice boilerplate of results by opening up the sub-tedana_report.html file\nfirefox tedana_report.html &\nExample of rejected component:\n\nExample of accepted component:\n\nI believe the file we would want to use for further analysis would be: desc-optcomDenoised_bold.nii.gz",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "Tedana"
+    ]
+  },
+  {
+    "objectID": "bcchrimriresources/index.html",
+    "href": "bcchrimriresources/index.html",
+    "title": "BCCHRI MRI Resources",
     "section": "",
-    "text": "3D Slicer\n\n\n\nsoftware\n\nvisualization\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nANTs\n\n\n\n-software -registration\n\n\n\nAdvanced Normalization Tools\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nFreesurfer\n\n\n\n-software -anatomical -visualization -segmentation -surface\n\n\n\nAn open source neuroimaging toolkit for processing, analyzing, and visualizing human brain MR images\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nMRIQC\n\n\n\nquality control\n\nsoftware\n\nvisualization\n\n\n\nMRIQC extracts no-reference IQMs (image quality metrics) from structural (T1w and T2w), functional and diffusion MRI (magnetic resonance imaging) data.\n\n\n\n\n\nOct 6, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nTedana\n\n\n\n-software -multi-echo -fmri -processing\n\n\n\nProcessing multi-echo fMRI data after it has been preprocessed by fmriprep\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nfmriprep\n\n\n\n-software -fmri -reproducibility -standardization -preprocessing\n\n\n\nAn automated and standardized way of preprocessing fmri data\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\nNo matching items\n Back to top",
+    "text": "No matching items\n Back to top",
     "crumbs": [
       "Home",
-      "MRI Software"
+      "BCCHRI MRI Resources"
     ]
-  },
-  {
-    "objectID": "mrisoftware/3D-Slicer.html#loading-nifti-files",
-    "href": "mrisoftware/3D-Slicer.html#loading-nifti-files",
-    "title": "3D Slicer",
-    "section": "Loading Nifti Files",
-    "text": "Loading Nifti Files\nMany medical imaging files come in what’s called the ‘NIfTI’ format (stands for Neuroimaging Informatics Technology Initiative). These files will end in either .nii or a compressed version .nii.gz\nTo load a .nii or .nii.gz file:\nFile &gt; Add Data &gt; Choose File(s) to Add\n\nNow you should be able to view three different ‘slices’ of your brain: \nUsing your mouse, hover over the view you want to interact with, and use your scroll wheel to navigate through slices. Or hold down CTRL while using the scroll wheel to zoom in.\nTo move the image around (in case you want to zoom into a particular area), hold down your scroll-wheel and move your cursor.",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "3D Slicer"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/3D-Slicer.html#d-rendering",
-    "href": "mrisoftware/3D-Slicer.html#d-rendering",
-    "title": "3D Slicer",
-    "section": "3D Rendering",
-    "text": "3D Rendering\nWould you like to see your brain in 3D and perform a ‘virtual dissection’?\n\nClick on the \"Welcome to Slicer\" drop down menu (Top left)\nClick on \"Volume Rendering\"\nClick on the 'closed eye' in the top left (beside the name of the image)\nYou can then do a digital dissection by clicking on Crop: Enable; Display ROI, then click on the green, red, blue whatever circles to move the planes to dissect\n\nHere is a gif that shows these steps in detail [Note: if the image is too small, right-click, and press ‘Open Image in New Tab’]\n\nMore info: slicer.readthedocs.io/en/latest/user_guide/modules/volumerendering.html",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "3D Slicer"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/3D-Slicer.html#manual",
-    "href": "mrisoftware/3D-Slicer.html#manual",
-    "title": "3D Slicer",
-    "section": "Manual",
-    "text": "Manual\nslicer.readthedocs.io/en/latest/",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "3D Slicer"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/3D-Slicer.html#faq",
-    "href": "mrisoftware/3D-Slicer.html#faq",
-    "title": "3D Slicer",
-    "section": "FAQ",
-    "text": "FAQ\nslicer.org/wiki/Documentation/4.5/FAQ/General",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "3D Slicer"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/ants.html#n4biasfieldcorrection",
-    "href": "mrisoftware/ants.html#n4biasfieldcorrection",
-    "title": "ANTs",
-    "section": "N4BiasFieldCorrection",
-    "text": "N4BiasFieldCorrection\nN4 is a variant of the popular N3 (nonparameteric nonuniform normalization) retrospective bias correction algorithm. Widely seen as an improvement to N3. It is almost always advisable to run N4 correction before registration.\nA simple run using default options, which is normally good enough.\nN4BiasFieldCorrection -d 3 -i ${input} -o ${output}",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "ANTs"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/ants.html#antsregistration",
-    "href": "mrisoftware/ants.html#antsregistration",
-    "title": "ANTs",
-    "section": "antsRegistration",
-    "text": "antsRegistration\nI will provide a rough call, but look here for an anatomy of an antsRegistration call.\nTips for registration:\n\nRun a bias correction before antsRegistration (i.e. N4).\nRemove the skull before antsRegistration.\nNever register a lesioned brain with a healthy brain without a proper mask.\nRegister a low resolution image onto a high resolution image, look at antsApplyTransforms if you need to register a high to low resolution image\n\nantsRegistration --dimensionality 3 --float 0 \\\n        --output [./input_to_ref_,./input_to_ref_Warped.nii.gz] \\\n        --interpolation Linear \\\n        --winsorize-image-intensities [0.005,0.995] \\\n        --use-histogram-matching 0 \\\n        --initial-moving-transform [$fixed,$moving,1] \\\n\n        --transform Rigid[0.1] \\\n        --metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n        --convergence [1000x500x250x100,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox \\\n\n        --transform Affine[0.1] \\\n        --metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n        --convergence [1000x500x250x100,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox \\\n\n        --transform SyN[0.1,3,0] \\\n        --metric CC[$fixed,$moving,1,4] \\\n        --convergence [100x70x50x20,1e-6,10] \\\n        --shrink-factors 8x4x2x1 \\\n        --smoothing-sigmas 3x2x1x0vox\n\n\n\n\n\n\nNote\n\n\n\nRemove the spaces if using the above code. I used them to highlight the 3 registration differences.\n\n\n\nRigid = Translation + Rotation\nAffine = Translation + Rotation + Shearing + Scaling\nSyN = Diffeomorphism (non-linear)",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "ANTs"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/ants.html#antsmultivariatetemplateconstruction2.sh",
-    "href": "mrisoftware/ants.html#antsmultivariatetemplateconstruction2.sh",
-    "title": "ANTs",
-    "section": "antsMultivariateTemplateConstruction2.sh",
-    "text": "antsMultivariateTemplateConstruction2.sh\nYou need to create a folder with all the scans you want to create a template out of\n${ANTSPATH}/antsMultivariateTemplateConstruction2.sh \\\n  -d 3 \\\n  -a 1 \\\n  -o ${outputPath} \\\n  -i 5 \\\n  -g 0.25 \\\n  -j 16 \\\n  -c 0 \\\n  -k 1 \\\n  -w 1 \\\n  -n 1 \\\n  -r 1 \\\n  -l 1 \\\n  -m CC \\\n  -t SyN \\\n  -y 0 \\\n  -z ${referenceT1} \\\n  ${tempDirectory}*\n\n\n\n\n\n\nNote\n\n\n\nmy ${tempDirectory} directory ended in a /\n\n\nThe below is an illustration of how the template construction works.\n\nThe images are averaged or an initial reference is specified.\nEach image is registered to this reference.\nA new reference is created by averaging these registered images\nUsing the registered images and new reference repeat steps 3-4 for a total of i iterations\n\n\nUseful flags\n\no: You don't need to end the path with '/'\ni: From above, number of images to reference iterations\nj: number of CPU cores\nc: control for parallel computation\nk: number of modalities (i.e. just T2 image or T2 WM and GM)\nn: N4BiasField Correction of moving image\nr: rigid body registration before creating initial template\ny: rigid (translation & rotation) not used when y=0 with affine transform\nz: useful if input images are at different FOV",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "ANTs"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/ants.html#antsapplytransforms",
-    "href": "mrisoftware/ants.html#antsapplytransforms",
-    "title": "ANTs",
-    "section": "antsApplyTransforms",
-    "text": "antsApplyTransforms\nI will provide a rough idea of this function, but look here for a much more detailed overview.\nAs mentioned in antsRegistration it is advised to register a low resolution image onto a high resolution image. But if you need a high resolution image in the low resolution images space.\n\nRegister the low resolution image to the high resolution image\nApply the inverse warp to the high resolution image\n\ne.g Applying the inverse warp to register the fixed image to the moving images original space.\n${ANTSPATH}antsApplyTransforms \\\n  -d 3 \\\n  -i fixedImage.nii.gz \\\n  -r movingImage.nii.gz \\   \n  -t [movingToFixed_0GenericAffine.mat, 1] \\   \n  -t movingToFixed_1InverseWarp.nii.gz \\\n  -o fixedToMovingDeformed.nii.gz\n\ni: input\nr: reference image\nt: transform file, note differences in order in above link\no: output",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "ANTs"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/MRIQC.html#local-install",
-    "href": "mrisoftware/MRIQC.html#local-install",
-    "title": "MRIQC",
-    "section": "Local install",
-    "text": "Local install\npip install mriqc\n\nUpgrade\npip install --user --upgrade mriqc",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "MRIQC"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/MRIQC.html#docker-install-or-upgrade",
-    "href": "mrisoftware/MRIQC.html#docker-install-or-upgrade",
-    "title": "MRIQC",
-    "section": "Docker install or upgrade",
-    "text": "Docker install or upgrade\ndocker pull nipreps/mriqc:latest",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "MRIQC"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/freesurfer.html#beginner-guide",
-    "href": "mrisoftware/freesurfer.html#beginner-guide",
-    "title": "Freesurfer",
-    "section": "Beginner Guide",
-    "text": "Beginner Guide\nhttp://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferBeginnersGuide",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "Freesurfer"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/freesurfer.html#install-1",
-    "href": "mrisoftware/freesurfer.html#install-1",
-    "title": "Freesurfer",
-    "section": "Install",
-    "text": "Install\nClone the git:\ngit clone git@github.com:Deep-MI/FastSurfer.git\nGrab the latest docker:\ndocker pull deepmi/fastsurfer:latest\nGo into the git folder and type:\ndocker build --rm=true -t fastsurfer:gpu -f ./Docker/Dockerfile .",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "Freesurfer"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/freesurfer.html#example-run",
-    "href": "mrisoftware/freesurfer.html#example-run",
-    "title": "Freesurfer",
-    "section": "Example run",
-    "text": "Example run\ndocker run --gpus all -v /mnt/WeberLab/Data/BCCHR/ForDanny_Aug2022/derivatives/anat:/data \\\n-v /mnt/WeberLab/Data/BCCHR/ForDanny_Aug2022/derivatives/FastSurfer:/output \\\n-v /home/aweber:/fs_license \\\n--rm fastsurfer:gpu --fs_license /fs_license/license.txt \\\n--t1 /data/T1w_robust.nii.gz --sid 01 --sd /output --parallel\n\nTroubleshooting:\nIf you get an error like:\n\ndocker: Error response from daemon: could not select device driver \"\" with capabilities: [[gpu]].\n\nTry this: https://collabnix.com/introducing-new-docker-cli-api-support-for-nvidia-gpus-under-docker-engine-19-03-0-beta-release/\nYou may need to run these two lines after following the instructions in the above link:\nsudo systemctl daemon-reload\nsudo systemctl restart docker\nIf you get an error like \"RuntimeError: CUDA error: out of memory\"\nThe best way is to find the process engaging gpu memory and kill it:\nfind the PID of python process from:\nnvidia-smi\ncopy the PID and kill it by:\nsudo kill -9 pid",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "Freesurfer"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/freesurfer.html#example",
-    "href": "mrisoftware/freesurfer.html#example",
-    "title": "Freesurfer",
-    "section": "Example:",
-    "text": "Example:\nfreeview -v \\\nmri/T1.mgz \\\nmri/wm.mgz \\\nmri/brainmask.mgz \\\nmri/aseg.mgz:colormap=lut:opacity=0.2 \\\n-f surf/lh.white:edgecolor=blue \\\nsurf/lh.pial:edgecolor=red \\\nsurf/rh.white:edgecolor=blue \\\nsurf/rh.pial:edgecolor=red",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "Freesurfer"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/freesurfer.html#if-you-want-the-cortical-thickness-in-mni-space",
-    "href": "mrisoftware/freesurfer.html#if-you-want-the-cortical-thickness-in-mni-space",
-    "title": "Freesurfer",
-    "section": "If you want the cortical thickness in MNI space:",
-    "text": "If you want the cortical thickness in MNI space:\nmkdir derivatives/test_Justin\n\nmri_convert derivatives/FastSurfer/sub-Pilot01/mri/brain.mgz derivatives/test_Justin/brain.nii.gz\n\ncd derivatives/test_Justin/\n\nfslreorient2std brain.nii.gz brain_reorient.nii.gz\n\nmoving=/usr/local/fsl/data/standard/MNI152_T1_2mm_brain.nii.gz\nfixed=brain_reorient.nii.gz\n\nantsRegistration --dimensionality 3 --float 0 \\\n--output [MNI-to-T1_,MNI-to-T1_Warped.nii.gz] \\\n--interpolation Linear \\\n--winsorize-image-intensities [0.005,0.995] \\\n--use-histogram-matching 0 \\\n--initial-moving-transform [$fixed,$moving,1] \\\n--transform Rigid[0.1] \\\n--metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n--convergence [1000x500x250x100,1e-6,10] \\\n--shrink-factors 8x4x2x1 \\\n--smoothing-sigmas 3x2x1x0vox \\\n--transform Affine[0.1] \\\n--metric MI[$fixed,$moving,1,32,Regular,0.25] \\\n--convergence [1000x500x250x100,1e-6,10] \\\n--shrink-factors 8x4x2x1 \\\n--smoothing-sigmas 3x2x1x0vox \\\n--transform SyN[0.1,3,0] \\\n--metric CC[$fixed,$moving,1,4] \\\n--convergence [100x70x50x20,1e-6,10] \\\n--shrink-factors 8x4x2x1 \\\n--smoothing-sigmas 3x2x1x0vox\n\nantsApplyTransforms \\\n  -d 3 \\\n  -i thickness_test_reorient.nii.gz \\\n  -r $moving \\\n  -t [MNI-to-T1_0GenericAffine.mat, 1] \\\n  -t MNI-to-T1_1InverseWarp.nii.gz \\\n  -o thickness-to-MNI.nii.gz",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "Freesurfer"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/freesurfer.html#process-and-convert-to-stl-format",
-    "href": "mrisoftware/freesurfer.html#process-and-convert-to-stl-format",
-    "title": "Freesurfer",
-    "section": "Process and Convert to STL Format",
-    "text": "Process and Convert to STL Format\nhttps://layerfmri.com/2018/07/25/3d-printing-nii-data/\n\nAssuming you have run recon-all with freesurfer or FastSurfer:\n\nmris_convert surf/rh.pial rh.stl\nmris_convert surf/lh.pial lh.stl\n\nDownload and install Meshlab: https://www.meshlab.net/\nMeshlab\n\n\nFile &gt; Import Mesh &gt; surf/rh.stl\nFile &gt; Import Mesh &gt; lh.stl\nFilters &gt; Mesh Layer &gt; Flatten Visible Layers; Click Apply\nFilters &gt; Remeshing Simplification and Reconstruction &gt; Simplification: Quadric Edge Collapse Decimation; Enter desired Target Number of Faces (suggested: 200,000) and Apply\nFilters &gt; Smoothing, Fairing and Deformation &gt; HC Laplacian Smooth; Click Apply\nFile &gt; Export Mesh As: Save as a .STL file (e.g. 3DPrint.stl)\n\n\nOpen netfabb-basic and load in the STL file that you just made\n\n\nProject &gt; Open &gt; aseg.stl\nClick on the repair symbol (red cross; top right)\nClick on Automatic repair and Apply repair.\n\n[note: I got a lot of 'netfab_free' is not responding. Ignore these]\n\nClick Apply Repair again, and discard old parts\nSave: Part &gt; Export Part &gt; As STL",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "Freesurfer"
-    ]
-  },
-  {
-    "objectID": "mrisoftware/freesurfer.html#where-to-print",
-    "href": "mrisoftware/freesurfer.html#where-to-print",
-    "title": "Freesurfer",
-    "section": "Where to Print",
-    "text": "Where to Print\nUBC: https://ubc-rapid.com/?/printing-service/#/\nBCCHR: https://www.bcchdigital.ca/\nPhysics and Astronomy UBC: https://www.phas.ubc.ca/3d-printing-services",
-    "crumbs": [
-      "Home",
-      "MRI Software",
-      "Freesurfer"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BCCH MRI Research Facility Wiki Page",
-    "section": "",
-    "text": "Overview\nThis page serves as a Wiki and collection of resources for users of BC Children’s MRI Research Facility\nYou can search this page using the magnifying glass in the top right 🔍\nOr you can navigate using the sidebar on the left 👈\nIf you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us (similar to Slack or Microsoft Teams).\n\n\n\n\n Back to top"
   },
   {
     "objectID": "orientation/instantmessaging.html",
