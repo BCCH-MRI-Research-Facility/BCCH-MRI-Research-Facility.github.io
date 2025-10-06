@@ -1,0 +1,111 @@
+---
+title: "How to contribute to the BCCHR MRI Wiki"
+author: "Alexander Weber"
+date: 2025-10-06
+date-modified: 2025-10-06 
+description: "Detailed instructions on how anyone can add/edit/contribute to the wiki"
+highlight-style: github
+categories:
+    - instructions
+    - wiki
+    - git
+---
+
+# Intro
+
+Do you have something you want to share? Or you see a mistake you would like to correct? Or a small tip you would like to contribute? We would love that!
+
+Our wiki page is built using a markdown language known as [`quarto`](https://quarto.org/), and hosted on [Github](https://github.com).
+
+In order to create a new page, or make an edit, you will therefore need to know a little bit about `quarto` and [`git`](../tutorials/git.qmd). 
+
+Below, I will give an example of how to edit a page.
+
+## Prerequisites
+
+Before being able to edit or create a new page, you will need to have or create a [Github account](https://github.com/login). 
+
+![](img/creategithub.png){width=30%}
+
+# Edit an existing page
+
+The easiest way to edit an existing page is to look for the 'Edit this page' link:
+
+![](img/editpage.png){width=80%}
+
+Once you click that link, you will be brought to a page like this, telling you to first 'fork' the 'repository':
+
+![](img/forkthisrepo.png)
+
+Basically, all this means is you will make a copy of the BCCHR MRI Wiki to your Github account, and then you will make changes to that version.
+
+So go ahead and click that green button and fork the page.
+
+Now you will be brought to a built-in text editor. Here you can make your changes. When you are happy, click on 'Commit changes'
+
+![](img/myawesomechanges.png)
+
+You might have to write a message for your changes. Just try to describe what you did: what you added or edited or removed.
+
+Then click on the 'Propose changes' green button.
+
+Next Github will tell you if the changes you've proposed can be made, or if there are any conflicts with other edits going on (unlikely)
+
+![](img/comparingchanges.png)
+
+If you are happy with your edits, click on the 'Create pull request' green button.
+
+Annoyingly, you will have to title and describe your changes (again).
+
+When you are done, click on 'Create pull request'
+
+![](img/createpullrequest.png)
+
+🎉 You did it! 🎉
+
+Now someone from the team just needs to approve it 😊
+
+# Create a new page
+
+To create a whole new page, you will still need to fork the repo. If you didn't do that in the step above, click on the Github dropdown button at the top right, and click on 'Source Code'
+
+![](img/sourcecode.png)
+
+This will bring you to the Github repository for the wiki. Now click on Fork (you must be signed in, of course)
+
+![](img/fork.png)
+
+Once you have your own fork of the wiki, you can navigate to the folder of your choice for where you think your article will best be placed (e.g. MRI Methods, Tutorials, Student Resources, etc.)
+
+Once in your folder of choice, click on the 'Add file > Create new file' button:
+
+![](img/createfile2.png)
+
+Give your page a filename, with `.qmd` for the suffix.
+
+Then add the content for your page.
+
+Be sure to include some 'front matter' such as title, date, author, etc.
+
+If you need help with markdown, see the official [Quarto website's Markdown Basics page](https://quarto.org/docs/authoring/markdown-basics.html). You can find a lot more instructions by reading other entries in their [Guide](https://quarto.org/docs/guide/).
+
+![](img/newpagechanges.png)
+
+Once you are happy, click on the green 'Commit changes...' button.
+
+You will be asked to create a commit message describing what changes you made.
+
+Next, click on the '1 commit ahead of' link to see if you can make your pull request:
+
+![](img/syncfork.png)
+
+Then click on the green 'Create pull request' button to push your changes to the main page. You will have to give it a title and description of what you are pushing.
+
+After that, finally click on the green 'Create pull request' button:
+
+![](img/createpullrequest2.png)
+
+🎉 You did it! 🎉
+
+Now someone from the team just needs to approve it 😊
+

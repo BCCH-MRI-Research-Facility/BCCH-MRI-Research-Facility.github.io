@@ -86,7 +86,7 @@
     "href": "mrisoftware/index.html",
     "title": "MRI Software",
     "section": "",
-    "text": "3D Slicer\n\n\n\nsoftware\n\nvisualization\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nANTs\n\n\n\n-software -registration\n\n\n\nAdvanced Normalization Tools\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nFreesurfer\n\n\n\n-software -anatomical -visualization -segmentation -surface\n\n\n\nAn open source neuroimaging toolkit for processing, analyzing, and visualizing human brain MR images\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nTedana\n\n\n\n-software -multi-echo -fmri -processing\n\n\n\nProcessing multi-echo fMRI data after it has been preprocessed by fmriprep\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nfmriprep\n\n\n\n-software -fmri -reproducibility -standardization -preprocessing\n\n\n\nAn automated and standardized way of preprocessing fmri data\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\nNo matching items\n Back to top",
+    "text": "3D Slicer\n\n\n\n\n\n\nsoftware\n\n\nvisualization\n\n\nmedical imaging\n\n\n\n3D Slicer is an open-source software platform used for visualization, segmentation, and modeling of medical imaging data in 3D.\n\n\n\n\n\nFeb 28, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nANTs\n\n\n\n\n\n\n-software -registration\n\n\n\nAdvanced Normalization Tools\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nFreesurfer\n\n\n\n\n\n\n-software -anatomical -visualization -segmentation -surface\n\n\n\nAn open source neuroimaging toolkit for processing, analyzing, and visualizing human brain MR images\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nMRIQC\n\n\n\n\n\n\nquality control\n\n\nsoftware\n\n\nvisualization\n\n\n\nMRIQC extracts no-reference IQMs (image quality metrics) from structural (T1w and T2w), functional and diffusion MRI (magnetic resonance imaging) data.\n\n\n\n\n\nOct 6, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nTedana\n\n\n\n\n\n\n-software -multi-echo -fmri -processing\n\n\n\nProcessing multi-echo fMRI data after it has been preprocessed by fmriprep\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nfmriprep\n\n\n\n\n\n\n-software -fmri -reproducibility -standardization -preprocessing\n\n\n\nAn automated and standardized way of preprocessing fmri data\n\n\n\n\n\nSep 17, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "MRI Software"
@@ -277,7 +277,7 @@
     "href": "orientation/index.html",
     "title": "Orientation",
     "section": "",
-    "text": "MRI Safety FAQ\n\n\n\nsafety\n\nmri\n\n\n\nYour frequently asked MRI safety questions answered\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMattermost: Instant Messaging / Stay in Touch\n\n\n\ncollaboration\n\nsoftware\n\ninstant messaging\n\n\n\nInstant messaging app for users of the research MRI facility\n\n\n\n\n\n\n\n\nNo matching items\n Back to top",
+    "text": "How to contribute to the BCCHR MRI Wiki\n\n\n\n\n\n\ninstructions\n\n\nwiki\n\n\ngit\n\n\n\nDetailed instructions on how anyone can add/edit/contribute to the wiki\n\n\n\n\n\nOct 6, 2025\n\n\nAlexander Weber\n\n\n\n\n\n\n\n\n\n\n\n\nMRI Safety FAQ\n\n\n\n\n\n\nsafety\n\n\nmri\n\n\n\nYour frequently asked MRI safety questions answered\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMattermost: Instant Messaging / Stay in Touch\n\n\n\n\n\n\ncollaboration\n\n\nsoftware\n\n\ninstant messaging\n\n\n\nInstant messaging app for users of the research MRI facility\n\n\n\n\n\nDec 4, 2024\n\n\nA Weber\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Home",
       "Orientation"
@@ -2472,6 +2472,149 @@
       "Home",
       "MRI Software",
       "ANTs"
+    ]
+  },
+  {
+    "objectID": "bcchrimriresources/index.html",
+    "href": "bcchrimriresources/index.html",
+    "title": "BCCHRI MRI Resources",
+    "section": "",
+    "text": "No matching items\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "BCCHRI MRI Resources"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/MRIQC.html#local-install",
+    "href": "mrisoftware/MRIQC.html#local-install",
+    "title": "MRIQC",
+    "section": "Local install",
+    "text": "Local install\npip install mriqc\n\nUpgrade\npip install --user --upgrade mriqc",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "MRIQC"
+    ]
+  },
+  {
+    "objectID": "mrisoftware/MRIQC.html#docker-install-or-upgrade",
+    "href": "mrisoftware/MRIQC.html#docker-install-or-upgrade",
+    "title": "MRIQC",
+    "section": "Docker install or upgrade",
+    "text": "Docker install or upgrade\ndocker pull nipreps/mriqc:latest",
+    "crumbs": [
+      "Home",
+      "MRI Software",
+      "MRIQC"
+    ]
+  },
+  {
+    "objectID": "orientation/contribute.html",
+    "href": "orientation/contribute.html",
+    "title": "How to contribute to the BCCHR MRI Wiki",
+    "section": "",
+    "text": "Do you have something you want to share? Or you see a mistake you would like to correct? Or a small tip you would like to contribute? We would love that!\nOur wiki page is built using a markdown language known as quarto, and hosted on Github.\nIn order to create a new page, or make an edit, you will therefore need to know a little bit about quarto and git.\nBelow, I will give an example of how to edit a page.\n\n\nBefore being able to edit or create a new page, you will need to have or create a Github account.",
+    "crumbs": [
+      "Home",
+      "Orientation",
+      "How to contribute to the BCCHR MRI Wiki"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#what-is-version-control",
+    "href": "tutorials/git.html#what-is-version-control",
+    "title": "Git",
+    "section": "What is Version Control?",
+    "text": "What is Version Control?\nGit version control is an excellent application that allows you to keep track of changes to documents, and also to collaborate and work together. We use it a lot in the lab to save our code, share our code publicly with the science community, and to collaborate on projects.\nSoftware Carpentry has a good tutorial: Version Control with Git",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#connecting-to-github-with-ssh",
+    "href": "tutorials/git.html#connecting-to-github-with-ssh",
+    "title": "Git",
+    "section": "Connecting to Github with SSH",
+    "text": "Connecting to Github with SSH\nIf you don't want to have to put your username and password in every time:\nNo Password Guide\nBasically, you will create a SSH key (or use an existing one):\nssh-keygen -t ed25519 -C \"your_email@example.com\"\nThen you will run:\ngh ssh-key add ~/.ssh/id_ed25519.pub\nNote, you will need to install gh, and run gh auth login\nFor gh auth login, pick:\n\nGitHub.com\nSSH\nyour key you want to upload\nLogin with a web browser",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#start-a-repository",
+    "href": "tutorials/git.html#start-a-repository",
+    "title": "Git",
+    "section": "Start a repository",
+    "text": "Start a repository\nCreate a folder, enter the folder, then type:\ngit init .\nNow, head to your Github account and create a new repo\nName your new repo and click Create New Repository\nNow, in the command line type:\necho \"# Title\" &gt;&gt; README.md\ngit init\ngit add README.md\ngit commit -m \"first commit\"\ngit branch -M main\ngit remote add origin git@github.com:WeberLab/Title.git\ngit push -u origin main\nWhere Title is the name of your new repo",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#update-a-repository",
+    "href": "tutorials/git.html#update-a-repository",
+    "title": "Git",
+    "section": "Update a repository",
+    "text": "Update a repository\nCheck status of remote origin (if any changes have been made on the Github):\ngit remote update\ngit pull",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#clone-a-repository",
+    "href": "tutorials/git.html#clone-a-repository",
+    "title": "Git",
+    "section": "Clone a repository",
+    "text": "Clone a repository\nYou can clone a remote repository to create a local repository on your computer\nFor example,\ngit clone https://github.com/&lt;YourGithubAccountName&gt;/&lt;YourRepoName&gt;",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#push-to-the-repository",
+    "href": "tutorials/git.html#push-to-the-repository",
+    "title": "Git",
+    "section": "Push to the repository",
+    "text": "Push to the repository\nYou can push any changes you make on your local repository to the remote repository. Make sure your current working directory is your local repository, then use the following commands:\ngit add &lt;filename&gt;\ngit commit -m \"Comment about what you added\"\ngit push origin &lt;branchname&gt;",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "tutorials/git.html#branches",
+    "href": "tutorials/git.html#branches",
+    "title": "Git",
+    "section": "Branches",
+    "text": "Branches\nYou can create branches to add or modify features of the master code.\nTo create a new branch, use command:\ngit checkout -b &lt;branchname&gt;\nThen you can add, commit and push to that branch as specified above. Note: use &lt;branchname&gt; main if you want to commit to main.\nYou can switch between branches using the command:\ngit checkout &lt;branchname&gt;\nYou can check what branch you are in using the command:\ngit branch\nSince branches are such an important topic, check out this website which is an excellent resource to understand them more intuitively: https://learngitbranching.js.org/",
+    "crumbs": [
+      "Home",
+      "Tutorials",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "orientation/contribute.html#prerequisites",
+    "href": "orientation/contribute.html#prerequisites",
+    "title": "How to contribute to the BCCHR MRI Wiki",
+    "section": "",
+    "text": "Before being able to edit or create a new page, you will need to have or create a Github account.",
+    "crumbs": [
+      "Home",
+      "Orientation",
+      "How to contribute to the BCCHR MRI Wiki"
     ]
   }
 ]
