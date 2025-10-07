@@ -1617,7 +1617,7 @@
     "href": "tutorials/BIDS.html#info-and-tutorials",
     "title": "BIDS (Brain Imaging Data Structure)",
     "section": "Info and Tutorials",
-    "text": "Info and Tutorials\nPlease take a look at the documentation to:\n\nInstall dcm2bids\nFollow the tutorial\nSeek for more advanced usage\n\n\nAnother tutorial",
+    "text": "Info and Tutorials\n\nInstall dcm2niix\n\nPlease take a look at the documentation to:\n\nInstall dcm2bids\nFollow the tutorial\nSeek for more advanced usage\n\n\nAnother tutorial",
     "crumbs": [
       "Home",
       "Tutorials",
