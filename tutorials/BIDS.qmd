@@ -124,6 +124,8 @@ One of the nicest ways to convert your raw `.dcm` files to NIfTI AND organize in
 
 ## Info and Tutorials
 
+- [Install dcm2niix](https://github.com/rordenlab/dcm2niix#install)
+
 Please take a look at the [documentation](https://unfmontreal.github.io/Dcm2Bids) to:
 
 - [Install dcm2bids](https://unfmontreal.github.io/Dcm2Bids/latest/get-started/install/)
