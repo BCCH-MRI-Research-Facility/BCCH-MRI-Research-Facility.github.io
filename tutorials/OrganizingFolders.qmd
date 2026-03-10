@@ -1,0 +1,33 @@
+---
+title: "A Quick Guide to Organizing Neuroimaging Projects"
+description: "File and Directory Organization"
+author: "Lynne Williams"
+date: "2025-10-09"
+date-modified: "2025-10-09"
+highlight-style: github
+categories:
+    - organization
+    - project management
+---
+
+This page is heavily based on [Noble, 2009](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424&featured_on=talkpython). I still find useful information in it. I also draw heavily on the BIDS standard, which contains a folder for models and statistical analysis. Add the `models` folder to your `.bidsignore` file. 
+
+# Guiding Principles
+
+1. **Someone unfamiliar with your project should be able to understand what you did and why you did it** (including your future self).
+
+2. **Everything you do, you will probably have to do again.** You will find an error or get new data or be asked to reproduce what you did on the fly in your defense. If you have documented your work clearly, you will have no problem with any of this.
+
+# File and Directory Organization
+
+Within a given project, I use a top-level organization that is logical, with chronological organization at the next level, and logical organization below that. A sample project, called `my_project`, is shown in below. At the root of most of projects, I have a data directory for storing fixed data sets (neuroimaging data in bids format), a results directory for tracking computational experiments peformed on that data, a doc directory with one subdirectory per manuscript, and directories such as src for source code and bin for compiled binaries or scripts.
+
+Unlike [Noble (2009)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424&featured_on=talkpython), we are going to work within the BIDS structure and add a few directories for our statistical models and results. Remember to add these to your `.bidsignore` file.
+
+For our example, we will be working with data from [Donizete de Faria et al., 2025](https://openneuro.org/datasets/ds006395/versions/1.0.6) "Upper limb dystonia, cervical dystonia and healthy controls dataset" from OpenNeuro.
+
+```
+ds006395
+
+
+```
