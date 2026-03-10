@@ -13,6 +13,7 @@ format:
         <meta charset="UTF-8" />
     resources:
       - js/chatbox.js
+      - custom-css/chatbox-style.css
 ---
 
 ![](/img/banner.jpg){width=100%}
