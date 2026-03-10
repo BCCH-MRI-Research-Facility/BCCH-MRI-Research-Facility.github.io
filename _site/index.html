@@ -78,6 +78,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 </script>
+<script> src="js/chatbox.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 
@@ -451,10 +452,7 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 Step 1: Initialize WebLLM and Download Model
 </p>
 <div class="download-container">
-<pre><code>&lt;select id="model-selection"&gt;&lt;/select&gt;
-&lt;button id="download"&gt;
-  Download
-&lt;/button&gt;</code></pre>
+<p><select id="model-selection"></select> <button id="download"> Download </button></p>
 </div>
 <p id="download-status" class="hidden">
 </p>
@@ -462,14 +460,17 @@ Step 1: Initialize WebLLM and Download Model
 Step 2: Chat
 </p>
 <div class="chat-container">
-<pre><code>&lt;div id="chat-box" class="chat-box"&gt;&lt;/div&gt;
-&lt;div id="chat-stats" class="chat-stats hidden"&gt;&lt;/div&gt;
-&lt;div class="chat-input-container"&gt;
-  &lt;input type="text" id="user-input" placeholder="Type a message..." /&gt;
-  &lt;button id="send" disabled&gt;Send&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+<div id="chat-box" class="chat-box">
+
 </div>
-<script src="./index.js" type="module"></script>
+<div id="chat-stats" class="chat-stats hidden">
+
+</div>
+<div class="chat-input-container">
+<pre><code>&lt;input type="text" id="user-input" placeholder="Type a message..." /&gt;
+&lt;button id="send" disabled&gt;Send&lt;/button&gt;</code></pre>
+</div>
+</div>
 
 
 </section>
