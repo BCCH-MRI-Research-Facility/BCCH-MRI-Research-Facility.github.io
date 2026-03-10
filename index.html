@@ -450,29 +450,30 @@ gtag('config', 'G-B9X9W6319W', { 'anonymize_ip': true});
 <p>If you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use <a href="./orientation/instantmessaging.html">Mattermost</a> to connect with us (similar to Slack or Microsoft Teams).</p>
 <p>or</p>
 <p>Ask our chatbot</p>
-<p>
-Step 1: Initialize WebLLM and Download Model
-</p>
-<div class="download-container">
-<pre><code>&lt;select id="model-selection"&gt;&lt;/select&gt;
-&lt;button id="download"&gt;
-  Download
-&lt;/button&gt;</code></pre>
-</div>
-<p id="download-status" class="hidden">
-</p>
-<p>
-Step 2: Chat
-</p>
-<div class="chat-container">
-<pre><code>&lt;div id="chat-box" class="chat-box"&gt;&lt;/div&gt;
-&lt;div id="chat-stats" class="chat-stats hidden"&gt;&lt;/div&gt;
-&lt;div class="chat-input-container"&gt;
-  &lt;input type="text" id="user-input" placeholder="Type a message..." /&gt;
-  &lt;button id="send" disabled&gt;Send&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-</div>
-<script src="./index.js" type="module"></script>
+  <p>
+    Step 1: Initialize WebLLM and Download Model
+  </p>
+  <div class="download-container">
+    <select id="model-selection"></select>
+    <button id="download">
+      Download
+    </button>
+  </div>
+  <p id="download-status" class="hidden"></p>
+
+  <p>
+    Step 2: Chat
+  </p>
+  <div class="chat-container">
+    <div id="chat-box" class="chat-box"></div>
+    <div id="chat-stats" class="chat-stats hidden"></div>
+    <div class="chat-input-container">
+      <input type="text" id="user-input" placeholder="Type a message...">
+      <button id="send" disabled="">Send</button>
+    </div>
+  </div>
+
+  <script src="./index.js" type="module"></script>
 
 
 </section>
