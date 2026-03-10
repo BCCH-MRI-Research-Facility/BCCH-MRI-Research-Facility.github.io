@@ -1,45 +1,22 @@
 [
   {
-    "listing": "/mriscanners/index.html",
+    "listing": "/scienceresources/index.html",
     "items": []
   },
   {
-    "listing": "/studentresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/mrimethods/eeg-fmri/index.html",
+    "listing": "/tutorials/index.html",
     "items": [
-      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html",
-      "/mrimethods/eeg-fmri/gradient-removal.html"
+      "/tutorials/OrganizingFolders.html",
+      "/tutorials/BIDS.html",
+      "/tutorials/docker.html",
+      "/tutorials/git.html",
+      "/tutorials/MATLAB.html",
+      "/tutorials/Python.html"
     ]
   },
   {
     "listing": "/bcchrimriresources/index.html",
     "items": []
-  },
-  {
-    "listing": "/mrisoftware/index.html",
-    "items": [
-      "/mrisoftware/3D-Slicer.html",
-      "/mrisoftware/ants.html",
-      "/mrisoftware/freesurfer.html",
-      "/mrisoftware/MRIQC.html",
-      "/mrisoftware/tedana.html",
-      "/mrisoftware/fmriprep.html"
-    ]
-  },
-  {
-    "listing": "/scienceresources/index.html",
-    "items": []
-  },
-  {
-    "listing": "/orientation/index.html",
-    "items": [
-      "/orientation/contribute.html",
-      "/orientation/mrisafetyfaq.html",
-      "/orientation/instantmessaging.html"
-    ]
   },
   {
     "listing": "/mrimethods/index.html",
@@ -55,16 +32,41 @@
     ]
   },
   {
+    "listing": "/orientation/index.html",
+    "items": [
+      "/orientation/contribute.html",
+      "/orientation/mrisafetyfaq.html",
+      "/orientation/instantmessaging.html"
+    ]
+  },
+  {
     "listing": "/investigatorresources/index.html",
     "items": []
   },
   {
-    "listing": "/tutorials/index.html",
+    "listing": "/mrimethods/eeg-fmri/index.html",
     "items": [
-      "/tutorials/BIDS.html",
-      "/tutorials/docker.html",
-      "/tutorials/git.html",
-      "/tutorials/Python.html"
+      "/mrimethods/eeg-fmri/ballistocardiogram-removal.html",
+      "/mrimethods/eeg-fmri/gradient-removal.html"
+    ]
+  },
+  {
+    "listing": "/mriscanners/index.html",
+    "items": []
+  },
+  {
+    "listing": "/studentresources/index.html",
+    "items": []
+  },
+  {
+    "listing": "/mrisoftware/index.html",
+    "items": [
+      "/mrisoftware/3D-Slicer.html",
+      "/mrisoftware/ants.html",
+      "/mrisoftware/freesurfer.html",
+      "/mrisoftware/MRIQC.html",
+      "/mrisoftware/tedana.html",
+      "/mrisoftware/fmriprep.html"
     ]
   }
 ]
