@@ -17,6 +17,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install WebLLM
+        run: npm install @mlc-ai/web-llm
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
