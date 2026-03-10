@@ -6,15 +6,13 @@ format:
     css: 
       - chatbox-style.css
       - styles.css
-    file: 
-      - chatbox.js
+    include-after-body: js/chatbox.js
     include-in-header:
       text: |
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
-    include-in-footer:
-      text: |
-        <script src="./chatbot.js" type="module"></script>
+    resources:
+      - js/chatbox.js
 ---
 
 ![](/img/banner.jpg){width=100%}
