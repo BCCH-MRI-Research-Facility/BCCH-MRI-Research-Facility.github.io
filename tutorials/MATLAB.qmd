@@ -1,0 +1,152 @@
+---
+title: "MATLAB"
+description: "Matrix Laboratory."
+author: "Lynne Williams"
+date: "2025-10-09"
+date-modified: "2025-10-09"
+highlight-style: github
+categories:
+    - software
+    - programming
+    - data analysis
+---
+
+![](img/matlablogo.jpeg)
+
+# What is Matlab? 
+
+MATLAB is a programming and numeric computing platform used 
+by millions of engineers and scientists to analyze data, 
+develop algorithms, and create models.
+
+# Tutorials 
+
+Software Carpentry provides a good resource for MATLAB:
+
+- [Programming with MATLAB](https://swcarpentry.github.io/matlab-novice-inflammation/)
+
+Complete this tutorial, then come back here.
+
+MathWorks also has an introductory MATLAB tutorial.  
+
+- [MATLAB Onramp](https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted)
+
+It is free to take and gives a good overview of what MATLAB can do.
+
+
+## Scripts
+
+A plain text `.m` file containing Python code that is intended to be directly
+executed by the user is usually called a **script**
+
+
+### How to write a simple script: 
+
+Open a text file and save it as a filename with the suffix `.m`:
+
+One good program to use for this is Sublime Text. [Check it out](https://www.sublimetext.com/).
+
+Or better yet, [Visual Studio Code](Visual-Studio-Code_223019247.html).
+
+Or even better yet, [Positron](https://positron.posit.co/) (You will need to add the MATLAB Extension and have MATLAB R2023a or higher on your machine).
+
+Or in the MATLAB console:
+
+```matlab
+edit filename.m
+```
+
+This will create a text file called `filename.m` into the current directory. Then in the file, add your code: 
+
+```matlab
+disp('Hello World!')
+```
+
+You can also store this file in a Script folder, which you can tell MATLAB to search. I generally put my MATLAB scripts in the directory MATLAB creates when it is installed (e.g., `/Users/lj/Documents/MATLAB/Script` on MacOS):
+
+```matlab
+addpath('/Users/lj/Documents/MATLAB/Script')
+```
+
+where `/Users/lj/Documents/MATLAB/Script` is replaced with the path to the folder you want MATLAB to look for your scripts. Note that the path is not saved when you quit MATLAB. If you would like to save the path, in the MATLAB console type:
+
+```matlab
+savepath('/Users/lj/Documents/MATLAB/Script')
+```
+
+This will save the path to your m-files for use next time. You only need to do this once.
+
+### Running your m-file
+
+To run the m-file, in the MATLAB console type:
+
+```matlab
+run filename.m
+```
+
+or use the Run button in the MATLAB toolbar. If the m-file is in the current directory or in your saved Script folder, you should get
+
+```matlab
+>>> run filename.m
+Hello world!
+>>
+```
+
+printed to the console.
+
+# MRI with MATLAB 
+
+Since MATLAB R2024a, MathWorks has included a Medical Imaging Toolbox (in addition to SPM and its toolboxes) with some MRI and fMRI capabilities. Some functions in this toolbox may be useful if you use MATLAB a lot for your image processing. Ask IT to install it when they install MATLAB.
+
+A useful review comes from (as always) [Andy's Brain Book](https://andysbrainbook.readthedocs.io/en/latest/index.html):
+
+- [Matlab for Neuroimagers](https://andysbrainbook.readthedocs.io/en/latest/Matlab/Matlab_Overview.html)
+
+## Structural MRI
+
+You can find a basic tutorial on how to load, view, register, and label a T1-weighted MRI using MathWorks' Deep Learning algorithm at 
+
+- [MRI Images And Data Structures](https://warda-syeda.gitbooks.io/matlab-for-mri/content/part_one_understanding_data_structures.html)
+- [Explore Slices from 3-D Image Volume with Anisotropic Voxel Spacing](https://www.mathworks.com/help/images/exploring-slices-from-a-3-dimensional-mri-data-set.html)
+- [Brain MRI Segmentation Using Pretrained 3-D U-Net Network](https://www.mathworks.com/help/medical-imaging/ug/Brain-MRI-Segmentation-Using-Trained-3-D-U-Net.html)
+- [Segment and Analyze Brain MRI Scan Using AI](https://www.mathworks.com/help/medical-imaging/ug/end-to-end-workflow-for-ai-based-segmentation-and-analysis-of-brain-mri-scan.html).
+- [Brain MRI Segmentation Using Pretrained 3-D U-Net Network](https://www.mathworks.com/help/medical-imaging/ug/Brain-MRI-Segmentation-Using-Trained-3-D-U-Net.html)
+
+Note that the Deep Learning algorithm has only been trained on healthy brains with no obvious structural abnormalities. Use caution when applying to clinical data.
+
+## Functional MRI
+
+There are a variety of toolboxes and extensions for functional MRI, including
+
+- [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/) (see also [SPM Overview](https://andysbrainbook.readthedocs.io/en/latest/SPM/SPM_Overview.html) from Andy's Brain Book)
+- [Brain Connectivity Toolbox](https://sites.google.com/site/bctnet/)
+- [Compute Functional Connectivity from Brain fMRI](https://www.mathworks.com/help/medical-imaging/ug/compute-functional-connectivity-from-brain-fmri.html)
+
+# Call Python from MATLAB
+
+You can access Python libraries directly from MATLAB by adding the `py.` prefix to the command name.
+
+```matlab
+py.list({'This', 'is', 'a','list'}) % Call built-in function list
+py.textwrap.wrap('This is a string') % Call the wrap function in the textwrap module
+```
+
+# Call R from MATLAB
+
+You can call your R script from MATLAB by invoking the `system` command in the MATLAB console.
+
+```matlab
+!Rscript /path/to/your/R_script.R
+```
+
+which does the equivalent of running your R script on the command line. You need to have R installed and your R script executable on the system path. In the terminal, type:
+
+```bash
+chmod +x R_script.R
+```
+and add it to your Script folder:
+
+```bash
+mv R_script.R /Users/lj/Documents/Script # I keep my scripts separate, but you should organize them by project
+export PATH="$PATH:/Users/lj/Documents/Script"
+```
