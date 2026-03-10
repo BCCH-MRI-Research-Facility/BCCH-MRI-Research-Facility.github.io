@@ -30,7 +30,7 @@ or
 
 Ask our chatbot
 
-
+```{=html}
   <p>
     Step 1: Initialize WebLLM and Download Model
   </p>
@@ -55,7 +55,7 @@ Ask our chatbot
   </div>
 
   <script src="./index.js" type="module"></script>
-
+```
 
 
 
