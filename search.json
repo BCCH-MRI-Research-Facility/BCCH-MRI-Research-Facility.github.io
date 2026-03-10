@@ -1096,7 +1096,7 @@
     "href": "index.html",
     "title": "BCCH MRI Research Facility Wiki Page",
     "section": "",
-    "text": "Overview\nThis page serves as a Wiki and collection of resources for users of BC Children’s MRI Research Facility\nYou can search this page using the magnifying glass in the top right 🔍\nOr you can navigate using the sidebar on the left 👈\nIf you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us (similar to Slack or Microsoft Teams).\nor\nAsk our chatbot\n  \n    Step 1: Initialize WebLLM and Download Model\n  \n  \n    \n    \n      Download\n    \n  \n  \n\n  \n    Step 2: Chat\n  \n  \n    \n    \n    \n      \n      Send\n    \n  \n\n\n\n\n Back to top"
+    "text": "Overview\nThis page serves as a Wiki and collection of resources for users of BC Children’s MRI Research Facility\nYou can search this page using the magnifying glass in the top right 🔍\nOr you can navigate using the sidebar on the left 👈\nIf you have MRI questions or want to connect with other BCCH MRI Research Facility users, you can use Mattermost to connect with us (similar to Slack or Microsoft Teams).\nor\nAsk our chatbot\n\nStep 1: Initialize WebLLM and Download Model\n\n\n  Download \n\n\n\n\nStep 2: Chat\n\n\n\n\n\n\n\n\n\n&lt;input type=\"text\" id=\"user-input\" placeholder=\"Type a message...\" /&gt;\n&lt;button id=\"send\" disabled&gt;Send&lt;/button&gt;\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "orientation/index.html",
