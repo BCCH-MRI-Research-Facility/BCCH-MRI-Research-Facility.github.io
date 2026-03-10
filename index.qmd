@@ -10,9 +10,11 @@ format:
       - chatbox.js
     include-in-header:
       text: |
-        <script src="./chatbot.js" type="module"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
+    include-in-footer:
+      text: |
+        <script src="./chatbot.js" type="module"></script>
 ---
 
 ![](/img/banner.jpg){width=100%}
@@ -54,8 +56,6 @@ Ask our chatbot
       <button id="send" disabled>Send</button>
     </div>
   </div>
-
-  <script src="./index.js" type="module"></script>
 ```
 
 
