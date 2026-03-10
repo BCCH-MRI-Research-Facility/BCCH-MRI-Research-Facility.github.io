@@ -1,5 +1,8 @@
 project:
   type: website
+  resources:
+    - js/chatbox.js
+    - custom-css/chatbox-style.css
 
 website:
   title: "BC Children's Research MRI Wiki"
